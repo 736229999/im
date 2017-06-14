@@ -1,0 +1,46 @@
+import "base.proto";
+
+option optimize_for = LITE_RUNTIME;
+
+message KfkNewOrder
+{
+    optional string memguid = 1;
+    optional string ogno = 2;
+    optional string ogseq = 3;
+}
+
+message KfkPayOrder
+{
+    optional string memguid = 1;
+    optional string ogno = 2;
+    optional string ogseq = 3;
+    optional string paytype = 4;    // 金额
+    optional string transno = 5;    // 对账账号
+}
+
+message KfkGoodsComment
+{
+    optional string memguid = 1;
+    optional string ogno = 2;
+    optional string bugername = 3;                          // 买家姓名
+    optional double evaluatelevel = 4;                      // 评价等级
+    optional string evaluatecontext = 5;                    // 评价内容
+    optional string skuid = 6;                              // 商品id
+}
+
+message KfkReturnOrder
+{
+    optional string memGuid = 1;                    // 会员编号
+    optional string ogNo = 2;                       // 订单编号
+    optional string ogSeq = 3;                      // 订单流水号
+    optional string ogsSeq = 4;                     // 字订单流水号
+    optional string rsSeq = 5;                      // 退货批次流水号
+}
+
+
+// 消息推送数据
+message MsgPushInner
+{
+    required EuMsgPush mpType = 1;                         // 消息类型
+    required bytes mpData = 2;                             // KfkNewOrder 或
+}

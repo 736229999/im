@@ -1,0 +1,159 @@
+[IMCommon]
+	IpAddr
+	ServerNo
+	MaxUserCount=5000
+	IMLogPath=../Log
+	IMLogClass={"debug":true, "normal":true, "important":true, "statistic":true, "net":true,"encode":"utf8"}
+	MaxThreadGroupA=5
+	MaxThreadGroupB=2
+	MaxThreadGroupC=2
+	IsPreview=0
+
+[SSDBConn]
+	SSDBAddr = 10.211.64.88
+	
+[IMP2P]	
+	IpinAddr
+	
+[WebConn]
+	TcpAddr
+	
+[ImgServer]
+	ImgServerIp = 10.211.64.90:8080/FeiniuImageInterface/common/upload.do
+	
+[OnlineUserCommon]	
+	OnlineUserServer
+	OnlineUserLogPath=../Log
+	OnlineUserLogClass={"debug":false, "normal":false, "important":true, "statistic":true}
+	
+[OnlineFamilyCommon]
+	OnlineFamilyServer
+	OnlineFamilyLogPath=../Log
+	OnlineFamilyLogClass={"debug":false, "normal":false, "important":true, "statistic":true}
+	
+[ConnectCommon]
+	ConnectServerIP
+
+[TransferCommon]
+	TransferServer
+	ImTransferLogPath=../Log
+	ImTransferLogClass={"debug":true, "normal":true, "important":true, "statistic":true}
+	MaxTransCount=20000
+	MaxThreadGroup=10
+
+[WebMsgNotifyCommon]
+	WebMsgNotifyServer
+	WebMsgNotifyLogPath=../Log
+	WebMsgNotifyLogClass={"debug":false, "normal":false, "important":true, "statistic":true}
+
+
+[MYSQLSID]
+	MYSQLSID=wh-testdb.fn.com
+
+[MYSQLUSER]
+	MYSQLUSER=testdb
+
+[MYSQLPWD]
+	MYSQLPWD=P@ssw5rd1
+
+[MYSQLDB]
+	MYSQLDB=member
+
+
+[LoginURL]
+	BuyerLoginURL=http://member-api.beta1.fn/account_api/login
+	SellerLoginURL=http://zhaoshang-member-api.beta.fn.com/memberApi/login.do
+  	BuyerLevelURL=http://score01.beta1.fn:8080/FeiniuScore/growth/mem/queryMemLevel
+  	IsSameAreaLoginURL=http://zhaoshang-member-api.beta.fn.com/memberApi/isSameAreaLogin.do
+  	IsBindMobileURL=http://zhaoshang-member-api.beta.fn.com/memberApi/isBindMobile.do
+  
+[SearchMemberURL]
+	SearchMemberURL=http://mem-info.beta1.fn:8080/member_api/searchMember
+   
+[HeadImgURL]
+ HeadImgURL=http://img.beta1.fn/ 	
+[MINIUID]
+	MINIUID=im
+
+[MINIPWD]
+	MINIPWD=moumou
+
+[MINISID]
+	MINISID=ORCL
+
+[WEBUID]
+	WEBUID=im
+
+[WEBPWD]
+	WEBPWD=moumou
+
+[WEBSID]
+	WEBSID=ORCL
+
+[FAMILYUID]
+	FAMILYUID=im
+
+[FAMILYPWD]
+	FAMILYPWD=moumou
+
+[FAMILYSID]
+	FAMILYSID=ORCL
+
+[MEMCACHEDCommon]
+  MEMCACHEDAddr=10.202.249.175:20634,10.202.249.176:20634,10.202.249.177:20634
+  MEMCACHEDPort=11211
+  MEMCACHEDMagic=1221
+[UPDATE]
+	BuyerDownloadUrl=http://webim.beta.fn.com/webim/static/exe/MouMou_beta_1.0.0.3.exe
+	SellerDownloadUrl=http://webim.beta.fn.com/webim/static/exe/MouMou_Bussiness_beta_1.0.0.3.exe
+	LowVersionNo=1001
+	NewVersionNo=1001
+	UpdateOptionNo=[ {"ver":1001, "cfg":2} , {"ver":1002, "cfg":2} ]
+	InfoMation="欢迎新版本哞哞"
+	CSDownloadUrl=http://kefu-backend.beta.fn.com/kefu-backend/material/download/pc/MouMou_cs_beta_2.1.0.0.exe	
+	CSLowVersionNo=2001
+	CSNewVersionNo=2100
+	CSUpdateOptionNo=[ {"ver":2001, "cfg":2}]
+	CSInfoMation="欢迎新版本哞哞客服工作台"
+
+[ShellConfig]
+	MasterIp=192.168.1.1
+
+[Hessian]
+	URL={"total":2,"url1":"http://10.211.240.128/im-logger/helloService","url2":"http://10.211.240.128:18080/im-logger/helloService"}
+
+[HttpServer]
+	HttpServerIP=10.211.240.233
+	HttpServerPort=80
+[ZookeeperServer]
+	ZookeeperServerIP=10.211.240.218
+	ZookeeperServerPort
+[Press]
+        MerchantId={"total":1,"mid1":110}
+	
+[KAFKACommon]
+	KAFKABroker=kafka01.dev1.fn:9092,kafka02.dev1.fn:9092,kafka03.dev1.fn:9092
+	KAFKATopic=moumou_topic_flow
+        
+[CSGroup]        
+	CsGroupUrl=http://backend.beta.fn.com/rest/organ/tree
+	GroupID=77
+	CsNameUrl=http://backend.beta.fn.com/rest/backOperator/realname/
+		
+[AES]
+	KEY=feiniu-webim2015
+
+[KAFKA]
+	zookeeper = kafka01.dev1.fn:2181,kafka02.dev1.fn:2181,kafka03.dev1.fn:2181
+	topic_neworder = orderplacing_topic_ODSUCC
+	topic_payorder = order_pay_success_topic_beta
+	topic_goodscomment = moumou_topic_comment
+	topic_returnorder = orderreturn_topic_returnApply	
+
+[ORDERDETAIL]
+	URL=http://orderquery.beta1.fn/OrderQuery/customerdesk/customerDeskOrderDetail
+
+[RETURNINFO]
+	URL=http://orderreturn.beta1.fn/OrderReturn/orderReturn/getReturnInfo
+
+	

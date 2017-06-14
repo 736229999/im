@@ -1,0 +1,126 @@
+.publish-control {
+    text-align: center;
+    background-color: #eeeeee;
+    padding: 10px 5px 5px;
+}
+
+.publish-control > .btn {
+    margin-left: 10px;
+    font-size: 14px;
+}
+
+.publish-edit-section > .publish-wrapper {
+    background-color: #FFFFFF;
+    padding: 15px 10%;
+}
+
+.top-banner > img {
+    width: 100%;
+}
+
+.editable {
+    position: relative;
+}
+
+.editable::after {
+    position: absolute;
+    z-index: 99;
+    background-color: #000000;
+    opacity: 0.5;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    content: ' ';
+    transition: all 0.5s ease-in-out 0s;
+}
+
+.editable.hover::after {
+    height: 100%;
+}
+
+.editable > i.edit-btn {
+    position: absolute;
+    z-index: 100;
+    background-color: #fefefe;
+    color: #000000;
+    right: 5px;
+    top: 5px;
+    transition: all 0.5s ease-in-out 0s;
+    cursor: pointer;
+    display: none;
+}
+
+.editable.hover > i.edit-btn {
+    display: block;
+}
+
+.editable.hover > i.edit-btn:hover {
+    background-color: #5bc0de;
+    border-color: #46b8da;
+    color: #ffffff;
+}
+
+.edit-window-footer {
+    text-align: center;
+    padding: 15px 5px 15px;
+}
+
+.field-group {
+    font-size: 14px;
+    padding: 5px;
+    clear: both;
+}
+
+.field-group > .field-label {
+    display: inline-block;
+    width: 100px;
+    text-align: right;
+    line-height: 28px;
+    font-family: "Microsoft Yahei", 微软雅黑, "Tahoma", "SimSun";
+    font-weight: 600;
+}
+
+.field-group > .field-input {
+    display: inline-block;
+}
+
+.field-group > .field-input .edit-field,
+.field-group > .field-input .edit-field-info {
+    line-height: 28px;
+    height: 28px;
+    float: left;
+}
+
+.w350 {
+    width: 350px;
+}
+
+.w400 {
+    width: 400px;
+}
+
+.v-top {
+    vertical-align: top;
+}
+
+.field-group > .field-input .edit-field-info {
+    line-height: 28px;
+}
+
+.edit-field-info.field-error {
+    color: #FF0000;
+    line-height: 22px !important;
+    height: 22px !important;
+}
+
+.edit-field-info.field-info {
+    color: #a5a5a5;
+}
+
+.m-g-footer {
+    height: auto !important;
+}
+
+.m-g-footer > .site-info > * {
+    background-color: #FFFFFF !important;
+}

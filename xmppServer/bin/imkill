@@ -1,0 +1,15 @@
+killall UserOnlineManager ClusterOnlineManager WebMsgNotify ImServer
+
+#kill immonitor
+HOLD=/tmp/imhold0.$$
+ps -aef| grep immonitor | grep -v grep | awk '{print $2}' > $HOLD
+if [ -s $HOLD ]
+ 
+then
+        while read PID
+        do
+        kill -9 $PID
+         done < $HOLD
+fi
+
+sh imlps

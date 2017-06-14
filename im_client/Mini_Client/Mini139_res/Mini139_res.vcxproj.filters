@@ -1,0 +1,1626 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\othersico\001.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\othersico\004.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\139note.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\139note.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\139note2.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\zone\account.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\action_btn.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\actor_boy.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\actor_girl.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\album_all.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\album_custom.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\album_draft.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\album_mobile.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\arrow_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\arrow_up.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\article2.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\article_icon.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\ARTICLE_SEL.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\arts_del.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\arts_del_D.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\arts_del_H.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\arts_del_N.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\arts_insert_woku.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\arts_item.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\big_head_btn.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\zone\bighead.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bighead.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bighead1.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bitmap1.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bitmap2.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bitmap4.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bitmap5.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bitmap6.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bitmap_folder_close.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bitmap_folder_expand.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bitmap_right2.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\blog_logo.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\blog_post.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\blog_reset.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00001.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00002.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00003.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00004.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00005.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00006.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00007.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00008.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00009.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00010.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bmpDel.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bmpNew.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bmpOpen.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bmpPost.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\bmpSave.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bold_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bold_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bold_sel.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn1_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn1_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn1_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn1_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\addbook\btn_add.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_addfriend.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_audio.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_audio_close_D.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_audio_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_audio_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_big_head.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\addbook\btn_cfg.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_close.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\addbook\btn_del.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_export.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_first.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_first_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_last.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_last_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_level.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_main_icon.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_media.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_minilink.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_modi.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\addbook\btn_modify.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_next.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_next_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_prev.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_prev_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_refresh.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_screen_copy.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_search.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_sendfile.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_status_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_status_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_status_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_tab_normal2.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_talk_linkres.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_uppic.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_vedio.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_vedio_close_D.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_vedio_close_n.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_vedio_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_websms.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_writeblog.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\btn_zone.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\button_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\button_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\button_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\button_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\zone\changehead.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\check.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\close_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\close_folder_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\close_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\hintdlg\close_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\close_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\hintdlg\close_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\cluster_acceptMsg.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\cluster_admin.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\cluster_creator.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\cluster_refuse.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\color_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\color_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\column_b.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\column_btn_bottom.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\column_btn_bottom_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\column_btn_bottom_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\column_btn_mid.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\column_btn_mid_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\column_btn_top.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\combo_button.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\combo_right.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\contact_.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\contact_inviate.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\contact_mini.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\contact_outlook.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\contact_sendmail.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\create_family.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\default_adv.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\dlg_caption_bar.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\dlg_caption_left.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\dlg_caption_mid.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\dlg_caption_right.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\floor_wnd_ctl\down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\family.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\family16.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\family40.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\family_group_bar_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\family_group_bar_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\family_group_bar_open.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\family_group_bar_status.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\family_group_tool.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\family_h.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\family_head.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\filetrans_btn.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\flag_login.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\flagicon.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\folder_close.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\folder_close_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\folder_close_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\folder_show.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\folder_show_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\folder_show_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\folder_title.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friend_139_new_published.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friend_b.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friend_blog.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friend_entry_dock_tool.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\friend_l.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friend_log_btn.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\friend_log_entry.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friend_mobile.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friend_p.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\friend_p.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friend_pic_btn.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\friend_pic_entry.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friend_v.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friend_vedio.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\grouplist_button.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\head20.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\head40.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\header_back.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\hintdlg\hint_dlg.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\hint_fla.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\hintdlg\hint_icon.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\hint_icon.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\hint_vedio.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\horn.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\floor_wnd_ctl\hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icodown.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\zone\icon1.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icon3.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icon4.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\iconup.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\idr_main.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\chanel\IM.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\im_cluster.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\im_face.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\im_no_image.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\im_service.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\im_tabhot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\image_cluster.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\imtab_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\insert_internet_image.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\insert_link.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\insert_local_image.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\italic_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\italic_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\italic_sel.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\left_btn_arrow.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\level.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\link_res.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\login_pass_hint.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\logining_pause.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\logining_title.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\logo_hmg.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\mailinvite.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\main_btn_gold.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\main_btn_home.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\main_btn_msg.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\main_dlg_caption.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\main_dlg_menu.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\main_menu.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\main_menu_icon.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\main_title_back.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\main_toolbtnbk_left.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\main_toolbtnbk_mid.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\main_toolbtnbk_right.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\max_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\max_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\max_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\menu_title.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\microphone.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\min_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\min_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\min_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\mobile.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\mobile_bind.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\msg_line.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\msg_list_tree.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\my_artic.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\my_article_btn.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\zone\my_home.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\my_pic1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\my_pic_btn.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\zone\myarticle.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\zone\mypicture.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\nodrop.cur">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\floor_wnd_ctl\normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\note_btn.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\note_btn1.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_btn_card.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_btn_invite.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_btn_visit.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_filetrans_tabbtn.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_toolfont_back.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_button_click.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_button_down_click.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_button_down_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_button_down_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_button_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_button_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_button_up_click.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_button_up_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_button_up_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_caption.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_menu.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_menu_click.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_menu_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_menu_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_min.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_min_click.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_min_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_min_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_scroll_dlg.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_scroll_dlg_click.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_scroll_dlg_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_scroll_dlg_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broad_tray.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broadcase_tray.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\picture_broadcast_tray.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\picture_error.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\picture_frame.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\pointer_.cur">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\register.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\restore_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\restore_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\right_btn_arrow.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\right_menu_imagelist.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\sa_caption.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\screen_cut_tip.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\scrollbar.BMP">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\search.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\sel_pic1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\zone\setting.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\zone\shop.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\show_p2p.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\show_p2pfolder_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\silder_thum_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\slider_thum_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\slider_thum_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\status16.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\status20.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\status40.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\status_foot20.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\status_foot40.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\tab_btn_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\tab_btn_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\tab_btn_normal0.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\tab_btn_normal1.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\tab_btn_sel.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\tab_frie.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\tab_friends.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\tab_norm.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\tab_woku.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\tabpage_.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\talk_emotion.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\talk_emotion_1.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\talk_emotion_2.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\talk_emotion_3.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\talk_emotion_4.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\talk_font.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\talk_magicface.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\talk_sendpic.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\talk_textcolor.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\talk_title_back.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\toolbar_blog24.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\top_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\top_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\top_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\uncheck.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\underline_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\underline_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\underline_sel.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\upload_picture_btn.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\zone\uploadpicture.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\userguide\userguidedlg.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\vedio.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\vedio_back_small.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\vedio_big.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\vedio_off.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\vedio_on.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\vedio_snatch.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\VIP.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\voice_thum.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\weather.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\web_star.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\webarticle.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\webinf_focuson.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\webinfo3.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\webinfo_focusoff.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\webpic.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\win2k_icon.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\winxp_cion.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\zone\writearticle.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\zone_media.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\上下移动-亮.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\上下移动-暗.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\chanel\便利店.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\chanel\图片.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\chanel\客户端.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\chanel\家族.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\我的家族4副本.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\chanel\播客图标.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\chanel\标签.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\猪头.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\chanel\移动博客.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\还原_down副本.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\还原_hot副本.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\还原_normal副本.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\html1.htm" />
+    <None Include="res\html2.htm" />
+    <None Include="res\im\loginWait.gif.dat" />
+    <None Include="res\im\group_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\color_sel.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\btn_historical.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\recent_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\recent_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friends_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friends_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\group_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\btn_login_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\btn_login_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\btn_login_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\add_any_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\add_any_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\add_any_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\add_any_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\chat_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\chat_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\chat_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icon_menu_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icon_menu_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icon_menu_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\icon_menu_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\seach_icon.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\setting_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\setting_group_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\setting_group_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\setting_group_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\setting_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\setting_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\setting_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\voice _setting_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\voice _setting_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\voice _setting_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\voice _setting_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\message_record_icon.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_audio_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_audio_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_audio_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_vedio_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_vedio_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_vedio_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_sendfile_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_sendfile_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_sendfile_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_font_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_font_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_font_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\p2p_font_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\emotion_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\emotion_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\emotion_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\emotion_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\sound_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\sound_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\sound_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\sound_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\pictures_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\pictures_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\pictures_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\pictures_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\screen_copy_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\screen_copy_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\screen_copy_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\screen_copy_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\vibration_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\vibration_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\vibration_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\vibration_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\score_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\score_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\score_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\score_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\history_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\history_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\icon_100x100.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\icon_88x88.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\icon_52x52.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\icon_47x47.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\icon_35x35.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\icon_30x30.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\icon_24x24.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\icon_88x88_group.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\icon_47x47_group.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\icon_35x35_group.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\im\icon_30x30_group.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\..\..\..\images\clear_contents_icon.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\forward_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bitmap7.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\forward_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\clear_contents_icon.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\forward_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\forward_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\forwardest_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\forwardest_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\forwardest_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\forwardest_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backward_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backward_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backward_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backward_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backwardest_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backwardest_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backwardest_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backwardest_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\friends_record_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\friends_record_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\friends_record_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\group_record_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\group_record_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\group_record_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\seach_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\seach_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\seach_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\seach_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\system_message_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\system_message_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\system_message_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\forward_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\forward_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\forwardest_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\forwardest_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\forwardest_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\forwardest_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\backward_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\backward_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\backward_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\backward_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\backwardest_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\backwardest_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\backwardest_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\backwardest_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friends_record_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friends_record_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\friends_record_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\group_record_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\group_record_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\group_record_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\seach_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\seach_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\seach_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\seach_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\system_message_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\system_message_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\system_message_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\main.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\list_delete_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\list_delete_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\list_delete_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\arrow_right.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\window_drop_down_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\window_drop_down_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\window_drop_down_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\choose_icon.png" />
+    <None Include="res\model_button_left_hover.png" />
+    <None Include="res\model_button_left_normal.png" />
+    <None Include="res\model_button_left_pressed.png" />
+    <None Include="res\model_button_left_right.png" />
+    <None Include="res\model_button_right_hover.png" />
+    <None Include="res\model_button_right_pressed.png" />
+    <None Include="Res\screenshots_choose_hover.png" />
+    <None Include="Res\screenshots_choose_normal.png" />
+    <None Include="Res\screenshots_choose_pressed.png" />
+    <None Include="Res\screenshots_hover.png" />
+    <None Include="Res\screenshots_normal.png" />
+    <None Include="Res\screenshots_pressed.png" />
+    <None Include="res\long_button_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\long_button_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\long_button_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\senior_button_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\senior_button_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\senior_button_pressed.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\hint_cluster_dlg.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Mini139_res.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

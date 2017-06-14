@@ -1,0 +1,27 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+/*登陆*/
+.main_bg{ background:url(../images/login_bg.png) center top no-repeat; min-width:1200px; min-height:1000px; overflow:hidden; display:block; clear:both; _height:1000px;}
+.log_box{ width:570px; height:330px; margin:192px auto 0; background:url(../images/zb_log_bg.png) no-repeat; overflow:hidden;}
+.log_info_box{margin:50px auto; width:302px;}
+.copyright{ line-height:34px; text-align:center; color:#3c3c3c;}
+.log_logo{ display:block; background:url(../images/login_logo.gif) no-repeat; height:42px; width:302px;}
+.log_user_bg{ display:block; background:url(../images/log_user_inp.gif) no-repeat; height:32px; width:266px; line-height:32px; font-size:14px; padding-left:36px;}
+.log_user_bg label, .log_pass_bg label{ width:56px; display:inline-block;}
+.log_pass_bg{ display:block; background:url(../images/log_pas_inp.gif) no-repeat; height:32px; width:266px; line-height:32px; font-size:14px; padding-left:36px;}
+.yc{ color:#fff; font-style:normal;}
+.log_user_box{ margin-top:40px;}
+.log_user_box li{ margin:10px 0px;}
+.log_user_input{ height:32px; border:0px; line-height:32px; background-color:transparent; width:210px; float:right; display:inline-block;}
+*html .log_user_input{width:207px;}
+.loguser_btn{ display:inline-block; margin:0 10px; background:url(../images/login_bnt_1.gif) no-repeat; height:38px; width:104px; line-height:38px; text-align:center; font-weight:bold; color:#fff; font-size:14px; border:0px; cursor:pointer;}
+.logrewrite_btn{ display:inline-block; margin:0 10px; background:url(../images/login_bnt_2.gif) no-repeat; height:38px; width:104px; line-height:38px; text-align:center; font-weight:bold; color:#fff; font-size:14px; border:0px; cursor:pointer;}
+.log_btn_warp{ text-align:center; display:block; padding-top:1px;}
+
+
+
+
+

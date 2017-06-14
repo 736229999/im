@@ -1,0 +1,85 @@
+#!/bin/sh 
+HOLD1=/tmp/imhold1.$$
+HOLD2=/tmp/imhold2.$$
+HOLD3=/tmp/imhold3.$$
+HOLD4=/tmp/imhold4.$$
+WORKINGPATH=`dirname $0`/..
+export PATH=$PATH:/usr/local/bin
+
+MASTERIP=`cat ../config/Config.ini | grep -A 1 "\[ShellConfig\]" | grep MasterIp | awk -F "[=]" '{print $2}'`
+MYIP=`ifconfig | grep -A 2 eth | grep "inet addr" | awk -F "[:]" '{print $2}' |  awk '{print $1}'`
+VALGRIND=`cat ../config/Config.ini | grep -A 3 "\[ShellConfig\]" | grep valgrind | awk -F "[=]" '{print $2}'`
+VALGRIND_CMD=`which valgrind`
+if [[ $VALGRIND = "true" ]] && [[ -n $VALGRIND_CMD ]];then
+	ImserverCmd=$VALGRIND_CMD" --tool=memcheck --log-file=../Log/imserver_valgrind_$Time.log --leak-check=yes --show-reachable=yes -v ../bin/ImServer"
+else
+	ImserverCmd="../bin/ImServer"
+fi
+echo $ImserverCmd
+echo $MASTERIP $MYIP 
+
+while [ 1 ]
+do
+ulimit -c unlimited
+
+ps -aux | egrep "ImServer|valgrind" | grep -v grep | awk '{print $2}' > $HOLD1
+if [ ! -s $HOLD1 ]; then
+	echo `date` >> ../Log/ImMonitor.log
+ 	echo "ImServer process isn't running..." >> ../Log/ImMonitor.log
+	ulimit -c unlimited
+	sleep 1
+	nohup $ImserverCmd &> /dev/null&
+	echo "restart ImServer" >> ../Log/ImMonitor.log
+	echo >> ../Log/ImMonitor.log
+	
+fi
+
+ps -A| grep AccessServer | grep -v grep | awk '{print $2}' > $HOLD2
+if [ ! -s $HOLD2 ]; then
+	echo `date` >> ../Log/ImMonitor.log
+ 	echo "AccessServer process isn't running..." >> ../Log/ImMonitor.log
+	ulimit -c unlimited
+	sleep 1
+	nohup ../bin/AccessServer &> /dev/null&
+	echo "restart AccessServer" >> ../Log/ImMonitor.log
+	echo >> ../Log/ImMonitor.log
+	
+fi
+	
+#if [ $MASTERIP = $MYIP ];then
+#	ps -A| grep WebMsgNotify | grep -v grep | awk '{print $2}' > $HOLD4
+#	if [ ! -s $HOLD4 ]; then
+#		echo `date` >> ../Log/ImMonitor.log
+#		echo "WebMsgNotify process isn't running..." >> ../Log/ImMonitor.log
+#		sleep 1
+#		nohup ../bin/WebMsgNotify &> /dev/null&
+#		echo "restart WebMsgNotify" >> ../Log/ImMonitor.log
+#		echo >> ../Log/ImMonitor.log
+		
+#	fi
+
+#	ps -A| grep -v WebMsgNotify | grep MsgNotify | grep -v grep | awk '{print $2}' > $HOLD4
+#	if [ ! -s $HOLD4 ]; then
+#		echo `date` >> ../Log/ImMonitor.log
+#		echo "MsgNotify process isn't running..." >> ../Log/ImMonitor.log
+#		sleep 1
+#		nohup ../bin/MsgNotify &> /dev/null&
+#		echo "restart MsgNotify" >> ../Log/ImMonitor.log
+#		echo >> ../Log/ImMonitor.log
+#		
+#	fi
+#fi
+
+if [ -f core.* ];then
+	HOSTNAMES=`hostname`
+        DATE=`date "+%Y%m%d%H%M%S"`
+        DUMPFILE=core${DATE}_${HOSTNAMES}.tar.gz
+	UPLOADSERVER=`cat ../config/Config.ini | grep -A 2 "\[ShellConfig\]" | grep UploadDumpIP | awk -F "[=]" '{print $2}'`
+        echo [$DATE] send dump file: $DUMPFILE to $UPLOADSERVER >> ../Log/ImMonitor.log
+	tar zcvf $DUMPFILE core.*
+        curl -F "file=@$DUMPFILE" $UPLOADSERVER
+        rm -rf core.*
+fi
+	sleep 300	
+	
+done

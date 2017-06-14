@@ -1,0 +1,48 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*头部*/
+.cus_head{ height:20px; border-bottom:2px solid #eeeeee; margin-top:15px;}
+.cus_head ul{ margin-left:0px;}
+.cus_head ul li{ display:block; width:60px; height:20px; float:left; text-align:center; color:#3c3c3c; line-height:20px; font-size:8px; cursor:pointer;}
+.cus_head ul li.on{ color:#fff;background:#F4614D;}
+
+
+#u180 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:110px;
+    word-wrap:break-word;
+}
+#u181 {
+    position:absolute;
+    left:618px;
+    top:669px;
+    width:110px;
+    height:16px;
+    font-family:'Arial Negreta', 'Arial';
+    font-weight:700;
+    font-style:normal;
+}
+#u181_img {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:110px;
+    height:16px;
+}
+#u182 {
+    position:absolute;
+    left:0px;
+    top:0px;
+    width:110px;
+    word-wrap:break-word;
+}
+
+.template-download {
+    color: #0099FF;
+    text-decoration: underline;
+    font-size: 12px;
+    margin-left: 10px;
+}

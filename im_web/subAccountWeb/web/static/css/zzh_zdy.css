@@ -1,0 +1,13 @@
+.g-right-title{height:48px; border-bottom:1px #e1e1e1 solid; line-height:48px; position:relative; _overflow:hidden;}
+  .g-right-title .g-right-Tabs{ position:absolute; bottom:-1px; left:20px; _bottom:-2px;}
+  .g-right-title .g-right-Tabs li{ list-style:none; float:left;}
+  .g-right-title .g-right-Tabs li a{ display:block; height:32px; padding:0px 20px; color:#333333; line-height:32px; cursor:pointer; _display:inline-block;}
+  .g-right-title .g-right-Tabs li a.selected{ border-left:1px #e1e1e1 solid; border-right:1px #e1e1e1 solid; border-top:1px #db384c solid; border-bottom:1px #ffffff solid;}
+  .g-right-content{ margin:20px 10px;}
+  .g-right-content .attention{ height:20px; line-height:20px; color:#ff8400;margin-bottom: 15px;}
+.g-right-content .attention em{ display:block; height:20px; width:14px; background:url(../images/zzh-images.png) no-repeat -410px -109px; margin-right:6px; float:left;}
+.g-right-content .attention .editA{ display:inline-block; border:1px #dddddd solid; color:#0066cc; padding:0px 5px; height:18px; line-height:18px; cursor:pointer; margin-left:30px; font-size:12px;}
+.g-right-content .attention .editA.disable{color:#e1e1e1;cursor: default}
+.g-right-content .setting_ul{ margin-left:20px; margin-top:10px;}
+.g-right-content .setting_ul li a{ display:inline-block; padding:6px 0px; color:#333333;}
+#showeditFZFL{display: none;}

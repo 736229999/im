@@ -1,0 +1,27 @@
+﻿生成启动时间为 2016/3/20 9:35:58。
+     1>项目“E:\moumou_2.2\OleLinkInfo\OleLinkInfo.vcxproj”在节点 2 上(build 个目标)。
+     1>C:\Program Files (x86)\MSBuild\Microsoft.Cpp\v4.0\Microsoft.CppBuild.targets(299,5): warning MSB8004: Output 目录未以斜杠结尾。此生成实例将添加斜杠，因为必须有这个斜杠才能正确计算 Output 目录。
+     1>InitializeBuildStatus:
+         正在对“Debug\OleLinkInfo.unsuccessfulbuild”执行 Touch 任务。
+       Midl:
+         所有输出均为最新。
+       ClCompile:
+         所有输出均为最新。
+         所有输出均为最新。
+       ResourceCompile:
+         所有输出均为最新。
+       ManifestResourceCompile:
+         所有输出均为最新。
+       Link:
+         所有输出均为最新。
+       Manifest:
+         所有输出均为最新。
+         所有输出均为最新。
+       FinalizeBuildStatus:
+         正在删除文件“Debug\OleLinkInfo.unsuccessfulbuild”。
+         正在对“Debug\OleLinkInfo.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“E:\moumou_2.2\OleLinkInfo\OleLinkInfo.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.04

@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="Profile">
+      <UniqueIdentifier>{82b3f3d9-9fb4-4494-b5ef-858d999f47f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Thread">
+      <UniqueIdentifier>{3d472259-671e-485c-ac7e-b7d7ac8e319a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{d8d1576a-d20c-4c21-9188-09cbd4143fe3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="misc">
+      <UniqueIdentifier>{e232d54f-d322-4117-93b3-b7730c3a2282}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Timer">
+      <UniqueIdentifier>{d1dc4420-3453-4cbd-a8c4-a0451b610b2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="stream">
+      <UniqueIdentifier>{bb2ff2cb-f9f6-4e7f-81e9-7438766a0f0c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="string">
+      <UniqueIdentifier>{af7f4527-9625-41e9-be81-075cb0702db2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="trace">
+      <UniqueIdentifier>{082c12ec-1ea0-409b-ae1e-7b709f945aec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="container">
+      <UniqueIdentifier>{3f233231-500b-4b64-a2db-e7ae8f2b2399}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\src\profile\profile.cpp">
+      <Filter>Profile</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\thread\ThreadingModel.cpp">
+      <Filter>Thread</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stdafx.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\timer\TimeAxisProxy.cpp">
+      <Filter>Timer</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stream\csv.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stream\FileStream.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stream\Path.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\stream\Stream.cpp">
+      <Filter>stream</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\string\string_t.cpp">
+      <Filter>string</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\trace\Trace.cpp">
+      <Filter>trace</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\include\profile\profile.h">
+      <Filter>Profile</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\thread\ThreadingModel.h">
+      <Filter>Thread</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\Config.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\stdafx.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\misc\single.h">
+      <Filter>misc</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\timer\ITimeAxis.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\timer\MyTimer.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\timer\TimeAxis.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\timer\TimeAxisImp.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\timer\TimeAxisProxy.h">
+      <Filter>Timer</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\stream\buff.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\stream\csv.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\stream\FileStream.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\stream\Path.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\stream\Stream.h">
+      <Filter>stream</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\string\string_t.h">
+      <Filter>string</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\trace\Trace.h">
+      <Filter>trace</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\container\fclHash_map.h">
+      <Filter>container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\container\fclList.h">
+      <Filter>container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\include\fcl.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

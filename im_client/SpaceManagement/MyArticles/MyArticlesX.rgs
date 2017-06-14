@@ -1,0 +1,27 @@
+HKCR
+{
+	MyArticles.MyArticlesX.1 = s 'MyArticlesX Class'
+	{
+		CLSID = s '{5AEA6EC6-720E-4609-BC72-5D84953ABBE9}'
+	}
+	MyArticles.MyArticlesX = s 'MyArticlesX Class'
+	{
+		CLSID = s '{5AEA6EC6-720E-4609-BC72-5D84953ABBE9}'
+		CurVer = s 'MyArticles.MyArticlesX.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {5AEA6EC6-720E-4609-BC72-5D84953ABBE9} = s 'MyArticlesX Class'
+		{
+			ProgID = s 'MyArticles.MyArticlesX.1'
+			VersionIndependentProgID = s 'MyArticles.MyArticlesX'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{3A62904D-83EF-4C97-9638-2CE871609E42}'
+		}
+	}
+}

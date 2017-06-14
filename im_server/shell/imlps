@@ -1,0 +1,101 @@
+chk_process()
+{
+prc_name1=$1
+prc_name2=$2
+
+if [ -z "${prc_name2}" ]; then
+	v_proc="${prc_name1}"
+else
+	v_proc="${prc_name1} ${prc_name2}"
+fi
+
+pids=`ps -fA | grep "\${v_proc}" | grep -v grep |grep -v tail| awk '{print $2}'|head -1`
+pids1=`ps -LfA | grep "\${v_proc}" | grep -v grep |grep -v tail| awk '{print $2}'|wc -l`
+times=`ps -fA | grep "\${v_proc}" | grep -v grep |grep -v tail| awk '{print $5}'|head -1`
+if [ "$pids" = "" ]
+then
+     printf "%-10s %-10s %-36s %-8s %-10s\n" "-" "-" "${v_proc}" "-" "Stoped"
+else
+     printf "%-10s %-10s %-36s %-8s %-10s\n" "${times}" "${pids}" "${v_proc}" "${pids1}" "Running"
+fi
+
+if [ -z "${prc_name2}" ]; then
+	return;
+fi
+
+pids=`ps -fA | grep "\${prc_name2}" | grep -v grep | grep -v "\${prc_name1}" |grep -v tail| awk '{print $2}'|head -1`
+pids1=`ps -LfA | grep "\${prc_name2}" | grep -v grep | grep -v "\${prc_name1}" |grep -v tail| awk '{print $2}'|wc -l`
+times=`ps -fA | grep "\${prc_name2}" | grep -v grep | grep -v "\${prc_name1}" |grep -v tail| awk '{print $5}'|head -1`
+if [ "$pids" = "" ]
+then
+	printf "%-10s %-10s %-35s  %-8s %-10s\n" "-" "-" "${prc_name2}" "-" "Stoped"
+else
+	printf "%-10s %-10s %-35s  %-8s %-10s\n" "${times}" "${pids}" "${prc_name2}" "${pids1}" "Running"
+fi
+}
+
+chk_process_MsgNotify()
+{
+prc_name1=MsgNotify
+prc_name2=$2
+
+if [ -z "${prc_name2}" ]; then
+        v_proc="${prc_name1}"
+else
+        v_proc="${prc_name1} ${prc_name2}"
+fi
+
+pids=`ps -fA | grep -v WebMsgNotify | grep "\${v_proc}" | grep -v grep |grep -v tail| awk '{print $2}'|head -1`
+pids1=`ps -LfA | grep -v WebMsgNotify|grep "\${v_proc}" | grep -v grep |grep -v tail| awk '{print $2}'|wc -l`
+times=`ps -fA | grep -v WebMsgNotify |grep "\${v_proc}" | grep -v grep |grep -v tail| awk '{print $5}'|head -1`
+if [ "$pids" = "" ]
+then
+     printf "%-10s %-10s %-36s %-8s %-10s\n" "-" "-" "${v_proc}" "-" "Stoped"
+else
+     printf "%-10s %-10s %-36s %-8s %-10s\n" "${times}" "${pids}" "${v_proc}" "${pids1}" "Running"
+fi
+
+if [ -z "${prc_name2}" ]; then
+        return;
+fi
+
+pids=`ps -fA | grep "\${prc_name2}" | grep -v grep | grep -v "\${prc_name1}" |grep -v tail| awk '{print $2}'|head -1`
+pids1=`ps -LfA | grep "\${prc_name2}" | grep -v grep | grep -v "\${prc_name1}" |grep -v tail| awk '{print $2}'|wc -l`
+times=`ps -fA | grep "\${prc_name2}" | grep -v grep | grep -v "\${prc_name1}" |grep -v tail| awk '{print $5}'|head -1`
+if [ "$pids" = "" ]
+then
+        printf "%-10s %-10s %-35s  %-8s %-10s\n" "-" "-" "${prc_name2}" "-" "Stoped"
+else
+        printf "%-10s %-10s %-35s  %-8s %-10s\n" "${times}" "${pids}" "${prc_name2}" "${pids1}" "Running"
+fi
+}
+
+MASTERIP=`cat ../config/Config.ini | grep -A 1 "\[ShellConfig\]" | grep MasterIp | awk -F "[=]" '{print $2}'`
+MYIP=`ifconfig | grep -A 2 eth | grep "inet addr" | awk -F "[:]" '{print $2}' |  awk '{print $1}'`
+echo $MASTERIP $MYIP 
+
+show_head()
+{
+echo -e "\n"$1
+printf "%s\n" "----------------------------------------------------------------------------"
+printf "%-10s %-10s %-36s %-8s %-10s\n" "StartTime" "PID" "Name" "Threads" "Status"
+}
+
+printf "\n____________________________________________________________________________\n"
+
+
+
+
+show_head "Status of IM Services"
+
+chk_process ImServer
+chk_process AccessServer
+#if [ $MASTERIP = $MYIP ];then
+#	chk_process_MsgNotify
+#	chk_process WebMsgNotify
+#fi
+
+chk_process immonitor
+
+printf "____________________________________________________________________________\n\n"
+

@@ -1,0 +1,346 @@
+@charset "utf-8";
+/* CSS Document */
+/*!
+ * @名称：base.css
+ * @功能：1、重设浏览器默认样式
+ *       2、设置通用原子类
+ */
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+html {
+}
+/* 内外边距通常让各个浏览器样式的表现位置不同 */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td,hr,button,article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    margin:0;
+    padding:0;
+	
+}
+/* 要注意表单元素并不继承父级 font 的问题 */
+body,button,input,select,textarea {
+    font:12px "宋体";
+}
+input,select,textarea {
+    font-size:100%;
+}
+/* 去掉 table cell 的边距并让其边重合 */
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+/* ie bug：th 不继承 text-align */
+th {
+    text-align:inherit;
+}
+/* 去除默认边框 */
+fieldset,img {
+    border:none;
+}
+/* ie6 7 8(q) bug 显示为行内表现 */
+iframe {
+    display:block;
+}
+/* 去掉 firefox 下此元素的边框 */
+abbr,acronym {
+    border:none;
+    font-variant:normal;
+}
+/* 一致的 del 样式 */
+del {
+    text-decoration:line-through;
+}
+address,caption,cite,code,dfn,em,th,var {
+    font-style:normal;
+    font-weight:500;
+}
+/* 去掉列表前的标识，li 会继承 */
+ol,ul {
+    list-style:none;
+}
+/* 对齐是排版最重要的因素，别让什么都居中 */
+caption,th {
+    text-align:left;
+}
+/* 来自yahoo，让标题都自定义，适应多个系统应用 */
+h1,h2,h3,h4,h5,h6 {
+    font-size:100%;
+    font-weight:500;
+}
+q:before,q:after {
+    content:'';
+}
+/* 统一上标和下标 */
+sub,sup {
+    font-size:75%;
+    line-height:0;
+    position:relative;
+    vertical-align:baseline;
+}
+sup {
+    top:-0.5em;
+}
+sub {
+    bottom:-0.25em;
+}
+img{ cursor:pointer;}
+/* 默认不显示下划线，保持页面简洁 */
+ins,a {
+    text-decoration:none;
+	font-size:12px; 
+	color:#666666;
+	cursor:pointer;
+}
+/* 去除 ie6 & ie7 焦点点状线 */
+a:focus,*:focus {
+    outline:none;
+}
+/* 清除浮动 */
+.clearfix:before,.clearfix:after {
+    content:"";
+    display:table;
+}
+.clearfix:after {
+	visibility:hidden;
+	display:block;
+	font-size:0;
+	content:" ";
+	clear:both;
+	height:0;
+	overflow:hidden;
+}
+.clearfix {
+    zoom:1; /* for ie6 & ie7 */
+}
+.clear {
+    clear:both;
+    display:block;
+    font-size:0;
+    height:0;
+    line-height:0;
+    overflow:hidden;
+}
+.myclear{ clear:both;}
+/* 设置显示和隐藏，通常用来与 js 配合 */
+.hidden {
+    display:none;
+}
+.block {
+    display:block;
+}
+/* 设置浮动，减少浮动带来的 bug */
+.fl,.fr {
+    display:inline;
+}
+.fl {
+    float:left;
+}
+.fr {
+    float:right;
+}
+.w55{ width:55px;}
+.w56{ width:56px;}
+.w64{ width:64px;}
+.w70{ width:70px;}
+.w106{ width:106px;}
+.w120{ width:120px;}
+.w130{ width:130px;}
+.w168{ width:168px;}
+.w182{ width:182px;}
+.w460{ width:460px;}
+.w880{ width:880px;}
+.colff8400{ color:#ff8400;}
+.col999999{ color:#999999;}
+.colff0000{ color:#ff0000}
+.colf22e00{ color:#f22e00}
+.col333333{ color:#333333;}
+.col0066cc{ color:#0066cc;}
+.lh28{ line-height:28px;}
+.mt10{ margin-top:10px;}
+.mt15{ margin-top:15px;}
+.mr10{ margin-right:10px;}
+.mr15{ margin-right:15px;}
+.mr20{ margin-right:20px;}
+.mr30{ margin-right:30px;}
+.mb20{ margin-bottom:20px;}
+
+
+
+.structure-Table{  border:1px #dedede solid;}
+.structure-Table thead tr th{ height:35px; line-height:35px; padding-left:10px;border:1px #dedede solid;  }
+.structure-Table thead tr th span{ position:relative;}
+.structure-Table tbody tr td{ height:35px; line-height:35px; border:1px #dedede solid;  }
+.structure-Table input[type=checkbox]{-webkit-appearance: none;appearance: none;width:12px; height:12px;cursor: pointer;background: #fff; border:1px #dedede solid; overflow:hidden; }
+.structure-Table input[type=checkbox]:checked::after { content:url(../images/checkbg.gif);display: block;}
+.structure-Table .commonCheckBox{width:12px; height:12px;cursor: pointer;background: #fff; border:1px #dedede solid;}
+.structure-Table tbody td a{ color:#333333;}
+.structure-Table tbody td a:hover{ color:#0066cc; text-decoration:underline; cursor:pointer;}
+
+.structure-Table thead tr th .aShowSelectBox{ display:inline-block; padding-right:15px; background:url(../images/table_list.gif) right center no-repeat; cursor:pointer;color:#333333;}
+
+.structure-Table thead tr th .showMoreUlBox{ display:none; width:168px; border:1px #bebebe solid; overflow:hidden; position:absolute; z-index:2; left:-10px; background:#ffffff; *margin-top:35px !important; }
+.structure-Table thead tr th .showMoreUlBox h2{ height:24px; line-height:24px; padding-left:10px; color:#333333; font-size:12px;}
+.structure-Table thead tr th .showMoreUlBox ul li{ *line-height:25px !important;*overflow:visible !important;}
+.structure-Table thead tr th .showMoreUlBox ul li a{ display:block; height:25px; line-height:25px; padding-left:28px; *height:25px !important;}
+.structure-Table thead tr th .showMoreUlBox ul li ul li a{ display:block; height:25px; line-height:25px; padding-left:46px;}
+.structure-Table thead tr th .showMoreUlBox ul li a:hover{ background:#eeeeee;  color:#f22e00;}
+
+.structure-Table thead tr th .showSingleUlBox{ display:none; width:168px; border:1px #bebebe solid; overflow:hidden; position:absolute; z-index:2; left:-10px; background:#ffffff;*margin-top:35px !important;}
+.structure-Table thead tr th .showSingleUlBox li{*height:25px !important; *line-height:25px !important;}
+.structure-Table thead tr th .showSingleUlBox li ul{ padding-left: 10px;}
+.structure-Table thead tr th .showSingleUlBox a{ display:block; height:25px; line-height:25px; padding-left:28px;}
+.structure-Table thead tr th .showSingleUlBox li a:hover{ background:#eeeeee;  color:#f22e00;}
+
+.zzhCommonTable{ border:1px #dedede solid; margin-top:10px;}
+.zzhCommonTable thead th{ height:34px; line-height:34px; background:#f6f6f6; color:#333333; text-indent:10px; border:1px #dedede solid;}
+.zzhCommonTable tbody tr{ cursor:pointer;}
+.zzhCommonTable tbody td{ height:34px; line-height:34px; text-indent:10px;}
+.zzhCommonTable tbody td a{ color:#333333;}
+input[type=checkbox]{-webkit-appearance: none;appearance: none;width:13px; height:13px;cursor: pointer;vertical-align: bottom;background: #fff; border:1px #dedede solid; vertical-align:text-top; margin-right:10px;}
+input[type=checkbox]:checked::after {content:url(../images/checkbg.gif);display: block;}
+
+
+
+
+.notice{ height:14px; text-align:right; padding-right:10px; color:#999999; margin-bottom:27px;}
+.attion{ color:#ff8400; height:14px; line-height:14px; margin-bottom:20px; }
+.attion em.attentionPic{ width:14px; height:14px; display:inline-block;background:url(../images/zzh/zzh-images.png) no-repeat -410px -112px; position:relative; top:3px; margin-right:5px;}
+.d-a-table{ width:458px;}
+.d-a-table th,td{ height:34px; border:1px #dedede solid;padding-left:10px;}
+.d-a-table td a{ color:#333333;}
+.d-a-table td a:hover{ color:#0066cc; text-decoration:underline;}
+
+.p-alert-box .p-alert-content {
+    margin: 0 auto;
+    width: 440px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.ui-dialog {
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    FILTER: progid:DXImageTransform.Microsoft.Gradient(startColorstr=#88000000, endColorstr=#88000000);
+    padding: 6px;
+    outline: none;
+    /* http://ued.taobao.com/blog/2011/04/onfocus-this-blur/ */
+}
+
+.ui-dialog-content {
+    background: #fff;
+}
+
+:root .ui-dialog {
+    FILTER: none\9;
+}
+
+.ui-dialog-close {
+    color: #999;
+    cursor: pointer;
+    display: block;
+    font-family: tahoma;
+    font-size: 24px;
+    font-weight: bold;
+    height: 18px;
+    line-height: 14px;
+    position: absolute;
+    right: 16px;
+    text-decoration: none;
+    top: 14px;
+    z-index: 10;
+}
+.ui-dialog-close:hover {
+    color: #666;
+    text-shadow: 0 0 2px #aaa;
+    text-decoration: none;
+}
+
+.ui-dialog-title {
+    height:32px;
+    font-size:14px;
+    font-family:'寰蒋闆呴粦', '榛戜綋', Arial;
+    line-height:32px;
+    border-bottom:1px solid #E1E1E1;
+    font-weight: bold;
+    color:#3c3c3c;
+    text-indent: 10px;
+    background-color: #f9f9f9;
+    background: -webkit-gradient(linear, left top, left bottom, from(#fcfcfc), to(#f9f9f9));
+    background: -moz-linear-gradient(top, #fcfcfc, #f9f9f9);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fcfcfc', endColorstr='#f9f9f9');
+    background:-o-linear-gradient(top, #fcfcfc, #f9f9f9);
+    background: -ms-linear-gradient(top, #fcfcfc, #f9f9f9);
+    background: linear-gradient(top, #fcfcfc, #f9f9f9);
+}
+
+.ui-dialog-container {
+    padding:15px 20px 35px;
+    font-size: 12px;
+}
+
+.ui-dialog-message {
+    margin-bottom:15px;
+    height: 300px;
+    overflow-y: auto;
+}
+
+.ui-dialog-operation {
+    zoom:1;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.ui-dialog-confirm, .ui-dialog-cancel {
+    display: inline;
+}
+
+.ui-dialog-operation .ui-dialog-confirm {
+    margin-right: 4px;
+}
+
+.ui-dialog-button-orange,
+.ui-dialog-button-white {
+    background: url("../images/pic.jpg") no-repeat;
+    border: medium none;
+    color: #ffffff;
+    cursor: pointer;
+    float: left;
+    height: 28px;
+    line-height: 28px;
+    margin-bottom: 20px;
+    margin-right: 10px;
+    text-align: center;
+    width: 87px;
+}
+
+a.ui-dialog-button-orange:hover,
+a.ui-dialog-button-white:hover {
+    text-decoration: none;
+}
+
+.ui-dialog-button-orange {
+    background-position:0px -139px;
+}
+
+.ui-dialog-button-orange:hover {
+}
+
+.ui-dialog-button-white {
+    background-position:-104px -139px
+}

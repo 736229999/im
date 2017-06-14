@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:beans="http://www.springframework.org/schema/beans" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+             http://www.springframework.org/schema/mvc
+              http://www.springframework.org/schema/mvc/spring-mvc.xsd
+              http://www.springframework.org/schema/task
+               http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+    <!-- Root Context: defines shared resources visible to all other web components -->
+    <!-- Enables the Spring MVC @Controller programming model -->
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <beans:bean id="mappingJacksonHttpMessageConverter"
+                        class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+                <beans:property name="supportedMediaTypes">
+                    <beans:list>
+                        <beans:value>application/json;charset=UTF-8</beans:value>
+                        <beans:value>text/json;charset=UTF-8</beans:value>
+                        <beans:value>text/plain;charset=UTF-8</beans:value>
+                    </beans:list>
+                </beans:property>
+            </beans:bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <mvc:resources mapping="/js/**" location="/static/js/"/>
+    <mvc:resources mapping="/css/**" location="/static/css/"/>
+    <mvc:resources mapping="/html/**" location="/static/html/"/>
+    <mvc:resources mapping="/images/**" location="/static/images/"/>
+    <mvc:resources mapping="/fonts/**" location="/static/fonts/"/>
+    <mvc:resources mapping="/sound/**" location="/static/sound/"/>
+    <mvc:resources mapping="/swf/**" location="/static/swf/"/>
+
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/webRight/**"/>
+            <bean class="com.feiniu.csWebIm.interceptors.AuthInterceptor">
+            </bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/buyerRightPage/**"/>
+            <bean class="com.feiniu.csWebIm.interceptors.WebRightAuthInterceptor">
+            </bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/serviceLogFunction/**"/>
+            <bean class="com.feiniu.csWebIm.interceptors.ServiceLogInterceptor">
+            </bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/serviceProfile/**"/>
+            <bean class="com.feiniu.csWebIm.interceptors.ServiceRightProfileInterceptor">
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+
+    <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+    <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix" value="/WEB-INF/pages/"/>
+        <beans:property name="suffix" value=".jsp"/>
+    </beans:bean>
+
+    <beans:bean id="multipartResolver"
+                class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设置上传文件的最大尺寸为2MB -->
+        <beans:property name="maxUploadSize">
+            <beans:value>2097152</beans:value>
+        </beans:property>
+    </beans:bean>
+
+    <context:component-scan base-package="com.feiniu.csWebIm"/>
+
+    <beans:bean class="com.feiniu.csWebIm.consts.BusinessConfig">
+        <property name="memberInfoServiceURL" value="${feiniu.memberInfoServiceURL}"></property>
+        <property name="memberLevelInfoServiceURL" value="${feiniu.memberInfoLevelServiceURL}"></property>
+        <property name="contactInfoServiceURL" value="${feiniu.contactInfoServiceURL}"></property>
+        <property name="cartServiceURL" value="${feiniu.cartServiceURL}"></property>
+        <property name="goodsItemURL" value="${feiniu.goodsItemURL}"></property>
+        <property name="goodsImgURL" value="${feiniu.goodsImgURL}"></property>
+        <property name="employInfoURL" value="${feiniu.employInfoURL}"></property>
+        <property name="memberServerURL" value="${feiniu.memberServer}"></property>
+        <property name="totalCostURL" value="${feiniu.totalCostURL}"></property>
+        <property name="recentDealsURL" value="${feiniu.recentDealsURL}"></property>
+        <property name="orderConsultURL" value="${feiniu.orderConsultURL}"></property>
+        <property name="logisticsDetailURL" value="${feiniu.logisticsDetailURL}"></property>
+        <property name="productDetailURL" value="${feiniu.productDetailURL}"></property>
+        <property name="serviceMemberURL" value="${feiniu.serviceMemberURL}"></property>
+        <property name="kefuBackendURL" value="${feiniu.kefuBackendURL}"></property>
+        <property name="webimAuthURL" value="${feiniu.webImAuthURL}"></property>
+        <property name="SaveServicelogURL" value="${feiniu.SaveServicelogURL}"></property>
+        <property name="AskingQuestionURL" value="${feiniu.AskingQuestionURL}"></property>
+        <property name="SaveQuestionURL" value="${feiniu.SaveQuestionURL}"></property>
+        <property name="imServerList" value="${feiniu.imServerIPList}"></property>
+        <property name="feiniuSelfSupportImgBaseUrl" value="${feiniu.selfSupportImgBaseUrl}"></property>
+        <property name="newImageUrlBases" value="${feiniu.image_access_url_list}"></property>
+        <property name="orderPicSize" value="${feiniu.order_pic_size}"></property>
+        <property name="webImAuthURLPort" value="${feiniu.webImAuthURLPort}"></property>
+        <property name="errorIndexPath" value="${feiniu.errorIndexPath}"></property>
+        <property name="grayFactor" value="${feiniu.grayFactor}"></property>
+        <property name="grayLuckyNumber" value="${feiniu.grayLuckyNumber}"></property>
+        <property name="orderGrayFactor" value="${feiniu.orderGrayFactor}"></property>
+        <property name="orderGrayLuckyNumber" value="${feiniu.orderGrayLuckyNumber}"></property>
+        <property name="magicNumber" value="${feiniu.magicNumber}"></property>
+        <property name="appMemberMd5EncryptedKey" value="${service_app_md5_key}"></property>
+        <property name="appMemberRetriveServiceUrl" value="${service_app_member}"></property>
+        <property name="appMemberSiteKey" value="${service_app_member_site_key}"></property>
+    </beans:bean>
+
+    <task:annotation-driven scheduler="qbScheduler" mode="proxy"/>
+    <task:scheduler id="qbScheduler" pool-size="10"/>
+
+    <beans:bean class="com.feiniu.csWebIm.exception.GlobalExceptionHandler">
+    </beans:bean>
+
+</beans>

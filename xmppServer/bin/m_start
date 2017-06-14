@@ -1,0 +1,23 @@
+
+ps -aux | grep memcached | grep -v grep | awk '{print $2}' | xargs -n 1 kill -9 ;
+sleep 1 ;
+memcached -d -u im ;
+sleep 1;
+#START EXPECT
+expect << EOF
+spawn telnet 127.0.0.1 11211
+expect "Escape character is \'^]\'."
+#send "set totaluser#107 0 0 1\r"
+#expect "\r"
+#send "0\r"
+#expect "STORED\r"
+send "set totalserver 0 0 1\r"
+expect "\r"
+send "0\r"
+expect "STORED\r"
+expect eof"
+EOF
+echo "init memcached success"
+
+sh imstart
+

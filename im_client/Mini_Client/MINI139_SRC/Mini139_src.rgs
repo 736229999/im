@@ -1,0 +1,22 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'Mini139_src'
+				'Mini139_src.EXE'
+				{
+			val AppID = s '%APPID%'
+		}
+	}
+}
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'Mini139_src'
+				'Mini139_src.EXE'
+				{
+			val AppID = s '%APPID%'
+		}
+	}
+}

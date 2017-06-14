@@ -1,0 +1,27 @@
+HKCR
+{
+	HmgUploadPicture.HmgUploadPictureX.1 = s 'HmgUploadPictureX Class'
+	{
+		CLSID = s '{6F2F282E-E779-4481-8731-0EF43766059F}'
+	}
+	HmgUploadPicture.HmgUploadPictureX = s 'HmgUploadPictureX Class'
+	{
+		CLSID = s '{6F2F282E-E779-4481-8731-0EF43766059F}'
+		CurVer = s 'HmgUploadPicture.HmgUploadPictureX.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {6F2F282E-E779-4481-8731-0EF43766059F} = s 'HmgUploadPictureX Class'
+		{
+			ProgID = s 'HmgUploadPicture.HmgUploadPictureX.1'
+			VersionIndependentProgID = s 'HmgUploadPicture.HmgUploadPictureX'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{691C0FE0-A0BF-46C9-8EE7-CAA5997762DB}'
+		}
+	}
+}

@@ -1,0 +1,15 @@
+cd `dirname $0`
+
+#sh imstop_1
+sh imkill
+#rm -rf ./Log
+echo -e "\nStarting IM Service ......"
+
+nohup ./ImServer > /dev/null&
+sleep 1
+echo -e "[ImServer]..........started!"
+
+echo -e "\nAll IM Service Started"
+sh imlps_1
+
+sh immonitor_1 &

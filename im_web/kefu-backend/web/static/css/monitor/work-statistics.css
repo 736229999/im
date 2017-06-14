@@ -1,0 +1,127 @@
+#content {
+    border: 1px solid #a5a5a5;
+    padding-top: 0px;
+}
+
+#content .title_nav {
+    border-bottom: 1px solid #a5a5a5;
+    background-color: #E4E4E4;
+}
+
+.fancybox-wrap {
+    max-width: 1600px !important;
+    max-height: 750px !important;
+    overflow-x: hidden;
+}
+
+.fancybox-inner {
+    max-width: 1600px !important;
+    max-height: 750px !important;
+}
+
+.fancybox-inner img {
+    max-width: 1600px !important;
+    max-height: 750px !important;
+}
+
+.fancybox-skin {
+    padding: 0px !important;
+}
+
+.fn-fancy-item {
+    display: inline-block;
+    position: relative;
+    max-width: 450px !important;
+    max-height: 450px !important;
+}
+
+.fn-fancy-item img {
+    max-width: 450px !important;
+    max-height: 450px !important;
+}
+
+.fn-fancy-item::after {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 16px;
+    height: 16px;
+    content: ' ';
+    background: url("../../images/magnifier_zoom_in.png") no-repeat rgb(255, 255, 255);
+}
+
+.panel .messager-body {
+    border: 2px solid #dedede;
+}
+
+.labelplacehold {
+    position: relative;
+}
+
+.labelplacehold::after {
+    position: absolute;
+    color: #cccccc;
+    top: 0px;
+    content: attr(data-tip);
+    left: calc(100% + 12px);
+    width: 14em;
+    text-align: left;
+    z-index: 2;
+}
+
+.labelplacehold.hide-placeholder::after{
+    content: '';
+}
+/* 设置显示和隐藏，通常用来与 js 配合 */
+.hide {
+    display:none !important;
+}
+
+.TimeSettingTxt {
+    border: 1px solid #e1e1e1;
+    color: #333333;
+    height: 26px;
+    line-height: 26px;
+    text-indent: 10px;
+    width: 100px;
+}
+
+#updateEmployeeForm table>tbody>tr>td{
+    padding: 5px 10px;
+}
+
+#updateEmployeeForm table>tbody>tr>td:first-child{
+    width: 8em;
+    text-align: left;
+}
+
+.time-btn-unselect {
+    display: inline-block;
+    background-color: #f5f5f5;
+    line-height: 28px;
+    width: 70px;
+    color: #3c3c3c;
+    font-weight: bold;
+    text-align: center;
+    height: 28px;
+    border: 0px;
+    cursor: pointer;
+    /* margin: 0 5px; */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+.time-btn-select {
+    display: inline-block;
+    background-color: #F35E4B;
+    line-height: 28px;
+    width: 70px;
+    color: #efefef;
+    font-weight: bold;
+    text-align: center;
+    height: 28px;
+    border: 0px;
+    cursor: pointer;
+    /* margin: 0 5px; */
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}

@@ -1,0 +1,27 @@
+HKCR
+{
+	MyPictures.MyPicturesX.1 = s 'MyPicturesX Class'
+	{
+		CLSID = s '{9AEF2D1C-2907-4E80-AEA8-A91374E3379F}'
+	}
+	MyPictures.MyPicturesX = s 'MyPicturesX Class'
+	{
+		CLSID = s '{9AEF2D1C-2907-4E80-AEA8-A91374E3379F}'
+		CurVer = s 'MyPictures.MyPicturesX.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {9AEF2D1C-2907-4E80-AEA8-A91374E3379F} = s 'MyPicturesX Class'
+		{
+			ProgID = s 'MyPictures.MyPicturesX.1'
+			VersionIndependentProgID = s 'MyPictures.MyPicturesX'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{279C8FC4-2542-46E6-8856-F24FCA354111}'
+		}
+	}
+}

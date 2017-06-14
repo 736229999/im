@@ -1,0 +1,296 @@
+.datagrid-header-row td {
+    background-color: #eaf5ff;
+}
+
+.clear_data_btn {
+    vertical-align: baseline;
+}
+
+.searchbar li > span:first-child {
+    float: left;
+    height: 100%;
+    line-height: 28px;
+}
+
+.count-tab {
+    height: 30px;
+    color: #000000;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.count-tab > span {
+    margin-left: 0px;
+    cursor: pointer;
+}
+
+.count-tab > span.tab-btn.active {
+    background: rgba(0, 0, 0, 0) url("../../images/btn_1.gif") no-repeat scroll 0 0;
+    color: #FFFFFF;
+}
+
+.count-tab > .chart-entrance,
+.count-tab > .template-download {
+    color: #0099FF;
+    text-decoration: underline;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.datagrid-header-inner {
+    width: 100%;
+}
+
+.datagrid-header-inner .datagrid-htable {
+    width: 100%;
+}
+
+.datagrid-body .datagrid-btable {
+    width: 100%;
+}
+
+.operation_btn_bg {
+    box-sizing: border-box;
+}
+
+#faqEditWindow .wrapper .faq-field input,
+.wrapper .faq-field input {
+    height: 28px;
+}
+
+#faqEditWindow .wrapper .faq-field input, .wrapper .faq-field input {
+    width: 220px;
+}
+
+#faqEditWindow .wrapper .faq-field, .wrapper .faq-field {
+    padding: 10px;
+}
+
+#faqEditWindow .wrapper .faq-field .summary, .wrapper .faq-field .summary {
+    margin: 10px 0px;
+    height: 60px;
+    resize: none;
+    border: 1px solid #C3C4C5;
+    font-size: 14px;
+    overflow-y: auto;
+    outline: none;
+    word-wrap: break-word;
+}
+
+#faqEditWindow .wrapper .faq-field .summary a, .wrapper .faq-field .summary a {
+    text-decoration: underline;
+    color: #3399FF;
+}
+
+#faqEditWindow .wrapper .faq-field .faq-label, .wrapper .faq-field .faq-label {
+    font-size: 14px;
+    font-family: "Microsoft Yahei", 微软雅黑, "Tahoma", "SimSun";
+    font-weight: 500;
+    color: #000000;
+}
+
+#faqEditWindow .wrapper .faq-field .faq-label .required, .wrapper .faq-field .faq-label .required {
+    color: #FF0000;
+}
+
+#faqEditWindow .wrapper .faq-field .faq-notice,
+#faqEditWindow .wrapper .faq-field .faq-error,
+.wrapper .faq-field .faq-notice,
+.wrapper .faq-field .faq-error {
+    font-size: 12px;
+}
+
+#faqEditWindow .wrapper .faq-field .faq-notice, .wrapper .faq-field .faq-notice {
+    color: #a5a5a5;
+}
+
+#faqEditWindow .wrapper .faq-field .faq-error, .wrapper .faq-field .faq-error {
+    color: #FF0000;
+}
+
+#faqEditWindow .wrapper .faq-field.normal .faq-error, .wrapper .faq-field.normal .faq-error {
+    visibility: hidden;
+}
+
+#faqEditWindow .wrapper .faq-field.error .faq-error, .wrapper .faq-field.error .faq-error {
+    visibility: visible;
+}
+
+#faqEditWindow {
+    position: relative;
+}
+
+#faqEditWindow > .mask {
+    position: absolute;
+    z-index: 10;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #7C7B7D;
+}
+
+#faqEditWindow > .mask > .add-link-panel {
+    position: absolute;
+    width: 60%;
+    top: 10%;
+    left: 20%;
+    z-index: 111;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+#faqEditWindow > .mask > .add-link-panel .panel-header {
+    height: 15px;
+    margin-bottom: 5px;
+    background-color: #f2f2f2;
+}
+
+#faqEditWindow > .mask > .add-link-panel .panel-header .close {
+    float: right;
+    margin-right: 5px;
+    color: #999999;
+    cursor: pointer;
+}
+
+#faqEditWindow > .mask > .add-link-panel .panel-header .close:hover {
+    color: #555555;
+}
+
+#faqEditWindow > .mask > .add-link-panel .link-field {
+    padding: 5px 20px;
+}
+
+#faqEditWindow > .mask > .add-link-panel p,
+#faqEditWindow > .mask > .add-link-panel input {
+    height: 28px;
+    font-weight: 700;
+    font-family: "Microsoft Yahei", 微软雅黑, "Tahoma", "SimSun";
+}
+
+#faqEditWindow > .mask > .add-link-panel input {
+    display: block;
+    width: 100%;
+}
+
+#faqEditWindow > .mask > .add-link-panel .panel-footer {
+    padding-top: 10px;
+    text-align: center;
+}
+
+#faqEditWindow > .mask > .add-link-panel .panel-footer .save {
+    display: inline-block;
+    height: 20px;
+    font-size: 14px;
+}
+
+#content .datagrid-btable .datagrid-cell a.faq-edit,
+#content .datagrid-btable .datagrid-cell a.faq-delete,
+#content .datagrid-btable .datagrid-cell a.faq-cancel-show {
+    color: #134da5;
+    display: inline-block;
+    margin: 10px 10px 10px 0px;
+    cursor: pointer;
+}
+
+#content .datagrid-btable .datagrid-cell a.move-up,
+#content .datagrid-btable .datagrid-cell a.move-down,
+#content .datagrid-btable .datagrid-cell a.move-top,
+#content .datagrid-btable .datagrid-cell a.move-bottom {
+    cursor: pointer;
+    display: inline-block;
+    height: 12px;
+    margin-right: 8px;
+    margin-top: 5px;
+    width: 12px;
+    background: rgba(0, 0, 0, 0) url("../../images/module-form.png") no-repeat scroll 0 0;
+}
+
+#content .datagrid-btable .datagrid-cell a.move-up:hover,
+#content .datagrid-btable .datagrid-cell a.move-down:hover,
+#content .datagrid-btable .datagrid-cell a.move-top:hover,
+#content .datagrid-btable .datagrid-cell a.move-bottom:hover {
+    color: #0099FF;
+}
+
+#content .datagrid-btable .datagrid-cell a.move-up {
+    background-position: 0 -30px;
+}
+
+#content .datagrid-btable .datagrid-cell a.move-down {
+    background-position: -16px -31px;
+}
+
+#content .datagrid-btable .datagrid-cell a.move-top {
+    background-position: -54px -30px;
+}
+
+#content .datagrid-btable .datagrid-cell a.move-bottom {
+    background-position: -54px -30px;
+    transform: rotate(180deg);
+}
+
+.chart-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    padding-top: 30px;
+    padding-left: 20px;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.chart-mask > .wrapper {
+    width: 1200px;
+    height: 500px;
+}
+
+.chart-mask > .wrapper .chart-tab-bar {
+    border-bottom: 1px solid #E1E1E1;
+}
+
+.chart-mask > .wrapper .chart-tab-bar > .chart-tab {
+    margin-left: 0px;
+    margin-bottom: -1px;
+}
+
+.chart-mask > .wrapper .chart-tab-bar > .chart-tab.active {
+    background: rgba(0, 0, 0, 0) url("../../images/btn_1.gif") no-repeat scroll 0 0;
+    color: #FFFFFF;
+}
+
+.chart-mask > .wrapper .chart-container {
+    border: 1px solid #e1e1e1;
+    margin: 20px 30px 20px 0px;
+    height: 420px;
+    overflow: hidden;
+    position: relative;
+}
+
+.chart-mask > .wrapper .chart-container > .chart-to-show {
+    height: 420px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.chart-mask > .wrapper .chart-container > .loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    background: #FFFFFF;
+}
+
+.chart-mask > .wrapper .chart-container > .loading > .loading-indicator {
+    position: absolute;
+    top: 48%;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}

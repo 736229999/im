@@ -1,0 +1,25 @@
+.fnmm-chat-panel {
+    display: inline-block;
+    width: 50px;
+}
+
+.fnmm-chat-panel .general.chat-icon a {
+    display: inline-block;
+    line-height: 30px;
+    background: url('../images/niutou.gif') -8px -10px no-repeat;
+    text-decoration: none;
+    color: #C65B2B;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+
+.fnmm-chat-panel .chat-icon.general a.offline {
+    background: url('../images/niutou_offline.png') 0 0 no-repeat;
+    color: #666666;
+}
+
+.fnmm-chat-panel .chat-icon.general a span {
+    padding: 0 20px;
+}
+

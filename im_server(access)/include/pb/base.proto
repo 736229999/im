@@ -1,0 +1,26 @@
+option optimize_for = LITE_RUNTIME;
+
+
+// 消息推送类型
+enum EuMsgPush
+{
+ MP_NEWORDER = 0x01;
+ MP_PAYORDER = 0x02;
+ MP_RETURNORDER = 0x03;
+ MP_GOODSCOMMENT = 0x04;
+}
+
+// 协议类型(服务器与客户端之间)
+enum CSCmdID
+{
+ CS_CID_MSGPUSH_IND 			= 0xA001;		// 消息推送
+}
+
+// 协议类型(服务器与服务器之间)
+enum SSCmdID
+{
+ SS_CID_MSG_PUSH				= 0xF001;		// MsgNotify推送给ImServer	
+}
+
+
+

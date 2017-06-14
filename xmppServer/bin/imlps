@@ -1,0 +1,53 @@
+chk_process()
+{
+prc_name1=$1
+prc_name2=$2
+
+if [ -z "${prc_name2}" ]; then
+	v_proc="${prc_name1}"
+else
+	v_proc="${prc_name1} ${prc_name2}"
+fi
+
+pids=`ps -fu im | grep "\${v_proc}" | grep -v grep |grep -v tail| awk '{print $2}'|head -1`
+pids1=`ps -Lfu im | grep "\${v_proc}" | grep -v grep |grep -v tail| awk '{print $2}'|wc -l`
+times=`ps -fu im | grep "\${v_proc}" | grep -v grep |grep -v tail| awk '{print $5}'|head -1`
+if [ "$pids" = "" ]
+then
+     printf "%-10s %-10s %-36s %-8s %-10s\n" "-" "-" "${v_proc}" "-" "Stoped"
+else
+     printf "%-10s %-10s %-36s %-8s %-10s\n" "${times}" "${pids}" "${v_proc}" "${pids1}" "Running"
+fi
+
+if [ -z "${prc_name2}" ]; then
+	return;
+fi
+
+pids=`ps -fu im | grep "\${prc_name2}" | grep -v grep | grep -v "\${prc_name1}" |grep -v tail| awk '{print $2}'|head -1`
+pids1=`ps -Lfu im | grep "\${prc_name2}" | grep -v grep | grep -v "\${prc_name1}" |grep -v tail| awk '{print $2}'|wc -l`
+times=`ps -fu im | grep "\${prc_name2}" | grep -v grep | grep -v "\${prc_name1}" |grep -v tail| awk '{print $5}'|head -1`
+if [ "$pids" = "" ]
+then
+	printf "%-10s %-10s %-35s  %-8s %-10s\n" "-" "-" "${prc_name2}" "-" "Stoped"
+else
+	printf "%-10s %-10s %-35s  %-8s %-10s\n" "${times}" "${pids}" "${prc_name2}" "${pids1}" "Running"
+fi
+}
+
+show_head()
+{
+echo -e "\n"$1
+printf "%s\n" "----------------------------------------------------------------------------"
+printf "%-10s %-10s %-36s %-8s %-10s\n" "StartTime" "PID" "Name" "Threads" "Status"
+}
+
+printf "\n____________________________________________________________________________\n"
+
+show_head "Status of IM Services"
+chk_process UserOnlineManager
+chk_process ClusterOnlineManager
+chk_process WebMsgNotify
+chk_process ImServer
+
+printf "____________________________________________________________________________\n\n"
+

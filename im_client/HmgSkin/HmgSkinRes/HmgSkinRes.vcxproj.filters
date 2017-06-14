@@ -1,0 +1,216 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\im\arrow_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\arrow_up.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00001.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00005.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00006.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00007.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00008.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\bmp00009.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\button_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\button_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\button_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\button_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\close_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\close_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\close_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\column_b.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\column_btn_bottom.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\column_btn_bottom_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\column_btn_bottom_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\column_btn_mid.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\column_btn_mid_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\column_btn_top.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\combo_right.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\dlg_caption_bar.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\dlg_caption_left.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\dlg_caption_mid.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\dlg_caption_right.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\help_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\help_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\help_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\idr_main.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\im_cluster.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\left_btn_arrow.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\max_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\max_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\max_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\min_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\min_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\min_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\right_btn_arrow.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\scrollbar.BMP">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\silder_thum_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\slider_thum_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\slider_thum_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\上下移动-亮.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\上下移动-暗.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\还原_down副本.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\还原_hot副本.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\还原_normal副本.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\切片(滚动条).bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\chat_close_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\chat_close_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\chat_close_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\chat_max_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\chat_max_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\chat_max_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\chat_min_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\chat_min_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\im\chat_min_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\close_hover.png" />
+    <None Include="res\close_normal.png" />
+    <None Include="res\check_box_hover.png" />
+    <None Include="res\check_box_normal.png" />
+    <None Include="res\check_box_pressed.png" />
+    <None Include="res\checked_box_hover.png" />
+    <None Include="res\radiobox_hover.png" />
+    <None Include="res\radiobox_normal.png" />
+    <None Include="res\radiobox_pressed.png" />
+    <None Include="res\radioboxed_hover.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="HmgSkinRes.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

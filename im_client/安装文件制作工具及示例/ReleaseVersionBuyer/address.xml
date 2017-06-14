@@ -1,0 +1,3611 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<北京市 PID="1" PName="北京市">
+    <北京市 CID="1" CName="北京市">
+        <东城区 DID="1" DName="东城区" />
+        <西城区 DID="2" DName="西城区" />
+        <崇文区 DID="3" DName="崇文区" />
+        <宣武区 DID="4" DName="宣武区" />
+        <朝阳区 DID="5" DName="朝阳区" />
+        <丰台区 DID="6" DName="丰台区" />
+        <石景山区 DID="7" DName="石景山区" />
+        <海淀区 DID="8" DName="海淀区" />
+        <门头沟区 DID="9" DName="门头沟区" />
+        <房山区 DID="10" DName="房山区" />
+        <通州区 DID="11" DName="通州区" />
+        <顺义区 DID="12" DName="顺义区" />
+        <昌平区 DID="13" DName="昌平区" />
+        <大兴区 DID="14" DName="大兴区" />
+        <怀柔区 DID="15" DName="怀柔区" />
+        <平谷区 DID="16" DName="平谷区" />
+        <密云县 DID="17" DName="密云县" />
+        <延庆县 DID="18" DName="延庆县" />
+    </北京市>
+</北京市>
+<天津市 PID="2" PName="天津市">
+    <天津市 CID="1" CName="天津市">
+        <和平区 DID="1" DName="和平区" />
+        <河东区 DID="2" DName="河东区" />
+        <河西区 DID="3" DName="河西区" />
+        <南开区 DID="4" DName="南开区" />
+        <河北区 DID="5" DName="河北区" />
+        <红桥区 DID="6" DName="红桥区" />
+        <塘沽区 DID="7" DName="塘沽区" />
+        <汉沽区 DID="8" DName="汉沽区" />
+        <大港区 DID="9" DName="大港区" />
+        <东丽区 DID="10" DName="东丽区" />
+        <西青区 DID="11" DName="西青区" />
+        <津南区 DID="12" DName="津南区" />
+        <北辰区 DID="13" DName="北辰区" />
+        <武清区 DID="14" DName="武清区" />
+        <宝坻区 DID="15" DName="宝坻区" />
+        <宁河县 DID="16" DName="宁河县" />
+        <静海县 DID="17" DName="静海县" />
+        <蓟县 DID="18" DName="蓟县" />
+    </天津市>
+</天津市>
+<河北省 PID="3" PName="河北省">
+    <石家庄市 CID="1" CName="石家庄市">
+        <长安区 DID="1" DName="长安区" />
+        <桥东区 DID="2" DName="桥东区" />
+        <桥西区 DID="3" DName="桥西区" />
+        <新华区 DID="4" DName="新华区" />
+        <井陉矿区 DID="5" DName="井陉矿区" />
+        <裕华区 DID="6" DName="裕华区" />
+        <井陉县 DID="7" DName="井陉县" />
+        <正定县 DID="8" DName="正定县" />
+        <栾城县 DID="9" DName="栾城县" />
+        <行唐县 DID="10" DName="行唐县" />
+        <灵寿县 DID="11" DName="灵寿县" />
+        <高邑县 DID="12" DName="高邑县" />
+        <深泽县 DID="13" DName="深泽县" />
+        <赞皇县 DID="14" DName="赞皇县" />
+        <无极县 DID="15" DName="无极县" />
+        <平山县 DID="16" DName="平山县" />
+        <元氏县 DID="17" DName="元氏县" />
+        <赵县 DID="18" DName="赵县" />
+        <辛集市 DID="19" DName="辛集市" />
+        <藁城市 DID="20" DName="藁城市" />
+        <晋州市 DID="21" DName="晋州市" />
+        <新乐市 DID="22" DName="新乐市" />
+        <鹿泉市 DID="23" DName="鹿泉市" />
+    </石家庄市>
+    <唐山市 CID="2" CName="唐山市">
+        <路南区 DID="1" DName="路南区" />
+        <路北区 DID="2" DName="路北区" />
+        <古冶区 DID="3" DName="古冶区" />
+        <开平区 DID="4" DName="开平区" />
+        <丰南区 DID="5" DName="丰南区" />
+        <丰润区 DID="6" DName="丰润区" />
+        <滦县 DID="7" DName="滦县" />
+        <滦南县 DID="8" DName="滦南县" />
+        <乐亭县 DID="9" DName="乐亭县" />
+        <迁西县 DID="10" DName="迁西县" />
+        <玉田县 DID="11" DName="玉田县" />
+        <唐海县 DID="12" DName="唐海县" />
+        <遵化市 DID="13" DName="遵化市" />
+        <迁安市 DID="14" DName="迁安市" />
+    </唐山市>
+    <秦皇岛市 CID="3" CName="秦皇岛市">
+        <海港区 DID="1" DName="海港区" />
+        <山海关区 DID="2" DName="山海关区" />
+        <北戴河区 DID="3" DName="北戴河区" />
+        <青龙满族自治县 DID="4" DName="青龙满族自治县" />
+        <昌黎县 DID="5" DName="昌黎县" />
+        <抚宁县 DID="6" DName="抚宁县" />
+        <卢龙县 DID="7" DName="卢龙县" />
+    </秦皇岛市>
+    <邯郸市 CID="4" CName="邯郸市">
+        <邯山区 DID="1" DName="邯山区" />
+        <丛台区 DID="2" DName="丛台区" />
+        <复兴区 DID="3" DName="复兴区" />
+        <峰峰矿区 DID="4" DName="峰峰矿区" />
+        <邯郸县 DID="5" DName="邯郸县" />
+        <临漳县 DID="6" DName="临漳县" />
+        <成安县 DID="7" DName="成安县" />
+        <大名县 DID="8" DName="大名县" />
+        <涉县 DID="9" DName="涉县" />
+        <磁县 DID="10" DName="磁县" />
+        <肥乡县 DID="11" DName="肥乡县" />
+        <永年县 DID="12" DName="永年县" />
+        <邱县 DID="13" DName="邱县" />
+        <鸡泽县 DID="14" DName="鸡泽县" />
+        <广平县 DID="15" DName="广平县" />
+        <馆陶县 DID="16" DName="馆陶县" />
+        <魏县 DID="17" DName="魏县" />
+        <曲周县 DID="18" DName="曲周县" />
+        <武安市 DID="19" DName="武安市" />
+    </邯郸市>
+    <邢台市 CID="5" CName="邢台市">
+        <桥东区 DID="1" DName="桥东区" />
+        <桥西区 DID="2" DName="桥西区" />
+        <邢台县 DID="3" DName="邢台县" />
+        <临城县 DID="4" DName="临城县" />
+        <内丘县 DID="5" DName="内丘县" />
+        <柏乡县 DID="6" DName="柏乡县" />
+        <隆尧县 DID="7" DName="隆尧县" />
+        <任县 DID="8" DName="任县" />
+        <南和县 DID="9" DName="南和县" />
+        <宁晋县 DID="10" DName="宁晋县" />
+        <巨鹿县 DID="11" DName="巨鹿县" />
+        <新河县 DID="12" DName="新河县" />
+        <广宗县 DID="13" DName="广宗县" />
+        <平乡县 DID="14" DName="平乡县" />
+        <威县 DID="15" DName="威县" />
+        <清河县 DID="16" DName="清河县" />
+        <临西县 DID="17" DName="临西县" />
+        <南宫市 DID="18" DName="南宫市" />
+        <沙河市 DID="19" DName="沙河市" />
+    </邢台市>
+    <保定市 CID="6" CName="保定市">
+        <新市区 DID="1" DName="新市区" />
+        <北市区 DID="2" DName="北市区" />
+        <南市区 DID="3" DName="南市区" />
+        <满城县 DID="4" DName="满城县" />
+        <清苑县 DID="5" DName="清苑县" />
+        <涞水县 DID="6" DName="涞水县" />
+        <阜平县 DID="7" DName="阜平县" />
+        <徐水县 DID="8" DName="徐水县" />
+        <定兴县 DID="9" DName="定兴县" />
+        <唐县 DID="10" DName="唐县" />
+        <高阳县 DID="11" DName="高阳县" />
+        <容城县 DID="12" DName="容城县" />
+        <涞源县 DID="13" DName="涞源县" />
+        <望都县 DID="14" DName="望都县" />
+        <安新县 DID="15" DName="安新县" />
+        <易县 DID="16" DName="易县" />
+        <曲阳县 DID="17" DName="曲阳县" />
+        <蠡县 DID="18" DName="蠡县" />
+        <顺平县 DID="19" DName="顺平县" />
+        <博野县 DID="20" DName="博野县" />
+        <雄县 DID="21" DName="雄县" />
+        <涿州市 DID="22" DName="涿州市" />
+        <定州市 DID="23" DName="定州市" />
+        <安国市 DID="24" DName="安国市" />
+        <高碑店市 DID="25" DName="高碑店市" />
+    </保定市>
+    <张家口市 CID="7" CName="张家口市">
+        <桥东区 DID="1" DName="桥东区" />
+        <桥西区 DID="2" DName="桥西区" />
+        <宣化区 DID="3" DName="宣化区" />
+        <下花园区 DID="4" DName="下花园区" />
+        <宣化县 DID="5" DName="宣化县" />
+        <张北县 DID="6" DName="张北县" />
+        <康保县 DID="7" DName="康保县" />
+        <沽源县 DID="8" DName="沽源县" />
+        <尚义县 DID="9" DName="尚义县" />
+        <蔚县 DID="10" DName="蔚县" />
+        <阳原县 DID="11" DName="阳原县" />
+        <怀安县 DID="12" DName="怀安县" />
+        <万全县 DID="13" DName="万全县" />
+        <怀来县 DID="14" DName="怀来县" />
+        <涿鹿县 DID="15" DName="涿鹿县" />
+        <赤城县 DID="16" DName="赤城县" />
+        <崇礼县 DID="17" DName="崇礼县" />
+    </张家口市>
+    <承德市 CID="8" CName="承德市">
+        <双桥区 DID="1" DName="双桥区" />
+        <双滦区 DID="2" DName="双滦区" />
+        <鹰手营子矿区 DID="3" DName="鹰手营子矿区" />
+        <承德县 DID="4" DName="承德县" />
+        <兴隆县 DID="5" DName="兴隆县" />
+        <平泉县 DID="6" DName="平泉县" />
+        <滦平县 DID="7" DName="滦平县" />
+        <隆化县 DID="8" DName="隆化县" />
+        <丰宁满族自治县 DID="9" DName="丰宁满族自治县" />
+        <宽城满族自治县 DID="10" DName="宽城满族自治县" />
+        <围场满族蒙古族自治县 DID="11" DName="围场满族蒙古族自治县" />
+    </承德市>
+    <沧州市 CID="9" CName="沧州市">
+        <新华区 DID="1" DName="新华区" />
+        <运河区 DID="2" DName="运河区" />
+        <沧县 DID="3" DName="沧县" />
+        <青县 DID="4" DName="青县" />
+        <东光县 DID="5" DName="东光县" />
+        <海兴县 DID="6" DName="海兴县" />
+        <盐山县 DID="7" DName="盐山县" />
+        <肃宁县 DID="8" DName="肃宁县" />
+        <南皮县 DID="9" DName="南皮县" />
+        <吴桥县 DID="10" DName="吴桥县" />
+        <献县 DID="11" DName="献县" />
+        <孟村回族自治县 DID="12" DName="孟村回族自治县" />
+        <泊头市 DID="13" DName="泊头市" />
+        <任丘市 DID="14" DName="任丘市" />
+        <黄骅市 DID="15" DName="黄骅市" />
+        <河间市 DID="16" DName="河间市" />
+    </沧州市>
+    <廊坊市 CID="10" CName="廊坊市">
+        <安次区 DID="1" DName="安次区" />
+        <广阳区 DID="2" DName="广阳区" />
+        <固安县 DID="3" DName="固安县" />
+        <永清县 DID="4" DName="永清县" />
+        <香河县 DID="5" DName="香河县" />
+        <大城县 DID="6" DName="大城县" />
+        <文安县 DID="7" DName="文安县" />
+        <大厂回族自治县 DID="8" DName="大厂回族自治县" />
+        <霸州市 DID="9" DName="霸州市" />
+        <三河市 DID="10" DName="三河市" />
+    </廊坊市>
+    <衡水市 CID="11" CName="衡水市">
+        <桃城区 DID="1" DName="桃城区" />
+        <枣强县 DID="2" DName="枣强县" />
+        <武邑县 DID="3" DName="武邑县" />
+        <武强县 DID="4" DName="武强县" />
+        <饶阳县 DID="5" DName="饶阳县" />
+        <安平县 DID="6" DName="安平县" />
+        <故城县 DID="7" DName="故城县" />
+        <景县 DID="8" DName="景县" />
+        <阜城县 DID="9" DName="阜城县" />
+        <冀州市 DID="10" DName="冀州市" />
+        <深州市 DID="11" DName="深州市" />
+    </衡水市>
+</河北省>
+<山西省 PID="4" PName="山西省">
+    <太原市 CID="1" CName="太原市">
+        <小店区 DID="1" DName="小店区" />
+        <迎泽区 DID="2" DName="迎泽区" />
+        <杏花岭区 DID="3" DName="杏花岭区" />
+        <尖草坪区 DID="4" DName="尖草坪区" />
+        <万柏林区 DID="5" DName="万柏林区" />
+        <晋源区 DID="6" DName="晋源区" />
+        <清徐县 DID="7" DName="清徐县" />
+        <阳曲县 DID="8" DName="阳曲县" />
+        <娄烦县 DID="9" DName="娄烦县" />
+        <古交市 DID="10" DName="古交市" />
+    </太原市>
+    <大同市 CID="2" CName="大同市">
+        <城区 DID="1" DName="城区" />
+        <矿区 DID="2" DName="矿区" />
+        <南郊区 DID="3" DName="南郊区" />
+        <新荣区 DID="4" DName="新荣区" />
+        <阳高县 DID="5" DName="阳高县" />
+        <天镇县 DID="6" DName="天镇县" />
+        <广灵县 DID="7" DName="广灵县" />
+        <灵丘县 DID="8" DName="灵丘县" />
+        <浑源县 DID="9" DName="浑源县" />
+        <左云县 DID="10" DName="左云县" />
+        <大同县 DID="11" DName="大同县" />
+    </大同市>
+    <阳泉市 CID="3" CName="阳泉市">
+        <城区 DID="1" DName="城区" />
+        <矿区 DID="2" DName="矿区" />
+        <郊区 DID="3" DName="郊区" />
+        <平定县 DID="4" DName="平定县" />
+        <盂县 DID="5" DName="盂县" />
+    </阳泉市>
+    <长治市 CID="4" CName="长治市">
+        <城区 DID="1" DName="城区" />
+        <郊区 DID="2" DName="郊区" />
+        <长治县 DID="3" DName="长治县" />
+        <襄垣县 DID="4" DName="襄垣县" />
+        <屯留县 DID="5" DName="屯留县" />
+        <平顺县 DID="6" DName="平顺县" />
+        <黎城县 DID="7" DName="黎城县" />
+        <壶关县 DID="8" DName="壶关县" />
+        <长子县 DID="9" DName="长子县" />
+        <武乡县 DID="10" DName="武乡县" />
+        <沁县 DID="11" DName="沁县" />
+        <沁源县 DID="12" DName="沁源县" />
+        <潞城市 DID="13" DName="潞城市" />
+    </长治市>
+    <晋城市 CID="5" CName="晋城市">
+        <城区 DID="1" DName="城区" />
+        <沁水县 DID="2" DName="沁水县" />
+        <阳城县 DID="3" DName="阳城县" />
+        <陵川县 DID="4" DName="陵川县" />
+        <泽州县 DID="5" DName="泽州县" />
+        <高平市 DID="6" DName="高平市" />
+    </晋城市>
+    <朔州市 CID="6" CName="朔州市">
+        <朔城区 DID="1" DName="朔城区" />
+        <平鲁区 DID="2" DName="平鲁区" />
+        <山阴县 DID="3" DName="山阴县" />
+        <应县 DID="4" DName="应县" />
+        <右玉县 DID="5" DName="右玉县" />
+        <怀仁县 DID="6" DName="怀仁县" />
+    </朔州市>
+    <晋中市 CID="7" CName="晋中市">
+        <榆次区 DID="1" DName="榆次区" />
+        <榆社县 DID="2" DName="榆社县" />
+        <左权县 DID="3" DName="左权县" />
+        <和顺县 DID="4" DName="和顺县" />
+        <昔阳县 DID="5" DName="昔阳县" />
+        <寿阳县 DID="6" DName="寿阳县" />
+        <太谷县 DID="7" DName="太谷县" />
+        <祁县 DID="8" DName="祁县" />
+        <平遥县 DID="9" DName="平遥县" />
+        <灵石县 DID="10" DName="灵石县" />
+        <介休市 DID="11" DName="介休市" />
+    </晋中市>
+    <运城市 CID="8" CName="运城市">
+        <盐湖区 DID="1" DName="盐湖区" />
+        <临猗县 DID="2" DName="临猗县" />
+        <万荣县 DID="3" DName="万荣县" />
+        <闻喜县 DID="4" DName="闻喜县" />
+        <稷山县 DID="5" DName="稷山县" />
+        <新绛县 DID="6" DName="新绛县" />
+        <绛县 DID="7" DName="绛县" />
+        <垣曲县 DID="8" DName="垣曲县" />
+        <夏县 DID="9" DName="夏县" />
+        <平陆县 DID="10" DName="平陆县" />
+        <芮城县 DID="11" DName="芮城县" />
+        <永济市 DID="12" DName="永济市" />
+        <河津市 DID="13" DName="河津市" />
+    </运城市>
+    <忻州市 CID="9" CName="忻州市">
+        <忻府区 DID="1" DName="忻府区" />
+        <定襄县 DID="2" DName="定襄县" />
+        <五台县 DID="3" DName="五台县" />
+        <代县 DID="4" DName="代县" />
+        <繁峙县 DID="5" DName="繁峙县" />
+        <宁武县 DID="6" DName="宁武县" />
+        <静乐县 DID="7" DName="静乐县" />
+        <神池县 DID="8" DName="神池县" />
+        <五寨县 DID="9" DName="五寨县" />
+        <岢岚县 DID="10" DName="岢岚县" />
+        <河曲县 DID="11" DName="河曲县" />
+        <保德县 DID="12" DName="保德县" />
+        <偏关县 DID="13" DName="偏关县" />
+        <原平市 DID="14" DName="原平市" />
+    </忻州市>
+    <临汾市 CID="10" CName="临汾市">
+        <尧都区 DID="1" DName="尧都区" />
+        <曲沃县 DID="2" DName="曲沃县" />
+        <翼城县 DID="3" DName="翼城县" />
+        <襄汾县 DID="4" DName="襄汾县" />
+        <洪洞县 DID="5" DName="洪洞县" />
+        <古县 DID="6" DName="古县" />
+        <安泽县 DID="7" DName="安泽县" />
+        <浮山县 DID="8" DName="浮山县" />
+        <吉县 DID="9" DName="吉县" />
+        <乡宁县 DID="10" DName="乡宁县" />
+        <大宁县 DID="11" DName="大宁县" />
+        <隰县 DID="12" DName="隰县" />
+        <永和县 DID="13" DName="永和县" />
+        <蒲县 DID="14" DName="蒲县" />
+        <汾西县 DID="15" DName="汾西县" />
+        <侯马市 DID="16" DName="侯马市" />
+        <霍州市 DID="17" DName="霍州市" />
+    </临汾市>
+    <吕梁市 CID="11" CName="吕梁市">
+        <离石区 DID="1" DName="离石区" />
+        <文水县 DID="2" DName="文水县" />
+        <交城县 DID="3" DName="交城县" />
+        <兴县 DID="4" DName="兴县" />
+        <临县 DID="5" DName="临县" />
+        <柳林县 DID="6" DName="柳林县" />
+        <石楼县 DID="7" DName="石楼县" />
+        <岚县 DID="8" DName="岚县" />
+        <方山县 DID="9" DName="方山县" />
+        <中阳县 DID="10" DName="中阳县" />
+        <交口县 DID="11" DName="交口县" />
+        <孝义市 DID="12" DName="孝义市" />
+        <汾阳市 DID="13" DName="汾阳市" />
+    </吕梁市>
+</山西省>
+<内蒙古自治区 PID="5" PName="内蒙古自治区">
+    <呼和浩特市 CID="1" CName="呼和浩特市">
+        <新城区 DID="1" DName="新城区" />
+        <回民区 DID="2" DName="回民区" />
+        <玉泉区 DID="3" DName="玉泉区" />
+        <赛罕区 DID="4" DName="赛罕区" />
+        <土默特左旗 DID="5" DName="土默特左旗" />
+        <托克托县 DID="6" DName="托克托县" />
+        <和林格尔县 DID="7" DName="和林格尔县" />
+        <清水河县 DID="8" DName="清水河县" />
+        <武川县 DID="9" DName="武川县" />
+    </呼和浩特市>
+    <包头市 CID="2" CName="包头市">
+        <东河区 DID="1" DName="东河区" />
+        <昆都仑区 DID="2" DName="昆都仑区" />
+        <青山区 DID="3" DName="青山区" />
+        <石拐区 DID="4" DName="石拐区" />
+        <白云矿区 DID="5" DName="白云矿区" />
+        <九原区 DID="6" DName="九原区" />
+        <土默特右旗 DID="7" DName="土默特右旗" />
+        <固阳县 DID="8" DName="固阳县" />
+        <达尔罕茂明安联合旗 DID="9" DName="达尔罕茂明安联合旗" />
+    </包头市>
+    <乌海市 CID="3" CName="乌海市">
+        <海勃湾区 DID="1" DName="海勃湾区" />
+        <海南区 DID="2" DName="海南区" />
+        <乌达区 DID="3" DName="乌达区" />
+    </乌海市>
+    <赤峰市 CID="4" CName="赤峰市">
+        <红山区 DID="1" DName="红山区" />
+        <元宝山区 DID="2" DName="元宝山区" />
+        <松山区 DID="3" DName="松山区" />
+        <阿鲁科尔沁旗 DID="4" DName="阿鲁科尔沁旗" />
+        <巴林左旗 DID="5" DName="巴林左旗" />
+        <巴林右旗 DID="6" DName="巴林右旗" />
+        <林西县 DID="7" DName="林西县" />
+        <克什克腾旗 DID="8" DName="克什克腾旗" />
+        <翁牛特旗 DID="9" DName="翁牛特旗" />
+        <喀喇沁旗 DID="10" DName="喀喇沁旗" />
+        <宁城县 DID="11" DName="宁城县" />
+        <敖汉旗 DID="12" DName="敖汉旗" />
+    </赤峰市>
+    <通辽市 CID="5" CName="通辽市">
+        <科尔沁区 DID="1" DName="科尔沁区" />
+        <科尔沁左翼中旗 DID="2" DName="科尔沁左翼中旗" />
+        <科尔沁左翼后旗 DID="3" DName="科尔沁左翼后旗" />
+        <开鲁县 DID="4" DName="开鲁县" />
+        <库伦旗 DID="5" DName="库伦旗" />
+        <奈曼旗 DID="6" DName="奈曼旗" />
+        <扎鲁特旗 DID="7" DName="扎鲁特旗" />
+        <霍林郭勒市 DID="8" DName="霍林郭勒市" />
+    </通辽市>
+    <鄂尔多斯市 CID="6" CName="鄂尔多斯市">
+        <东胜区 DID="1" DName="东胜区" />
+        <达拉特旗 DID="2" DName="达拉特旗" />
+        <准格尔旗 DID="3" DName="准格尔旗" />
+        <鄂托克前旗 DID="4" DName="鄂托克前旗" />
+        <鄂托克旗 DID="5" DName="鄂托克旗" />
+        <杭锦旗 DID="6" DName="杭锦旗" />
+        <乌审旗 DID="7" DName="乌审旗" />
+        <伊金霍洛旗 DID="8" DName="伊金霍洛旗" />
+    </鄂尔多斯市>
+    <呼伦贝尔市 CID="7" CName="呼伦贝尔市">
+        <海拉尔区 DID="1" DName="海拉尔区" />
+        <阿荣旗 DID="2" DName="阿荣旗" />
+        <莫力达瓦达斡尔族自治旗 DID="3" DName="莫力达瓦达斡尔族自治旗" />
+        <鄂伦春自治旗 DID="4" DName="鄂伦春自治旗" />
+        <鄂温克族自治旗 DID="5" DName="鄂温克族自治旗" />
+        <陈巴尔虎旗 DID="6" DName="陈巴尔虎旗" />
+        <新巴尔虎左旗 DID="7" DName="新巴尔虎左旗" />
+        <新巴尔虎右旗 DID="8" DName="新巴尔虎右旗" />
+        <满洲里市 DID="9" DName="满洲里市" />
+        <牙克石市 DID="10" DName="牙克石市" />
+        <扎兰屯市 DID="11" DName="扎兰屯市" />
+        <额尔古纳市 DID="12" DName="额尔古纳市" />
+        <根河市 DID="13" DName="根河市" />
+    </呼伦贝尔市>
+    <巴彦淖尔市 CID="8" CName="巴彦淖尔市">
+        <临河区 DID="1" DName="临河区" />
+        <五原县 DID="2" DName="五原县" />
+        <磴口县 DID="3" DName="磴口县" />
+        <乌拉特前旗 DID="4" DName="乌拉特前旗" />
+        <乌拉特中旗 DID="5" DName="乌拉特中旗" />
+        <乌拉特后旗 DID="6" DName="乌拉特后旗" />
+        <杭锦后旗 DID="7" DName="杭锦后旗" />
+    </巴彦淖尔市>
+    <乌兰察布市 CID="9" CName="乌兰察布市">
+        <集宁区 DID="1" DName="集宁区" />
+        <卓资县 DID="2" DName="卓资县" />
+        <化德县 DID="3" DName="化德县" />
+        <商都县 DID="4" DName="商都县" />
+        <兴和县 DID="5" DName="兴和县" />
+        <凉城县 DID="6" DName="凉城县" />
+        <察哈尔右翼前旗 DID="7" DName="察哈尔右翼前旗" />
+        <察哈尔右翼中旗 DID="8" DName="察哈尔右翼中旗" />
+        <察哈尔右翼后旗 DID="9" DName="察哈尔右翼后旗" />
+        <四子王旗 DID="10" DName="四子王旗" />
+        <丰镇市 DID="11" DName="丰镇市" />
+    </乌兰察布市>
+    <兴安盟 CID="10" CName="兴安盟">
+        <乌兰浩特市 DID="1" DName="乌兰浩特市" />
+        <阿尔山市 DID="2" DName="阿尔山市" />
+        <科尔沁右翼前旗 DID="3" DName="科尔沁右翼前旗" />
+        <科尔沁右翼中旗 DID="4" DName="科尔沁右翼中旗" />
+        <扎赉特旗 DID="5" DName="扎赉特旗" />
+        <突泉县 DID="6" DName="突泉县" />
+    </兴安盟>
+    <锡林郭勒盟 CID="11" CName="锡林郭勒盟">
+        <二连浩特市 DID="1" DName="二连浩特市" />
+        <锡林浩特市 DID="2" DName="锡林浩特市" />
+        <阿巴嘎旗 DID="3" DName="阿巴嘎旗" />
+        <苏尼特左旗 DID="4" DName="苏尼特左旗" />
+        <苏尼特右旗 DID="5" DName="苏尼特右旗" />
+        <东乌珠穆沁旗 DID="6" DName="东乌珠穆沁旗" />
+        <西乌珠穆沁旗 DID="7" DName="西乌珠穆沁旗" />
+        <太仆寺旗 DID="8" DName="太仆寺旗" />
+        <镶黄旗 DID="9" DName="镶黄旗" />
+        <正镶白旗 DID="10" DName="正镶白旗" />
+        <正蓝旗 DID="11" DName="正蓝旗" />
+        <多伦县 DID="12" DName="多伦县" />
+    </锡林郭勒盟>
+    <阿拉善盟 CID="12" CName="阿拉善盟">
+        <阿拉善左旗 DID="1" DName="阿拉善左旗" />
+        <阿拉善右旗 DID="2" DName="阿拉善右旗" />
+        <额济纳旗 DID="3" DName="额济纳旗" />
+    </阿拉善盟>
+</内蒙古自治区>
+<辽宁省 PID="6" PName="辽宁省">
+    <沈阳市 CID="1" CName="沈阳市">
+        <和平区 DID="1" DName="和平区" />
+        <沈河区 DID="2" DName="沈河区" />
+        <大东区 DID="3" DName="大东区" />
+        <皇姑区 DID="4" DName="皇姑区" />
+        <铁西区 DID="5" DName="铁西区" />
+        <苏家屯区 DID="6" DName="苏家屯区" />
+        <东陵区 DID="7" DName="东陵区" />
+        <新城子区 DID="8" DName="新城子区" />
+        <于洪区 DID="9" DName="于洪区" />
+        <辽中县 DID="10" DName="辽中县" />
+        <康平县 DID="11" DName="康平县" />
+        <法库县 DID="12" DName="法库县" />
+        <新民市 DID="13" DName="新民市" />
+    </沈阳市>
+    <大连市 CID="2" CName="大连市">
+        <中山区 DID="1" DName="中山区" />
+        <西岗区 DID="2" DName="西岗区" />
+        <沙河口区 DID="3" DName="沙河口区" />
+        <甘井子区 DID="4" DName="甘井子区" />
+        <旅顺口区 DID="5" DName="旅顺口区" />
+        <金州区 DID="6" DName="金州区" />
+        <长海县 DID="7" DName="长海县" />
+        <瓦房店市 DID="8" DName="瓦房店市" />
+        <普兰店市 DID="9" DName="普兰店市" />
+        <庄河市 DID="10" DName="庄河市" />
+    </大连市>
+    <鞍山市 CID="3" CName="鞍山市">
+        <铁东区 DID="1" DName="铁东区" />
+        <铁西区 DID="2" DName="铁西区" />
+        <立山区 DID="3" DName="立山区" />
+        <千山区 DID="4" DName="千山区" />
+        <台安县 DID="5" DName="台安县" />
+        <岫岩满族自治县 DID="6" DName="岫岩满族自治县" />
+        <海城市 DID="7" DName="海城市" />
+    </鞍山市>
+    <抚顺市 CID="4" CName="抚顺市">
+        <新抚区 DID="1" DName="新抚区" />
+        <东洲区 DID="2" DName="东洲区" />
+        <望花区 DID="3" DName="望花区" />
+        <顺城区 DID="4" DName="顺城区" />
+        <抚顺县 DID="5" DName="抚顺县" />
+        <新宾满族自治县 DID="6" DName="新宾满族自治县" />
+        <清原满族自治县 DID="7" DName="清原满族自治县" />
+    </抚顺市>
+    <本溪市 CID="5" CName="本溪市">
+        <平山区 DID="1" DName="平山区" />
+        <溪湖区 DID="2" DName="溪湖区" />
+        <明山区 DID="3" DName="明山区" />
+        <南芬区 DID="4" DName="南芬区" />
+        <本溪满族自治县 DID="5" DName="本溪满族自治县" />
+        <桓仁满族自治县 DID="6" DName="桓仁满族自治县" />
+    </本溪市>
+    <丹东市 CID="6" CName="丹东市">
+        <元宝区 DID="1" DName="元宝区" />
+        <振兴区 DID="2" DName="振兴区" />
+        <振安区 DID="3" DName="振安区" />
+        <宽甸满族自治县 DID="4" DName="宽甸满族自治县" />
+        <东港市 DID="5" DName="东港市" />
+        <凤城市 DID="6" DName="凤城市" />
+    </丹东市>
+    <锦州市 CID="7" CName="锦州市">
+        <古塔区 DID="1" DName="古塔区" />
+        <凌河区 DID="2" DName="凌河区" />
+        <太和区 DID="3" DName="太和区" />
+        <黑山县 DID="4" DName="黑山县" />
+        <义县 DID="5" DName="义县" />
+        <凌海市 DID="6" DName="凌海市" />
+        <北宁市 DID="7" DName="北宁市" />
+    </锦州市>
+    <营口市 CID="8" CName="营口市">
+        <站前区 DID="1" DName="站前区" />
+        <西市区 DID="2" DName="西市区" />
+        <鲅鱼圈区 DID="3" DName="鲅鱼圈区" />
+        <老边区 DID="4" DName="老边区" />
+        <盖州市 DID="5" DName="盖州市" />
+        <大石桥市 DID="6" DName="大石桥市" />
+    </营口市>
+    <阜新市 CID="9" CName="阜新市">
+        <海州区 DID="1" DName="海州区" />
+        <新邱区 DID="2" DName="新邱区" />
+        <太平区 DID="3" DName="太平区" />
+        <清河门区 DID="4" DName="清河门区" />
+        <细河区 DID="5" DName="细河区" />
+        <阜新蒙古族自治县 DID="6" DName="阜新蒙古族自治县" />
+        <彰武县 DID="7" DName="彰武县" />
+    </阜新市>
+    <辽阳市 CID="10" CName="辽阳市">
+        <白塔区 DID="1" DName="白塔区" />
+        <文圣区 DID="2" DName="文圣区" />
+        <宏伟区 DID="3" DName="宏伟区" />
+        <弓长岭区 DID="4" DName="弓长岭区" />
+        <太子河区 DID="5" DName="太子河区" />
+        <辽阳县 DID="6" DName="辽阳县" />
+        <灯塔市 DID="7" DName="灯塔市" />
+    </辽阳市>
+    <盘锦市 CID="11" CName="盘锦市">
+        <双台子区 DID="1" DName="双台子区" />
+        <兴隆台区 DID="2" DName="兴隆台区" />
+        <大洼县 DID="3" DName="大洼县" />
+        <盘山县 DID="4" DName="盘山县" />
+    </盘锦市>
+    <铁岭市 CID="12" CName="铁岭市">
+        <银州区 DID="1" DName="银州区" />
+        <清河区 DID="2" DName="清河区" />
+        <铁岭县 DID="3" DName="铁岭县" />
+        <西丰县 DID="4" DName="西丰县" />
+        <昌图县 DID="5" DName="昌图县" />
+        <调兵山市 DID="6" DName="调兵山市" />
+        <开原市 DID="7" DName="开原市" />
+    </铁岭市>
+    <朝阳市 CID="13" CName="朝阳市">
+        <双塔区 DID="1" DName="双塔区" />
+        <龙城区 DID="2" DName="龙城区" />
+        <朝阳县 DID="3" DName="朝阳县" />
+        <建平县 DID="4" DName="建平县" />
+        <喀喇沁左翼蒙古族自治县 DID="5" DName="喀喇沁左翼蒙古族自治县" />
+        <北票市 DID="6" DName="北票市" />
+        <凌源市 DID="7" DName="凌源市" />
+    </朝阳市>
+    <葫芦岛市 CID="14" CName="葫芦岛市">
+        <连山区 DID="1" DName="连山区" />
+        <龙港区 DID="2" DName="龙港区" />
+        <南票区 DID="3" DName="南票区" />
+        <绥中县 DID="4" DName="绥中县" />
+        <建昌县 DID="5" DName="建昌县" />
+        <兴城市 DID="6" DName="兴城市" />
+    </葫芦岛市>
+</辽宁省>
+<吉林省 PID="7" PName="吉林省">
+    <长春市 CID="1" CName="长春市">
+        <南关区 DID="1" DName="南关区" />
+        <宽城区 DID="2" DName="宽城区" />
+        <朝阳区 DID="3" DName="朝阳区" />
+        <二道区 DID="4" DName="二道区" />
+        <绿园区 DID="5" DName="绿园区" />
+        <双阳区 DID="6" DName="双阳区" />
+        <农安县 DID="7" DName="农安县" />
+        <九台市 DID="8" DName="九台市" />
+        <榆树市 DID="9" DName="榆树市" />
+        <德惠市 DID="10" DName="德惠市" />
+    </长春市>
+    <吉林市 CID="2" CName="吉林市">
+        <昌邑区 DID="1" DName="昌邑区" />
+        <龙潭区 DID="2" DName="龙潭区" />
+        <船营区 DID="3" DName="船营区" />
+        <丰满区 DID="4" DName="丰满区" />
+        <永吉县 DID="5" DName="永吉县" />
+        <蛟河市 DID="6" DName="蛟河市" />
+        <桦甸市 DID="7" DName="桦甸市" />
+        <舒兰市 DID="8" DName="舒兰市" />
+        <磐石市 DID="9" DName="磐石市" />
+    </吉林市>
+    <四平市 CID="3" CName="四平市">
+        <铁西区 DID="1" DName="铁西区" />
+        <铁东区 DID="2" DName="铁东区" />
+        <梨树县 DID="3" DName="梨树县" />
+        <伊通满族自治县 DID="4" DName="伊通满族自治县" />
+        <公主岭市 DID="5" DName="公主岭市" />
+        <双辽市 DID="6" DName="双辽市" />
+    </四平市>
+    <辽源市 CID="4" CName="辽源市">
+        <龙山区 DID="1" DName="龙山区" />
+        <西安区 DID="2" DName="西安区" />
+        <东丰县 DID="3" DName="东丰县" />
+        <东辽县 DID="4" DName="东辽县" />
+    </辽源市>
+    <通化市 CID="5" CName="通化市">
+        <东昌区 DID="1" DName="东昌区" />
+        <二道江区 DID="2" DName="二道江区" />
+        <通化县 DID="3" DName="通化县" />
+        <辉南县 DID="4" DName="辉南县" />
+        <柳河县 DID="5" DName="柳河县" />
+        <梅河口市 DID="6" DName="梅河口市" />
+        <集安市 DID="7" DName="集安市" />
+    </通化市>
+    <白山市 CID="6" CName="白山市">
+        <八道江区 DID="1" DName="八道江区" />
+        <抚松县 DID="2" DName="抚松县" />
+        <靖宇县 DID="3" DName="靖宇县" />
+        <长白朝鲜族自治县 DID="4" DName="长白朝鲜族自治县" />
+        <江源县 DID="5" DName="江源县" />
+        <临江市 DID="6" DName="临江市" />
+    </白山市>
+    <松原市 CID="7" CName="松原市">
+        <宁江区 DID="1" DName="宁江区" />
+        <前郭尔罗斯蒙古族自治县 DID="2" DName="前郭尔罗斯蒙古族自治县" />
+        <长岭县 DID="3" DName="长岭县" />
+        <乾安县 DID="4" DName="乾安县" />
+        <扶余县 DID="5" DName="扶余县" />
+    </松原市>
+    <白城市 CID="8" CName="白城市">
+        <洮北区 DID="1" DName="洮北区" />
+        <镇赉县 DID="2" DName="镇赉县" />
+        <通榆县 DID="3" DName="通榆县" />
+        <洮南市 DID="4" DName="洮南市" />
+        <大安市 DID="5" DName="大安市" />
+    </白城市>
+    <延边朝鲜族自治州 CID="9" CName="延边朝鲜族自治州">
+        <延吉市 DID="1" DName="延吉市" />
+        <图们市 DID="2" DName="图们市" />
+        <敦化市 DID="3" DName="敦化市" />
+        <珲春市 DID="4" DName="珲春市" />
+        <龙井市 DID="5" DName="龙井市" />
+        <和龙市 DID="6" DName="和龙市" />
+        <汪清县 DID="7" DName="汪清县" />
+        <安图县 DID="8" DName="安图县" />
+    </延边朝鲜族自治州>
+</吉林省>
+<黑龙江省 PID="8" PName="黑龙江省">
+    <哈尔滨市 CID="1" CName="哈尔滨市">
+        <道里区 DID="1" DName="道里区" />
+        <南岗区 DID="2" DName="南岗区" />
+        <道外区 DID="3" DName="道外区" />
+        <香坊区 DID="4" DName="香坊区" />
+        <动力区 DID="5" DName="动力区" />
+        <平房区 DID="6" DName="平房区" />
+        <松北区 DID="7" DName="松北区" />
+        <呼兰区 DID="8" DName="呼兰区" />
+        <依兰县 DID="9" DName="依兰县" />
+        <方正县 DID="10" DName="方正县" />
+        <宾县 DID="11" DName="宾县" />
+        <巴彦县 DID="12" DName="巴彦县" />
+        <木兰县 DID="13" DName="木兰县" />
+        <通河县 DID="14" DName="通河县" />
+        <延寿县 DID="15" DName="延寿县" />
+        <阿城市 DID="16" DName="阿城市" />
+        <双城市 DID="17" DName="双城市" />
+        <尚志市 DID="18" DName="尚志市" />
+        <五常市 DID="19" DName="五常市" />
+    </哈尔滨市>
+    <齐齐哈尔市 CID="2" CName="齐齐哈尔市">
+        <龙沙区 DID="1" DName="龙沙区" />
+        <建华区 DID="2" DName="建华区" />
+        <铁锋区 DID="3" DName="铁锋区" />
+        <昂昂溪区 DID="4" DName="昂昂溪区" />
+        <富拉尔基区 DID="5" DName="富拉尔基区" />
+        <碾子山区 DID="6" DName="碾子山区" />
+        <梅里斯达斡尔族区 DID="7" DName="梅里斯达斡尔族区" />
+        <龙江县 DID="8" DName="龙江县" />
+        <依安县 DID="9" DName="依安县" />
+        <泰来县 DID="10" DName="泰来县" />
+        <甘南县 DID="11" DName="甘南县" />
+        <富裕县 DID="12" DName="富裕县" />
+        <克山县 DID="13" DName="克山县" />
+        <克东县 DID="14" DName="克东县" />
+        <拜泉县 DID="15" DName="拜泉县" />
+        <讷河市 DID="16" DName="讷河市" />
+    </齐齐哈尔市>
+    <鸡西市 CID="3" CName="鸡西市">
+        <鸡冠区 DID="1" DName="鸡冠区" />
+        <恒山区 DID="2" DName="恒山区" />
+        <滴道区 DID="3" DName="滴道区" />
+        <梨树区 DID="4" DName="梨树区" />
+        <城子河区 DID="5" DName="城子河区" />
+        <麻山区 DID="6" DName="麻山区" />
+        <鸡东县 DID="7" DName="鸡东县" />
+        <虎林市 DID="8" DName="虎林市" />
+        <密山市 DID="9" DName="密山市" />
+    </鸡西市>
+    <鹤岗市 CID="4" CName="鹤岗市">
+        <向阳区 DID="1" DName="向阳区" />
+        <工农区 DID="2" DName="工农区" />
+        <南山区 DID="3" DName="南山区" />
+        <兴安区 DID="4" DName="兴安区" />
+        <东山区 DID="5" DName="东山区" />
+        <兴山区 DID="6" DName="兴山区" />
+        <萝北县 DID="7" DName="萝北县" />
+        <绥滨县 DID="8" DName="绥滨县" />
+    </鹤岗市>
+    <双鸭山市 CID="5" CName="双鸭山市">
+        <尖山区 DID="1" DName="尖山区" />
+        <岭东区 DID="2" DName="岭东区" />
+        <四方台区 DID="3" DName="四方台区" />
+        <宝山区 DID="4" DName="宝山区" />
+        <集贤县 DID="5" DName="集贤县" />
+        <友谊县 DID="6" DName="友谊县" />
+        <宝清县 DID="7" DName="宝清县" />
+        <饶河县 DID="8" DName="饶河县" />
+    </双鸭山市>
+    <大庆市 CID="6" CName="大庆市">
+        <萨尔图区 DID="1" DName="萨尔图区" />
+        <龙凤区 DID="2" DName="龙凤区" />
+        <让胡路区 DID="3" DName="让胡路区" />
+        <红岗区 DID="4" DName="红岗区" />
+        <大同区 DID="5" DName="大同区" />
+        <肇州县 DID="6" DName="肇州县" />
+        <肇源县 DID="7" DName="肇源县" />
+        <林甸县 DID="8" DName="林甸县" />
+        <杜尔伯特蒙古族自治县 DID="9" DName="杜尔伯特蒙古族自治县" />
+    </大庆市>
+    <伊春市 CID="7" CName="伊春市">
+        <伊春区 DID="1" DName="伊春区" />
+        <南岔区 DID="2" DName="南岔区" />
+        <友好区 DID="3" DName="友好区" />
+        <西林区 DID="4" DName="西林区" />
+        <翠峦区 DID="5" DName="翠峦区" />
+        <新青区 DID="6" DName="新青区" />
+        <美溪区 DID="7" DName="美溪区" />
+        <金山屯区 DID="8" DName="金山屯区" />
+        <五营区 DID="9" DName="五营区" />
+        <乌马河区 DID="10" DName="乌马河区" />
+        <汤旺河区 DID="11" DName="汤旺河区" />
+        <带岭区 DID="12" DName="带岭区" />
+        <乌伊岭区 DID="13" DName="乌伊岭区" />
+        <红星区 DID="14" DName="红星区" />
+        <上甘岭区 DID="15" DName="上甘岭区" />
+        <嘉荫县 DID="16" DName="嘉荫县" />
+        <铁力市 DID="17" DName="铁力市" />
+    </伊春市>
+    <佳木斯市 CID="8" CName="佳木斯市">
+        <永红区 DID="1" DName="永红区" />
+        <向阳区 DID="2" DName="向阳区" />
+        <前进区 DID="3" DName="前进区" />
+        <东风区 DID="4" DName="东风区" />
+        <郊区 DID="5" DName="郊区" />
+        <桦南县 DID="6" DName="桦南县" />
+        <桦川县 DID="7" DName="桦川县" />
+        <汤原县 DID="8" DName="汤原县" />
+        <抚远县 DID="9" DName="抚远县" />
+        <同江市 DID="10" DName="同江市" />
+        <富锦市 DID="11" DName="富锦市" />
+    </佳木斯市>
+    <七台河市 CID="9" CName="七台河市">
+        <新兴区 DID="1" DName="新兴区" />
+        <桃山区 DID="2" DName="桃山区" />
+        <茄子河区 DID="3" DName="茄子河区" />
+        <勃利县 DID="4" DName="勃利县" />
+    </七台河市>
+    <牡丹江市 CID="10" CName="牡丹江市">
+        <东安区 DID="1" DName="东安区" />
+        <阳明区 DID="2" DName="阳明区" />
+        <爱民区 DID="3" DName="爱民区" />
+        <西安区 DID="4" DName="西安区" />
+        <东宁县 DID="5" DName="东宁县" />
+        <林口县 DID="6" DName="林口县" />
+        <绥芬河市 DID="7" DName="绥芬河市" />
+        <海林市 DID="8" DName="海林市" />
+        <宁安市 DID="9" DName="宁安市" />
+        <穆棱市 DID="10" DName="穆棱市" />
+    </牡丹江市>
+    <黑河市 CID="11" CName="黑河市">
+        <爱辉区 DID="1" DName="爱辉区" />
+        <嫩江县 DID="2" DName="嫩江县" />
+        <逊克县 DID="3" DName="逊克县" />
+        <孙吴县 DID="4" DName="孙吴县" />
+        <北安市 DID="5" DName="北安市" />
+        <五大连池市 DID="6" DName="五大连池市" />
+    </黑河市>
+    <绥化市 CID="12" CName="绥化市">
+        <北林区 DID="1" DName="北林区" />
+        <望奎县 DID="2" DName="望奎县" />
+        <兰西县 DID="3" DName="兰西县" />
+        <青冈县 DID="4" DName="青冈县" />
+        <庆安县 DID="5" DName="庆安县" />
+        <明水县 DID="6" DName="明水县" />
+        <绥棱县 DID="7" DName="绥棱县" />
+        <安达市 DID="8" DName="安达市" />
+        <肇东市 DID="9" DName="肇东市" />
+        <海伦市 DID="10" DName="海伦市" />
+    </绥化市>
+    <大兴安岭地区 CID="13" CName="大兴安岭地区">
+        <呼玛县 DID="1" DName="呼玛县" />
+        <塔河县 DID="2" DName="塔河县" />
+        <漠河县 DID="3" DName="漠河县" />
+    </大兴安岭地区>
+</黑龙江省>
+<上海市 PID="9" PName="上海市">
+    <上海市 CID="1" CName="上海市">
+        <黄浦区 DID="1" DName="黄浦区" />
+        <卢湾区 DID="2" DName="卢湾区" />
+        <徐汇区 DID="3" DName="徐汇区" />
+        <长宁区 DID="4" DName="长宁区" />
+        <静安区 DID="5" DName="静安区" />
+        <普陀区 DID="6" DName="普陀区" />
+        <闸北区 DID="7" DName="闸北区" />
+        <虹口区 DID="8" DName="虹口区" />
+        <杨浦区 DID="9" DName="杨浦区" />
+        <闵行区 DID="10" DName="闵行区" />
+        <宝山区 DID="11" DName="宝山区" />
+        <嘉定区 DID="12" DName="嘉定区" />
+        <浦东新区 DID="13" DName="浦东新区" />
+        <金山区 DID="14" DName="金山区" />
+        <松江区 DID="15" DName="松江区" />
+        <青浦区 DID="16" DName="青浦区" />
+        <南汇区 DID="17" DName="南汇区" />
+        <奉贤区 DID="18" DName="奉贤区" />
+        <崇明县 DID="19" DName="崇明县" />
+    </上海市>
+</上海市>
+<江苏省 PID="10" PName="江苏省">
+    <南京市 CID="1" CName="南京市">
+        <玄武区 DID="1" DName="玄武区" />
+        <白下区 DID="2" DName="白下区" />
+        <秦淮区 DID="3" DName="秦淮区" />
+        <建邺区 DID="4" DName="建邺区" />
+        <鼓楼区 DID="5" DName="鼓楼区" />
+        <下关区 DID="6" DName="下关区" />
+        <浦口区 DID="7" DName="浦口区" />
+        <栖霞区 DID="8" DName="栖霞区" />
+        <雨花台区 DID="9" DName="雨花台区" />
+        <江宁区 DID="10" DName="江宁区" />
+        <六合区 DID="11" DName="六合区" />
+        <溧水县 DID="12" DName="溧水县" />
+        <高淳县 DID="13" DName="高淳县" />
+    </南京市>
+    <无锡市 CID="2" CName="无锡市">
+        <崇安区 DID="1" DName="崇安区" />
+        <南长区 DID="2" DName="南长区" />
+        <北塘区 DID="3" DName="北塘区" />
+        <锡山区 DID="4" DName="锡山区" />
+        <惠山区 DID="5" DName="惠山区" />
+        <滨湖区 DID="6" DName="滨湖区" />
+        <江阴市 DID="7" DName="江阴市" />
+        <宜兴市 DID="8" DName="宜兴市" />
+    </无锡市>
+    <徐州市 CID="3" CName="徐州市">
+        <鼓楼区 DID="1" DName="鼓楼区" />
+        <云龙区 DID="2" DName="云龙区" />
+        <九里区 DID="3" DName="九里区" />
+        <贾汪区 DID="4" DName="贾汪区" />
+        <泉山区 DID="5" DName="泉山区" />
+        <丰县 DID="6" DName="丰县" />
+        <沛县 DID="7" DName="沛县" />
+        <铜山县 DID="8" DName="铜山县" />
+        <睢宁县 DID="9" DName="睢宁县" />
+        <新沂市 DID="10" DName="新沂市" />
+        <邳州市 DID="11" DName="邳州市" />
+    </徐州市>
+    <常州市 CID="4" CName="常州市">
+        <天宁区 DID="1" DName="天宁区" />
+        <钟楼区 DID="2" DName="钟楼区" />
+        <戚墅堰区 DID="3" DName="戚墅堰区" />
+        <新北区 DID="4" DName="新北区" />
+        <武进区 DID="5" DName="武进区" />
+        <溧阳市 DID="6" DName="溧阳市" />
+        <金坛市 DID="7" DName="金坛市" />
+    </常州市>
+    <苏州市 CID="5" CName="苏州市">
+        <沧浪区 DID="1" DName="沧浪区" />
+        <平江区 DID="2" DName="平江区" />
+        <金阊区 DID="3" DName="金阊区" />
+        <虎丘区 DID="4" DName="虎丘区" />
+        <吴中区 DID="5" DName="吴中区" />
+        <相城区 DID="6" DName="相城区" />
+        <常熟市 DID="7" DName="常熟市" />
+        <张家港市 DID="8" DName="张家港市" />
+        <昆山市 DID="9" DName="昆山市" />
+        <吴江市 DID="10" DName="吴江市" />
+        <太仓市 DID="11" DName="太仓市" />
+    </苏州市>
+    <南通市 CID="6" CName="南通市">
+        <崇川区 DID="1" DName="崇川区" />
+        <港闸区 DID="2" DName="港闸区" />
+        <海安县 DID="3" DName="海安县" />
+        <如东县 DID="4" DName="如东县" />
+        <启东市 DID="5" DName="启东市" />
+        <如皋市 DID="6" DName="如皋市" />
+        <通州市 DID="7" DName="通州市" />
+        <海门市 DID="8" DName="海门市" />
+    </南通市>
+    <连云港市 CID="7" CName="连云港市">
+        <连云区 DID="1" DName="连云区" />
+        <新浦区 DID="2" DName="新浦区" />
+        <海州区 DID="3" DName="海州区" />
+        <赣榆县 DID="4" DName="赣榆县" />
+        <东海县 DID="5" DName="东海县" />
+        <灌云县 DID="6" DName="灌云县" />
+        <灌南县 DID="7" DName="灌南县" />
+    </连云港市>
+    <淮安市 CID="8" CName="淮安市">
+        <清河区 DID="1" DName="清河区" />
+        <楚州区 DID="2" DName="楚州区" />
+        <淮阴区 DID="3" DName="淮阴区" />
+        <清浦区 DID="4" DName="清浦区" />
+        <涟水县 DID="5" DName="涟水县" />
+        <洪泽县 DID="6" DName="洪泽县" />
+        <盱眙县 DID="7" DName="盱眙县" />
+        <金湖县 DID="8" DName="金湖县" />
+    </淮安市>
+    <盐城市 CID="9" CName="盐城市">
+        <亭湖区 DID="1" DName="亭湖区" />
+        <盐都区 DID="2" DName="盐都区" />
+        <响水县 DID="3" DName="响水县" />
+        <滨海县 DID="4" DName="滨海县" />
+        <阜宁县 DID="5" DName="阜宁县" />
+        <射阳县 DID="6" DName="射阳县" />
+        <建湖县 DID="7" DName="建湖县" />
+        <东台市 DID="8" DName="东台市" />
+        <大丰市 DID="9" DName="大丰市" />
+    </盐城市>
+    <扬州市 CID="10" CName="扬州市">
+        <广陵区 DID="1" DName="广陵区" />
+        <邗江区 DID="2" DName="邗江区" />
+        <维扬区 DID="3" DName="维扬区" />
+        <宝应县 DID="4" DName="宝应县" />
+        <仪征市 DID="5" DName="仪征市" />
+        <高邮市 DID="6" DName="高邮市" />
+        <江都市 DID="7" DName="江都市" />
+    </扬州市>
+    <镇江市 CID="11" CName="镇江市">
+        <京口区 DID="1" DName="京口区" />
+        <润州区 DID="2" DName="润州区" />
+        <丹徒区 DID="3" DName="丹徒区" />
+        <丹阳市 DID="4" DName="丹阳市" />
+        <扬中市 DID="5" DName="扬中市" />
+        <句容市 DID="6" DName="句容市" />
+    </镇江市>
+    <泰州市 CID="12" CName="泰州市">
+        <海陵区 DID="1" DName="海陵区" />
+        <高港区 DID="2" DName="高港区" />
+        <兴化市 DID="3" DName="兴化市" />
+        <靖江市 DID="4" DName="靖江市" />
+        <泰兴市 DID="5" DName="泰兴市" />
+        <姜堰市 DID="6" DName="姜堰市" />
+    </泰州市>
+    <宿迁市 CID="13" CName="宿迁市">
+        <宿城区 DID="1" DName="宿城区" />
+        <宿豫区 DID="2" DName="宿豫区" />
+        <沭阳县 DID="3" DName="沭阳县" />
+        <泗阳县 DID="4" DName="泗阳县" />
+        <泗洪县 DID="5" DName="泗洪县" />
+    </宿迁市>
+</江苏省>
+<浙江省 PID="11" PName="浙江省">
+    <杭州市 CID="1" CName="杭州市">
+        <上城区 DID="1" DName="上城区" />
+        <下城区 DID="2" DName="下城区" />
+        <江干区 DID="3" DName="江干区" />
+        <拱墅区 DID="4" DName="拱墅区" />
+        <西湖区 DID="5" DName="西湖区" />
+        <滨江区 DID="6" DName="滨江区" />
+        <萧山区 DID="7" DName="萧山区" />
+        <余杭区 DID="8" DName="余杭区" />
+        <桐庐县 DID="9" DName="桐庐县" />
+        <淳安县 DID="10" DName="淳安县" />
+        <建德市 DID="11" DName="建德市" />
+        <富阳市 DID="12" DName="富阳市" />
+        <临安市 DID="13" DName="临安市" />
+    </杭州市>
+    <宁波市 CID="2" CName="宁波市">
+        <海曙区 DID="1" DName="海曙区" />
+        <江东区 DID="2" DName="江东区" />
+        <江北区 DID="3" DName="江北区" />
+        <北仑区 DID="4" DName="北仑区" />
+        <镇海区 DID="5" DName="镇海区" />
+        <鄞州区 DID="6" DName="鄞州区" />
+        <象山县 DID="7" DName="象山县" />
+        <宁海县 DID="8" DName="宁海县" />
+        <余姚市 DID="9" DName="余姚市" />
+        <慈溪市 DID="10" DName="慈溪市" />
+        <奉化市 DID="11" DName="奉化市" />
+    </宁波市>
+    <温州市 CID="3" CName="温州市">
+        <鹿城区 DID="1" DName="鹿城区" />
+        <龙湾区 DID="2" DName="龙湾区" />
+        <瓯海区 DID="3" DName="瓯海区" />
+        <洞头县 DID="4" DName="洞头县" />
+        <永嘉县 DID="5" DName="永嘉县" />
+        <平阳县 DID="6" DName="平阳县" />
+        <苍南县 DID="7" DName="苍南县" />
+        <文成县 DID="8" DName="文成县" />
+        <泰顺县 DID="9" DName="泰顺县" />
+        <瑞安市 DID="10" DName="瑞安市" />
+        <乐清市 DID="11" DName="乐清市" />
+    </温州市>
+    <嘉兴市 CID="4" CName="嘉兴市">
+        <秀城区 DID="1" DName="秀城区" />
+        <秀洲区 DID="2" DName="秀洲区" />
+        <嘉善县 DID="3" DName="嘉善县" />
+        <海盐县 DID="4" DName="海盐县" />
+        <海宁市 DID="5" DName="海宁市" />
+        <平湖市 DID="6" DName="平湖市" />
+        <桐乡市 DID="7" DName="桐乡市" />
+    </嘉兴市>
+    <湖州市 CID="5" CName="湖州市">
+        <吴兴区 DID="1" DName="吴兴区" />
+        <南浔区 DID="2" DName="南浔区" />
+        <德清县 DID="3" DName="德清县" />
+        <长兴县 DID="4" DName="长兴县" />
+        <安吉县 DID="5" DName="安吉县" />
+    </湖州市>
+    <绍兴市 CID="6" CName="绍兴市">
+        <越城区 DID="1" DName="越城区" />
+        <绍兴县 DID="2" DName="绍兴县" />
+        <新昌县 DID="3" DName="新昌县" />
+        <诸暨市 DID="4" DName="诸暨市" />
+        <上虞市 DID="5" DName="上虞市" />
+        <嵊州市 DID="6" DName="嵊州市" />
+    </绍兴市>
+    <金华市 CID="7" CName="金华市">
+        <婺城区 DID="1" DName="婺城区" />
+        <金东区 DID="2" DName="金东区" />
+        <武义县 DID="3" DName="武义县" />
+        <浦江县 DID="4" DName="浦江县" />
+        <磐安县 DID="5" DName="磐安县" />
+        <兰溪市 DID="6" DName="兰溪市" />
+        <义乌市 DID="7" DName="义乌市" />
+        <东阳市 DID="8" DName="东阳市" />
+        <永康市 DID="9" DName="永康市" />
+    </金华市>
+    <衢州市 CID="8" CName="衢州市">
+        <柯城区 DID="1" DName="柯城区" />
+        <衢江区 DID="2" DName="衢江区" />
+        <常山县 DID="3" DName="常山县" />
+        <开化县 DID="4" DName="开化县" />
+        <龙游县 DID="5" DName="龙游县" />
+        <江山市 DID="6" DName="江山市" />
+    </衢州市>
+    <舟山市 CID="9" CName="舟山市">
+        <定海区 DID="1" DName="定海区" />
+        <普陀区 DID="2" DName="普陀区" />
+        <岱山县 DID="3" DName="岱山县" />
+        <嵊泗县 DID="4" DName="嵊泗县" />
+    </舟山市>
+    <台州市 CID="10" CName="台州市">
+        <椒江区 DID="1" DName="椒江区" />
+        <黄岩区 DID="2" DName="黄岩区" />
+        <路桥区 DID="3" DName="路桥区" />
+        <玉环县 DID="4" DName="玉环县" />
+        <三门县 DID="5" DName="三门县" />
+        <天台县 DID="6" DName="天台县" />
+        <仙居县 DID="7" DName="仙居县" />
+        <温岭市 DID="8" DName="温岭市" />
+        <临海市 DID="9" DName="临海市" />
+    </台州市>
+    <丽水市 CID="11" CName="丽水市">
+        <莲都区 DID="1" DName="莲都区" />
+        <青田县 DID="2" DName="青田县" />
+        <缙云县 DID="3" DName="缙云县" />
+        <遂昌县 DID="4" DName="遂昌县" />
+        <松阳县 DID="5" DName="松阳县" />
+        <云和县 DID="6" DName="云和县" />
+        <庆元县 DID="7" DName="庆元县" />
+        <景宁畲族自治县 DID="8" DName="景宁畲族自治县" />
+        <龙泉市 DID="9" DName="龙泉市" />
+    </丽水市>
+</浙江省>
+<安徽省 PID="12" PName="安徽省">
+    <合肥市 CID="1" CName="合肥市">
+        <瑶海区 DID="1" DName="瑶海区" />
+        <庐阳区 DID="2" DName="庐阳区" />
+        <蜀山区 DID="3" DName="蜀山区" />
+        <包河区 DID="4" DName="包河区" />
+        <长丰县 DID="5" DName="长丰县" />
+        <肥东县 DID="6" DName="肥东县" />
+        <肥西县 DID="7" DName="肥西县" />
+    </合肥市>
+    <芜湖市 CID="2" CName="芜湖市">
+        <镜湖区 DID="1" DName="镜湖区" />
+        <马塘区 DID="2" DName="马塘区" />
+        <新芜区 DID="3" DName="新芜区" />
+        <鸠江区 DID="4" DName="鸠江区" />
+        <芜湖县 DID="5" DName="芜湖县" />
+        <繁昌县 DID="6" DName="繁昌县" />
+        <南陵县 DID="7" DName="南陵县" />
+    </芜湖市>
+    <蚌埠市 CID="3" CName="蚌埠市">
+        <龙子湖区 DID="1" DName="龙子湖区" />
+        <蚌山区 DID="2" DName="蚌山区" />
+        <禹会区 DID="3" DName="禹会区" />
+        <淮上区 DID="4" DName="淮上区" />
+        <怀远县 DID="5" DName="怀远县" />
+        <五河县 DID="6" DName="五河县" />
+        <固镇县 DID="7" DName="固镇县" />
+    </蚌埠市>
+    <淮南市 CID="4" CName="淮南市">
+        <大通区 DID="1" DName="大通区" />
+        <田家庵区 DID="2" DName="田家庵区" />
+        <谢家集区 DID="3" DName="谢家集区" />
+        <八公山区 DID="4" DName="八公山区" />
+        <潘集区 DID="5" DName="潘集区" />
+        <凤台县 DID="6" DName="凤台县" />
+    </淮南市>
+    <马鞍山市 CID="5" CName="马鞍山市">
+        <金家庄区 DID="1" DName="金家庄区" />
+        <花山区 DID="2" DName="花山区" />
+        <雨山区 DID="3" DName="雨山区" />
+        <当涂县 DID="4" DName="当涂县" />
+    </马鞍山市>
+    <淮北市 CID="6" CName="淮北市">
+        <杜集区 DID="1" DName="杜集区" />
+        <相山区 DID="2" DName="相山区" />
+        <烈山区 DID="3" DName="烈山区" />
+        <濉溪县 DID="4" DName="濉溪县" />
+    </淮北市>
+    <铜陵市 CID="7" CName="铜陵市">
+        <铜官山区 DID="1" DName="铜官山区" />
+        <狮子山区 DID="2" DName="狮子山区" />
+        <郊区 DID="3" DName="郊区" />
+        <铜陵县 DID="4" DName="铜陵县" />
+    </铜陵市>
+    <安庆市 CID="8" CName="安庆市">
+        <迎江区 DID="1" DName="迎江区" />
+        <大观区 DID="2" DName="大观区" />
+        <郊区 DID="3" DName="郊区" />
+        <怀宁县 DID="4" DName="怀宁县" />
+        <枞阳县 DID="5" DName="枞阳县" />
+        <潜山县 DID="6" DName="潜山县" />
+        <太湖县 DID="7" DName="太湖县" />
+        <宿松县 DID="8" DName="宿松县" />
+        <望江县 DID="9" DName="望江县" />
+        <岳西县 DID="10" DName="岳西县" />
+        <桐城市 DID="11" DName="桐城市" />
+    </安庆市>
+    <黄山市 CID="9" CName="黄山市">
+        <屯溪区 DID="1" DName="屯溪区" />
+        <黄山区 DID="2" DName="黄山区" />
+        <徽州区 DID="3" DName="徽州区" />
+        <歙县 DID="4" DName="歙县" />
+        <休宁县 DID="5" DName="休宁县" />
+        <黟县 DID="6" DName="黟县" />
+        <祁门县 DID="7" DName="祁门县" />
+    </黄山市>
+    <滁州市 CID="10" CName="滁州市">
+        <琅琊区 DID="1" DName="琅琊区" />
+        <南谯区 DID="2" DName="南谯区" />
+        <来安县 DID="3" DName="来安县" />
+        <全椒县 DID="4" DName="全椒县" />
+        <定远县 DID="5" DName="定远县" />
+        <凤阳县 DID="6" DName="凤阳县" />
+        <天长市 DID="7" DName="天长市" />
+        <明光市 DID="8" DName="明光市" />
+    </滁州市>
+    <阜阳市 CID="11" CName="阜阳市">
+        <颍州区 DID="1" DName="颍州区" />
+        <颍东区 DID="2" DName="颍东区" />
+        <颍泉区 DID="3" DName="颍泉区" />
+        <临泉县 DID="4" DName="临泉县" />
+        <太和县 DID="5" DName="太和县" />
+        <阜南县 DID="6" DName="阜南县" />
+        <颍上县 DID="7" DName="颍上县" />
+        <界首市 DID="8" DName="界首市" />
+    </阜阳市>
+    <宿州市 CID="12" CName="宿州市">
+        <埇桥区 DID="1" DName="埇桥区" />
+        <砀山县 DID="2" DName="砀山县" />
+        <萧县 DID="3" DName="萧县" />
+        <灵璧县 DID="4" DName="灵璧县" />
+        <泗县 DID="5" DName="泗县" />
+    </宿州市>
+    <巢湖市 CID="13" CName="巢湖市">
+        <居巢区 DID="1" DName="居巢区" />
+        <庐江县 DID="2" DName="庐江县" />
+        <无为县 DID="3" DName="无为县" />
+        <含山县 DID="4" DName="含山县" />
+        <和县 DID="5" DName="和县" />
+    </巢湖市>
+    <六安市 CID="14" CName="六安市">
+        <金安区 DID="1" DName="金安区" />
+        <裕安区 DID="2" DName="裕安区" />
+        <寿县 DID="3" DName="寿县" />
+        <霍邱县 DID="4" DName="霍邱县" />
+        <舒城县 DID="5" DName="舒城县" />
+        <金寨县 DID="6" DName="金寨县" />
+        <霍山县 DID="7" DName="霍山县" />
+    </六安市>
+    <亳州市 CID="15" CName="亳州市">
+        <谯城区 DID="1" DName="谯城区" />
+        <涡阳县 DID="2" DName="涡阳县" />
+        <蒙城县 DID="3" DName="蒙城县" />
+        <利辛县 DID="4" DName="利辛县" />
+    </亳州市>
+    <池州市 CID="16" CName="池州市">
+        <贵池区 DID="1" DName="贵池区" />
+        <东至县 DID="2" DName="东至县" />
+        <石台县 DID="3" DName="石台县" />
+        <青阳县 DID="4" DName="青阳县" />
+    </池州市>
+    <宣城市 CID="17" CName="宣城市">
+        <宣州区 DID="1" DName="宣州区" />
+        <郎溪县 DID="2" DName="郎溪县" />
+        <广德县 DID="3" DName="广德县" />
+        <泾县 DID="4" DName="泾县" />
+        <绩溪县 DID="5" DName="绩溪县" />
+        <旌德县 DID="6" DName="旌德县" />
+        <宁国市 DID="7" DName="宁国市" />
+    </宣城市>
+</安徽省>
+<福建省 PID="13" PName="福建省">
+    <福州市 CID="1" CName="福州市">
+        <鼓楼区 DID="1" DName="鼓楼区" />
+        <台江区 DID="2" DName="台江区" />
+        <仓山区 DID="3" DName="仓山区" />
+        <马尾区 DID="4" DName="马尾区" />
+        <晋安区 DID="5" DName="晋安区" />
+        <闽侯县 DID="6" DName="闽侯县" />
+        <连江县 DID="7" DName="连江县" />
+        <罗源县 DID="8" DName="罗源县" />
+        <闽清县 DID="9" DName="闽清县" />
+        <永泰县 DID="10" DName="永泰县" />
+        <平潭县 DID="11" DName="平潭县" />
+        <福清市 DID="12" DName="福清市" />
+        <长乐市 DID="13" DName="长乐市" />
+    </福州市>
+    <厦门市 CID="2" CName="厦门市">
+        <思明区 DID="1" DName="思明区" />
+        <海沧区 DID="2" DName="海沧区" />
+        <湖里区 DID="3" DName="湖里区" />
+        <集美区 DID="4" DName="集美区" />
+        <同安区 DID="5" DName="同安区" />
+        <翔安区 DID="6" DName="翔安区" />
+    </厦门市>
+    <莆田市 CID="3" CName="莆田市">
+        <城厢区 DID="1" DName="城厢区" />
+        <涵江区 DID="2" DName="涵江区" />
+        <荔城区 DID="3" DName="荔城区" />
+        <秀屿区 DID="4" DName="秀屿区" />
+        <仙游县 DID="5" DName="仙游县" />
+    </莆田市>
+    <三明市 CID="4" CName="三明市">
+        <梅列区 DID="1" DName="梅列区" />
+        <三元区 DID="2" DName="三元区" />
+        <明溪县 DID="3" DName="明溪县" />
+        <清流县 DID="4" DName="清流县" />
+        <宁化县 DID="5" DName="宁化县" />
+        <大田县 DID="6" DName="大田县" />
+        <尤溪县 DID="7" DName="尤溪县" />
+        <沙县 DID="8" DName="沙县" />
+        <将乐县 DID="9" DName="将乐县" />
+        <泰宁县 DID="10" DName="泰宁县" />
+        <建宁县 DID="11" DName="建宁县" />
+        <永安市 DID="12" DName="永安市" />
+    </三明市>
+    <泉州市 CID="5" CName="泉州市">
+        <鲤城区 DID="1" DName="鲤城区" />
+        <丰泽区 DID="2" DName="丰泽区" />
+        <洛江区 DID="3" DName="洛江区" />
+        <泉港区 DID="4" DName="泉港区" />
+        <惠安县 DID="5" DName="惠安县" />
+        <安溪县 DID="6" DName="安溪县" />
+        <永春县 DID="7" DName="永春县" />
+        <德化县 DID="8" DName="德化县" />
+        <金门县 DID="9" DName="金门县" />
+        <石狮市 DID="10" DName="石狮市" />
+        <晋江市 DID="11" DName="晋江市" />
+        <南安市 DID="12" DName="南安市" />
+    </泉州市>
+    <漳州市 CID="6" CName="漳州市">
+        <芗城区 DID="1" DName="芗城区" />
+        <龙文区 DID="2" DName="龙文区" />
+        <云霄县 DID="3" DName="云霄县" />
+        <漳浦县 DID="4" DName="漳浦县" />
+        <诏安县 DID="5" DName="诏安县" />
+        <长泰县 DID="6" DName="长泰县" />
+        <东山县 DID="7" DName="东山县" />
+        <南靖县 DID="8" DName="南靖县" />
+        <平和县 DID="9" DName="平和县" />
+        <华安县 DID="10" DName="华安县" />
+        <龙海市 DID="11" DName="龙海市" />
+    </漳州市>
+    <南平市 CID="7" CName="南平市">
+        <延平区 DID="1" DName="延平区" />
+        <顺昌县 DID="2" DName="顺昌县" />
+        <浦城县 DID="3" DName="浦城县" />
+        <光泽县 DID="4" DName="光泽县" />
+        <松溪县 DID="5" DName="松溪县" />
+        <政和县 DID="6" DName="政和县" />
+        <邵武市 DID="7" DName="邵武市" />
+        <武夷山市 DID="8" DName="武夷山市" />
+        <建瓯市 DID="9" DName="建瓯市" />
+        <建阳市 DID="10" DName="建阳市" />
+    </南平市>
+    <龙岩市 CID="8" CName="龙岩市">
+        <新罗区 DID="1" DName="新罗区" />
+        <长汀县 DID="2" DName="长汀县" />
+        <永定县 DID="3" DName="永定县" />
+        <上杭县 DID="4" DName="上杭县" />
+        <武平县 DID="5" DName="武平县" />
+        <连城县 DID="6" DName="连城县" />
+        <漳平市 DID="7" DName="漳平市" />
+    </龙岩市>
+    <宁德市 CID="9" CName="宁德市">
+        <蕉城区 DID="1" DName="蕉城区" />
+        <霞浦县 DID="2" DName="霞浦县" />
+        <古田县 DID="3" DName="古田县" />
+        <屏南县 DID="4" DName="屏南县" />
+        <寿宁县 DID="5" DName="寿宁县" />
+        <周宁县 DID="6" DName="周宁县" />
+        <柘荣县 DID="7" DName="柘荣县" />
+        <福安市 DID="8" DName="福安市" />
+        <福鼎市 DID="9" DName="福鼎市" />
+    </宁德市>
+</福建省>
+<江西省 PID="14" PName="江西省">
+    <南昌市 CID="1" CName="南昌市">
+        <东湖区 DID="1" DName="东湖区" />
+        <西湖区 DID="2" DName="西湖区" />
+        <青云谱区 DID="3" DName="青云谱区" />
+        <湾里区 DID="4" DName="湾里区" />
+        <青山湖区 DID="5" DName="青山湖区" />
+        <南昌县 DID="6" DName="南昌县" />
+        <新建县 DID="7" DName="新建县" />
+        <安义县 DID="8" DName="安义县" />
+        <进贤县 DID="9" DName="进贤县" />
+    </南昌市>
+    <景德镇市 CID="2" CName="景德镇市">
+        <昌江区 DID="1" DName="昌江区" />
+        <珠山区 DID="2" DName="珠山区" />
+        <浮梁县 DID="3" DName="浮梁县" />
+        <乐平市 DID="4" DName="乐平市" />
+    </景德镇市>
+    <萍乡市 CID="3" CName="萍乡市">
+        <安源区 DID="1" DName="安源区" />
+        <湘东区 DID="2" DName="湘东区" />
+        <莲花县 DID="3" DName="莲花县" />
+        <上栗县 DID="4" DName="上栗县" />
+        <芦溪县 DID="5" DName="芦溪县" />
+    </萍乡市>
+    <九江市 CID="4" CName="九江市">
+        <庐山区 DID="1" DName="庐山区" />
+        <浔阳区 DID="2" DName="浔阳区" />
+        <九江县 DID="3" DName="九江县" />
+        <武宁县 DID="4" DName="武宁县" />
+        <修水县 DID="5" DName="修水县" />
+        <永修县 DID="6" DName="永修县" />
+        <德安县 DID="7" DName="德安县" />
+        <星子县 DID="8" DName="星子县" />
+        <都昌县 DID="9" DName="都昌县" />
+        <湖口县 DID="10" DName="湖口县" />
+        <彭泽县 DID="11" DName="彭泽县" />
+        <瑞昌市 DID="12" DName="瑞昌市" />
+    </九江市>
+    <新余市 CID="5" CName="新余市">
+        <渝水区 DID="1" DName="渝水区" />
+        <分宜县 DID="2" DName="分宜县" />
+    </新余市>
+    <鹰潭市 CID="6" CName="鹰潭市">
+        <月湖区 DID="1" DName="月湖区" />
+        <余江县 DID="2" DName="余江县" />
+        <贵溪市 DID="3" DName="贵溪市" />
+    </鹰潭市>
+    <赣州市 CID="7" CName="赣州市">
+        <章贡区 DID="1" DName="章贡区" />
+        <赣县 DID="2" DName="赣县" />
+        <信丰县 DID="3" DName="信丰县" />
+        <大余县 DID="4" DName="大余县" />
+        <上犹县 DID="5" DName="上犹县" />
+        <崇义县 DID="6" DName="崇义县" />
+        <安远县 DID="7" DName="安远县" />
+        <龙南县 DID="8" DName="龙南县" />
+        <定南县 DID="9" DName="定南县" />
+        <全南县 DID="10" DName="全南县" />
+        <宁都县 DID="11" DName="宁都县" />
+        <于都县 DID="12" DName="于都县" />
+        <兴国县 DID="13" DName="兴国县" />
+        <会昌县 DID="14" DName="会昌县" />
+        <寻乌县 DID="15" DName="寻乌县" />
+        <石城县 DID="16" DName="石城县" />
+        <瑞金市 DID="17" DName="瑞金市" />
+        <南康市 DID="18" DName="南康市" />
+    </赣州市>
+    <吉安市 CID="8" CName="吉安市">
+        <吉州区 DID="1" DName="吉州区" />
+        <青原区 DID="2" DName="青原区" />
+        <吉安县 DID="3" DName="吉安县" />
+        <吉水县 DID="4" DName="吉水县" />
+        <峡江县 DID="5" DName="峡江县" />
+        <新干县 DID="6" DName="新干县" />
+        <永丰县 DID="7" DName="永丰县" />
+        <泰和县 DID="8" DName="泰和县" />
+        <遂川县 DID="9" DName="遂川县" />
+        <万安县 DID="10" DName="万安县" />
+        <安福县 DID="11" DName="安福县" />
+        <永新县 DID="12" DName="永新县" />
+        <井冈山市 DID="13" DName="井冈山市" />
+    </吉安市>
+    <宜春市 CID="9" CName="宜春市">
+        <袁州区 DID="1" DName="袁州区" />
+        <奉新县 DID="2" DName="奉新县" />
+        <万载县 DID="3" DName="万载县" />
+        <上高县 DID="4" DName="上高县" />
+        <宜丰县 DID="5" DName="宜丰县" />
+        <靖安县 DID="6" DName="靖安县" />
+        <铜鼓县 DID="7" DName="铜鼓县" />
+        <丰城市 DID="8" DName="丰城市" />
+        <樟树市 DID="9" DName="樟树市" />
+        <高安市 DID="10" DName="高安市" />
+    </宜春市>
+    <抚州市 CID="10" CName="抚州市">
+        <临川区 DID="1" DName="临川区" />
+        <南城县 DID="2" DName="南城县" />
+        <黎川县 DID="3" DName="黎川县" />
+        <南丰县 DID="4" DName="南丰县" />
+        <崇仁县 DID="5" DName="崇仁县" />
+        <乐安县 DID="6" DName="乐安县" />
+        <宜黄县 DID="7" DName="宜黄县" />
+        <金溪县 DID="8" DName="金溪县" />
+        <资溪县 DID="9" DName="资溪县" />
+        <东乡县 DID="10" DName="东乡县" />
+        <广昌县 DID="11" DName="广昌县" />
+    </抚州市>
+    <上饶市 CID="11" CName="上饶市">
+        <信州区 DID="1" DName="信州区" />
+        <上饶县 DID="2" DName="上饶县" />
+        <广丰县 DID="3" DName="广丰县" />
+        <玉山县 DID="4" DName="玉山县" />
+        <铅山县 DID="5" DName="铅山县" />
+        <横峰县 DID="6" DName="横峰县" />
+        <弋阳县 DID="7" DName="弋阳县" />
+        <余干县 DID="8" DName="余干县" />
+        <鄱阳县 DID="9" DName="鄱阳县" />
+        <万年县 DID="10" DName="万年县" />
+        <婺源县 DID="11" DName="婺源县" />
+        <德兴市 DID="12" DName="德兴市" />
+    </上饶市>
+</江西省>
+<山东省 PID="15" PName="山东省">
+    <济南市 CID="1" CName="济南市">
+        <历下区 DID="1" DName="历下区" />
+        <市中区 DID="2" DName="市中区" />
+        <槐荫区 DID="3" DName="槐荫区" />
+        <天桥区 DID="4" DName="天桥区" />
+        <历城区 DID="5" DName="历城区" />
+        <长清区 DID="6" DName="长清区" />
+        <平阴县 DID="7" DName="平阴县" />
+        <济阳县 DID="8" DName="济阳县" />
+        <商河县 DID="9" DName="商河县" />
+        <章丘市 DID="10" DName="章丘市" />
+    </济南市>
+    <青岛市 CID="2" CName="青岛市">
+        <市南区 DID="1" DName="市南区" />
+        <市北区 DID="2" DName="市北区" />
+        <四方区 DID="3" DName="四方区" />
+        <黄岛区 DID="4" DName="黄岛区" />
+        <崂山区 DID="5" DName="崂山区" />
+        <李沧区 DID="6" DName="李沧区" />
+        <城阳区 DID="7" DName="城阳区" />
+        <胶州市 DID="8" DName="胶州市" />
+        <即墨市 DID="9" DName="即墨市" />
+        <平度市 DID="10" DName="平度市" />
+        <胶南市 DID="11" DName="胶南市" />
+        <莱西市 DID="12" DName="莱西市" />
+    </青岛市>
+    <淄博市 CID="3" CName="淄博市">
+        <淄川区 DID="1" DName="淄川区" />
+        <张店区 DID="2" DName="张店区" />
+        <博山区 DID="3" DName="博山区" />
+        <临淄区 DID="4" DName="临淄区" />
+        <周村区 DID="5" DName="周村区" />
+        <桓台县 DID="6" DName="桓台县" />
+        <高青县 DID="7" DName="高青县" />
+        <沂源县 DID="8" DName="沂源县" />
+    </淄博市>
+    <枣庄市 CID="4" CName="枣庄市">
+        <市中区 DID="1" DName="市中区" />
+        <薛城区 DID="2" DName="薛城区" />
+        <峄城区 DID="3" DName="峄城区" />
+        <台儿庄区 DID="4" DName="台儿庄区" />
+        <山亭区 DID="5" DName="山亭区" />
+        <滕州市 DID="6" DName="滕州市" />
+    </枣庄市>
+    <东营市 CID="5" CName="东营市">
+        <东营区 DID="1" DName="东营区" />
+        <河口区 DID="2" DName="河口区" />
+        <垦利县 DID="3" DName="垦利县" />
+        <利津县 DID="4" DName="利津县" />
+        <广饶县 DID="5" DName="广饶县" />
+    </东营市>
+    <烟台市 CID="6" CName="烟台市">
+        <芝罘区 DID="1" DName="芝罘区" />
+        <福山区 DID="2" DName="福山区" />
+        <牟平区 DID="3" DName="牟平区" />
+        <莱山区 DID="4" DName="莱山区" />
+        <长岛县 DID="5" DName="长岛县" />
+        <龙口市 DID="6" DName="龙口市" />
+        <莱阳市 DID="7" DName="莱阳市" />
+        <莱州市 DID="8" DName="莱州市" />
+        <蓬莱市 DID="9" DName="蓬莱市" />
+        <招远市 DID="10" DName="招远市" />
+        <栖霞市 DID="11" DName="栖霞市" />
+        <海阳市 DID="12" DName="海阳市" />
+    </烟台市>
+    <潍坊市 CID="7" CName="潍坊市">
+        <潍城区 DID="1" DName="潍城区" />
+        <寒亭区 DID="2" DName="寒亭区" />
+        <坊子区 DID="3" DName="坊子区" />
+        <奎文区 DID="4" DName="奎文区" />
+        <临朐县 DID="5" DName="临朐县" />
+        <昌乐县 DID="6" DName="昌乐县" />
+        <青州市 DID="7" DName="青州市" />
+        <诸城市 DID="8" DName="诸城市" />
+        <寿光市 DID="9" DName="寿光市" />
+        <安丘市 DID="10" DName="安丘市" />
+        <高密市 DID="11" DName="高密市" />
+        <昌邑市 DID="12" DName="昌邑市" />
+    </潍坊市>
+    <济宁市 CID="8" CName="济宁市">
+        <市中区 DID="1" DName="市中区" />
+        <任城区 DID="2" DName="任城区" />
+        <微山县 DID="3" DName="微山县" />
+        <鱼台县 DID="4" DName="鱼台县" />
+        <金乡县 DID="5" DName="金乡县" />
+        <嘉祥县 DID="6" DName="嘉祥县" />
+        <汶上县 DID="7" DName="汶上县" />
+        <泗水县 DID="8" DName="泗水县" />
+        <梁山县 DID="9" DName="梁山县" />
+        <曲阜市 DID="10" DName="曲阜市" />
+        <兖州市 DID="11" DName="兖州市" />
+        <邹城市 DID="12" DName="邹城市" />
+    </济宁市>
+    <泰安市 CID="9" CName="泰安市">
+        <泰山区 DID="1" DName="泰山区" />
+        <岱岳区 DID="2" DName="岱岳区" />
+        <宁阳县 DID="3" DName="宁阳县" />
+        <东平县 DID="4" DName="东平县" />
+        <新泰市 DID="5" DName="新泰市" />
+        <肥城市 DID="6" DName="肥城市" />
+    </泰安市>
+    <威海市 CID="10" CName="威海市">
+        <环翠区 DID="1" DName="环翠区" />
+        <文登市 DID="2" DName="文登市" />
+        <荣成市 DID="3" DName="荣成市" />
+        <乳山市 DID="4" DName="乳山市" />
+    </威海市>
+    <日照市 CID="11" CName="日照市">
+        <东港区 DID="1" DName="东港区" />
+        <岚山区 DID="2" DName="岚山区" />
+        <五莲县 DID="3" DName="五莲县" />
+        <莒县 DID="4" DName="莒县" />
+    </日照市>
+    <莱芜市 CID="12" CName="莱芜市">
+        <莱城区 DID="1" DName="莱城区" />
+        <钢城区 DID="2" DName="钢城区" />
+    </莱芜市>
+    <临沂市 CID="13" CName="临沂市">
+        <兰山区 DID="1" DName="兰山区" />
+        <罗庄区 DID="2" DName="罗庄区" />
+        <河东区 DID="3" DName="河东区" />
+        <沂南县 DID="4" DName="沂南县" />
+        <郯城县 DID="5" DName="郯城县" />
+        <沂水县 DID="6" DName="沂水县" />
+        <苍山县 DID="7" DName="苍山县" />
+        <费县 DID="8" DName="费县" />
+        <平邑县 DID="9" DName="平邑县" />
+        <莒南县 DID="10" DName="莒南县" />
+        <蒙阴县 DID="11" DName="蒙阴县" />
+        <临沭县 DID="12" DName="临沭县" />
+    </临沂市>
+    <德州市 CID="14" CName="德州市">
+        <德城区 DID="1" DName="德城区" />
+        <陵县 DID="2" DName="陵县" />
+        <宁津县 DID="3" DName="宁津县" />
+        <庆云县 DID="4" DName="庆云县" />
+        <临邑县 DID="5" DName="临邑县" />
+        <齐河县 DID="6" DName="齐河县" />
+        <平原县 DID="7" DName="平原县" />
+        <夏津县 DID="8" DName="夏津县" />
+        <武城县 DID="9" DName="武城县" />
+        <乐陵市 DID="10" DName="乐陵市" />
+        <禹城市 DID="11" DName="禹城市" />
+    </德州市>
+    <聊城市 CID="15" CName="聊城市">
+        <东昌府区 DID="1" DName="东昌府区" />
+        <阳谷县 DID="2" DName="阳谷县" />
+        <莘县 DID="3" DName="莘县" />
+        <茌平县 DID="4" DName="茌平县" />
+        <东阿县 DID="5" DName="东阿县" />
+        <冠县 DID="6" DName="冠县" />
+        <高唐县 DID="7" DName="高唐县" />
+        <临清市 DID="8" DName="临清市" />
+    </聊城市>
+    <滨州市 CID="16" CName="滨州市">
+        <滨城区 DID="1" DName="滨城区" />
+        <惠民县 DID="2" DName="惠民县" />
+        <阳信县 DID="3" DName="阳信县" />
+        <无棣县 DID="4" DName="无棣县" />
+        <沾化县 DID="5" DName="沾化县" />
+        <博兴县 DID="6" DName="博兴县" />
+        <邹平县 DID="7" DName="邹平县" />
+    </滨州市>
+    <荷泽市 CID="17" CName="荷泽市">
+        <牡丹区 DID="1" DName="牡丹区" />
+        <曹县 DID="2" DName="曹县" />
+        <单县 DID="3" DName="单县" />
+        <成武县 DID="4" DName="成武县" />
+        <巨野县 DID="5" DName="巨野县" />
+        <郓城县 DID="6" DName="郓城县" />
+        <鄄城县 DID="7" DName="鄄城县" />
+        <定陶县 DID="8" DName="定陶县" />
+        <东明县 DID="9" DName="东明县" />
+    </荷泽市>
+</山东省>
+<河南省 PID="16" PName="河南省">
+    <郑州市 CID="1" CName="郑州市">
+        <中原区 DID="1" DName="中原区" />
+        <二七区 DID="2" DName="二七区" />
+        <管城回族区 DID="3" DName="管城回族区" />
+        <金水区 DID="4" DName="金水区" />
+        <上街区 DID="5" DName="上街区" />
+        <惠济区 DID="6" DName="惠济区" />
+        <中牟县 DID="7" DName="中牟县" />
+        <巩义市 DID="8" DName="巩义市" />
+        <荥阳市 DID="9" DName="荥阳市" />
+        <新密市 DID="10" DName="新密市" />
+        <新郑市 DID="11" DName="新郑市" />
+        <登封市 DID="12" DName="登封市" />
+    </郑州市>
+    <开封市 CID="2" CName="开封市">
+        <龙亭区 DID="1" DName="龙亭区" />
+        <顺河回族区 DID="2" DName="顺河回族区" />
+        <鼓楼区 DID="3" DName="鼓楼区" />
+        <南关区 DID="4" DName="南关区" />
+        <郊区 DID="5" DName="郊区" />
+        <杞县 DID="6" DName="杞县" />
+        <通许县 DID="7" DName="通许县" />
+        <尉氏县 DID="8" DName="尉氏县" />
+        <开封县 DID="9" DName="开封县" />
+        <兰考县 DID="10" DName="兰考县" />
+    </开封市>
+    <洛阳市 CID="3" CName="洛阳市">
+        <老城区 DID="1" DName="老城区" />
+        <西工区 DID="2" DName="西工区" />
+        <廛河回族区 DID="3" DName="廛河回族区" />
+        <涧西区 DID="4" DName="涧西区" />
+        <吉利区 DID="5" DName="吉利区" />
+        <洛龙区 DID="6" DName="洛龙区" />
+        <孟津县 DID="7" DName="孟津县" />
+        <新安县 DID="8" DName="新安县" />
+        <栾川县 DID="9" DName="栾川县" />
+        <嵩县 DID="10" DName="嵩县" />
+        <汝阳县 DID="11" DName="汝阳县" />
+        <宜阳县 DID="12" DName="宜阳县" />
+        <洛宁县 DID="13" DName="洛宁县" />
+        <伊川县 DID="14" DName="伊川县" />
+        <偃师市 DID="15" DName="偃师市" />
+    </洛阳市>
+    <平顶山市 CID="4" CName="平顶山市">
+        <新华区 DID="1" DName="新华区" />
+        <卫东区 DID="2" DName="卫东区" />
+        <石龙区 DID="3" DName="石龙区" />
+        <湛河区 DID="4" DName="湛河区" />
+        <宝丰县 DID="5" DName="宝丰县" />
+        <叶县 DID="6" DName="叶县" />
+        <鲁山县 DID="7" DName="鲁山县" />
+        <郏县 DID="8" DName="郏县" />
+        <舞钢市 DID="9" DName="舞钢市" />
+        <汝州市 DID="10" DName="汝州市" />
+    </平顶山市>
+    <安阳市 CID="5" CName="安阳市">
+        <文峰区 DID="1" DName="文峰区" />
+        <北关区 DID="2" DName="北关区" />
+        <殷都区 DID="3" DName="殷都区" />
+        <龙安区 DID="4" DName="龙安区" />
+        <安阳县 DID="5" DName="安阳县" />
+        <汤阴县 DID="6" DName="汤阴县" />
+        <滑县 DID="7" DName="滑县" />
+        <内黄县 DID="8" DName="内黄县" />
+        <林州市 DID="9" DName="林州市" />
+    </安阳市>
+    <鹤壁市 CID="6" CName="鹤壁市">
+        <鹤山区 DID="1" DName="鹤山区" />
+        <山城区 DID="2" DName="山城区" />
+        <淇滨区 DID="3" DName="淇滨区" />
+        <浚县 DID="4" DName="浚县" />
+        <淇县 DID="5" DName="淇县" />
+    </鹤壁市>
+    <新乡市 CID="7" CName="新乡市">
+        <红旗区 DID="1" DName="红旗区" />
+        <卫滨区 DID="2" DName="卫滨区" />
+        <凤泉区 DID="3" DName="凤泉区" />
+        <牧野区 DID="4" DName="牧野区" />
+        <新乡县 DID="5" DName="新乡县" />
+        <获嘉县 DID="6" DName="获嘉县" />
+        <原阳县 DID="7" DName="原阳县" />
+        <延津县 DID="8" DName="延津县" />
+        <封丘县 DID="9" DName="封丘县" />
+        <长垣县 DID="10" DName="长垣县" />
+        <卫辉市 DID="11" DName="卫辉市" />
+        <辉县市 DID="12" DName="辉县市" />
+    </新乡市>
+    <焦作市 CID="8" CName="焦作市">
+        <解放区 DID="1" DName="解放区" />
+        <中站区 DID="2" DName="中站区" />
+        <马村区 DID="3" DName="马村区" />
+        <山阳区 DID="4" DName="山阳区" />
+        <修武县 DID="5" DName="修武县" />
+        <博爱县 DID="6" DName="博爱县" />
+        <武陟县 DID="7" DName="武陟县" />
+        <温县 DID="8" DName="温县" />
+        <济源市 DID="9" DName="济源市" />
+        <沁阳市 DID="10" DName="沁阳市" />
+        <孟州市 DID="11" DName="孟州市" />
+    </焦作市>
+    <濮阳市 CID="9" CName="濮阳市">
+        <华龙区 DID="1" DName="华龙区" />
+        <清丰县 DID="2" DName="清丰县" />
+        <南乐县 DID="3" DName="南乐县" />
+        <范县 DID="4" DName="范县" />
+        <台前县 DID="5" DName="台前县" />
+        <濮阳县 DID="6" DName="濮阳县" />
+    </濮阳市>
+    <许昌市 CID="10" CName="许昌市">
+        <魏都区 DID="1" DName="魏都区" />
+        <许昌县 DID="2" DName="许昌县" />
+        <鄢陵县 DID="3" DName="鄢陵县" />
+        <襄城县 DID="4" DName="襄城县" />
+        <禹州市 DID="5" DName="禹州市" />
+        <长葛市 DID="6" DName="长葛市" />
+    </许昌市>
+    <漯河市 CID="11" CName="漯河市">
+        <源汇区 DID="1" DName="源汇区" />
+        <郾城区 DID="2" DName="郾城区" />
+        <召陵区 DID="3" DName="召陵区" />
+        <舞阳县 DID="4" DName="舞阳县" />
+        <临颍县 DID="5" DName="临颍县" />
+    </漯河市>
+    <三门峡市 CID="12" CName="三门峡市">
+        <市辖区 DID="1" DName="市辖区" />
+        <湖滨区 DID="2" DName="湖滨区" />
+        <渑池县 DID="3" DName="渑池县" />
+        <陕县 DID="4" DName="陕县" />
+        <卢氏县 DID="5" DName="卢氏县" />
+        <义马市 DID="6" DName="义马市" />
+        <灵宝市 DID="7" DName="灵宝市" />
+    </三门峡市>
+    <南阳市 CID="13" CName="南阳市">
+        <宛城区 DID="1" DName="宛城区" />
+        <卧龙区 DID="2" DName="卧龙区" />
+        <南召县 DID="3" DName="南召县" />
+        <方城县 DID="4" DName="方城县" />
+        <西峡县 DID="5" DName="西峡县" />
+        <镇平县 DID="6" DName="镇平县" />
+        <内乡县 DID="7" DName="内乡县" />
+        <淅川县 DID="8" DName="淅川县" />
+        <社旗县 DID="9" DName="社旗县" />
+        <唐河县 DID="10" DName="唐河县" />
+        <新野县 DID="11" DName="新野县" />
+        <桐柏县 DID="12" DName="桐柏县" />
+        <邓州市 DID="13" DName="邓州市" />
+    </南阳市>
+    <商丘市 CID="14" CName="商丘市">
+        <梁园区 DID="1" DName="梁园区" />
+        <睢阳区 DID="2" DName="睢阳区" />
+        <民权县 DID="3" DName="民权县" />
+        <睢县 DID="4" DName="睢县" />
+        <宁陵县 DID="5" DName="宁陵县" />
+        <柘城县 DID="6" DName="柘城县" />
+        <虞城县 DID="7" DName="虞城县" />
+        <夏邑县 DID="8" DName="夏邑县" />
+        <永城市 DID="9" DName="永城市" />
+    </商丘市>
+    <信阳市 CID="15" CName="信阳市">
+        <浉河区 DID="1" DName="浉河区" />
+        <平桥区 DID="2" DName="平桥区" />
+        <罗山县 DID="3" DName="罗山县" />
+        <光山县 DID="4" DName="光山县" />
+        <新县 DID="5" DName="新县" />
+        <商城县 DID="6" DName="商城县" />
+        <固始县 DID="7" DName="固始县" />
+        <潢川县 DID="8" DName="潢川县" />
+        <淮滨县 DID="9" DName="淮滨县" />
+        <息县 DID="10" DName="息县" />
+    </信阳市>
+    <周口市 CID="16" CName="周口市">
+        <川汇区 DID="1" DName="川汇区" />
+        <扶沟县 DID="2" DName="扶沟县" />
+        <西华县 DID="3" DName="西华县" />
+        <商水县 DID="4" DName="商水县" />
+        <沈丘县 DID="5" DName="沈丘县" />
+        <郸城县 DID="6" DName="郸城县" />
+        <淮阳县 DID="7" DName="淮阳县" />
+        <太康县 DID="8" DName="太康县" />
+        <鹿邑县 DID="9" DName="鹿邑县" />
+        <项城市 DID="10" DName="项城市" />
+    </周口市>
+    <驻马店市 CID="17" CName="驻马店市">
+        <驿城区 DID="1" DName="驿城区" />
+        <西平县 DID="2" DName="西平县" />
+        <上蔡县 DID="3" DName="上蔡县" />
+        <平舆县 DID="4" DName="平舆县" />
+        <正阳县 DID="5" DName="正阳县" />
+        <确山县 DID="6" DName="确山县" />
+        <泌阳县 DID="7" DName="泌阳县" />
+        <汝南县 DID="8" DName="汝南县" />
+        <遂平县 DID="9" DName="遂平县" />
+        <新蔡县 DID="10" DName="新蔡县" />
+    </驻马店市>
+</河南省>
+<湖北省 PID="17" PName="湖北省">
+    <武汉市 CID="1" CName="武汉市">
+        <江岸区 DID="1" DName="江岸区" />
+        <江汉区 DID="2" DName="江汉区" />
+        <硚口区 DID="3" DName="硚口区" />
+        <汉阳区 DID="4" DName="汉阳区" />
+        <武昌区 DID="5" DName="武昌区" />
+        <青山区 DID="6" DName="青山区" />
+        <洪山区 DID="7" DName="洪山区" />
+        <东西湖区 DID="8" DName="东西湖区" />
+        <汉南区 DID="9" DName="汉南区" />
+        <蔡甸区 DID="10" DName="蔡甸区" />
+        <江夏区 DID="11" DName="江夏区" />
+        <黄陂区 DID="12" DName="黄陂区" />
+        <新洲区 DID="13" DName="新洲区" />
+    </武汉市>
+    <黄石市 CID="2" CName="黄石市">
+        <黄石港区 DID="1" DName="黄石港区" />
+        <西塞山区 DID="2" DName="西塞山区" />
+        <下陆区 DID="3" DName="下陆区" />
+        <铁山区 DID="4" DName="铁山区" />
+        <阳新县 DID="5" DName="阳新县" />
+        <大冶市 DID="6" DName="大冶市" />
+    </黄石市>
+    <十堰市 CID="3" CName="十堰市">
+        <茅箭区 DID="1" DName="茅箭区" />
+        <张湾区 DID="2" DName="张湾区" />
+        <郧县 DID="3" DName="郧县" />
+        <郧西县 DID="4" DName="郧西县" />
+        <竹山县 DID="5" DName="竹山县" />
+        <竹溪县 DID="6" DName="竹溪县" />
+        <房县 DID="7" DName="房县" />
+        <丹江口市 DID="8" DName="丹江口市" />
+    </十堰市>
+    <宜昌市 CID="4" CName="宜昌市">
+        <西陵区 DID="1" DName="西陵区" />
+        <伍家岗区 DID="2" DName="伍家岗区" />
+        <点军区 DID="3" DName="点军区" />
+        <猇亭区 DID="4" DName="猇亭区" />
+        <夷陵区 DID="5" DName="夷陵区" />
+        <远安县 DID="6" DName="远安县" />
+        <兴山县 DID="7" DName="兴山县" />
+        <秭归县 DID="8" DName="秭归县" />
+        <长阳土家族自治县 DID="9" DName="长阳土家族自治县" />
+        <五峰土家族自治县 DID="10" DName="五峰土家族自治县" />
+        <宜都市 DID="11" DName="宜都市" />
+        <当阳市 DID="12" DName="当阳市" />
+        <枝江市 DID="13" DName="枝江市" />
+    </宜昌市>
+    <襄樊市 CID="5" CName="襄樊市">
+        <襄城区 DID="1" DName="襄城区" />
+        <樊城区 DID="2" DName="樊城区" />
+        <襄阳区 DID="3" DName="襄阳区" />
+        <南漳县 DID="4" DName="南漳县" />
+        <谷城县 DID="5" DName="谷城县" />
+        <保康县 DID="6" DName="保康县" />
+        <老河口市 DID="7" DName="老河口市" />
+        <枣阳市 DID="8" DName="枣阳市" />
+        <宜城市 DID="9" DName="宜城市" />
+    </襄樊市>
+    <鄂州市 CID="6" CName="鄂州市">
+        <梁子湖区 DID="1" DName="梁子湖区" />
+        <华容区 DID="2" DName="华容区" />
+        <鄂城区 DID="3" DName="鄂城区" />
+    </鄂州市>
+    <荆门市 CID="7" CName="荆门市">
+        <东宝区 DID="1" DName="东宝区" />
+        <掇刀区 DID="2" DName="掇刀区" />
+        <京山县 DID="3" DName="京山县" />
+        <沙洋县 DID="4" DName="沙洋县" />
+        <钟祥市 DID="5" DName="钟祥市" />
+    </荆门市>
+    <孝感市 CID="8" CName="孝感市">
+        <孝南区 DID="1" DName="孝南区" />
+        <孝昌县 DID="2" DName="孝昌县" />
+        <大悟县 DID="3" DName="大悟县" />
+        <云梦县 DID="4" DName="云梦县" />
+        <应城市 DID="5" DName="应城市" />
+        <安陆市 DID="6" DName="安陆市" />
+        <汉川市 DID="7" DName="汉川市" />
+    </孝感市>
+    <荆州市 CID="9" CName="荆州市">
+        <沙市区 DID="1" DName="沙市区" />
+        <荆州区 DID="2" DName="荆州区" />
+        <公安县 DID="3" DName="公安县" />
+        <监利县 DID="4" DName="监利县" />
+        <江陵县 DID="5" DName="江陵县" />
+        <石首市 DID="6" DName="石首市" />
+        <洪湖市 DID="7" DName="洪湖市" />
+        <松滋市 DID="8" DName="松滋市" />
+    </荆州市>
+    <黄冈市 CID="10" CName="黄冈市">
+        <黄州区 DID="1" DName="黄州区" />
+        <团风县 DID="2" DName="团风县" />
+        <红安县 DID="3" DName="红安县" />
+        <罗田县 DID="4" DName="罗田县" />
+        <英山县 DID="5" DName="英山县" />
+        <浠水县 DID="6" DName="浠水县" />
+        <蕲春县 DID="7" DName="蕲春县" />
+        <黄梅县 DID="8" DName="黄梅县" />
+        <麻城市 DID="9" DName="麻城市" />
+        <武穴市 DID="10" DName="武穴市" />
+    </黄冈市>
+    <咸宁市 CID="11" CName="咸宁市">
+        <咸安区 DID="1" DName="咸安区" />
+        <嘉鱼县 DID="2" DName="嘉鱼县" />
+        <通城县 DID="3" DName="通城县" />
+        <崇阳县 DID="4" DName="崇阳县" />
+        <通山县 DID="5" DName="通山县" />
+        <赤壁市 DID="6" DName="赤壁市" />
+    </咸宁市>
+    <随州市 CID="12" CName="随州市">
+        <曾都区 DID="1" DName="曾都区" />
+        <广水市 DID="2" DName="广水市" />
+    </随州市>
+    <恩施土家族苗族自治州 CID="13" CName="恩施土家族苗族自治州">
+        <恩施市 DID="1" DName="恩施市" />
+        <利川市 DID="2" DName="利川市" />
+        <建始县 DID="3" DName="建始县" />
+        <巴东县 DID="4" DName="巴东县" />
+        <宣恩县 DID="5" DName="宣恩县" />
+        <咸丰县 DID="6" DName="咸丰县" />
+        <来凤县 DID="7" DName="来凤县" />
+        <鹤峰县 DID="8" DName="鹤峰县" />
+    </恩施土家族苗族自治州>
+    <神农架 CID="14" CName="神农架">
+        <仙桃市 DID="1" DName="仙桃市" />
+        <潜江市 DID="2" DName="潜江市" />
+        <天门市 DID="3" DName="天门市" />
+        <神农架林区 DID="4" DName="神农架林区" />
+    </神农架>
+</湖北省>
+<湖南省 PID="18" PName="湖南省">
+    <长沙市 CID="1" CName="长沙市">
+        <芙蓉区 DID="1" DName="芙蓉区" />
+        <天心区 DID="2" DName="天心区" />
+        <岳麓区 DID="3" DName="岳麓区" />
+        <开福区 DID="4" DName="开福区" />
+        <雨花区 DID="5" DName="雨花区" />
+        <长沙县 DID="6" DName="长沙县" />
+        <望城县 DID="7" DName="望城县" />
+        <宁乡县 DID="8" DName="宁乡县" />
+        <浏阳市 DID="9" DName="浏阳市" />
+    </长沙市>
+    <株洲市 CID="2" CName="株洲市">
+        <荷塘区 DID="1" DName="荷塘区" />
+        <芦淞区 DID="2" DName="芦淞区" />
+        <石峰区 DID="3" DName="石峰区" />
+        <天元区 DID="4" DName="天元区" />
+        <株洲县 DID="5" DName="株洲县" />
+        <攸县 DID="6" DName="攸县" />
+        <茶陵县 DID="7" DName="茶陵县" />
+        <炎陵县 DID="8" DName="炎陵县" />
+        <醴陵市 DID="9" DName="醴陵市" />
+    </株洲市>
+    <湘潭市 CID="3" CName="湘潭市">
+        <雨湖区 DID="1" DName="雨湖区" />
+        <岳塘区 DID="2" DName="岳塘区" />
+        <湘潭县 DID="3" DName="湘潭县" />
+        <湘乡市 DID="4" DName="湘乡市" />
+        <韶山市 DID="5" DName="韶山市" />
+    </湘潭市>
+    <衡阳市 CID="4" CName="衡阳市">
+        <珠晖区 DID="1" DName="珠晖区" />
+        <雁峰区 DID="2" DName="雁峰区" />
+        <石鼓区 DID="3" DName="石鼓区" />
+        <蒸湘区 DID="4" DName="蒸湘区" />
+        <南岳区 DID="5" DName="南岳区" />
+        <衡阳县 DID="6" DName="衡阳县" />
+        <衡南县 DID="7" DName="衡南县" />
+        <衡山县 DID="8" DName="衡山县" />
+        <衡东县 DID="9" DName="衡东县" />
+        <祁东县 DID="10" DName="祁东县" />
+        <耒阳市 DID="11" DName="耒阳市" />
+        <常宁市 DID="12" DName="常宁市" />
+    </衡阳市>
+    <邵阳市 CID="5" CName="邵阳市">
+        <双清区 DID="1" DName="双清区" />
+        <大祥区 DID="2" DName="大祥区" />
+        <北塔区 DID="3" DName="北塔区" />
+        <邵东县 DID="4" DName="邵东县" />
+        <新邵县 DID="5" DName="新邵县" />
+        <邵阳县 DID="6" DName="邵阳县" />
+        <隆回县 DID="7" DName="隆回县" />
+        <洞口县 DID="8" DName="洞口县" />
+        <绥宁县 DID="9" DName="绥宁县" />
+        <新宁县 DID="10" DName="新宁县" />
+        <城步苗族自治县 DID="11" DName="城步苗族自治县" />
+        <武冈市 DID="12" DName="武冈市" />
+    </邵阳市>
+    <岳阳市 CID="6" CName="岳阳市">
+        <岳阳楼区 DID="1" DName="岳阳楼区" />
+        <云溪区 DID="2" DName="云溪区" />
+        <君山区 DID="3" DName="君山区" />
+        <岳阳县 DID="4" DName="岳阳县" />
+        <华容县 DID="5" DName="华容县" />
+        <湘阴县 DID="6" DName="湘阴县" />
+        <平江县 DID="7" DName="平江县" />
+        <汨罗市 DID="8" DName="汨罗市" />
+        <临湘市 DID="9" DName="临湘市" />
+    </岳阳市>
+    <常德市 CID="7" CName="常德市">
+        <武陵区 DID="1" DName="武陵区" />
+        <鼎城区 DID="2" DName="鼎城区" />
+        <安乡县 DID="3" DName="安乡县" />
+        <汉寿县 DID="4" DName="汉寿县" />
+        <澧县 DID="5" DName="澧县" />
+        <临澧县 DID="6" DName="临澧县" />
+        <桃源县 DID="7" DName="桃源县" />
+        <石门县 DID="8" DName="石门县" />
+        <津市市 DID="9" DName="津市市" />
+    </常德市>
+    <张家界市 CID="8" CName="张家界市">
+        <永定区 DID="1" DName="永定区" />
+        <武陵源区 DID="2" DName="武陵源区" />
+        <慈利县 DID="3" DName="慈利县" />
+        <桑植县 DID="4" DName="桑植县" />
+    </张家界市>
+    <益阳市 CID="9" CName="益阳市">
+        <资阳区 DID="1" DName="资阳区" />
+        <赫山区 DID="2" DName="赫山区" />
+        <南县 DID="3" DName="南县" />
+        <桃江县 DID="4" DName="桃江县" />
+        <安化县 DID="5" DName="安化县" />
+        <沅江市 DID="6" DName="沅江市" />
+    </益阳市>
+    <郴州市 CID="10" CName="郴州市">
+        <北湖区 DID="1" DName="北湖区" />
+        <苏仙区 DID="2" DName="苏仙区" />
+        <桂阳县 DID="3" DName="桂阳县" />
+        <宜章县 DID="4" DName="宜章县" />
+        <永兴县 DID="5" DName="永兴县" />
+        <嘉禾县 DID="6" DName="嘉禾县" />
+        <临武县 DID="7" DName="临武县" />
+        <汝城县 DID="8" DName="汝城县" />
+        <桂东县 DID="9" DName="桂东县" />
+        <安仁县 DID="10" DName="安仁县" />
+        <资兴市 DID="11" DName="资兴市" />
+    </郴州市>
+    <永州市 CID="11" CName="永州市">
+        <芝山区 DID="1" DName="芝山区" />
+        <冷水滩区 DID="2" DName="冷水滩区" />
+        <祁阳县 DID="3" DName="祁阳县" />
+        <东安县 DID="4" DName="东安县" />
+        <双牌县 DID="5" DName="双牌县" />
+        <道县 DID="6" DName="道县" />
+        <江永县 DID="7" DName="江永县" />
+        <宁远县 DID="8" DName="宁远县" />
+        <蓝山县 DID="9" DName="蓝山县" />
+        <新田县 DID="10" DName="新田县" />
+        <江华瑶族自治县 DID="11" DName="江华瑶族自治县" />
+    </永州市>
+    <怀化市 CID="12" CName="怀化市">
+        <鹤城区 DID="1" DName="鹤城区" />
+        <中方县 DID="2" DName="中方县" />
+        <沅陵县 DID="3" DName="沅陵县" />
+        <辰溪县 DID="4" DName="辰溪县" />
+        <溆浦县 DID="5" DName="溆浦县" />
+        <会同县 DID="6" DName="会同县" />
+        <麻阳苗族自治县 DID="7" DName="麻阳苗族自治县" />
+        <新晃侗族自治县 DID="8" DName="新晃侗族自治县" />
+        <芷江侗族自治县 DID="9" DName="芷江侗族自治县" />
+        <靖州苗族侗族自治县 DID="10" DName="靖州苗族侗族自治县" />
+        <通道侗族自治县 DID="11" DName="通道侗族自治县" />
+        <洪江市 DID="12" DName="洪江市" />
+    </怀化市>
+    <娄底市 CID="13" CName="娄底市">
+        <娄星区 DID="1" DName="娄星区" />
+        <双峰县 DID="2" DName="双峰县" />
+        <新化县 DID="3" DName="新化县" />
+        <冷水江市 DID="4" DName="冷水江市" />
+        <涟源市 DID="5" DName="涟源市" />
+    </娄底市>
+    <湘西土家族苗族自治州 CID="14" CName="湘西土家族苗族自治州">
+        <吉首市 DID="1" DName="吉首市" />
+        <泸溪县 DID="2" DName="泸溪县" />
+        <凤凰县 DID="3" DName="凤凰县" />
+        <花垣县 DID="4" DName="花垣县" />
+        <保靖县 DID="5" DName="保靖县" />
+        <古丈县 DID="6" DName="古丈县" />
+        <永顺县 DID="7" DName="永顺县" />
+        <龙山县 DID="8" DName="龙山县" />
+    </湘西土家族苗族自治州>
+</湖南省>
+<广东省 PID="19" PName="广东省">
+    <广州市 CID="1" CName="广州市">
+        <东山区 DID="1" DName="东山区" />
+        <荔湾区 DID="2" DName="荔湾区" />
+        <越秀区 DID="3" DName="越秀区" />
+        <海珠区 DID="4" DName="海珠区" />
+        <天河区 DID="5" DName="天河区" />
+        <芳村区 DID="6" DName="芳村区" />
+        <白云区 DID="7" DName="白云区" />
+        <黄埔区 DID="8" DName="黄埔区" />
+        <番禺区 DID="9" DName="番禺区" />
+        <花都区 DID="10" DName="花都区" />
+        <增城市 DID="11" DName="增城市" />
+        <从化市 DID="12" DName="从化市" />
+    </广州市>
+    <韶关市 CID="2" CName="韶关市">
+        <武江区 DID="1" DName="武江区" />
+        <浈江区 DID="2" DName="浈江区" />
+        <曲江区 DID="3" DName="曲江区" />
+        <始兴县 DID="4" DName="始兴县" />
+        <仁化县 DID="5" DName="仁化县" />
+        <翁源县 DID="6" DName="翁源县" />
+        <乳源瑶族自治县 DID="7" DName="乳源瑶族自治县" />
+        <新丰县 DID="8" DName="新丰县" />
+        <乐昌市 DID="9" DName="乐昌市" />
+        <南雄市 DID="10" DName="南雄市" />
+    </韶关市>
+    <深圳市 CID="3" CName="深圳市">
+        <罗湖区 DID="1" DName="罗湖区" />
+        <福田区 DID="2" DName="福田区" />
+        <南山区 DID="3" DName="南山区" />
+        <宝安区 DID="4" DName="宝安区" />
+        <龙岗区 DID="5" DName="龙岗区" />
+        <盐田区 DID="6" DName="盐田区" />
+    </深圳市>
+    <珠海市 CID="4" CName="珠海市">
+        <香洲区 DID="1" DName="香洲区" />
+        <斗门区 DID="2" DName="斗门区" />
+        <金湾区 DID="3" DName="金湾区" />
+    </珠海市>
+    <汕头市 CID="5" CName="汕头市">
+        <龙湖区 DID="1" DName="龙湖区" />
+        <金平区 DID="2" DName="金平区" />
+        <濠江区 DID="3" DName="濠江区" />
+        <潮阳区 DID="4" DName="潮阳区" />
+        <潮南区 DID="5" DName="潮南区" />
+        <澄海区 DID="6" DName="澄海区" />
+        <南澳县 DID="7" DName="南澳县" />
+    </汕头市>
+    <佛山市 CID="6" CName="佛山市">
+        <禅城区 DID="1" DName="禅城区" />
+        <南海区 DID="2" DName="南海区" />
+        <顺德区 DID="3" DName="顺德区" />
+        <三水区 DID="4" DName="三水区" />
+        <高明区 DID="5" DName="高明区" />
+    </佛山市>
+    <江门市 CID="7" CName="江门市">
+        <蓬江区 DID="1" DName="蓬江区" />
+        <江海区 DID="2" DName="江海区" />
+        <新会区 DID="3" DName="新会区" />
+        <台山市 DID="4" DName="台山市" />
+        <开平市 DID="5" DName="开平市" />
+        <鹤山市 DID="6" DName="鹤山市" />
+        <恩平市 DID="7" DName="恩平市" />
+    </江门市>
+    <湛江市 CID="8" CName="湛江市">
+        <赤坎区 DID="1" DName="赤坎区" />
+        <霞山区 DID="2" DName="霞山区" />
+        <坡头区 DID="3" DName="坡头区" />
+        <麻章区 DID="4" DName="麻章区" />
+        <遂溪县 DID="5" DName="遂溪县" />
+        <徐闻县 DID="6" DName="徐闻县" />
+        <廉江市 DID="7" DName="廉江市" />
+        <雷州市 DID="8" DName="雷州市" />
+        <吴川市 DID="9" DName="吴川市" />
+    </湛江市>
+    <茂名市 CID="9" CName="茂名市">
+        <茂南区 DID="1" DName="茂南区" />
+        <茂港区 DID="2" DName="茂港区" />
+        <电白县 DID="3" DName="电白县" />
+        <高州市 DID="4" DName="高州市" />
+        <化州市 DID="5" DName="化州市" />
+        <信宜市 DID="6" DName="信宜市" />
+    </茂名市>
+    <肇庆市 CID="10" CName="肇庆市">
+        <端州区 DID="1" DName="端州区" />
+        <鼎湖区 DID="2" DName="鼎湖区" />
+        <广宁县 DID="3" DName="广宁县" />
+        <怀集县 DID="4" DName="怀集县" />
+        <封开县 DID="5" DName="封开县" />
+        <德庆县 DID="6" DName="德庆县" />
+        <高要市 DID="7" DName="高要市" />
+        <四会市 DID="8" DName="四会市" />
+    </肇庆市>
+    <惠州市 CID="11" CName="惠州市">
+        <惠城区 DID="1" DName="惠城区" />
+        <惠阳区 DID="2" DName="惠阳区" />
+        <博罗县 DID="3" DName="博罗县" />
+        <惠东县 DID="4" DName="惠东县" />
+        <龙门县 DID="5" DName="龙门县" />
+    </惠州市>
+    <梅州市 CID="12" CName="梅州市">
+        <梅江区 DID="1" DName="梅江区" />
+        <梅县 DID="2" DName="梅县" />
+        <大埔县 DID="3" DName="大埔县" />
+        <丰顺县 DID="4" DName="丰顺县" />
+        <五华县 DID="5" DName="五华县" />
+        <平远县 DID="6" DName="平远县" />
+        <蕉岭县 DID="7" DName="蕉岭县" />
+        <兴宁市 DID="8" DName="兴宁市" />
+    </梅州市>
+    <汕尾市 CID="13" CName="汕尾市">
+        <城区 DID="1" DName="城区" />
+        <海丰县 DID="2" DName="海丰县" />
+        <陆河县 DID="3" DName="陆河县" />
+        <陆丰市 DID="4" DName="陆丰市" />
+    </汕尾市>
+    <河源市 CID="14" CName="河源市">
+        <源城区 DID="1" DName="源城区" />
+        <紫金县 DID="2" DName="紫金县" />
+        <龙川县 DID="3" DName="龙川县" />
+        <连平县 DID="4" DName="连平县" />
+        <和平县 DID="5" DName="和平县" />
+        <东源县 DID="6" DName="东源县" />
+    </河源市>
+    <阳江市 CID="15" CName="阳江市">
+        <江城区 DID="1" DName="江城区" />
+        <阳西县 DID="2" DName="阳西县" />
+        <阳东县 DID="3" DName="阳东县" />
+        <阳春市 DID="4" DName="阳春市" />
+    </阳江市>
+    <清远市 CID="16" CName="清远市">
+        <清城区 DID="1" DName="清城区" />
+        <佛冈县 DID="2" DName="佛冈县" />
+        <阳山县 DID="3" DName="阳山县" />
+        <连山壮族瑶族自治县 DID="4" DName="连山壮族瑶族自治县" />
+        <连南瑶族自治县 DID="5" DName="连南瑶族自治县" />
+        <清新县 DID="6" DName="清新县" />
+        <英德市 DID="7" DName="英德市" />
+        <连州市 DID="8" DName="连州市" />
+    </清远市>
+    <东莞市 CID="17" CName="东莞市" />
+    <中山市 CID="18" CName="中山市" />
+    <潮州市 CID="19" CName="潮州市">
+        <湘桥区 DID="1" DName="湘桥区" />
+        <潮安县 DID="2" DName="潮安县" />
+        <饶平县 DID="3" DName="饶平县" />
+    </潮州市>
+    <揭阳市 CID="20" CName="揭阳市">
+        <榕城区 DID="1" DName="榕城区" />
+        <揭东县 DID="2" DName="揭东县" />
+        <揭西县 DID="3" DName="揭西县" />
+        <惠来县 DID="4" DName="惠来县" />
+        <普宁市 DID="5" DName="普宁市" />
+    </揭阳市>
+    <云浮市 CID="21" CName="云浮市">
+        <云城区 DID="1" DName="云城区" />
+        <新兴县 DID="2" DName="新兴县" />
+        <郁南县 DID="3" DName="郁南县" />
+        <云安县 DID="4" DName="云安县" />
+        <罗定市 DID="5" DName="罗定市" />
+    </云浮市>
+</广东省>
+<广西壮族自治区 PID="20" PName="广西壮族自治区">
+    <南宁市 CID="1" CName="南宁市">
+        <兴宁区 DID="1" DName="兴宁区" />
+        <青秀区 DID="2" DName="青秀区" />
+        <江南区 DID="3" DName="江南区" />
+        <西乡塘区 DID="4" DName="西乡塘区" />
+        <良庆区 DID="5" DName="良庆区" />
+        <邕宁区 DID="6" DName="邕宁区" />
+        <武鸣县 DID="7" DName="武鸣县" />
+        <隆安县 DID="8" DName="隆安县" />
+        <马山县 DID="9" DName="马山县" />
+        <上林县 DID="10" DName="上林县" />
+        <宾阳县 DID="11" DName="宾阳县" />
+        <横县 DID="12" DName="横县" />
+    </南宁市>
+    <柳州市 CID="2" CName="柳州市">
+        <城中区 DID="1" DName="城中区" />
+        <鱼峰区 DID="2" DName="鱼峰区" />
+        <柳南区 DID="3" DName="柳南区" />
+        <柳北区 DID="4" DName="柳北区" />
+        <柳江县 DID="5" DName="柳江县" />
+        <柳城县 DID="6" DName="柳城县" />
+        <鹿寨县 DID="7" DName="鹿寨县" />
+        <融安县 DID="8" DName="融安县" />
+        <融水苗族自治县 DID="9" DName="融水苗族自治县" />
+        <三江侗族自治县 DID="10" DName="三江侗族自治县" />
+    </柳州市>
+    <桂林市 CID="3" CName="桂林市">
+        <秀峰区 DID="1" DName="秀峰区" />
+        <叠彩区 DID="2" DName="叠彩区" />
+        <象山区 DID="3" DName="象山区" />
+        <七星区 DID="4" DName="七星区" />
+        <雁山区 DID="5" DName="雁山区" />
+        <阳朔县 DID="6" DName="阳朔县" />
+        <临桂县 DID="7" DName="临桂县" />
+        <灵川县 DID="8" DName="灵川县" />
+        <全州县 DID="9" DName="全州县" />
+        <兴安县 DID="10" DName="兴安县" />
+        <永福县 DID="11" DName="永福县" />
+        <灌阳县 DID="12" DName="灌阳县" />
+        <龙胜各族自治县 DID="13" DName="龙胜各族自治县" />
+        <资源县 DID="14" DName="资源县" />
+        <平乐县 DID="15" DName="平乐县" />
+        <荔蒲县 DID="16" DName="荔蒲县" />
+        <恭城瑶族自治县 DID="17" DName="恭城瑶族自治县" />
+    </桂林市>
+    <梧州市 CID="4" CName="梧州市">
+        <万秀区 DID="1" DName="万秀区" />
+        <蝶山区 DID="2" DName="蝶山区" />
+        <长洲区 DID="3" DName="长洲区" />
+        <苍梧县 DID="4" DName="苍梧县" />
+        <藤县 DID="5" DName="藤县" />
+        <蒙山县 DID="6" DName="蒙山县" />
+        <岑溪市 DID="7" DName="岑溪市" />
+    </梧州市>
+    <北海市 CID="5" CName="北海市">
+        <海城区 DID="1" DName="海城区" />
+        <银海区 DID="2" DName="银海区" />
+        <铁山港区 DID="3" DName="铁山港区" />
+        <合浦县 DID="4" DName="合浦县" />
+    </北海市>
+    <防城港市 CID="6" CName="防城港市">
+        <港口区 DID="1" DName="港口区" />
+        <防城区 DID="2" DName="防城区" />
+        <上思县 DID="3" DName="上思县" />
+        <东兴市 DID="4" DName="东兴市" />
+    </防城港市>
+    <钦州市 CID="7" CName="钦州市">
+        <钦南区 DID="1" DName="钦南区" />
+        <钦北区 DID="2" DName="钦北区" />
+        <灵山县 DID="3" DName="灵山县" />
+        <浦北县 DID="4" DName="浦北县" />
+    </钦州市>
+    <贵港市 CID="8" CName="贵港市">
+        <港北区 DID="1" DName="港北区" />
+        <港南区 DID="2" DName="港南区" />
+        <覃塘区 DID="3" DName="覃塘区" />
+        <平南县 DID="4" DName="平南县" />
+        <桂平市 DID="5" DName="桂平市" />
+    </贵港市>
+    <玉林市 CID="9" CName="玉林市">
+        <玉州区 DID="1" DName="玉州区" />
+        <容县 DID="2" DName="容县" />
+        <陆川县 DID="3" DName="陆川县" />
+        <博白县 DID="4" DName="博白县" />
+        <兴业县 DID="5" DName="兴业县" />
+        <北流市 DID="6" DName="北流市" />
+    </玉林市>
+    <百色市 CID="10" CName="百色市">
+        <右江区 DID="1" DName="右江区" />
+        <田阳县 DID="2" DName="田阳县" />
+        <田东县 DID="3" DName="田东县" />
+        <平果县 DID="4" DName="平果县" />
+        <德保县 DID="5" DName="德保县" />
+        <靖西县 DID="6" DName="靖西县" />
+        <那坡县 DID="7" DName="那坡县" />
+        <凌云县 DID="8" DName="凌云县" />
+        <乐业县 DID="9" DName="乐业县" />
+        <田林县 DID="10" DName="田林县" />
+        <西林县 DID="11" DName="西林县" />
+        <隆林各族自治县 DID="12" DName="隆林各族自治县" />
+    </百色市>
+    <贺州市 CID="11" CName="贺州市">
+        <八步区 DID="1" DName="八步区" />
+        <昭平县 DID="2" DName="昭平县" />
+        <钟山县 DID="3" DName="钟山县" />
+        <富川瑶族自治县 DID="4" DName="富川瑶族自治县" />
+    </贺州市>
+    <河池市 CID="12" CName="河池市">
+        <金城江区 DID="1" DName="金城江区" />
+        <南丹县 DID="2" DName="南丹县" />
+        <天峨县 DID="3" DName="天峨县" />
+        <凤山县 DID="4" DName="凤山县" />
+        <东兰县 DID="5" DName="东兰县" />
+        <罗城仫佬族自治县 DID="6" DName="罗城仫佬族自治县" />
+        <环江毛南族自治县 DID="7" DName="环江毛南族自治县" />
+        <巴马瑶族自治县 DID="8" DName="巴马瑶族自治县" />
+        <都安瑶族自治县 DID="9" DName="都安瑶族自治县" />
+        <大化瑶族自治县 DID="10" DName="大化瑶族自治县" />
+        <宜州市 DID="11" DName="宜州市" />
+    </河池市>
+    <来宾市 CID="13" CName="来宾市">
+        <兴宾区 DID="1" DName="兴宾区" />
+        <忻城县 DID="2" DName="忻城县" />
+        <象州县 DID="3" DName="象州县" />
+        <武宣县 DID="4" DName="武宣县" />
+        <金秀瑶族自治县 DID="5" DName="金秀瑶族自治县" />
+        <合山市 DID="6" DName="合山市" />
+    </来宾市>
+    <崇左市 CID="14" CName="崇左市">
+        <江洲区 DID="1" DName="江洲区" />
+        <扶绥县 DID="2" DName="扶绥县" />
+        <宁明县 DID="3" DName="宁明县" />
+        <龙州县 DID="4" DName="龙州县" />
+        <大新县 DID="5" DName="大新县" />
+        <天等县 DID="6" DName="天等县" />
+        <凭祥市 DID="7" DName="凭祥市" />
+    </崇左市>
+</广西壮族自治区>
+<海南省 PID="21" PName="海南省">
+    <海口市 CID="1" CName="海口市">
+        <秀英区 DID="1" DName="秀英区" />
+        <龙华区 DID="2" DName="龙华区" />
+        <琼山区 DID="3" DName="琼山区" />
+        <美兰区 DID="4" DName="美兰区" />
+    </海口市>
+    <三亚市 CID="2" CName="三亚市">
+        <五指山市 DID="1" DName="五指山市" />
+        <琼海市 DID="2" DName="琼海市" />
+        <儋州市 DID="3" DName="儋州市" />
+        <文昌市 DID="4" DName="文昌市" />
+        <万宁市 DID="5" DName="万宁市" />
+        <东方市 DID="6" DName="东方市" />
+        <定安县 DID="7" DName="定安县" />
+        <屯昌县 DID="8" DName="屯昌县" />
+        <澄迈县 DID="9" DName="澄迈县" />
+        <临高县 DID="10" DName="临高县" />
+        <白沙黎族自治县 DID="11" DName="白沙黎族自治县" />
+        <昌江黎族自治县 DID="12" DName="昌江黎族自治县" />
+        <乐东黎族自治县 DID="13" DName="乐东黎族自治县" />
+        <陵水黎族自治县 DID="14" DName="陵水黎族自治县" />
+        <保亭黎族苗族自治县 DID="15" DName="保亭黎族苗族自治县" />
+        <琼中黎族苗族自治县 DID="16" DName="琼中黎族苗族自治县" />
+        <西沙群岛 DID="17" DName="西沙群岛" />
+        <南沙群岛 DID="18" DName="南沙群岛" />
+        <中沙群岛的岛礁及其海域 DID="19" DName="中沙群岛的岛礁及其海域" />
+    </三亚市>
+</海南省>
+<重庆市 PID="22" PName="重庆市">
+    <重庆市 CID="1" CName="重庆市">
+        <万州区 DID="1" DName="万州区" />
+        <涪陵区 DID="2" DName="涪陵区" />
+        <渝中区 DID="3" DName="渝中区" />
+        <大渡口区 DID="4" DName="大渡口区" />
+        <江北区 DID="5" DName="江北区" />
+        <沙坪坝区 DID="6" DName="沙坪坝区" />
+        <九龙坡区 DID="7" DName="九龙坡区" />
+        <南岸区 DID="8" DName="南岸区" />
+        <北碚区 DID="9" DName="北碚区" />
+        <万盛区 DID="10" DName="万盛区" />
+        <双桥区 DID="11" DName="双桥区" />
+        <渝北区 DID="12" DName="渝北区" />
+        <巴南区 DID="13" DName="巴南区" />
+        <黔江区 DID="14" DName="黔江区" />
+        <长寿区 DID="15" DName="长寿区" />
+        <綦江县 DID="16" DName="綦江县" />
+        <潼南县 DID="17" DName="潼南县" />
+        <铜梁县 DID="18" DName="铜梁县" />
+        <大足县 DID="19" DName="大足县" />
+        <荣昌县 DID="20" DName="荣昌县" />
+        <璧山县 DID="21" DName="璧山县" />
+        <梁平县 DID="22" DName="梁平县" />
+        <城口县 DID="23" DName="城口县" />
+        <丰都县 DID="24" DName="丰都县" />
+        <垫江县 DID="25" DName="垫江县" />
+        <武隆县 DID="26" DName="武隆县" />
+        <忠县 DID="27" DName="忠县" />
+        <开县 DID="28" DName="开县" />
+        <云阳县 DID="29" DName="云阳县" />
+        <奉节县 DID="30" DName="奉节县" />
+        <巫山县 DID="31" DName="巫山县" />
+        <巫溪县 DID="32" DName="巫溪县" />
+        <石柱土家族自治县 DID="33" DName="石柱土家族自治县" />
+        <秀山土家族苗族自治县 DID="34" DName="秀山土家族苗族自治县" />
+        <酉阳土家族苗族自治县 DID="35" DName="酉阳土家族苗族自治县" />
+        <彭水苗族土家族自治县 DID="36" DName="彭水苗族土家族自治县" />
+        <江津市 DID="37" DName="江津市" />
+        <合川市 DID="38" DName="合川市" />
+        <永川市 DID="39" DName="永川市" />
+        <南川市 DID="40" DName="南川市" />
+    </重庆市>
+</重庆市>
+<四川省 PID="23" PName="四川省">
+    <成都市 CID="1" CName="成都市">
+        <锦江区 DID="1" DName="锦江区" />
+        <青羊区 DID="2" DName="青羊区" />
+        <金牛区 DID="3" DName="金牛区" />
+        <武侯区 DID="4" DName="武侯区" />
+        <成华区 DID="5" DName="成华区" />
+        <龙泉驿区 DID="6" DName="龙泉驿区" />
+        <青白江区 DID="7" DName="青白江区" />
+        <新都区 DID="8" DName="新都区" />
+        <温江区 DID="9" DName="温江区" />
+        <金堂县 DID="10" DName="金堂县" />
+        <双流县 DID="11" DName="双流县" />
+        <郫县 DID="12" DName="郫县" />
+        <大邑县 DID="13" DName="大邑县" />
+        <蒲江县 DID="14" DName="蒲江县" />
+        <新津县 DID="15" DName="新津县" />
+        <都江堰市 DID="16" DName="都江堰市" />
+        <彭州市 DID="17" DName="彭州市" />
+        <邛崃市 DID="18" DName="邛崃市" />
+        <崇州市 DID="19" DName="崇州市" />
+    </成都市>
+    <自贡市 CID="2" CName="自贡市">
+        <自流井区 DID="1" DName="自流井区" />
+        <贡井区 DID="2" DName="贡井区" />
+        <大安区 DID="3" DName="大安区" />
+        <沿滩区 DID="4" DName="沿滩区" />
+        <荣县 DID="5" DName="荣县" />
+        <富顺县 DID="6" DName="富顺县" />
+    </自贡市>
+    <攀枝花市 CID="3" CName="攀枝花市">
+        <东区 DID="1" DName="东区" />
+        <西区 DID="2" DName="西区" />
+        <仁和区 DID="3" DName="仁和区" />
+        <米易县 DID="4" DName="米易县" />
+        <盐边县 DID="5" DName="盐边县" />
+    </攀枝花市>
+    <泸州市 CID="4" CName="泸州市">
+        <江阳区 DID="1" DName="江阳区" />
+        <纳溪区 DID="2" DName="纳溪区" />
+        <龙马潭区 DID="3" DName="龙马潭区" />
+        <泸县 DID="4" DName="泸县" />
+        <合江县 DID="5" DName="合江县" />
+        <叙永县 DID="6" DName="叙永县" />
+        <古蔺县 DID="7" DName="古蔺县" />
+    </泸州市>
+    <德阳市 CID="5" CName="德阳市">
+        <旌阳区 DID="1" DName="旌阳区" />
+        <中江县 DID="2" DName="中江县" />
+        <罗江县 DID="3" DName="罗江县" />
+        <广汉市 DID="4" DName="广汉市" />
+        <什邡市 DID="5" DName="什邡市" />
+        <绵竹市 DID="6" DName="绵竹市" />
+    </德阳市>
+    <绵阳市 CID="6" CName="绵阳市">
+        <涪城区 DID="1" DName="涪城区" />
+        <游仙区 DID="2" DName="游仙区" />
+        <三台县 DID="3" DName="三台县" />
+        <盐亭县 DID="4" DName="盐亭县" />
+        <安县 DID="5" DName="安县" />
+        <梓潼县 DID="6" DName="梓潼县" />
+        <北川羌族自治县 DID="7" DName="北川羌族自治县" />
+        <平武县 DID="8" DName="平武县" />
+        <江油市 DID="9" DName="江油市" />
+    </绵阳市>
+    <广元市 CID="7" CName="广元市">
+        <市中区 DID="1" DName="市中区" />
+        <元坝区 DID="2" DName="元坝区" />
+        <朝天区 DID="3" DName="朝天区" />
+        <旺苍县 DID="4" DName="旺苍县" />
+        <青川县 DID="5" DName="青川县" />
+        <剑阁县 DID="6" DName="剑阁县" />
+        <苍溪县 DID="7" DName="苍溪县" />
+    </广元市>
+    <遂宁市 CID="8" CName="遂宁市">
+        <船山区 DID="1" DName="船山区" />
+        <安居区 DID="2" DName="安居区" />
+        <蓬溪县 DID="3" DName="蓬溪县" />
+        <射洪县 DID="4" DName="射洪县" />
+        <大英县 DID="5" DName="大英县" />
+    </遂宁市>
+    <内江市 CID="9" CName="内江市">
+        <市中区 DID="1" DName="市中区" />
+        <东兴区 DID="2" DName="东兴区" />
+        <威远县 DID="3" DName="威远县" />
+        <资中县 DID="4" DName="资中县" />
+        <隆昌县 DID="5" DName="隆昌县" />
+    </内江市>
+    <乐山市 CID="10" CName="乐山市">
+        <市中区 DID="1" DName="市中区" />
+        <沙湾区 DID="2" DName="沙湾区" />
+        <五通桥区 DID="3" DName="五通桥区" />
+        <金口河区 DID="4" DName="金口河区" />
+        <犍为县 DID="5" DName="犍为县" />
+        <井研县 DID="6" DName="井研县" />
+        <夹江县 DID="7" DName="夹江县" />
+        <沐川县 DID="8" DName="沐川县" />
+        <峨边彝族自治县 DID="9" DName="峨边彝族自治县" />
+        <马边彝族自治县 DID="10" DName="马边彝族自治县" />
+        <峨眉山市 DID="11" DName="峨眉山市" />
+    </乐山市>
+    <南充市 CID="11" CName="南充市">
+        <顺庆区 DID="1" DName="顺庆区" />
+        <高坪区 DID="2" DName="高坪区" />
+        <嘉陵区 DID="3" DName="嘉陵区" />
+        <南部县 DID="4" DName="南部县" />
+        <营山县 DID="5" DName="营山县" />
+        <蓬安县 DID="6" DName="蓬安县" />
+        <仪陇县 DID="7" DName="仪陇县" />
+        <西充县 DID="8" DName="西充县" />
+        <阆中市 DID="9" DName="阆中市" />
+    </南充市>
+    <眉山市 CID="12" CName="眉山市">
+        <东坡区 DID="1" DName="东坡区" />
+        <仁寿县 DID="2" DName="仁寿县" />
+        <彭山县 DID="3" DName="彭山县" />
+        <洪雅县 DID="4" DName="洪雅县" />
+        <丹棱县 DID="5" DName="丹棱县" />
+        <青神县 DID="6" DName="青神县" />
+    </眉山市>
+    <宜宾市 CID="13" CName="宜宾市">
+        <翠屏区 DID="1" DName="翠屏区" />
+        <宜宾县 DID="2" DName="宜宾县" />
+        <南溪县 DID="3" DName="南溪县" />
+        <江安县 DID="4" DName="江安县" />
+        <长宁县 DID="5" DName="长宁县" />
+        <高县 DID="6" DName="高县" />
+        <珙县 DID="7" DName="珙县" />
+        <筠连县 DID="8" DName="筠连县" />
+        <兴文县 DID="9" DName="兴文县" />
+        <屏山县 DID="10" DName="屏山县" />
+    </宜宾市>
+    <广安市 CID="14" CName="广安市">
+        <广安区 DID="1" DName="广安区" />
+        <岳池县 DID="2" DName="岳池县" />
+        <武胜县 DID="3" DName="武胜县" />
+        <邻水县 DID="4" DName="邻水县" />
+        <华蓥市 DID="5" DName="华蓥市" />
+    </广安市>
+    <达州市 CID="15" CName="达州市">
+        <通川区 DID="1" DName="通川区" />
+        <达县 DID="2" DName="达县" />
+        <宣汉县 DID="3" DName="宣汉县" />
+        <开江县 DID="4" DName="开江县" />
+        <大竹县 DID="5" DName="大竹县" />
+        <渠县 DID="6" DName="渠县" />
+        <万源市 DID="7" DName="万源市" />
+    </达州市>
+    <雅安市 CID="16" CName="雅安市">
+        <雨城区 DID="1" DName="雨城区" />
+        <名山县 DID="2" DName="名山县" />
+        <荥经县 DID="3" DName="荥经县" />
+        <汉源县 DID="4" DName="汉源县" />
+        <石棉县 DID="5" DName="石棉县" />
+        <天全县 DID="6" DName="天全县" />
+        <芦山县 DID="7" DName="芦山县" />
+        <宝兴县 DID="8" DName="宝兴县" />
+    </雅安市>
+    <巴中市 CID="17" CName="巴中市">
+        <巴州区 DID="1" DName="巴州区" />
+        <通江县 DID="2" DName="通江县" />
+        <南江县 DID="3" DName="南江县" />
+        <平昌县 DID="4" DName="平昌县" />
+    </巴中市>
+    <资阳市 CID="18" CName="资阳市">
+        <雁江区 DID="1" DName="雁江区" />
+        <安岳县 DID="2" DName="安岳县" />
+        <乐至县 DID="3" DName="乐至县" />
+        <简阳市 DID="4" DName="简阳市" />
+    </资阳市>
+    <阿坝藏族羌族自治州 CID="19" CName="阿坝藏族羌族自治州">
+        <汶川县 DID="1" DName="汶川县" />
+        <理县 DID="2" DName="理县" />
+        <茂县 DID="3" DName="茂县" />
+        <松潘县 DID="4" DName="松潘县" />
+        <九寨沟县 DID="5" DName="九寨沟县" />
+        <金川县 DID="6" DName="金川县" />
+        <小金县 DID="7" DName="小金县" />
+        <黑水县 DID="8" DName="黑水县" />
+        <马尔康县 DID="9" DName="马尔康县" />
+        <壤塘县 DID="10" DName="壤塘县" />
+        <阿坝县 DID="11" DName="阿坝县" />
+        <若尔盖县 DID="12" DName="若尔盖县" />
+        <红原县 DID="13" DName="红原县" />
+    </阿坝藏族羌族自治州>
+    <甘孜藏族自治州 CID="20" CName="甘孜藏族自治州">
+        <康定县 DID="1" DName="康定县" />
+        <泸定县 DID="2" DName="泸定县" />
+        <丹巴县 DID="3" DName="丹巴县" />
+        <九龙县 DID="4" DName="九龙县" />
+        <雅江县 DID="5" DName="雅江县" />
+        <道孚县 DID="6" DName="道孚县" />
+        <炉霍县 DID="7" DName="炉霍县" />
+        <甘孜县 DID="8" DName="甘孜县" />
+        <新龙县 DID="9" DName="新龙县" />
+        <德格县 DID="10" DName="德格县" />
+        <白玉县 DID="11" DName="白玉县" />
+        <石渠县 DID="12" DName="石渠县" />
+        <色达县 DID="13" DName="色达县" />
+        <理塘县 DID="14" DName="理塘县" />
+        <巴塘县 DID="15" DName="巴塘县" />
+        <乡城县 DID="16" DName="乡城县" />
+        <稻城县 DID="17" DName="稻城县" />
+        <得荣县 DID="18" DName="得荣县" />
+    </甘孜藏族自治州>
+    <凉山彝族自治州 CID="21" CName="凉山彝族自治州">
+        <西昌市 DID="1" DName="西昌市" />
+        <木里藏族自治县 DID="2" DName="木里藏族自治县" />
+        <盐源县 DID="3" DName="盐源县" />
+        <德昌县 DID="4" DName="德昌县" />
+        <会理县 DID="5" DName="会理县" />
+        <会东县 DID="6" DName="会东县" />
+        <宁南县 DID="7" DName="宁南县" />
+        <普格县 DID="8" DName="普格县" />
+        <布拖县 DID="9" DName="布拖县" />
+        <金阳县 DID="10" DName="金阳县" />
+        <昭觉县 DID="11" DName="昭觉县" />
+        <喜德县 DID="12" DName="喜德县" />
+        <冕宁县 DID="13" DName="冕宁县" />
+        <越西县 DID="14" DName="越西县" />
+        <甘洛县 DID="15" DName="甘洛县" />
+        <美姑县 DID="16" DName="美姑县" />
+        <雷波县 DID="17" DName="雷波县" />
+    </凉山彝族自治州>
+</四川省>
+<贵州省 PID="24" PName="贵州省">
+    <贵阳市 CID="1" CName="贵阳市">
+        <南明区 DID="1" DName="南明区" />
+        <云岩区 DID="2" DName="云岩区" />
+        <花溪区 DID="3" DName="花溪区" />
+        <乌当区 DID="4" DName="乌当区" />
+        <白云区 DID="5" DName="白云区" />
+        <小河区 DID="6" DName="小河区" />
+        <开阳县 DID="7" DName="开阳县" />
+        <息烽县 DID="8" DName="息烽县" />
+        <修文县 DID="9" DName="修文县" />
+        <清镇市 DID="10" DName="清镇市" />
+    </贵阳市>
+    <六盘水市 CID="2" CName="六盘水市">
+        <钟山区 DID="1" DName="钟山区" />
+        <六枝特区 DID="2" DName="六枝特区" />
+        <水城县 DID="3" DName="水城县" />
+        <盘县 DID="4" DName="盘县" />
+    </六盘水市>
+    <遵义市 CID="3" CName="遵义市">
+        <红花岗区 DID="1" DName="红花岗区" />
+        <汇川区 DID="2" DName="汇川区" />
+        <遵义县 DID="3" DName="遵义县" />
+        <桐梓县 DID="4" DName="桐梓县" />
+        <绥阳县 DID="5" DName="绥阳县" />
+        <正安县 DID="6" DName="正安县" />
+        <道真仡佬族苗族自治县 DID="7" DName="道真仡佬族苗族自治县" />
+        <务川仡佬族苗族自治县 DID="8" DName="务川仡佬族苗族自治县" />
+        <凤冈县 DID="9" DName="凤冈县" />
+        <湄潭县 DID="10" DName="湄潭县" />
+        <余庆县 DID="11" DName="余庆县" />
+        <习水县 DID="12" DName="习水县" />
+        <赤水市 DID="13" DName="赤水市" />
+        <仁怀市 DID="14" DName="仁怀市" />
+    </遵义市>
+    <安顺市 CID="4" CName="安顺市">
+        <西秀区 DID="1" DName="西秀区" />
+        <平坝县 DID="2" DName="平坝县" />
+        <普定县 DID="3" DName="普定县" />
+        <镇宁布依族苗族自治县 DID="4" DName="镇宁布依族苗族自治县" />
+        <关岭布依族苗族自治县 DID="5" DName="关岭布依族苗族自治县" />
+        <紫云苗族布依族自治县 DID="6" DName="紫云苗族布依族自治县" />
+    </安顺市>
+    <铜仁地区 CID="5" CName="铜仁地区">
+        <铜仁市 DID="1" DName="铜仁市" />
+        <江口县 DID="2" DName="江口县" />
+        <玉屏侗族自治县 DID="3" DName="玉屏侗族自治县" />
+        <石阡县 DID="4" DName="石阡县" />
+        <思南县 DID="5" DName="思南县" />
+        <印江土家族苗族自治县 DID="6" DName="印江土家族苗族自治县" />
+        <德江县 DID="7" DName="德江县" />
+        <沿河土家族自治县 DID="8" DName="沿河土家族自治县" />
+        <松桃苗族自治县 DID="9" DName="松桃苗族自治县" />
+        <万山特区 DID="10" DName="万山特区" />
+    </铜仁地区>
+    <黔西南布依族苗族自治州 CID="6" CName="黔西南布依族苗族自治州">
+        <兴义市 DID="1" DName="兴义市" />
+        <兴仁县 DID="2" DName="兴仁县" />
+        <普安县 DID="3" DName="普安县" />
+        <晴隆县 DID="4" DName="晴隆县" />
+        <贞丰县 DID="5" DName="贞丰县" />
+        <望谟县 DID="6" DName="望谟县" />
+        <册亨县 DID="7" DName="册亨县" />
+        <安龙县 DID="8" DName="安龙县" />
+    </黔西南布依族苗族自治州>
+    <毕节地区 CID="7" CName="毕节地区">
+        <毕节市 DID="1" DName="毕节市" />
+        <大方县 DID="2" DName="大方县" />
+        <黔西县 DID="3" DName="黔西县" />
+        <金沙县 DID="4" DName="金沙县" />
+        <织金县 DID="5" DName="织金县" />
+        <纳雍县 DID="6" DName="纳雍县" />
+        <威宁彝族回族苗族自治县 DID="7" DName="威宁彝族回族苗族自治县" />
+        <赫章县 DID="8" DName="赫章县" />
+    </毕节地区>
+    <黔东南苗族侗族自治州 CID="8" CName="黔东南苗族侗族自治州">
+        <凯里市 DID="1" DName="凯里市" />
+        <黄平县 DID="2" DName="黄平县" />
+        <施秉县 DID="3" DName="施秉县" />
+        <三穗县 DID="4" DName="三穗县" />
+        <镇远县 DID="5" DName="镇远县" />
+        <岑巩县 DID="6" DName="岑巩县" />
+        <天柱县 DID="7" DName="天柱县" />
+        <锦屏县 DID="8" DName="锦屏县" />
+        <剑河县 DID="9" DName="剑河县" />
+        <台江县 DID="10" DName="台江县" />
+        <黎平县 DID="11" DName="黎平县" />
+        <榕江县 DID="12" DName="榕江县" />
+        <从江县 DID="13" DName="从江县" />
+        <雷山县 DID="14" DName="雷山县" />
+        <麻江县 DID="15" DName="麻江县" />
+        <丹寨县 DID="16" DName="丹寨县" />
+    </黔东南苗族侗族自治州>
+    <黔南布依族苗族自治州 CID="9" CName="黔南布依族苗族自治州">
+        <都匀市 DID="1" DName="都匀市" />
+        <福泉市 DID="2" DName="福泉市" />
+        <荔波县 DID="3" DName="荔波县" />
+        <贵定县 DID="4" DName="贵定县" />
+        <瓮安县 DID="5" DName="瓮安县" />
+        <独山县 DID="6" DName="独山县" />
+        <平塘县 DID="7" DName="平塘县" />
+        <罗甸县 DID="8" DName="罗甸县" />
+        <长顺县 DID="9" DName="长顺县" />
+        <龙里县 DID="10" DName="龙里县" />
+        <惠水县 DID="11" DName="惠水县" />
+        <三都水族自治县 DID="12" DName="三都水族自治县" />
+    </黔南布依族苗族自治州>
+</贵州省>
+<云南省 PID="25" PName="云南省">
+    <昆明市 CID="1" CName="昆明市">
+        <五华区 DID="1" DName="五华区" />
+        <盘龙区 DID="2" DName="盘龙区" />
+        <官渡区 DID="3" DName="官渡区" />
+        <西山区 DID="4" DName="西山区" />
+        <东川区 DID="5" DName="东川区" />
+        <呈贡县 DID="6" DName="呈贡县" />
+        <晋宁县 DID="7" DName="晋宁县" />
+        <富民县 DID="8" DName="富民县" />
+        <宜良县 DID="9" DName="宜良县" />
+        <石林彝族自治县 DID="10" DName="石林彝族自治县" />
+        <嵩明县 DID="11" DName="嵩明县" />
+        <禄劝彝族苗族自治县 DID="12" DName="禄劝彝族苗族自治县" />
+        <寻甸回族彝族自治县 DID="13" DName="寻甸回族彝族自治县" />
+        <安宁市 DID="14" DName="安宁市" />
+    </昆明市>
+    <曲靖市 CID="2" CName="曲靖市">
+        <麒麟区 DID="1" DName="麒麟区" />
+        <马龙县 DID="2" DName="马龙县" />
+        <陆良县 DID="3" DName="陆良县" />
+        <师宗县 DID="4" DName="师宗县" />
+        <罗平县 DID="5" DName="罗平县" />
+        <富源县 DID="6" DName="富源县" />
+        <会泽县 DID="7" DName="会泽县" />
+        <沾益县 DID="8" DName="沾益县" />
+        <宣威市 DID="9" DName="宣威市" />
+    </曲靖市>
+    <玉溪市 CID="3" CName="玉溪市">
+        <红塔区 DID="1" DName="红塔区" />
+        <江川县 DID="2" DName="江川县" />
+        <澄江县 DID="3" DName="澄江县" />
+        <通海县 DID="4" DName="通海县" />
+        <华宁县 DID="5" DName="华宁县" />
+        <易门县 DID="6" DName="易门县" />
+        <峨山彝族自治县 DID="7" DName="峨山彝族自治县" />
+        <新平彝族傣族自治县 DID="8" DName="新平彝族傣族自治县" />
+        <元江哈尼族彝族傣族自治县 DID="9" DName="元江哈尼族彝族傣族自治县" />
+    </玉溪市>
+    <保山市 CID="4" CName="保山市">
+        <隆阳区 DID="1" DName="隆阳区" />
+        <施甸县 DID="2" DName="施甸县" />
+        <腾冲县 DID="3" DName="腾冲县" />
+        <龙陵县 DID="4" DName="龙陵县" />
+        <昌宁县 DID="5" DName="昌宁县" />
+    </保山市>
+    <昭通市 CID="5" CName="昭通市">
+        <昭阳区 DID="1" DName="昭阳区" />
+        <鲁甸县 DID="2" DName="鲁甸县" />
+        <巧家县 DID="3" DName="巧家县" />
+        <盐津县 DID="4" DName="盐津县" />
+        <大关县 DID="5" DName="大关县" />
+        <永善县 DID="6" DName="永善县" />
+        <绥江县 DID="7" DName="绥江县" />
+        <镇雄县 DID="8" DName="镇雄县" />
+        <彝良县 DID="9" DName="彝良县" />
+        <威信县 DID="10" DName="威信县" />
+        <水富县 DID="11" DName="水富县" />
+    </昭通市>
+    <丽江市 CID="6" CName="丽江市">
+        <古城区 DID="1" DName="古城区" />
+        <玉龙纳西族自治县 DID="2" DName="玉龙纳西族自治县" />
+        <永胜县 DID="3" DName="永胜县" />
+        <华坪县 DID="4" DName="华坪县" />
+        <宁蒗彝族自治县 DID="5" DName="宁蒗彝族自治县" />
+    </丽江市>
+    <思茅市 CID="7" CName="思茅市">
+        <翠云区 DID="1" DName="翠云区" />
+        <普洱哈尼族彝族自治县 DID="2" DName="普洱哈尼族彝族自治县" />
+        <墨江哈尼族自治县 DID="3" DName="墨江哈尼族自治县" />
+        <景东彝族自治县 DID="4" DName="景东彝族自治县" />
+        <景谷傣族彝族自治县 DID="5" DName="景谷傣族彝族自治县" />
+        <镇沅彝族哈尼族拉祜族自治县 DID="6" DName="镇沅彝族哈尼族拉祜族自治县" />
+        <江城哈尼族彝族自治县 DID="7" DName="江城哈尼族彝族自治县" />
+        <孟连傣族拉祜族佤族自治县 DID="8" DName="孟连傣族拉祜族佤族自治县" />
+        <澜沧拉祜族自治县 DID="9" DName="澜沧拉祜族自治县" />
+        <西盟佤族自治县 DID="10" DName="西盟佤族自治县" />
+    </思茅市>
+    <临沧市 CID="8" CName="临沧市">
+        <临翔区 DID="1" DName="临翔区" />
+        <凤庆县 DID="2" DName="凤庆县" />
+        <云县 DID="3" DName="云县" />
+        <永德县 DID="4" DName="永德县" />
+        <镇康县 DID="5" DName="镇康县" />
+        <双江拉祜族佤族布朗族傣族自治县 DID="6" DName="双江拉祜族佤族布朗族傣族自治县" />
+        <耿马傣族佤族自治县 DID="7" DName="耿马傣族佤族自治县" />
+        <沧源佤族自治县 DID="8" DName="沧源佤族自治县" />
+    </临沧市>
+    <楚雄彝族自治州 CID="9" CName="楚雄彝族自治州">
+        <楚雄市 DID="1" DName="楚雄市" />
+        <双柏县 DID="2" DName="双柏县" />
+        <牟定县 DID="3" DName="牟定县" />
+        <南华县 DID="4" DName="南华县" />
+        <姚安县 DID="5" DName="姚安县" />
+        <大姚县 DID="6" DName="大姚县" />
+        <永仁县 DID="7" DName="永仁县" />
+        <元谋县 DID="8" DName="元谋县" />
+        <武定县 DID="9" DName="武定县" />
+        <禄丰县 DID="10" DName="禄丰县" />
+    </楚雄彝族自治州>
+    <红河哈尼族彝族自治州 CID="10" CName="红河哈尼族彝族自治州">
+        <个旧市 DID="1" DName="个旧市" />
+        <开远市 DID="2" DName="开远市" />
+        <蒙自县 DID="3" DName="蒙自县" />
+        <屏边苗族自治县 DID="4" DName="屏边苗族自治县" />
+        <建水县 DID="5" DName="建水县" />
+        <石屏县 DID="6" DName="石屏县" />
+        <弥勒县 DID="7" DName="弥勒县" />
+        <泸西县 DID="8" DName="泸西县" />
+        <元阳县 DID="9" DName="元阳县" />
+        <红河县 DID="10" DName="红河县" />
+        <金平苗族瑶族傣族自治县 DID="11" DName="金平苗族瑶族傣族自治县" />
+        <绿春县 DID="12" DName="绿春县" />
+        <河口瑶族自治县 DID="13" DName="河口瑶族自治县" />
+    </红河哈尼族彝族自治州>
+    <文山壮族苗族自治州 CID="11" CName="文山壮族苗族自治州">
+        <文山县 DID="1" DName="文山县" />
+        <砚山县 DID="2" DName="砚山县" />
+        <西畴县 DID="3" DName="西畴县" />
+        <麻栗坡县 DID="4" DName="麻栗坡县" />
+        <马关县 DID="5" DName="马关县" />
+        <丘北县 DID="6" DName="丘北县" />
+        <广南县 DID="7" DName="广南县" />
+        <富宁县 DID="8" DName="富宁县" />
+    </文山壮族苗族自治州>
+    <西双版纳傣族自治州 CID="12" CName="西双版纳傣族自治州">
+        <景洪市 DID="1" DName="景洪市" />
+        <勐海县 DID="2" DName="勐海县" />
+        <勐腊县 DID="3" DName="勐腊县" />
+    </西双版纳傣族自治州>
+    <大理白族自治州 CID="13" CName="大理白族自治州">
+        <大理市 DID="1" DName="大理市" />
+        <漾濞彝族自治县 DID="2" DName="漾濞彝族自治县" />
+        <祥云县 DID="3" DName="祥云县" />
+        <宾川县 DID="4" DName="宾川县" />
+        <弥渡县 DID="5" DName="弥渡县" />
+        <南涧彝族自治县 DID="6" DName="南涧彝族自治县" />
+        <巍山彝族回族自治县 DID="7" DName="巍山彝族回族自治县" />
+        <永平县 DID="8" DName="永平县" />
+        <云龙县 DID="9" DName="云龙县" />
+        <洱源县 DID="10" DName="洱源县" />
+        <剑川县 DID="11" DName="剑川县" />
+        <鹤庆县 DID="12" DName="鹤庆县" />
+    </大理白族自治州>
+    <德宏傣族景颇族自治州 CID="14" CName="德宏傣族景颇族自治州">
+        <瑞丽市 DID="1" DName="瑞丽市" />
+        <潞西市 DID="2" DName="潞西市" />
+        <梁河县 DID="3" DName="梁河县" />
+        <盈江县 DID="4" DName="盈江县" />
+        <陇川县 DID="5" DName="陇川县" />
+    </德宏傣族景颇族自治州>
+    <怒江傈僳族自治州 CID="15" CName="怒江傈僳族自治州">
+        <泸水县 DID="1" DName="泸水县" />
+        <福贡县 DID="2" DName="福贡县" />
+        <贡山独龙族怒族自治县 DID="3" DName="贡山独龙族怒族自治县" />
+        <兰坪白族普米族自治县 DID="4" DName="兰坪白族普米族自治县" />
+    </怒江傈僳族自治州>
+    <迪庆藏族自治州 CID="16" CName="迪庆藏族自治州">
+        <香格里拉县 DID="1" DName="香格里拉县" />
+        <德钦县 DID="2" DName="德钦县" />
+        <维西傈僳族自治县 DID="3" DName="维西傈僳族自治县" />
+    </迪庆藏族自治州>
+</云南省>
+<西藏自治区 PID="26" PName="西藏自治区">
+    <拉萨市 CID="1" CName="拉萨市">
+        <城关区 DID="1" DName="城关区" />
+        <林周县 DID="2" DName="林周县" />
+        <当雄县 DID="3" DName="当雄县" />
+        <尼木县 DID="4" DName="尼木县" />
+        <曲水县 DID="5" DName="曲水县" />
+        <堆龙德庆县 DID="6" DName="堆龙德庆县" />
+        <达孜县 DID="7" DName="达孜县" />
+        <墨竹工卡县 DID="8" DName="墨竹工卡县" />
+    </拉萨市>
+    <昌都地区 CID="2" CName="昌都地区">
+        <昌都县 DID="1" DName="昌都县" />
+        <江达县 DID="2" DName="江达县" />
+        <贡觉县 DID="3" DName="贡觉县" />
+        <类乌齐县 DID="4" DName="类乌齐县" />
+        <丁青县 DID="5" DName="丁青县" />
+        <察雅县 DID="6" DName="察雅县" />
+        <八宿县 DID="7" DName="八宿县" />
+        <左贡县 DID="8" DName="左贡县" />
+        <芒康县 DID="9" DName="芒康县" />
+        <洛隆县 DID="10" DName="洛隆县" />
+        <边坝县 DID="11" DName="边坝县" />
+    </昌都地区>
+    <山南地区 CID="3" CName="山南地区">
+        <乃东县 DID="1" DName="乃东县" />
+        <扎囊县 DID="2" DName="扎囊县" />
+        <贡嘎县 DID="3" DName="贡嘎县" />
+        <桑日县 DID="4" DName="桑日县" />
+        <琼结县 DID="5" DName="琼结县" />
+        <曲松县 DID="6" DName="曲松县" />
+        <措美县 DID="7" DName="措美县" />
+        <洛扎县 DID="8" DName="洛扎县" />
+        <加查县 DID="9" DName="加查县" />
+        <隆子县 DID="10" DName="隆子县" />
+        <错那县 DID="11" DName="错那县" />
+        <浪卡子县 DID="12" DName="浪卡子县" />
+    </山南地区>
+    <日喀则地区 CID="4" CName="日喀则地区">
+        <日喀则市 DID="1" DName="日喀则市" />
+        <南木林县 DID="2" DName="南木林县" />
+        <江孜县 DID="3" DName="江孜县" />
+        <定日县 DID="4" DName="定日县" />
+        <萨迦县 DID="5" DName="萨迦县" />
+        <拉孜县 DID="6" DName="拉孜县" />
+        <昂仁县 DID="7" DName="昂仁县" />
+        <谢通门县 DID="8" DName="谢通门县" />
+        <白朗县 DID="9" DName="白朗县" />
+        <仁布县 DID="10" DName="仁布县" />
+        <康马县 DID="11" DName="康马县" />
+        <定结县 DID="12" DName="定结县" />
+        <仲巴县 DID="13" DName="仲巴县" />
+        <亚东县 DID="14" DName="亚东县" />
+        <吉隆县 DID="15" DName="吉隆县" />
+        <聂拉木县 DID="16" DName="聂拉木县" />
+        <萨嘎县 DID="17" DName="萨嘎县" />
+        <岗巴县 DID="18" DName="岗巴县" />
+    </日喀则地区>
+    <那曲地区 CID="5" CName="那曲地区">
+        <那曲县 DID="1" DName="那曲县" />
+        <嘉黎县 DID="2" DName="嘉黎县" />
+        <比如县 DID="3" DName="比如县" />
+        <聂荣县 DID="4" DName="聂荣县" />
+        <安多县 DID="5" DName="安多县" />
+        <申扎县 DID="6" DName="申扎县" />
+        <索县 DID="7" DName="索县" />
+        <班戈县 DID="8" DName="班戈县" />
+        <巴青县 DID="9" DName="巴青县" />
+        <尼玛县 DID="10" DName="尼玛县" />
+    </那曲地区>
+    <阿里地区 CID="6" CName="阿里地区">
+        <普兰县 DID="1" DName="普兰县" />
+        <札达县 DID="2" DName="札达县" />
+        <噶尔县 DID="3" DName="噶尔县" />
+        <日土县 DID="4" DName="日土县" />
+        <革吉县 DID="5" DName="革吉县" />
+        <改则县 DID="6" DName="改则县" />
+        <措勤县 DID="7" DName="措勤县" />
+    </阿里地区>
+    <林芝地区 CID="7" CName="林芝地区">
+        <林芝县 DID="1" DName="林芝县" />
+        <工布江达县 DID="2" DName="工布江达县" />
+        <米林县 DID="3" DName="米林县" />
+        <墨脱县 DID="4" DName="墨脱县" />
+        <波密县 DID="5" DName="波密县" />
+        <察隅县 DID="6" DName="察隅县" />
+        <朗县 DID="7" DName="朗县" />
+    </林芝地区>
+</西藏自治区>
+<陕西省 PID="27" PName="陕西省">
+    <西安市 CID="1" CName="西安市">
+        <新城区 DID="1" DName="新城区" />
+        <碑林区 DID="2" DName="碑林区" />
+        <莲湖区 DID="3" DName="莲湖区" />
+        <灞桥区 DID="4" DName="灞桥区" />
+        <未央区 DID="5" DName="未央区" />
+        <雁塔区 DID="6" DName="雁塔区" />
+        <阎良区 DID="7" DName="阎良区" />
+        <临潼区 DID="8" DName="临潼区" />
+        <长安区 DID="9" DName="长安区" />
+        <蓝田县 DID="10" DName="蓝田县" />
+        <周至县 DID="11" DName="周至县" />
+        <户县 DID="12" DName="户县" />
+        <高陵县 DID="13" DName="高陵县" />
+    </西安市>
+    <铜川市 CID="2" CName="铜川市">
+        <王益区 DID="1" DName="王益区" />
+        <印台区 DID="2" DName="印台区" />
+        <耀州区 DID="3" DName="耀州区" />
+        <宜君县 DID="4" DName="宜君县" />
+    </铜川市>
+    <宝鸡市 CID="3" CName="宝鸡市">
+        <渭滨区 DID="1" DName="渭滨区" />
+        <金台区 DID="2" DName="金台区" />
+        <陈仓区 DID="3" DName="陈仓区" />
+        <凤翔县 DID="4" DName="凤翔县" />
+        <岐山县 DID="5" DName="岐山县" />
+        <扶风县 DID="6" DName="扶风县" />
+        <眉县 DID="7" DName="眉县" />
+        <陇县 DID="8" DName="陇县" />
+        <千阳县 DID="9" DName="千阳县" />
+        <麟游县 DID="10" DName="麟游县" />
+        <凤县 DID="11" DName="凤县" />
+        <太白县 DID="12" DName="太白县" />
+    </宝鸡市>
+    <咸阳市 CID="4" CName="咸阳市">
+        <秦都区 DID="1" DName="秦都区" />
+        <杨凌区 DID="2" DName="杨凌区" />
+        <渭城区 DID="3" DName="渭城区" />
+        <三原县 DID="4" DName="三原县" />
+        <泾阳县 DID="5" DName="泾阳县" />
+        <乾县 DID="6" DName="乾县" />
+        <礼泉县 DID="7" DName="礼泉县" />
+        <永寿县 DID="8" DName="永寿县" />
+        <彬县 DID="9" DName="彬县" />
+        <长武县 DID="10" DName="长武县" />
+        <旬邑县 DID="11" DName="旬邑县" />
+        <淳化县 DID="12" DName="淳化县" />
+        <武功县 DID="13" DName="武功县" />
+        <兴平市 DID="14" DName="兴平市" />
+    </咸阳市>
+    <渭南市 CID="5" CName="渭南市">
+        <临渭区 DID="1" DName="临渭区" />
+        <华县 DID="2" DName="华县" />
+        <潼关县 DID="3" DName="潼关县" />
+        <大荔县 DID="4" DName="大荔县" />
+        <合阳县 DID="5" DName="合阳县" />
+        <澄城县 DID="6" DName="澄城县" />
+        <蒲城县 DID="7" DName="蒲城县" />
+        <白水县 DID="8" DName="白水县" />
+        <富平县 DID="9" DName="富平县" />
+        <韩城市 DID="10" DName="韩城市" />
+        <华阴市 DID="11" DName="华阴市" />
+    </渭南市>
+    <延安市 CID="6" CName="延安市">
+        <宝塔区 DID="1" DName="宝塔区" />
+        <延长县 DID="2" DName="延长县" />
+        <延川县 DID="3" DName="延川县" />
+        <子长县 DID="4" DName="子长县" />
+        <安塞县 DID="5" DName="安塞县" />
+        <志丹县 DID="6" DName="志丹县" />
+        <吴旗县 DID="7" DName="吴旗县" />
+        <甘泉县 DID="8" DName="甘泉县" />
+        <富县 DID="9" DName="富县" />
+        <洛川县 DID="10" DName="洛川县" />
+        <宜川县 DID="11" DName="宜川县" />
+        <黄龙县 DID="12" DName="黄龙县" />
+        <黄陵县 DID="13" DName="黄陵县" />
+    </延安市>
+    <汉中市 CID="7" CName="汉中市">
+        <汉台区 DID="1" DName="汉台区" />
+        <南郑县 DID="2" DName="南郑县" />
+        <城固县 DID="3" DName="城固县" />
+        <洋县 DID="4" DName="洋县" />
+        <西乡县 DID="5" DName="西乡县" />
+        <勉县 DID="6" DName="勉县" />
+        <宁强县 DID="7" DName="宁强县" />
+        <略阳县 DID="8" DName="略阳县" />
+        <镇巴县 DID="9" DName="镇巴县" />
+        <留坝县 DID="10" DName="留坝县" />
+        <佛坪县 DID="11" DName="佛坪县" />
+    </汉中市>
+    <榆林市 CID="8" CName="榆林市">
+        <榆阳区 DID="1" DName="榆阳区" />
+        <神木县 DID="2" DName="神木县" />
+        <府谷县 DID="3" DName="府谷县" />
+        <横山县 DID="4" DName="横山县" />
+        <靖边县 DID="5" DName="靖边县" />
+        <定边县 DID="6" DName="定边县" />
+        <绥德县 DID="7" DName="绥德县" />
+        <米脂县 DID="8" DName="米脂县" />
+        <佳县 DID="9" DName="佳县" />
+        <吴堡县 DID="10" DName="吴堡县" />
+        <清涧县 DID="11" DName="清涧县" />
+        <子洲县 DID="12" DName="子洲县" />
+    </榆林市>
+    <安康市 CID="9" CName="安康市">
+        <汉滨区 DID="1" DName="汉滨区" />
+        <汉阴县 DID="2" DName="汉阴县" />
+        <石泉县 DID="3" DName="石泉县" />
+        <宁陕县 DID="4" DName="宁陕县" />
+        <紫阳县 DID="5" DName="紫阳县" />
+        <岚皋县 DID="6" DName="岚皋县" />
+        <平利县 DID="7" DName="平利县" />
+        <镇坪县 DID="8" DName="镇坪县" />
+        <旬阳县 DID="9" DName="旬阳县" />
+        <白河县 DID="10" DName="白河县" />
+    </安康市>
+    <商洛市 CID="10" CName="商洛市">
+        <商州区 DID="1" DName="商州区" />
+        <洛南县 DID="2" DName="洛南县" />
+        <丹凤县 DID="3" DName="丹凤县" />
+        <商南县 DID="4" DName="商南县" />
+        <山阳县 DID="5" DName="山阳县" />
+        <镇安县 DID="6" DName="镇安县" />
+        <柞水县 DID="7" DName="柞水县" />
+    </商洛市>
+</陕西省>
+<甘肃省 PID="28" PName="甘肃省">
+    <兰州市 CID="1" CName="兰州市">
+        <城关区 DID="1" DName="城关区" />
+        <七里河区 DID="2" DName="七里河区" />
+        <西固区 DID="3" DName="西固区" />
+        <安宁区 DID="4" DName="安宁区" />
+        <红古区 DID="5" DName="红古区" />
+        <永登县 DID="6" DName="永登县" />
+        <皋兰县 DID="7" DName="皋兰县" />
+        <榆中县 DID="8" DName="榆中县" />
+    </兰州市>
+    <嘉峪关市 CID="2" CName="嘉峪关市" />
+    <金昌市 CID="3" CName="金昌市">
+        <金川区 DID="1" DName="金川区" />
+        <永昌县 DID="2" DName="永昌县" />
+    </金昌市>
+    <白银市 CID="4" CName="白银市">
+        <白银区 DID="1" DName="白银区" />
+        <平川区 DID="2" DName="平川区" />
+        <靖远县 DID="3" DName="靖远县" />
+        <会宁县 DID="4" DName="会宁县" />
+        <景泰县 DID="5" DName="景泰县" />
+    </白银市>
+    <天水市 CID="5" CName="天水市">
+        <秦城区 DID="1" DName="秦城区" />
+        <北道区 DID="2" DName="北道区" />
+        <清水县 DID="3" DName="清水县" />
+        <秦安县 DID="4" DName="秦安县" />
+        <甘谷县 DID="5" DName="甘谷县" />
+        <武山县 DID="6" DName="武山县" />
+        <张家川回族自治县 DID="7" DName="张家川回族自治县" />
+    </天水市>
+    <武威市 CID="6" CName="武威市">
+        <凉州区 DID="1" DName="凉州区" />
+        <民勤县 DID="2" DName="民勤县" />
+        <古浪县 DID="3" DName="古浪县" />
+        <天祝藏族自治县 DID="4" DName="天祝藏族自治县" />
+    </武威市>
+    <张掖市 CID="7" CName="张掖市">
+        <甘州区 DID="1" DName="甘州区" />
+        <肃南裕固族自治县 DID="2" DName="肃南裕固族自治县" />
+        <民乐县 DID="3" DName="民乐县" />
+        <临泽县 DID="4" DName="临泽县" />
+        <高台县 DID="5" DName="高台县" />
+        <山丹县 DID="6" DName="山丹县" />
+    </张掖市>
+    <平凉市 CID="8" CName="平凉市">
+        <崆峒区 DID="1" DName="崆峒区" />
+        <泾川县 DID="2" DName="泾川县" />
+        <灵台县 DID="3" DName="灵台县" />
+        <崇信县 DID="4" DName="崇信县" />
+        <华亭县 DID="5" DName="华亭县" />
+        <庄浪县 DID="6" DName="庄浪县" />
+        <静宁县 DID="7" DName="静宁县" />
+    </平凉市>
+    <酒泉市 CID="9" CName="酒泉市">
+        <肃州区 DID="1" DName="肃州区" />
+        <金塔县 DID="2" DName="金塔县" />
+        <安西县 DID="3" DName="安西县" />
+        <肃北蒙古族自治县 DID="4" DName="肃北蒙古族自治县" />
+        <阿克塞哈萨克族自治县 DID="5" DName="阿克塞哈萨克族自治县" />
+        <玉门市 DID="6" DName="玉门市" />
+        <敦煌市 DID="7" DName="敦煌市" />
+    </酒泉市>
+    <庆阳市 CID="10" CName="庆阳市">
+        <西峰区 DID="1" DName="西峰区" />
+        <庆城县 DID="2" DName="庆城县" />
+        <环县 DID="3" DName="环县" />
+        <华池县 DID="4" DName="华池县" />
+        <合水县 DID="5" DName="合水县" />
+        <正宁县 DID="6" DName="正宁县" />
+        <宁县 DID="7" DName="宁县" />
+        <镇原县 DID="8" DName="镇原县" />
+    </庆阳市>
+    <定西市 CID="11" CName="定西市">
+        <安定区 DID="1" DName="安定区" />
+        <通渭县 DID="2" DName="通渭县" />
+        <陇西县 DID="3" DName="陇西县" />
+        <渭源县 DID="4" DName="渭源县" />
+        <临洮县 DID="5" DName="临洮县" />
+        <漳县 DID="6" DName="漳县" />
+        <岷县 DID="7" DName="岷县" />
+    </定西市>
+    <陇南市 CID="12" CName="陇南市">
+        <武都区 DID="1" DName="武都区" />
+        <成县 DID="2" DName="成县" />
+        <文县 DID="3" DName="文县" />
+        <宕昌县 DID="4" DName="宕昌县" />
+        <康县 DID="5" DName="康县" />
+        <西和县 DID="6" DName="西和县" />
+        <礼县 DID="7" DName="礼县" />
+        <徽县 DID="8" DName="徽县" />
+        <两当县 DID="9" DName="两当县" />
+    </陇南市>
+    <临夏回族自治州 CID="13" CName="临夏回族自治州">
+        <临夏市 DID="1" DName="临夏市" />
+        <临夏县 DID="2" DName="临夏县" />
+        <康乐县 DID="3" DName="康乐县" />
+        <永靖县 DID="4" DName="永靖县" />
+        <广河县 DID="5" DName="广河县" />
+        <和政县 DID="6" DName="和政县" />
+        <东乡族自治县 DID="7" DName="东乡族自治县" />
+        <积石山保安族东乡族撒拉族自治县 DID="8" DName="积石山保安族东乡族撒拉族自治县" />
+    </临夏回族自治州>
+    <甘南藏族自治州 CID="14" CName="甘南藏族自治州">
+        <合作市 DID="1" DName="合作市" />
+        <临潭县 DID="2" DName="临潭县" />
+        <卓尼县 DID="3" DName="卓尼县" />
+        <舟曲县 DID="4" DName="舟曲县" />
+        <迭部县 DID="5" DName="迭部县" />
+        <玛曲县 DID="6" DName="玛曲县" />
+        <碌曲县 DID="7" DName="碌曲县" />
+        <夏河县 DID="8" DName="夏河县" />
+    </甘南藏族自治州>
+</甘肃省>
+<青海省 PID="29" PName="青海省">
+    <西宁市 CID="1" CName="西宁市">
+        <城东区 DID="1" DName="城东区" />
+        <城中区 DID="2" DName="城中区" />
+        <城西区 DID="3" DName="城西区" />
+        <城北区 DID="4" DName="城北区" />
+        <大通回族土族自治县 DID="5" DName="大通回族土族自治县" />
+        <湟中县 DID="6" DName="湟中县" />
+        <湟源县 DID="7" DName="湟源县" />
+    </西宁市>
+    <海东地区 CID="2" CName="海东地区">
+        <平安县 DID="1" DName="平安县" />
+        <民和回族土族自治县 DID="2" DName="民和回族土族自治县" />
+        <乐都县 DID="3" DName="乐都县" />
+        <互助土族自治县 DID="4" DName="互助土族自治县" />
+        <化隆回族自治县 DID="5" DName="化隆回族自治县" />
+        <循化撒拉族自治县 DID="6" DName="循化撒拉族自治县" />
+    </海东地区>
+    <海北藏族自治州 CID="3" CName="海北藏族自治州">
+        <门源回族自治县 DID="1" DName="门源回族自治县" />
+        <祁连县 DID="2" DName="祁连县" />
+        <海晏县 DID="3" DName="海晏县" />
+        <刚察县 DID="4" DName="刚察县" />
+    </海北藏族自治州>
+    <黄南藏族自治州 CID="4" CName="黄南藏族自治州">
+        <同仁县 DID="1" DName="同仁县" />
+        <尖扎县 DID="2" DName="尖扎县" />
+        <泽库县 DID="3" DName="泽库县" />
+        <河南蒙古族自治县 DID="4" DName="河南蒙古族自治县" />
+    </黄南藏族自治州>
+    <海南藏族自治州 CID="5" CName="海南藏族自治州">
+        <共和县 DID="1" DName="共和县" />
+        <同德县 DID="2" DName="同德县" />
+        <贵德县 DID="3" DName="贵德县" />
+        <兴海县 DID="4" DName="兴海县" />
+        <贵南县 DID="5" DName="贵南县" />
+    </海南藏族自治州>
+    <果洛藏族自治州 CID="6" CName="果洛藏族自治州">
+        <玛沁县 DID="1" DName="玛沁县" />
+        <班玛县 DID="2" DName="班玛县" />
+        <甘德县 DID="3" DName="甘德县" />
+        <达日县 DID="4" DName="达日县" />
+        <久治县 DID="5" DName="久治县" />
+        <玛多县 DID="6" DName="玛多县" />
+    </果洛藏族自治州>
+    <玉树藏族自治州 CID="7" CName="玉树藏族自治州">
+        <玉树县 DID="1" DName="玉树县" />
+        <杂多县 DID="2" DName="杂多县" />
+        <称多县 DID="3" DName="称多县" />
+        <治多县 DID="4" DName="治多县" />
+        <囊谦县 DID="5" DName="囊谦县" />
+        <曲麻莱县 DID="6" DName="曲麻莱县" />
+    </玉树藏族自治州>
+    <海西蒙古族藏族自治州 CID="8" CName="海西蒙古族藏族自治州">
+        <格尔木市 DID="1" DName="格尔木市" />
+        <德令哈市 DID="2" DName="德令哈市" />
+        <乌兰县 DID="3" DName="乌兰县" />
+        <都兰县 DID="4" DName="都兰县" />
+        <天峻县 DID="5" DName="天峻县" />
+    </海西蒙古族藏族自治州>
+</青海省>
+<宁夏回族自治区 PID="30" PName="宁夏回族自治区">
+    <银川市 CID="1" CName="银川市">
+        <兴庆区 DID="1" DName="兴庆区" />
+        <西夏区 DID="2" DName="西夏区" />
+        <金凤区 DID="3" DName="金凤区" />
+        <永宁县 DID="4" DName="永宁县" />
+        <贺兰县 DID="5" DName="贺兰县" />
+        <灵武市 DID="6" DName="灵武市" />
+    </银川市>
+    <石嘴山市 CID="2" CName="石嘴山市">
+        <大武口区 DID="1" DName="大武口区" />
+        <惠农区 DID="2" DName="惠农区" />
+        <平罗县 DID="3" DName="平罗县" />
+    </石嘴山市>
+    <吴忠市 CID="3" CName="吴忠市">
+        <利通区 DID="1" DName="利通区" />
+        <盐池县 DID="2" DName="盐池县" />
+        <同心县 DID="3" DName="同心县" />
+        <青铜峡市 DID="4" DName="青铜峡市" />
+    </吴忠市>
+    <固原市 CID="4" CName="固原市">
+        <原州区 DID="1" DName="原州区" />
+        <西吉县 DID="2" DName="西吉县" />
+        <隆德县 DID="3" DName="隆德县" />
+        <泾源县 DID="4" DName="泾源县" />
+        <彭阳县 DID="5" DName="彭阳县" />
+    </固原市>
+    <中卫市 CID="5" CName="中卫市">
+        <沙坡头区 DID="1" DName="沙坡头区" />
+        <中宁县 DID="2" DName="中宁县" />
+        <海原县 DID="3" DName="海原县" />
+    </中卫市>
+</宁夏回族自治区>
+<新疆维吾尔自治区 PID="31" PName="新疆维吾尔自治区">
+    <乌鲁木齐市 CID="1" CName="乌鲁木齐市">
+        <天山区 DID="1" DName="天山区" />
+        <沙依巴克区 DID="2" DName="沙依巴克区" />
+        <新市区 DID="3" DName="新市区" />
+        <水磨沟区 DID="4" DName="水磨沟区" />
+        <头屯河区 DID="5" DName="头屯河区" />
+        <达坂城区 DID="6" DName="达坂城区" />
+        <东山区 DID="7" DName="东山区" />
+        <乌鲁木齐县 DID="8" DName="乌鲁木齐县" />
+    </乌鲁木齐市>
+    <克拉玛依市 CID="2" CName="克拉玛依市">
+        <独山子区 DID="1" DName="独山子区" />
+        <克拉玛依区 DID="2" DName="克拉玛依区" />
+        <白碱滩区 DID="3" DName="白碱滩区" />
+        <乌尔禾区 DID="4" DName="乌尔禾区" />
+    </克拉玛依市>
+    <吐鲁番地区 CID="3" CName="吐鲁番地区">
+        <吐鲁番市 DID="1" DName="吐鲁番市" />
+        <鄯善县 DID="2" DName="鄯善县" />
+        <托克逊县 DID="3" DName="托克逊县" />
+    </吐鲁番地区>
+    <哈密地区 CID="4" CName="哈密地区">
+        <哈密市 DID="1" DName="哈密市" />
+        <巴里坤哈萨克自治县 DID="2" DName="巴里坤哈萨克自治县" />
+        <伊吾县 DID="3" DName="伊吾县" />
+    </哈密地区>
+    <昌吉回族自治州 CID="5" CName="昌吉回族自治州">
+        <昌吉市 DID="1" DName="昌吉市" />
+        <阜康市 DID="2" DName="阜康市" />
+        <米泉市 DID="3" DName="米泉市" />
+        <呼图壁县 DID="4" DName="呼图壁县" />
+        <玛纳斯县 DID="5" DName="玛纳斯县" />
+        <奇台县 DID="6" DName="奇台县" />
+        <吉木萨尔县 DID="7" DName="吉木萨尔县" />
+        <木垒哈萨克自治县 DID="8" DName="木垒哈萨克自治县" />
+    </昌吉回族自治州>
+    <博尔塔拉蒙古自治州 CID="6" CName="博尔塔拉蒙古自治州">
+        <博乐市 DID="1" DName="博乐市" />
+        <精河县 DID="2" DName="精河县" />
+        <温泉县 DID="3" DName="温泉县" />
+    </博尔塔拉蒙古自治州>
+    <巴音郭楞蒙古自治州 CID="7" CName="巴音郭楞蒙古自治州">
+        <库尔勒市 DID="1" DName="库尔勒市" />
+        <轮台县 DID="2" DName="轮台县" />
+        <尉犁县 DID="3" DName="尉犁县" />
+        <若羌县 DID="4" DName="若羌县" />
+        <且末县 DID="5" DName="且末县" />
+        <焉耆回族自治县 DID="6" DName="焉耆回族自治县" />
+        <和静县 DID="7" DName="和静县" />
+        <和硕县 DID="8" DName="和硕县" />
+        <博湖县 DID="9" DName="博湖县" />
+    </巴音郭楞蒙古自治州>
+    <阿克苏地区 CID="8" CName="阿克苏地区">
+        <阿克苏市 DID="1" DName="阿克苏市" />
+        <温宿县 DID="2" DName="温宿县" />
+        <库车县 DID="3" DName="库车县" />
+        <沙雅县 DID="4" DName="沙雅县" />
+        <新和县 DID="5" DName="新和县" />
+        <拜城县 DID="6" DName="拜城县" />
+        <乌什县 DID="7" DName="乌什县" />
+        <阿瓦提县 DID="8" DName="阿瓦提县" />
+        <柯坪县 DID="9" DName="柯坪县" />
+    </阿克苏地区>
+    <克孜勒苏柯尔克孜自治州 CID="9" CName="克孜勒苏柯尔克孜自治州">
+        <阿图什市 DID="1" DName="阿图什市" />
+        <阿克陶县 DID="2" DName="阿克陶县" />
+        <阿合奇县 DID="3" DName="阿合奇县" />
+        <乌恰县 DID="4" DName="乌恰县" />
+    </克孜勒苏柯尔克孜自治州>
+    <喀什地区 CID="10" CName="喀什地区">
+        <喀什市 DID="1" DName="喀什市" />
+        <疏附县 DID="2" DName="疏附县" />
+        <疏勒县 DID="3" DName="疏勒县" />
+        <英吉沙县 DID="4" DName="英吉沙县" />
+        <泽普县 DID="5" DName="泽普县" />
+        <莎车县 DID="6" DName="莎车县" />
+        <叶城县 DID="7" DName="叶城县" />
+        <麦盖提县 DID="8" DName="麦盖提县" />
+        <岳普湖县 DID="9" DName="岳普湖县" />
+        <伽师县 DID="10" DName="伽师县" />
+        <巴楚县 DID="11" DName="巴楚县" />
+        <塔什库尔干塔吉克自治县 DID="12" DName="塔什库尔干塔吉克自治县" />
+    </喀什地区>
+    <和田地区 CID="11" CName="和田地区">
+        <和田市 DID="1" DName="和田市" />
+        <和田县 DID="2" DName="和田县" />
+        <墨玉县 DID="3" DName="墨玉县" />
+        <皮山县 DID="4" DName="皮山县" />
+        <洛浦县 DID="5" DName="洛浦县" />
+        <策勒县 DID="6" DName="策勒县" />
+        <于田县 DID="7" DName="于田县" />
+        <民丰县 DID="8" DName="民丰县" />
+    </和田地区>
+    <伊犁哈萨克自治州 CID="12" CName="伊犁哈萨克自治州">
+        <伊宁市 DID="1" DName="伊宁市" />
+        <奎屯市 DID="2" DName="奎屯市" />
+        <伊宁县 DID="3" DName="伊宁县" />
+        <察布查尔锡伯自治县 DID="4" DName="察布查尔锡伯自治县" />
+        <霍城县 DID="5" DName="霍城县" />
+        <巩留县 DID="6" DName="巩留县" />
+        <新源县 DID="7" DName="新源县" />
+        <昭苏县 DID="8" DName="昭苏县" />
+        <特克斯县 DID="9" DName="特克斯县" />
+        <尼勒克县 DID="10" DName="尼勒克县" />
+    </伊犁哈萨克自治州>
+    <塔城地区 CID="13" CName="塔城地区">
+        <塔城市 DID="1" DName="塔城市" />
+        <乌苏市 DID="2" DName="乌苏市" />
+        <额敏县 DID="3" DName="额敏县" />
+        <沙湾县 DID="4" DName="沙湾县" />
+        <托里县 DID="5" DName="托里县" />
+        <裕民县 DID="6" DName="裕民县" />
+        <和布克赛尔蒙古自治县 DID="7" DName="和布克赛尔蒙古自治县" />
+    </塔城地区>
+    <阿勒泰地区 CID="14" CName="阿勒泰地区">
+        <阿勒泰市 DID="1" DName="阿勒泰市" />
+        <布尔津县 DID="2" DName="布尔津县" />
+        <富蕴县 DID="3" DName="富蕴县" />
+        <福海县 DID="4" DName="福海县" />
+        <哈巴河县 DID="5" DName="哈巴河县" />
+        <青河县 DID="6" DName="青河县" />
+        <吉木乃县 DID="7" DName="吉木乃县" />
+    </阿勒泰地区>
+    <石河子市 CID="15" CName="石河子市" />
+    <阿拉尔市 CID="16" CName="阿拉尔市" />
+    <图木舒克市 CID="17" CName="图木舒克市" />
+    <五家渠市 CID="18" CName="五家渠市" />
+</新疆维吾尔自治区>
+<香港特别行政区 PID="32" PName="香港特别行政区">
+    <香港特别行政区 CID="1" CName="香港特别行政区" />
+</香港特别行政区>
+<澳门特别行政区 PID="33" PName="澳门特别行政区">
+    <澳门特别行政区 CID="1" CName="澳门特别行政区" />
+</澳门特别行政区>
+<台湾省 PID="34" PName="台湾省">
+    <台湾省 CID="1" CName="台湾省" />
+</台湾省>

@@ -1,0 +1,1445 @@
+#include "stdafx.h"
+
+#define SQLCA_NONE 
+#define ORACA_NONE
+#include <sqlcpr.h>
+#include <string>
+
+#include "DatabaseFamily.h"
+#include <sqlda.h>
+
+
+EXEC SQL INCLUDE SQLCA;
+EXEC SQL INCLUDE ORACA;
+
+EXEC ORACLE OPTION (RELEASE_CURSOR = YES);  
+EXEC ORACLE OPTION (ORACA=YES);
+
+extern struct oraca oraca;
+// SQLDA * select_des;
+// SQLDA * bind_des;
+
+extern void sqlgls(char*,size_t*,size_t *);
+
+//线程运行上下文
+EXEC SQL BEGIN DECLARE SECTION;
+	extern sql_context m_ctx[ 200 ];
+EXEC SQL END DECLARE SECTION;
+//连接池编译选项需增加：
+//CPOOL=YES CMIN = 5 CMAX = 15 	
+
+CDatabaseFamily::CDatabaseFamily(void)
+{
+
+}
+
+CDatabaseFamily::~CDatabaseFamily(void)
+{
+
+}
+
+void CDatabaseFamily::SetConnectDB(char* uid, char* pwd, char* sid)
+{
+	strncpy(familyuid, uid,31);
+	strncpy(familypwd,pwd,31);
+	strncpy(familysid, sid,31);
+}
+
+//连接WEB数据库  (初始化连接名，上下文)
+bool CDatabaseFamily::ConnectDB()
+{
+	return ConnectFamily();
+}
+
+
+/*================================================================ 
+*
+* 函 数 名：Get_Family_List 
+** 根据用户ID获取用户的加入的固定群列表
+* 参 数： 
+* const uint32 c_iUserID [IN] : 用户ID 
+* uint32 *FamilyID [[IN,OUT]] : 用户加入的家族数组
+* int &FamilyCount	[IN, OUT] : 要获取的家族数目和返回的数目, 如果为0，则输出为用户加入的家族数目
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 用户不存在: DB_NOUSER; 操作失败: DB_ERROR;
+* 
+================================================================*/
+
+int CDatabaseFamily::Get_Family_List(const uint32 c_iUserID, uint32 *FamilyID, int &FamilyCount)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		int ret_count;
+		unsigned int      i_userid, i_familyid;
+		VARCHAR	 db_link_name[32];
+		int		 retcode;
+		SQL_CURSOR cur_familylist;
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+	
+	ret_count = 0;
+	i_userid = c_iUserID;
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];    
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	if (FamilyCount == 0)
+		FamilyCount = MAX_PERMFAMILY_NUM;
+	EXEC SQL ALLOCATE :cur_familylist;
+	
+start:
+	
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Family_Pkg.GetFamilyList(:i_userid,:cur_familylist,:retcode);
+		end;
+	END-EXEC;
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		EXEC SQL CLOSE :cur_familylist;
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 )
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL CLOSE :cur_familylist;
+		FamilyCount = 0;
+		EXEC SQL FREE  :cur_familylist;
+		return DB_ERROR;
+	}    
+	
+	//EXEC SQL WHENEVER NOT FOUND DO BREAK;
+	while(1)
+	{		
+		if( ret_count >= FamilyCount )	//指定获取的数目
+		{			
+			break;
+		}
+		EXEC SQL FETCH :cur_familylist INTO :i_familyid;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			ret_count=0;
+			EXEC SQL CLOSE :cur_familylist;
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( db_ret == 1403 )
+		{			
+			FamilyCount = ret_count;
+			break;
+		} 
+		if( db_ret < 0 )
+		{
+			sql_error(sqlca, oraca);
+			break;
+		}
+		FamilyID[ret_count] = i_familyid;	
+		++ret_count;
+	}
+
+	EXEC SQL CLOSE :cur_familylist;
+	EXEC SQL FREE :cur_familylist;
+	FamilyCount = ret_count;
+	return  DB_SUCCESS;
+}
+
+/*================================================================ 
+*
+* 函 数 名：Get_Family_Info 
+** 根据家族ID获取家族信息
+* 参 数： 
+* const uint32 c_iFamilyID [IN] : 家族ID 
+* LPXT_GET_CINFO_ACK lpAck [[IN,OUT]] : 家族的详细信息
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 传入的参数错误：DB_PARAM；家族不存在: DB_NOFAMILY; 操作失败: DB_ERROR;
+* 
+================================================================*/
+
+int CDatabaseFamily::Get_Family_Info(const uint32 c_iFamilyID, LPXT_GET_CINFO_ACK lpAck)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int  nFamilyID, nCreatorID;
+		int		 nFamilyType, nFamilyClass,  nJoinFlag, nViewFlag, nMemberLimit;
+		VARCHAR  var_familyname[101],var_familydesc[501], var_familydomain[21], var_familyfaceurl[101], var_familysign[101], var_familynotice[101];
+		VARCHAR db_link_name[32];
+		int		 retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	if (!lpAck)
+		return DB_PARAM;
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];  
+	
+	nFamilyID = c_iFamilyID;
+	int db_ret;
+	nFamilyType				= 0;
+	nFamilyClass			= 0;
+	nJoinFlag				= 0;
+	nViewFlag				= 0;
+	nCreatorID				= 0;	
+
+	SET_INIT_NULL(var_familyname);
+	SET_INIT_NULL(var_familydesc);
+	SET_INIT_NULL(var_familydomain);
+	SET_INIT_NULL(var_familyfaceurl);
+	SET_INIT_NULL(var_familysign);
+	SET_INIT_NULL(var_familynotice);
+	
+	int iReconnTimes;
+	bool bReconn;
+
+start:
+
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Family_Pkg.GetFamilyInfo(:nFamilyID,:nCreatorID,:nFamilyType,:nFamilyClass,:nViewFlag,:nJoinFlag,:var_familyname,:var_familydesc,:var_familydomain,:var_familyfaceurl,:nMemberLimit,:var_familysign, :var_familynotice,:retcode);
+		end;
+	END-EXEC;
+
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 && db_ret != -1405)
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+
+  
+	if (retcode == 1403)
+	{
+		char szError[255];
+		sprintf(szError, "%s, %d\n", "Get_Family_Info()",c_iFamilyID); 
+		return CError::DB_Error(DB_NOFAMILY, szError);
+	}
+	
+	SET_END_NULL(var_familyfaceurl);
+	SET_END_NULL(var_familyname);
+	SET_END_NULL(var_familydesc);
+	SET_END_NULL(var_familydomain);
+	SET_END_NULL(var_familysign);
+	SET_END_NULL(var_familynotice);
+	
+	lpAck->nCreatorID		= nCreatorID;	
+	lpAck->nFamilyType		= nFamilyType;		//家族类型 FAMILY_COMMON 普通家族，FAMILY_VIP VIP家族
+	lpAck->nFamilyClass		= nFamilyClass;		//分类
+	lpAck->nFamilyFaceID	= 0;				//族徽ID
+	strncpy(lpAck->szFamilyFaceUrl, (char*)var_familyfaceurl.arr,MAX_FAMILYFACEURL_LEN);	//族徽链接地址
+	lpAck->nJoinFlag		= nJoinFlag;		//加入规则 FAMILY_JOIN_ANY|FAMILY_JOIN_VALI|FAMILY_JOIN_UNALLOW
+	lpAck->nViewFlag		= nViewFlag;		//页面浏览权限	FAMILY_VIEW_MEM|FAMILY_VIEW_REG|FAMILY_VIEW_ALL
+	strncpy(lpAck->szFamilyName, (char*)var_familyname.arr,MAX_FAMILYNAME_LEN);
+	strncpy(lpAck->szFamilyDesc, (char*)var_familydesc.arr,MAX_FAMILYDESC_LEN);
+	strncpy(lpAck->szFamilyDomain, (char*)var_familydomain.arr,MAX_FAMILYDOMAIN_LEN);
+	lpAck->nMemberLimit = nMemberLimit;
+	strncpy(lpAck->szFamilySign, (char*)var_familysign.arr,MAX_FAMILYNAME_LEN);
+	strncpy(lpAck->szFamilyNotice, (char*)var_familynotice.arr,MAX_FAMILYNAME_LEN);
+		
+	return DB_SUCCESS;
+}
+
+
+/*================================================================ 
+*
+* 函 数 名：Set_Family_Info 
+** 设置家族信息
+* 参 数： 
+* LPXT_SET_CINFO_REQ lpReq [[IN]] : 家族的详细信息
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 传入的参数错误：DB_PARAM；家族不存在: DB_NOFAMILY; 操作失败: DB_ERROR;
+* 
+================================================================*/
+int	CDatabaseFamily::Set_Family_Info(LPXT_SET_CINFO_REQ lpReq)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int      nFamilyID;
+		int      nJoinFlag,nFamilyClass;
+		VARCHAR  var_familyname[101],/*var_testname[31],*/var_familydesc[501],var_familyfaceurl[101],var_familysign[101],var_familynotice[101];
+		VARCHAR db_link_name[32];
+		int retcode;
+	EXEC SQL END DECLARE SECTION;
+		
+	if( !lpReq )
+		return DB_PARAM;
+		
+	SET_INIT_NULL(var_familyname);
+	SET_INIT_NULL(var_familydesc);
+	SET_INIT_NULL(var_familyfaceurl);
+	SET_INIT_NULL(var_familysign);
+	SET_INIT_NULL(var_familynotice);
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	nFamilyID		= lpReq->nFamilyID;
+	nJoinFlag		= lpReq->nJoinFlag;
+	nFamilyClass	= lpReq->nFamilyClass;
+	
+	strncpy((char*)var_familyname.arr,lpReq->szFamilyName,MAX_FAMILYNAME_LEN);
+	var_familyname.len = (uint16)strlen((char*)var_familyname.arr);
+	strncpy((char*)var_familydesc.arr,lpReq->szFamilyDesc,MAX_FAMILYDESC_LEN);
+	var_familydesc.len = (uint16)strlen((char*)var_familydesc.arr);
+	strncpy((char*)var_familyfaceurl.arr,lpReq->szFamilyFaceUrl,MAX_FAMILYFACEURL_LEN);
+	var_familyfaceurl.len = (uint16)strlen((char*)var_familyfaceurl.arr);
+	strncpy((char*)var_familysign.arr,lpReq->szFamilySign,MAX_FAMILYNAME_LEN);
+	var_familysign.len = (uint16)strlen((char*)var_familysign.arr);
+	strncpy((char*)var_familynotice.arr,lpReq->szFamilyNotice,MAX_FAMILYNAME_LEN);
+	var_familynotice.len = (uint16)strlen((char*)var_familynotice.arr);
+
+	/*
+	char nickname[33]={0},repname[33]={0};
+	strncpy(nickname, lpReq->szFamilyName,MAX_FAMILYNAME_LEN);	
+	char *p = nickname;
+	char *pd = repname;
+	while(*p)
+	{		
+		if( (*p >= 'a' && *p <= 'z') ||
+			(*p >= 'A' && *p <= 'Z') || 
+			(*p >= '0' && *p <= '9'))
+		{	
+			*pd++ = *p++;
+		}
+		else if ((BYTE)*p > 127)
+		{
+			if( (BYTE)*p == 0xa1 && (BYTE)*(p+1) == 0xa1)
+			{
+				p += 2;
+			}
+			else
+				*pd++ = *p++;	
+		}
+		else
+			p++;
+	}
+	*pd = 0;
+	
+	strncpy((char*)var_testname.arr, repname,MAX_FAMILYNAME_LEN);
+	var_testname.len = (unsigned short)strlen(repname);	
+	*/
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];	
+	
+start:
+
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Family_Pkg.SetFamilyInfo(:nFamilyID,:nFamilyClass,:nJoinFlag,:var_familyname,:var_familydesc,:var_familysign,:var_familynotice,:var_familyfaceurl,:retcode);
+		end;
+	END-EXEC;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 && db_ret != -1405)
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+	if (retcode == 1403)
+		return CError::DB_Error(DB_NOFAMILY);	
+	else if( retcode == DB_FAMILYNAME_EXIST )
+		return CError::DB_Error(DB_FAMILYNAME_EXIST,lpReq->szFamilyName);    
+	else if (retcode == DB_FAMILYNAME_ERROR)
+		return DB_FAMILYNAME_ERROR;
+	
+	//need added 修改faceid 和faceuri
+	
+	return DB_SUCCESS;
+}
+
+/*================================================================ 
+*
+* 函 数 名：Get_Family_Mem 
+** 根据用户ID获取家族成员列表
+* 参 数： 
+* const uint32 c_iFamilyID [IN] : 家族ID 
+* LPST_FAMILY_MEMBER pFamilyMem [[IN,OUT]] : 成员结构。ID和属性
+* int &nMemNum	[IN, OUT] : 要获取的成员数目和返回的数目, 如果为0，则输出家族成员数
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 家族不存在: DB_NOFAMILY; 操作失败: DB_ERROR;
+* 
+================================================================*/
+int CDatabaseFamily::Get_Family_Mem(const uint32 c_iFamilyID, LPST_FAMILY_MEMBER pFamilyMem, int &nMemNum)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR db_link_name[32];
+		unsigned int	nFamilyID,nMemID,nProp;
+		VARCHAR nProfile[12];
+		int				ret_count;
+		int		 retcode;
+		SQL_CURSOR cur_familymem;
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	SET_INIT_NULL(nProfile);
+	
+	nFamilyID = c_iFamilyID;
+	ret_count = 0;
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];	
+	if (nMemNum == 0)
+		nMemNum = MAX_VIPFAMILYMEM_NUM;
+	EXEC SQL ALLOCATE :cur_familymem;
+
+start:
+
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Family_Pkg.GetFamilyMember(:nFamilyID,:cur_familymem,:retcode);
+		end;
+	END-EXEC;
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		EXEC SQL CLOSE :cur_familymem;
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 )
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL CLOSE :cur_familymem;
+		nMemNum = 0;
+		EXEC SQL FREE  :cur_familymem;
+		return DB_ERROR;
+	}    
+	
+	for(;;)
+	{  
+		if( ret_count >= nMemNum )	//指定获取的个数
+		{			
+			break;
+		}
+		EXEC SQL FETCH :cur_familymem INTO :nMemID,:nProp,:nProfile;
+		db_ret = sqlca.sqlcode;
+		if( db_ret == 1403)
+		{
+			nMemNum = ret_count;
+			break;
+		}
+		if( db_ret < 0 && db_ret != -1405)
+		{
+			EXEC SQL CLOSE :cur_familymem;
+			EXEC SQL FREE  :cur_familymem;
+			char szError[255];
+			sprintf(szError, "获取家族成员出错.家族ID：%d", nFamilyID);
+			return CError::DB_Error(DB_ERROR, szError);
+		}
+		if (nMemID != 0)
+		{
+			pFamilyMem[ret_count].nUserID = nMemID;
+			pFamilyMem[ret_count].nProp = nProp;
+			SET_END_NULL(nProfile);
+			strncpy(pFamilyMem[ret_count].nProfile, (char*)nProfile.arr, nProfile.len);
+
+		}
+		++ret_count;
+	}
+	EXEC SQL CLOSE :cur_familymem;
+	EXEC SQL FREE  :cur_familymem;
+	return DB_SUCCESS;
+}
+
+/*================================================================ 
+*
+* 函 数 名：Create_Family 
+** 设置家族信息
+* 参 数：
+* const uint32 iCreaterID [IN] : 创建者ID
+* LPXT_CREATE_CLUSTER_REQ lpReq [IN] : 家族的详细信息
+* uint32 &iFamilyID	[IN,OUT] : 输出创建的家族ID
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 传入的参数错误：DB_PARAM；操作失败: DB_ERROR;
+*					家族名称存在 DB_FAMILYNAME_EXIST; 域名存在 DB_FAMILYDOMAIN_EXIST;
+*					创建数达到限制 DB_CREATE_FAMILY_FULL;
+* 
+================================================================*/
+int CDatabaseFamily::Create_Family(const uint32 iCreaterID, LPXT_CREATE_CLUSTER_REQ lpReq, uint32 &iFamilyID)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		int				nJoinFlag,nViewFlag,nFamilyClass;
+		unsigned int	nCreaterID;
+		unsigned int   nFamilyID;
+		VARCHAR  db_link_name[32];
+		VARCHAR  var_familydomain[21], var_familyname[101],var_testname[31],var_familydesc[501], var_familyfaceurl[101];
+//		VARCHAR  var_pic[61], var_audio[61], var_video[61], var_share[61];
+		int				retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	if( !lpReq )
+	{
+		return DB_PARAM;
+	}
+	
+	SET_INIT_NULL(var_familydomain);
+	SET_INIT_NULL(var_familyname);
+	SET_INIT_NULL(var_familydesc);
+	SET_INIT_NULL(var_familyfaceurl);
+	SET_INIT_NULL(var_testname);
+	nCreaterID = iCreaterID;
+	   
+	nJoinFlag			 = lpReq->nJoinFlag;
+	nViewFlag			 = lpReq->nViewFlag;
+	nFamilyClass		 = lpReq->nFamilyClass;
+
+	strncpy((char*)var_familyname.arr,lpReq->szFamilyName,MAX_FAMILYNAME_LEN);
+	var_familyname.len = (uint16)strlen((char*)var_familyname.arr);
+	strncpy((char*)var_familydesc.arr,lpReq->szFamilyDesc,MAX_FAMILYDESC_LEN);
+	var_familydesc.len = (uint16)strlen((char*)var_familydesc.arr);
+	strncpy((char*)var_familyfaceurl.arr,lpReq->szFamilyFaceUrl,MAX_FAMILYFACEURL_LEN);
+	var_familyfaceurl.len = (uint16)strlen((char*)var_familyfaceurl.arr);			
+
+	strncpy((char*)var_familydomain.arr,lpReq->szFamilyDomain,MAX_FAMILYDOMAIN_LEN);
+	var_familydomain.len = (uint16)strlen((char*)var_familydomain.arr);	
+			
+// 	char nickname[33]={0},repname[33]={0};
+// 	strncpy(nickname, lpReq->szFamilyName,MAX_FAMILYNAME_LEN);	
+// 	char *p = nickname;
+// 	char *pd = repname;
+// 	while(*p)
+// 	{		
+// 		if( (*p >= 'a' && *p <= 'z') ||
+// 			(*p >= 'A' && *p <= 'Z') || 
+// 			(*p >= '0' && *p <= '9'))
+// 		{	
+// 			*pd++ = *p++;
+// 		}
+// 		else if ((BYTE)*p > 127)
+// 		{
+// 			if( (BYTE)*p == 0xa1 && (BYTE)*(p+1) == 0xa1)
+// 			{
+// 				p += 2;
+// 			}
+// 			else
+// 				*pd++ = *p++;	
+// 		}
+// 		else
+// 			p++;
+// 	}
+// 	*pd = 0;
+// 	
+// 	strncpy((char*)var_testname.arr, repname,MAX_FAMILYNAME_LEN);
+// 	var_testname.len = (unsigned short)strlen(repname);	
+	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+		
+start:
+
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Family_Pkg.CreateFamily(:nFamilyID,:nCreaterID,:nFamilyClass,:nViewFlag,:nJoinFlag,:var_familyname,:var_familydesc,:var_familydomain,:retcode);
+		end;
+	END-EXEC;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 && db_ret != -1405)
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+
+	if (retcode == DB_CREATE_FAMILY_FULL)
+	{
+		char szError[MAX_ERROR_BUF];
+		sprintf(szError, "用户ID:%d", iCreaterID);
+		return CError::DB_Error(DB_CREATE_FAMILY_FULL, szError);
+	}
+	else if (retcode == DB_FAMILYNAME_EXIST)
+		return DB_FAMILYNAME_EXIST;
+	else if (retcode == DB_FAMILYDOMAIN_EXIST)
+		return DB_FAMILYDOMAIN_EXIST;
+	
+	//need added 添加faceid 和faceuri
+	
+	iFamilyID = nFamilyID;
+	return DB_SUCCESS;
+}
+
+/*================================================================ 
+*
+* 函 数 名：Family_Add_Member 
+** 添加家族普通成员
+* 参 数：
+* const uint32 iFamilyID [IN]	家族ID
+* uint32 *iUserID	[IN]		要添加的成员ID列表
+* int	&nRetCount	[IN]		要添加的个数,返回成功的个数
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 操作失败: DB_ERROR;
+* 
+================================================================*/
+int	CDatabaseFamily::Family_Add_Member(const uint32 iFamilyID, uint32 *iUserID, int &nRetCount)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int      nFamilyID;
+		VARCHAR db_link_name[32],var_userid[4000];
+		int retcode,retcount;
+	EXEC SQL END DECLARE SECTION;
+
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	nFamilyID	= iFamilyID;
+	retcount = 0;
+	
+	int db_ret;
+
+	SET_INIT_NULL(var_userid);
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];	
+	int iReconnTimes;
+	bool bReconn;	
+	
+	for(int i = 0; i < nRetCount; ++i)
+	{
+		char szUserID[10] = {0};
+		itoa(iUserID[i], szUserID, 10);
+		strcat((char*)var_userid.arr,szUserID);
+		if (i != nRetCount -1)
+			strcat((char*)var_userid.arr,",");
+	}
+	var_userid.len = (uint16)strlen((char*)var_userid.arr);
+
+start:
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Family_Pkg.AddFamilyMember(:nFamilyID,:var_userid,:retcount,:retcode);
+		end;
+	END-EXEC;
+		
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( (db_ret < 0 && db_ret != -1405) || retcode == 1)
+	{ 
+		sql_error(sqlca, oraca);
+		nRetCount = retcount;
+		return DB_ERROR;
+
+	}
+	nRetCount = retcount;
+	return DB_SUCCESS; 
+}
+
+/*================================================================ 
+*
+* 函 数 名：Family_Delete_Member 
+** 删除家族成员
+* 参 数：
+* const uint32 iFamilyID [IN]	家族ID
+* uint32 iUserID	[IN]		要删除的成员ID
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 操作失败: DB_ERROR;
+* 
+================================================================*/
+int CDatabaseFamily::Family_Delete_Member(const uint32 iFamilyID, uint32 iUserID)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int      nFamilyID, nUserID;
+		VARCHAR db_link_name[32];
+		int retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	nFamilyID	= iFamilyID;
+	nUserID		= iUserID;
+	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];	
+start:
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Family_Pkg.DelFamilyMember(:nFamilyID,:nUserID,:retcode);
+		end;
+	END-EXEC;
+		
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( (db_ret < 0 && db_ret != -1405) || retcode == 1)
+	{ 
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	} 
+
+	return DB_SUCCESS;  
+}
+
+/*================================================================ 
+*
+* 函 数 名：Family_SetMem_Prop 
+** 设置家族成员属性
+* 参 数：
+* const uint32 iFamilyID [IN]	家族ID
+* uint32 iUserID	[IN]		要修改的成员ID
+* uint8	iMemProp	[IN]		成员的属性	FAMILY_CREATER|FAMILY_MANAGER|FAMILY_NORMAL
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 操作失败: DB_ERROR;
+* 
+================================================================*/
+int CDatabaseFamily::Family_SetMem_Prop(const uint32 iFamilyID, uint32 iUserID, uint8 iMemProp)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int     nFamilyID, nUserID, nMemProp;
+		VARCHAR db_link_name[32];
+		int retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	nFamilyID	= iFamilyID;
+	nUserID		= iUserID;
+	nMemProp	= iMemProp;
+	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];	
+
+start:
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Family_Pkg.FamilySetMemProp(:nFamilyID,:nUserID,:nMemProp,:retcode);
+		end;
+	END-EXEC;
+		
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( (db_ret < 0 && db_ret != -1405) || retcode == 1)
+	{ 
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	} 
+	
+	return DB_SUCCESS;
+}
+
+/*================================================================ 
+*
+* 函 数 名：Family_Find 
+** 查找家族
+* 参 数：
+* XT_CLUSTER_SEARCH_REQ Req			[IN]			查找家族请求
+* CLUSTER_SEARCH_RESULT *FamilyData	[IN/OUT]		查找结果
+* int &nRetCount					[IN/OUT]		输入请求个数，返回结果个数
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 操作失败: DB_ERROR;
+* 
+================================================================*/
+int CDatabaseFamily::Family_Find(XT_CLUSTER_SEARCH_REQ Req,XT_CLUSTER_SEARCH_ACK::tagFamilyFindRet *FamilyData, int &nRetCount)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int nFamilyID, nCreaterID,nMemberCnt;
+		int			nJoinFlag, nFamilyClass, nStartPos, nReqCount;
+		VARCHAR var_familyname[101], var_familydomain[21],var_familyfindname[101];
+		VARCHAR db_link_name[32];
+		int retcode;
+		SQL_CURSOR cur_familyclass;
+	EXEC SQL END DECLARE SECTION;
+
+	SET_INIT_NULL(var_familyname);
+	SET_INIT_NULL(var_familydomain);
+	SET_INIT_NULL(var_familyfindname);
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	if (nRetCount == 0)
+		return DB_PARAM;
+	
+	nStartPos		= Req.start_pos;
+	nReqCount		=  nRetCount;
+	nFamilyID		= Req.type_data.nFamilyID;
+	nFamilyClass	= Req.type_data.nFamilyClass;
+	strncpy((char*)var_familyname.arr, Req.type_data.szFamilyName,MAX_FAMILYNAME_LEN);
+	var_familyname.len	= (short)strlen((char*)var_familyname.arr);
+	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+start:
+	switch(Req.search_type)
+	{
+	case CLUSTER_SEARCH_ID:
+		{	
+			EXEC SQL AT :db_link_name EXECUTE
+				begin
+					Mini_Family_Pkg.SearchFamilyID(:nFamilyID,:var_familyname,:var_familydomain,:nJoinFlag,:nFamilyClass,:nCreaterID,:nMemberCnt,:retcode);
+				end;
+			END-EXEC;
+				
+			db_ret = sqlca.sqlcode;
+			if (conn_error(db_ret))
+			{
+				iReconnTimes=0;
+				bReconn=ConnectDB();
+				while(!bReconn)
+				{
+					iReconnTimes++;
+					sleep(iReconnTimes%10);
+					bReconn=ConnectDB();
+				}
+				goto start;				
+			}
+			
+			if( (db_ret < 0 && db_ret != -1405) || retcode == 1)
+			{ 
+				sql_error(sqlca, oraca);
+				return DB_ERROR;
+			} 
+						
+			if (retcode == 1403)
+			{
+				nRetCount = 0;
+				return DB_SUCCESS;
+			}
+			
+			SET_END_NULL(var_familyname);
+			SET_END_NULL(var_familydomain);
+			
+			FamilyData->nFamilyID		= nFamilyID;
+			FamilyData->nCreaterID		= nCreaterID;
+			FamilyData->nJoinFlag		= nJoinFlag;
+			FamilyData->nFamilyClass	= nFamilyClass;
+			FamilyData->nMemCount		= nMemberCnt;
+			strncpy(FamilyData->szFamilyName, (char*)var_familyname.arr,MAX_FAMILYNAME_LEN);
+			strncpy(FamilyData->szFamilyDomain, (char*)var_familydomain.arr,MAX_FAMILYDOMAIN_LEN);
+		}
+		break;
+	case CLUSTER_SEARCH_CLASS:
+		{
+		
+			EXEC SQL ALLOCATE :cur_familyclass;
+	
+			EXEC SQL AT :db_link_name EXECUTE
+				begin
+					Mini_Family_Pkg.SearchFamilyClass(:nFamilyClass,:nStartPos,:nReqCount,:cur_familyclass,:retcode);
+				end;
+			END-EXEC;
+			
+			db_ret = sqlca.sqlcode;
+			if (conn_error(db_ret))
+			{
+				EXEC SQL CLOSE :cur_familyclass;
+				iReconnTimes=0;
+				bReconn=ConnectDB();
+				while(!bReconn)
+				{
+					iReconnTimes++;
+					sleep(iReconnTimes%10);
+					bReconn=ConnectDB();
+				}
+				goto start;				
+			}
+
+			if( db_ret < 0 )
+			{
+				sql_error(sqlca, oraca);
+				EXEC SQL CLOSE :cur_familyclass;
+				EXEC SQL FREE :cur_familyclass;
+				nRetCount = 0;
+				return DB_ERROR;
+			}  						
+
+			int iNum = 0;
+			for(;;)
+			{  
+				EXEC SQL FETCH :cur_familyclass INTO :nFamilyID, :var_familyname, :var_familydomain, :nJoinFlag, :nFamilyClass, :nCreaterID;
+				db_ret = sqlca.sqlcode;
+				if (db_ret == 1403 )
+				{
+					nRetCount = iNum;
+					break;					
+				}
+				if (iNum > nRetCount)
+				{
+					break;
+				}
+				if( db_ret < 0 && db_ret !=-1405)
+				{
+					sql_error(sqlca, oraca);					
+					nRetCount = iNum;
+					break;
+				}
+				
+				SET_END_NULL(var_familyname);
+				SET_END_NULL(var_familydomain);
+				
+				FamilyData[iNum].nFamilyID		= nFamilyID;
+				FamilyData[iNum].nCreaterID		= nCreaterID;
+				FamilyData[iNum].nJoinFlag		= nJoinFlag;
+				FamilyData[iNum].nFamilyClass	= nFamilyClass;
+				strncpy(FamilyData[iNum].szFamilyName, (char*)var_familyname.arr,MAX_FAMILYNAME_LEN);
+				strncpy(FamilyData[iNum].szFamilyDomain, (char*)var_familydomain.arr,MAX_FAMILYDOMAIN_LEN);
+				++iNum;
+			}
+			EXEC SQL CLOSE :cur_familyclass;
+			EXEC SQL FREE :cur_familyclass;
+			return DB_SUCCESS; 		
+		}
+		break;
+	case CLUSTER_SEARCH_NAME:
+		{
+			EXEC SQL ALLOCATE :cur_familyclass;
+	
+			EXEC SQL AT :db_link_name EXECUTE
+				begin
+					Mini_Family_Pkg.SearchFamilyName(:var_familyname,:nStartPos,:nReqCount,:cur_familyclass,:retcode);
+				end;
+			END-EXEC;
+			
+			db_ret = sqlca.sqlcode;
+			if (conn_error(db_ret))
+			{
+				EXEC SQL CLOSE :cur_familyclass;
+				iReconnTimes=0;
+				bReconn=ConnectDB();
+				while(!bReconn)
+				{
+					iReconnTimes++;
+					sleep(iReconnTimes%10);
+					bReconn=ConnectDB();
+				}
+				goto start;				
+			}
+
+			if( db_ret < 0 )
+			{
+				sql_error(sqlca, oraca);
+				EXEC SQL CLOSE :cur_familyclass;
+				EXEC SQL FREE :cur_familyclass;
+				nRetCount = 0;
+				return DB_ERROR;
+			}  						
+
+			int iNum = 0;
+			for(;;)
+			{  
+				EXEC SQL FETCH :cur_familyclass INTO :nFamilyID, :var_familyname, :var_familydomain, :nJoinFlag, :nFamilyClass, :nCreaterID,:nMemberCnt;
+				db_ret = sqlca.sqlcode;
+				if (db_ret == 1403 )
+				{
+					nRetCount = iNum;
+					break;			
+					
+				}
+				if (iNum > nRetCount)
+				{
+					break;
+				}
+				if( db_ret < 0 && db_ret !=-1405)
+				{
+					sql_error(sqlca, oraca);					
+					nRetCount = iNum;
+					break;
+				}
+				
+				SET_END_NULL(var_familyname);
+				SET_END_NULL(var_familydomain);
+				
+				FamilyData[iNum].nFamilyID		= nFamilyID;
+				FamilyData[iNum].nCreaterID		= nCreaterID;
+				FamilyData[iNum].nJoinFlag		= nJoinFlag;
+				FamilyData[iNum].nFamilyClass	= nFamilyClass;
+				strncpy(FamilyData[iNum].szFamilyName, (char*)var_familyname.arr,MAX_FAMILYNAME_LEN);
+				strncpy(FamilyData[iNum].szFamilyDomain, (char*)var_familydomain.arr,MAX_FAMILYDOMAIN_LEN);
+				FamilyData[iNum].nMemCount	= nMemberCnt;
+				++iNum;
+			}
+			EXEC SQL CLOSE :cur_familyclass;
+			EXEC SQL FREE :cur_familyclass;
+			return DB_SUCCESS; 	
+		}
+		break;
+	default:
+		break;
+	}
+	return DB_SUCCESS;
+}
+
+/*================================================================ 
+*
+* 函 数 名：Delete_Family 
+** 删除家族
+* 参 数：
+const uint32 iFamilyID	[IN] : 删除家族
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 操作失败: DB_ERROR;
+* 
+================================================================*/
+int CDatabaseFamily::Delete_Family(const uint32 iFamilyID)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int      nFamilyID;
+		VARCHAR db_link_name[32];
+		int retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	nFamilyID		= iFamilyID;
+	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;	
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:	
+	CLog::Log("Delete_Family","解散家族%d", iFamilyID);
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Family_Pkg.DeleteFamily(:nFamilyID,:retcode);
+		end;
+	END-EXEC;
+		
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( (db_ret < 0 && db_ret != -1405) || retcode == 1)
+	{ 
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	} 
+
+	return DB_SUCCESS;
+}
+
+
+int	CDatabaseFamily::Get_FamilyMem_Porp(uint32 familyID, uint32 userID, uint8 &userProp)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int      nFamilyID, nUserID;
+		int role;
+		VARCHAR db_link_name[32];
+		int retcode;
+	EXEC SQL END DECLARE SECTION;
+
+	nFamilyID = familyID;
+	nUserID=userID;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];	
+
+start:
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Family_Pkg.GetMemLevel(:nFamilyID,:nUserID,:role,:retcode);
+		end;
+	END-EXEC;
+		
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( (db_ret < 0 && db_ret != -1405) || retcode == 1)
+	{ 
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+
+	if (retcode == 1403)
+		return DB_NOUSER;
+
+	userProp = role;
+	return DB_SUCCESS;
+}
+
+
+int	CDatabaseFamily::Get_Family_BlackList(uint32 familyID, uint32 userID, int &retCode)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int      nFamilyID, nUserID;
+		VARCHAR db_link_name[32];
+		int retcode;
+	EXEC SQL END DECLARE SECTION;
+
+	nFamilyID = familyID;
+	nUserID=userID;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];	
+start:
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Family_Pkg.GetBlackList(:nFamilyID,:nUserID,:retcode);
+		end;
+	END-EXEC;
+		
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( (db_ret < 0 && db_ret != -1405) || retcode == 1)
+	{ 
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+	if(db_ret == 1403)
+		retcode = 0; 
+
+	retCode = retcode;
+	return DB_SUCCESS;
+}
+
+
+int CDatabaseFamily::Get_All_Profile(uint32 iFamilyID, CMEM_INFO* profileName, uint32& nRetCnt)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int nFamilyID,nID;
+		VARCHAR db_link_name[32];
+		VARCHAR sProfile[11];
+		SQL_CURSOR cur_profile;
+		int retcode;
+	EXEC SQL END DECLARE SECTION;
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	SET_INIT_NULL(sProfile);
+	nFamilyID = iFamilyID;
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];  
+	EXEC SQL ALLOCATE :cur_profile;
+start:
+
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Family_Pkg.GetAllProfile(:nFamilyID,:cur_profile,:retcode);
+		end;
+	END-EXEC;
+	
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			EXEC SQL CLOSE :cur_profile;
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if(db_ret < 0 && db_ret != -1405) 
+		{
+			sql_error(sqlca, oraca);		
+			EXEC SQL CLOSE :cur_profile;
+			EXEC SQL FREE  :cur_profile;
+			return DB_ERROR;
+		}
+
+		int iNum = 0;
+		for(int i=0; i<30; i++)
+		{  
+			EXEC SQL FETCH :cur_profile INTO :nID,:sProfile;
+			db_ret = sqlca.sqlcode;
+			if (db_ret == 1403 )
+			{
+				break;
+			}
+
+			if( db_ret < 0 && db_ret != -1405 )
+			{
+				sql_error(sqlca, oraca);
+				break;
+			}		
+			profileName[iNum].nMemID = nID;
+			SET_END_NULL(sProfile);
+			strncpy(profileName[iNum].sProfileName,(char*)sProfile.arr,sProfile.len);										
+			++iNum;
+		}
+		nRetCnt = iNum;
+		EXEC SQL CLOSE :cur_profile;
+		EXEC SQL FREE  :cur_profile;
+		return DB_SUCCESS;		
+}
+
+int	CDatabaseFamily::Get_Mem_Profile(uint32 familyID, uint32 userID, char* profileName)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int      nFamilyID, nUserID;
+		VARCHAR pName[10];
+		VARCHAR db_link_name[32];
+		int retcode;
+	EXEC SQL END DECLARE SECTION;
+
+	nFamilyID 		= familyID;
+	nUserID			= userID;
+	pName.arr[0] 	= 0;
+	pName.len		= 0;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];	
+
+start:
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Family_Pkg.GetMemProfile(:nFamilyID,:nUserID,:pName,:retcode);
+		end;
+	END-EXEC;
+		
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( (db_ret < 0 && db_ret != -1405) || retcode == 1)
+	{ 
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+
+	if (retcode == 1403)
+		return DB_NOUSER;
+
+	strncpy(profileName, (char*)pName.arr, pName.len);
+	return DB_SUCCESS;
+}
+
+int CDatabaseFamily::Set_Mem_Profile(uint32 iFamilyID, uint32 iUserID, const char* profileName)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int     nFamilyID, nUserID;
+		VARCHAR pName[20];
+		VARCHAR db_link_name[32];
+		int retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	nFamilyID	= iFamilyID;
+	nUserID		= iUserID;
+	pName.len	= strlen(profileName);
+	strncpy((char*)pName.arr, profileName, pName.len);
+	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];	
+start:
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Family_Pkg.SetMemProfile(:nFamilyID,:nUserID,:pName,:retcode);
+		end;
+	END-EXEC;
+		
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( (db_ret < 0 && db_ret != -1405) || retcode == 1)
+	{ 
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	} 
+	
+	return DB_SUCCESS;
+}
+
+void ForDisableBuildWarningFamily()
+{
+	unsigned int nTest =  sqlstm.sqlvsn;
+	nTest++;
+}

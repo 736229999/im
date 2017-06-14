@@ -1,0 +1,105 @@
+// WebConfig.idl : WebConfig 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(WebConfig.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+typedef [uuid(44ABAE82-A173-11d4-98DB-0080C8F5B2E4)] 
+enum WebInterfaceType
+{
+	UPLOAD_PICTURE,
+	SET_USER_FACE,
+	USER_ARTICLE_LIST,
+	ARTICLE_CONTENT,
+	CREATE_ARTICLE,
+	SET_ARTICLE_TOP,
+	SET_ARTICLE_TITLE,
+	SET_ARTICLE_VIEW_PROP,
+	PUT_ARTICLE_TO_BOOK,
+	DEL_ARTICLE_IN_BOOK,
+	DELETE_ARTICLE,
+	USER_BOOK_LIST,
+	ARTICLE_BOOK_LIST,
+	CREATE_BOOK,
+	DELETE_BOOK,
+	USER_PICTURE_LIST,
+	SET_PICTURE_TITLE,
+	SET_PICTURE_VIEW_PROP,
+	PUT_PICTURE_TO_ALBUM,
+	DEL_PICTURE_IN_ALBUM,
+	USER_ALBUM_LIST,
+	PICTURE_ALBUM_LIST,
+	CREATE_ALBUM,
+	DELETE_ALBUM,
+	USER_ARTICLE_TAG_LIST,
+	USER_PICTURE_TAG_LIST,
+	SPACE_SIZE,
+	MINI_ONLINE,
+	PAY_PHOTO_FRAME,
+	SYNC_PICTURE,
+	ENABLE_PICTURE,
+
+} WebInterfaceType;
+
+
+typedef [uuid(44ABAE82-A173-11d4-98DB-0080C8F5B2E5)] 
+enum WebPageType
+{
+	MINI_LOGIN_PICTURE,
+	FLASH_SHOW,
+	WOKU_SHOP,
+	MAGIC_FACE,
+	PHOTO_FRAME,
+	FIX_USERNAME,
+	USER_ACCOUNT,
+	USER_ZONE,
+	USER_HOME,
+	USER_PHOTO,
+	USER_ARTICLE,
+	ARTICLE_EMOTION,
+	FAMILY_ALBUM,
+	FAMILY_DISCUSS,
+	FAMILY_HOME,
+	FAMILY_SETTING,
+	MINI_WEB_CHANEL,
+	MINI_WEB_FACE_PATH,
+	MINI_DEFAULT_FACE_XML,
+	MINI_ADVERTISE,
+	JIFEN_CENTER,
+	UPLOAD_MEDIA,
+} WebPageType;
+
+
+[
+	object,
+	uuid(C1EB1356-EC99-4C5D-987D-B254773FFD0A),
+	dual,
+	nonextensible,
+	helpstring("IWebConfigX 接口"),
+	pointer_default(unique)
+]
+
+interface IWebConfigX : IDispatch{
+	[id(1), helpstring("方法GetWebInterfaceUrl")] HRESULT GetWebInterfaceUrl([in] WebInterfaceType type, [in] BSTR param, [out,retval] BSTR* pVal);
+	[id(2), helpstring("方法GetWebPageUrl")] HRESULT GetWebPageUrl([in] WebPageType type, [in] BSTR param, [out,retval] BSTR* pVal);
+};
+[
+	uuid(24C1AACE-8551-445C-9899-9AB30A0FBCB9),  
+	version(1.0),
+	helpstring("WebConfig 1.0 类型库")
+]
+library WebConfigLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(933EFD6C-970E-4C27-8B35-3BD17AF6C1E9),
+		helpstring("WebConfigX Class")
+	]
+	coclass WebConfigX
+	{
+		[default] interface IWebConfigX;
+	};
+};

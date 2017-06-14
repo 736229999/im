@@ -1,0 +1,45 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.30319.01 (61f0cbc1).
+//
+// e:\moumou_2.2\mini_client\mini139_src\release\olelinkinfo.tli
+//
+// Wrapper implementations for Win32 type library ..\binRelease\OleLinkInfo.ocx
+// compiler-generated file created 03/20/16 at 09:15:10 - DO NOT EDIT!
+
+#pragma once
+
+//
+// dispinterface _DOleLinkInfo wrapper method implementations
+//
+
+inline HRESULT _DOleLinkInfo::SetPicFilePath ( _bstr_t strFilePath ) {
+    return _com_dispatch_method(this, 0x1, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0008", (BSTR)strFilePath);
+}
+
+inline HRESULT _DOleLinkInfo::SetHeadText ( _bstr_t strHeadText ) {
+    return _com_dispatch_method(this, 0x2, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0008", (BSTR)strHeadText);
+}
+
+inline HRESULT _DOleLinkInfo::SetContentText ( _bstr_t strContentText ) {
+    return _com_dispatch_method(this, 0x3, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0008", (BSTR)strContentText);
+}
+
+inline long _DOleLinkInfo::IsPointInLinkRect ( long olex, long oley, long x, long y ) {
+    long _result = 0;
+    _com_dispatch_method(this, 0x4, DISPATCH_METHOD, VT_I4, (void*)&_result, 
+        L"\x0003\x0003\x0003\x0003", olex, oley, x, y);
+    return _result;
+}
+
+inline HRESULT _DOleLinkInfo::SetUrlText ( _bstr_t strUrlText ) {
+    return _com_dispatch_method(this, 0x5, DISPATCH_METHOD, VT_EMPTY, NULL, 
+        L"\x0008", (BSTR)strUrlText);
+}
+
+inline _bstr_t _DOleLinkInfo::GetUrlText ( ) {
+    BSTR _result = 0;
+    _com_dispatch_method(this, 0x6, DISPATCH_METHOD, VT_BSTR, (void*)&_result, NULL);
+    return _bstr_t(_result, false);
+}

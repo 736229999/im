@@ -1,0 +1,159 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="common">
+      <UniqueIdentifier>{353a922e-00e5-4f47-9a0d-4efd2ea1649f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{cdcdd5eb-e401-4004-90be-bca61ae1b84b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="StreamConnect">
+      <UniqueIdentifier>{5b1e12bf-1987-41da-adfb-4ccc661b749c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Common\HashList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MiniNetTrans.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\SyncEvent.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="XDataPool.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="XUDS.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="XUDSocket.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="XUDSRecvWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="XUDSSendWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ZTcpComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ZUdpComm.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ZUdpCommExt.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\SyncCritical.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\Utility.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\ZObjectPool.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\ZSignalQueue.cpp">
+      <Filter>common</Filter>
+    </ClCompile>
+    <ClCompile Include="Channel.cpp">
+      <Filter>StreamConnect</Filter>
+    </ClCompile>
+    <ClCompile Include="TimeCount.cpp">
+      <Filter>StreamConnect</Filter>
+    </ClCompile>
+    <ClCompile Include="TransProcess.cpp">
+      <Filter>StreamConnect</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Common\HashList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Packet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\SyncEvent.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="XDataPool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xuds.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xudsokect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="XUDSRecvWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="XUDSSendWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ZTcpComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ZUdpComm.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ZUdpCommExt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\SyncCritical.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\Utility.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\ZObjectPool.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\ZSignalQueue.h">
+      <Filter>common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\PublicType.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\StdPublic.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="Channel.h">
+      <Filter>StreamConnect</Filter>
+    </ClInclude>
+    <ClInclude Include="config.h">
+      <Filter>StreamConnect</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\p2pDef.h">
+      <Filter>StreamConnect</Filter>
+    </ClInclude>
+    <ClInclude Include="TimeCount.h">
+      <Filter>StreamConnect</Filter>
+    </ClInclude>
+    <ClInclude Include="TransProcess.h">
+      <Filter>StreamConnect</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+</Project>

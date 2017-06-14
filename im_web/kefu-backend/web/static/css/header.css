@@ -1,0 +1,28 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*
+*
+*顶部
+*/
+.header_bg{ display:block; clear:both; background: url(../images/header_bg.gif) repeat-x; height:80px;}
+.logo{ display:block; float:left; width:500px; height:42px; background:url(../images/logo.gif) no-repeat; margin:18px 0 0 20px }
+.logo strong{ font-size:22px; font-family:"Microsoft Yahei",微软雅黑,"Tahoma","SimSun"; margin:20px 0 0 125px; font-weight:normal; display:block; line-height:22px;}
+.header_shadow{ background:url(../images/header_yy.gif) repeat-x; height:7px;}
+.header_left_t{ background:url(../images/nav_t_bg.gif) no-repeat 0 0; height:7px;}
+.user_info{ display:block; background:url(../images/user_info_bg.gif) no-repeat; float:right; width:130px; height:22px; line-height:22px; margin:10px 20px 0 0; padding:0 10px;}
+.user_name{ display:inline-block; width:85px; overflow:hidden; color:#fff; word-break:keep-all;}
+.user_edit, .user_close{ display:inline-block; padding:5px 0px 0 9px; float:right;}
+
+/*头像*/
+.user_conten{ display:block; float:right; padding-right:20px; padding-top:14px; font-family:"Microsoft Yahei",微软雅黑,"Tahoma","SimSun"; width:202px;}
+.user_head{ display:block; float:left; width:136px;}
+.user_head span{ display:inline-block; float:left; background:url(../images/h_user_t.png) no-repeat; height:50px; width:50px;}
+.user_wa{ display:inline-block; float:right; width:80px; padding-left:6px; padding-top:6px;}
+.user_wa .font1{ color:#a5a5a5; font-size:12px; text-shadow:#fff 1px 1px 0px}
+.user_wa .font2{ color:#3c3c3c; font-size:16px;}
+.user_btn_warp{ display:block; float:right; width:64px; padding-top:10px;}
+.edit_user_btn{ width:27px; height:27px; display:block; float:left; margin-right:10px; background:url(../images/header_icon.png) no-repeat 0 0;}
+.edit_user_btn:hover{background:url(../images/header_icon.png) no-repeat 0 -30px;}
+.close_system_btn{ width:27px; height:27px; display:block; float:left; background:url(../images/header_icon.png) no-repeat -30px 0;}
+.close_system_btn:hover{background:url(../images/header_icon.png) no-repeat -30px -30px;}

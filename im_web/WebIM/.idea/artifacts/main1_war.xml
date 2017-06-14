@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="main1:war">
+    <output-path>$PROJECT_DIR$/../app-member/src/main/target</output-path>
+    <root id="archive" name="FeiniuMemberWeb-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="main1:war exploded" />
+    </root>
+  </artifact>
+</component>

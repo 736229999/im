@@ -1,0 +1,43 @@
+<html>
+	<head>
+		<title></title>
+		<script language="javascript">
+		function window.onload()
+		{
+			var objWriter = new ActiveXObject("ScriptFile.ScriptFileX.1");
+			HtmlSafing(document.body);
+			objWriter.WriteFile("D://abc.txt",document.body.innerHTML);
+		}
+		function test()
+		{
+		}
+		function HtmlSafing(o)
+		{
+			try {
+				if(o.getElementsByTagName("BODY").length > 0) o.innerHTML = o.getElementsByTagName("BODY")[length-1].innerHTML;
+				if(o.getElementsByTagName("HTML").length > 0) o.innerHTML = o.getElementsByTagName("HTML")[length-1].innerHTML;
+				
+				var elems = o.all;
+				if(!elems) elems = o.getElementsByTagName("*");
+				for(var i=0; i<elems.length;i++) {
+					if(elems[i].tagName == "SCRIPT") { elems[i].parentNode.removeChild(elems[i]); i--; continue; }
+					else if(elems[i].tagName != "IMG") { elems[i].style.width = ""; elems[i].removeAttribute("width"); }
+					else { if(parseInt(elems[i].style.width) > 500 || parseInt(elems[i].getAttribute("width")) > 500){
+						elems[i].style.width = "500px";elems[i].setAttribute("width", "500px"); } }
+					
+					elems[i].removeAttribute("id");
+					elems[i].removeAttribute("className");
+					elems[i].removeAttribute("onload");
+					elems[i].removeAttribute("onmouseover");
+					elems[i].removeAttribute("onmouseout");
+					elems[i].removeAttribute("onmousewheel"); } } catch(e){}
+			return;
+		}
+		</script>
+		<meta name="GENERATOR" content="Microsoft Visual Studio .NET 7.1">
+		<meta name="vs_targetSchema" content="http://schemas.microsoft.com/intellisense/ie5">
+	</head>
+	<body>
+		YYYXXXBODYXXXYYY
+	</body>
+</html>

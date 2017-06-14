@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<webim-configuration>
+    <property name="preview_properties">${config.path}</property>
+    <!--<property name="preview_properties">/home/webdata/webim/webroot/config/application.properties</property>-->
+</webim-configuration>

@@ -1,0 +1,9 @@
+; MyPictures.def : 定义模块参数。
+
+LIBRARY      "MyPictures.DLL"
+
+EXPORTS
+	DllCanUnloadNow		PRIVATE
+	DllGetClassObject	PRIVATE
+	DllRegisterServer	PRIVATE
+	DllUnregisterServer	PRIVATE

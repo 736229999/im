@@ -1,0 +1,38 @@
+1.版本号 协议号 安装脚本更新
+2.代码合并到trunk
+3.安装文件的文件夹 http://wh-svn.fn.com/feiniu-website/code/im/trunk/im_release/im_web/imindex/web/static/exe
+4.版本配置 http://wh-svn.fn.com/feiniu-website/configuration/beta/imindex
+5.帮助文档 http://wh-svn.fn.com/feiniu-website/code/im/trunk/im_release/im_web/imindex/web/static/doc
+5.自动发布 http://wh-jenkins.fn.com/job/imindex/
+6.验证下载页 beta: http://messagecenter.beta.fn.com/imindex/index.jsp  onlie: http://im.feiniu.com/
+7.验证自动升级
+8.online的安装文件提交360并验证
+
+360提交地址和帐号
+http://rz.360.cn/
+13317117258
+feiniu
+
+VS2010环境
+http://blog.sina.com.cn/s/blog_7ea5cb4d0100xfce.html
+1. 变量名：path 变量值：D:\Program Files\Microsoft Visual Studio 10.0\VC\bin;D:\Program Files\Microsoft Visual Studio 10.0\Common7\IDE;
+2.变量名： include 变量值：D:\Program Files\Microsoft Visual Studio 10.0\VC\include;
+3.变量名：lib 变量值：D:\Program Files\Microsoft Visual Studio 10.0\VC\lib;C:\Program Files\Microsoft SDKs\Windows\v7.0A\Lib;
+
+上线注意事项
+beta、preview、online发布一定需要先发布前面的版本
+比如preview发布就需要先发布beta
+online发布就需要先发布beta、preview
+
+下载地址
+客服版
+beta
+http://kefu-backend.beta.fn.com/kefu-backend/material/download/pc/MouMou_cs_beta_2.1.0.0.exe
+preview online
+http://kefu-backend.idc1.fn/material/download/pc/MouMou_cs_preview_2.1.0.0.exe
+
+商家版
+beta
+http://messagecenter.beta.fn.com/imindex/exe/MouMou_Business_beta_2.2.0.0.exe
+preview online
+http://im.feiniu.com/exe/MouMou_Business_preview_2.2.0.0.exe

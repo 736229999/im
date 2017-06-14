@@ -1,0 +1,1 @@
+devenv /rebuild release "IMClient_internal.sln"

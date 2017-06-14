@@ -1,0 +1,15 @@
+
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fPIC")
+file(GLOB srcs ./*.cpp)
+IF(var_access)
+add_library (MiniAppNetwork_Access SHARED ${srcs})
+set_target_properties(MiniAppNetwork_Access PROPERTIES OUTPUT_NAME "MiniAppNetwork_Access")
+target_link_libraries(MiniAppNetwork_Access common memcached)
+add_dependencies(MiniAppNetwork_Access common)
+ELSE()
+add_library (MiniAppNetwork SHARED ${srcs})
+set_target_properties(MiniAppNetwork PROPERTIES OUTPUT_NAME "MiniAppNetwork")
+target_link_libraries(MiniAppNetwork common memcached)
+add_dependencies(MiniAppNetwork common)
+ENDIF()
+

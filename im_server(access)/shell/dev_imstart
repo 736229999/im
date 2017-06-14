@@ -1,0 +1,33 @@
+#!/bin/sh
+
+source ~/.bash_profile
+
+cd `dirname $0`
+
+#sh imstop
+sh imkill
+#rm -rf ./Log
+
+echo -e "\nStarting IM Service ......"
+memcached -u root -d ;
+sleep 1
+echo -e "[Memcached]..........started!"
+nohup ../bin_Access/AccessServer &> /dev/null&
+sleep 1
+echo -e "[AccessServer]..........started!"
+nohup ../bin/ImServer &> /dev/null&
+sleep 1
+echo -e "[ImServer]..........started!"
+#nohup ../bin/WebMsgNotify &> /dev/null&
+#sleep 1
+#echo -e "[WebMsgNotify]..........started!"
+#nohup ../bin/MsgNotify &> /dev/null&
+#sleep 1
+#echo -e "[MsgNotify]..........started!"
+
+echo -e "\nAll IM Service Started"
+nohup sh immonitor &>/dev/null&
+
+sh imlps
+
+sh immonitor &

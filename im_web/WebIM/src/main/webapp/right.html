@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en" style="overflow: hidden">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <title>Document</title>
+    <link href="static/css/main.css" rel="stylesheet" type="text/css"/>
+</head>
+<body style="height: 100%;">
+<div id="D_right_ifm">
+    <div id="J_info_tab" class="head">
+        <p id="J_store" class="on">店铺信息</p>
+    </div>
+    <div id="J_store_info" class="with">
+        <span style="height: auto">
+            <p style="float: left;width: 70px">公司名称：</p>
+            <p id="J_merchant_name" style="float: left;width: 98px;word-break: break-all"></p>
+        </span>
+        <span class="on">店铺评分</span>
+        <span class="on1">与同行业相比</span>
+
+        <div class="comment"><span class="on2">描述相符：<b>4.8</b></span>
+            <img src="static/images/top.jpg" width="89" height="8"/><span class="on3">4.23%</span></div>
+        <div class="comment">
+            <span class="on2">服务态度：<b>4.8</b></span><img src="static/images/top.jpg" width="89" height="8"/>
+            <span class="on3">4.23%</span>
+        </div>
+        <div class="comment">
+            <span class="on2">发货速度：<b>4.8</b></span><img src="static/images/top.jpg" width="89" height="8"/>
+            <span class="on3">4.23%</span>
+        </div>
+        <div class="btnn"><a id="J_store_entrance" class="black" href="#" target="_blank">进入店铺</a></div>
+    </div>
+
+    <!-- 右侧宝贝信息-->
+    <div id="J_product_info" class="pic" style="display:none;">
+        <a class="item-buy" href="#" target="_blank"><img id="itemPic" width="130" height="130"/></a>
+        <ul>
+            <li class="on"><a id="itemName" class="lan item-buy" href="#" target="_blank">正在获取宝贝信息~</a></li>
+            <li class="on1 ">成交笔数：</li>
+            <li id="soldCount" class="on2 "></li>
+            <li class="on3 ">笔</li>
+            <li class="on1">评价（</li>
+            <li id="commentCount" class="on2"></li>
+            <li class="on3">）</li>
+            <li id="itemPrice" class="on2"></li>
+            <li class="on3">元</li>
+        </ul>
+        <div class="buy"><a class="white item-buy">立即购买</a></div>
+    </div>
+
+    <!--以下是热销商品-->
+    <div class="hot">
+        <div class="title">
+            <p>店长推荐</p>
+
+            <div id="J_slider_toggle" class="button triangle"></div>
+        </div>
+        <div id="J_slider_wrap" class="commodity">
+            <div id="J_slider">
+                <ul class="slider">
+                </ul>
+            </div>
+            <ol id="J_slider_control" class="btn">
+            </ol>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="static/js/sea.js"></script>
+<script type="text/javascript" src="static/js/modules/init/dialogRight.js"></script>
+<script type="text/javascript" src="static/js/modules/init/im.js"></script>
+</body>
+</html>

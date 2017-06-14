@@ -1,0 +1,40 @@
+// HmgUploadPicture.idl : HmgUploadPicture 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(HmgUploadPicture.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(F22A721C-2EFD-4A86-880D-D0E791FB80A0),
+	dual,
+	nonextensible,
+	helpstring("IHmgUploadPictureX 接口"),
+	pointer_default(unique)
+]
+interface IHmgUploadPictureX : IDispatch{
+	[id(1), helpstring("方法QueryVersion")] HRESULT QueryVersion([in] BSTR strVersion, [out,retval] BSTR* retVal);
+	[id(2), helpstring("方法UploadPicShellExt")] HRESULT UploadPicShellExt([in] BSTR strParamInfo);
+	[id(3), helpstring("方法BringToTop")] HRESULT BringToTop(void);
+	[id(4), helpstring("方法ShowUploadDlg")] HRESULT ShowUploadDlg([in] BSTR strParam);
+};
+[
+	uuid(691C0FE0-A0BF-46C9-8EE7-CAA5997762DB),
+	version(1.0),
+	helpstring("HmgUploadPicture 1.0 类型库")
+]
+library HmgUploadPictureLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(6F2F282E-E779-4481-8731-0EF43766059F),
+		helpstring("HmgUploadPictureX Class")
+	]
+	coclass HmgUploadPictureX
+	{
+		[default] interface IHmgUploadPictureX;
+	};
+};

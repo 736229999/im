@@ -1,0 +1,457 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""WriteArticle.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "InternalName", "WriteArticle.dll"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "OriginalFilename", "WriteArticle.dll"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_WRITEARTICLE        REGISTRY                "WriteArticle.rgs"
+IDR_WRITEARTICLEX       REGISTRY                "WriteArticleX.rgs"
+IDR_ARTICLEDATAX        REGISTRY                "ArticleDataX.rgs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_WRITE_BLOG_PANEL DIALOGEX 0, 0, 149, 342
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    COMBOBOX        IDC_COMBO_TAG,12,228,113,81,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_COMBO_VIEW,11,256,114,75,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "标签 TAG",IDC_STATIC_TAG,11,217,35,8
+    LTEXT           "查看权限",IDC_STATIC_VIEWTYPE,11,246,33,8
+    LTEXT           "添加到文集",IDC_STATIC_APPARTS,11,274,42,8
+    EDITTEXT        IDC_EDIT1,12,285,112,12,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_DIR,11,285,113,171,CBS_DROPDOWNLIST | CBS_OWNERDRAWVARIABLE | CBS_HASSTRINGS | WS_VSCROLL | WS_TABSTOP
+    CONTROL         "将此文设为置顶",IDC_CHECK_TOP,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,201,71,9
+    PUSHBUTTON      "创建文集...",IDC_BTN_CREATEDIR,11,306,50,14,BS_FLAT
+    GROUPBOX        "设置",IDC_STATIC,4,188,129,139
+    LTEXT           "超级链接",IDC_STATIC_LINK,24,170,60,9
+    LTEXT           "本地图片",IDC_STATIC_LOCALFILE,24,123,60,8
+    LTEXT           "网络图片",IDC_STATIC_WEB,24,139,60,9
+    GROUPBOX        "插入",IDC_STATIC,3,111,130,74
+    LTEXT           "空文章",IDC_STATIC_LOCAL1,11,49,70,9
+    PUSHBUTTON      "×",IDC_BTN_DEL1,113,49,12,11
+    PUSHBUTTON      "×",IDC_BTN_DEL2,113,66,12,9
+    LTEXT           "空文章",IDC_STATIC_LOCAL3,11,79,70,9
+    PUSHBUTTON      "×",IDC_BTN_DEL3,113,81,12,9
+    LTEXT           "空文章",IDC_STATIC_LOCAL2,11,64,70,9
+    LTEXT           "更多...",IDC_STATIC_MORE,9,93,74,9
+    LTEXT           "您的个人空间",IDC_STATIC_MYSPACE,37,5,67,9
+    LTEXT           "http://miniking.woku.com",IDC_STATIC_VIEWSPACE,37,17,111,9
+    GROUPBOX        "草稿",IDC_STATIC,3,37,130,70
+    CONTROL         "",IDC_STATIC_PIC,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,4,4,28,26
+    CONTROL         "",IDC_ICON_LINK,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,7,169,12,11
+    CONTROL         "",IDC_ICON_LOCAL,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,7,123,12,11
+    CONTROL         "",IDC_ICON_WEB,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,7,138,12,11
+    LTEXT           "相册图片",IDC_STATIC_WOKU,24,155,60,9
+    CONTROL         "",IDC_ICON_WOKU,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,7,153,12,11
+END
+
+IDD_IMAGEPREVIEWDLG DIALOGEX 0, 0, 112, 168
+STYLE DS_SETFONT | WS_CHILD | WS_CLIPSIBLINGS
+FONT 9, "宋体", 400, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_IMAGEPREVIEW,"Static",SS_OWNERDRAW,10,26,97,85,WS_EX_CLIENTEDGE
+    LTEXT           "",IDC_FILESIZE,11,132,93,8
+    LTEXT           "",1119,1,0,8,161
+    LTEXT           "",IDC_PREVIEWNAME,11,121,93,8
+END
+
+IDD_DIALOG_WRITEBLOG DIALOGEX 0, 0, 516, 452
+STYLE DS_SETFONT | WS_POPUP | WS_SYSMENU
+FONT 9, "宋体", 400, 0, 0x86
+BEGIN
+    EDITTEXT        IDC_EDIT_TITLE,4,53,365,13,ES_AUTOHSCROLL
+    CONTROL         "",IDC_STATIC_HIDE,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,399,145,20,8
+    CONTROL         229,IDC_STATIC_PROGRESS,"Static",SS_BITMAP,277,7,15,14
+    PUSHBUTTON      "创建文章",IDC_BUTTON_RESET,97,32,46,15
+    PUSHBUTTON      "保存草稿",IDC_BUTTON_SAVE,50,32,46,15
+    PUSHBUTTON      "发表文章",IDC_BUTTON_POST,3,32,46,15
+    PUSHBUTTON      "我的文章",IDC_BUTTON_MYARTICLE,144,32,46,15
+    PUSHBUTTON      "打开...",IDC_BUTTON_OPEN,191,32,46,15
+    PUSHBUTTON      "本地图片",IDC_BUTTON_INSERTLOCAL,272,32,47,15
+    PUSHBUTTON      "网络图片",IDC_BUTTON_INSERTWEB,320,32,45,15
+    PUSHBUTTON      "相册图片",IDC_BUTTON_INSERTWOKU,365,32,46,15
+    PUSHBUTTON      "超级链接",IDC_BUTTON_INSERTLINK,412,32,46,15
+    LTEXT           "插入：",IDC_STATIC,244,35,24,8
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDVERT,241,33,1,14
+END
+
+IDD_DIALOG_WEBPIC DIALOGEX 0, 0, 240, 78
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "",IDC_BUTTON_RIGHT,230,0,10,59
+    PUSHBUTTON      "",IDC_BUTTON_LEFT,0,0,10,59
+    CONTROL         "",IDC_SLIDER1,"Static",SS_BLACKFRAME,3,66,179,7
+END
+
+IDD_DIALOG_WEBFACE DIALOGEX 0, 0, 154, 91
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_VISIBLE | WS_BORDER | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         "",IDC_EXPLORER1,"{8856F961-340A-11D0-A96B-00C04FD705A2}",WS_TABSTOP,0,7,147,84
+END
+
+IDD_DIALOG_TEST_WEBPIC DIALOGEX 0, 0, 304, 207
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+EXSTYLE WS_EX_STATICEDGE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDOK,247,171,50,14
+    PUSHBUTTON      "取消",IDCANCEL,247,187,50,14
+    EDITTEXT        IDC_EDIT_URL,7,37,290,12,ES_AUTOHSCROLL
+    LTEXT           "请在下面的编辑框中输入网络图片的链接地址\n如: http://www.woku.com/pic/image1.jpg",IDC_STATIC,7,19,286,17
+    CONTROL         "",IDC_EXPLORER1,"{8856F961-340A-11D0-A96B-00C04FD705A2}",WS_TABSTOP,7,54,236,146
+    PUSHBUTTON      "测试链接",IDTEST,247,55,50,14
+END
+
+IDD_DIALOG_PROGRESS3 DIALOGEX 0, 0, 132, 47
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,97,7,28,34
+    CONTROL         237,IDC_STATIC_PROGRESS,"Static",SS_BITMAP,7,29,80,13
+    LTEXT           "",IDC_STATIC1,7,7,85,17
+END
+
+IDD_DIALOG_PROGRESS2 DIALOGEX 0, 0, 96, 35
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         237,IDC_STATIC_PROGRESS,"Static",SS_BITMAP,7,18,80,10
+END
+
+IDD_DIALOG_PROGRESS DIALOGEX 0, 0, 132, 25
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,97,7,28,11
+    CONTROL         237,IDC_STATIC_PROGRESS,"Static",SS_BITMAP,7,8,80,10
+END
+
+IDD_DIALOG_CREATEDIR DIALOGEX 0, 0, 232, 166
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_STATICEDGE
+CAPTION "创建文集"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "创建",IDOK,65,144,50,14
+    PUSHBUTTON      "放弃",IDCANCEL,123,144,50,14
+    EDITTEXT        IDC_EDIT_DIR,14,25,199,14,ES_AUTOHSCROLL
+    LTEXT           "新建文集名称：",IDC_STATIC,14,13,57,8
+    LISTBOX         IDC_LIST_DIR,14,69,201,61,LBS_SORT | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "已有的文集：",IDC_STATIC,14,56,49,8
+    GROUPBOX        "",IDC_STATIC,8,5,214,133
+END
+
+IDD_MAINFRAME DIALOGEX 0, 0, 186, 90
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_DIALOG_OPEN DIALOGEX 0, 0, 417, 247
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "打开"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "确定",IDC_BUTTON_OK,310,224,45,14
+    PUSHBUTTON      "取消",IDC_BUTTON_PCANCLE,364,224,45,14
+    LISTBOX         IDC_LIST1,8,24,113,195,LBS_SORT | LBS_OWNERDRAWVARIABLE | LBS_HASSTRINGS | LBS_NOINTEGRALHEIGHT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "打开位置(&O):",IDC_STATIC,8,9,62,12
+    PUSHBUTTON      "刷新",IDC_BUTTON_REFRESH,126,8,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_DIALOG_WEBFACE DLGINIT
+BEGIN
+    IDC_EXPLORER1, 0x376, 160, 0
+0x0000, 0x0000, 0x004c, 0x0000, 0x16d7, 0x0000, 0x0e29, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x004c, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xd0e0, 0x0057, 0x3573, 0x11cf, 0x69ae, 0x0008, 0x2e2b, 0x6212, 
+0x0008, 0x0000, 0x0000, 0x0000, 0x004c, 0x0000, 0x1401, 0x0002, 0x0000, 
+0x0000, 0x00c0, 0x0000, 0x0000, 0x4600, 0x0080, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+    0
+END
+
+IDD_DIALOG_TEST_WEBPIC DLGINIT
+BEGIN
+    IDC_EXPLORER1, 0x376, 160, 0
+0x0000, 0x0000, 0x004c, 0x0000, 0x2496, 0x0000, 0x187f, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x004c, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 
+0x0000, 0xd0e0, 0x0057, 0x3573, 0x11cf, 0x69ae, 0x0008, 0x2e2b, 0x6212, 
+0x0008, 0x0000, 0x0000, 0x0000, 0x004c, 0x0000, 0x1401, 0x0002, 0x0000, 
+0x0000, 0x00c0, 0x0000, 0x0000, 0x4600, 0x0080, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0001, 0x0000, 
+0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 0x0000, 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_TEMPLATE MENU 
+BEGIN
+    POPUP "templete"
+    BEGIN
+        MENUITEM "fordelete",                   ID_FORDELETE
+    END
+END
+
+IDR_MENU1 MENU 
+BEGIN
+    POPUP "文件(&F)"
+    BEGIN
+        MENUITEM "发表文章",                        ID_POST
+        MENUITEM "新建文章",                        ID_NEW_ARTICLE
+        MENUITEM "打开...(&O)",                   ID_OPEN
+        MENUITEM "保存草稿(&S)",                    ID_SAVE_ARTICLE
+        MENUITEM SEPARATOR
+        MENUITEM "创建文集",                        ID_NEW_ARTICLES
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                      ID_EXIT
+    END
+END
+
+IDR_MENU2 MENU 
+BEGIN
+    POPUP "编辑(&E)"
+    BEGIN
+        MENUITEM "剪切",                          ID_CUT
+        MENUITEM "复制",                          ID_COPY
+        MENUITEM "粘贴",                          ID_PASTE
+        MENUITEM "全选",                          ID_SELALL
+        MENUITEM "撤消",                          ID_UNDO
+        MENUITEM "恢复",                          ID_REDO
+    END
+END
+
+IDR_MENU3 MENU 
+BEGIN
+    POPUP "插入(&I)"
+    BEGIN
+        MENUITEM "本地图片",                        ID_LOCAL_PIC
+        MENUITEM "相册图片",                        ID_WOKU_PIC
+        MENUITEM "网络图片",                        ID_WEB_PIC
+        MENUITEM "超级链接",                        ID_HYPERLINK
+    END
+END
+
+IDR_MENU5 MENU 
+BEGIN
+    POPUP "查看"
+    BEGIN
+        MENUITEM "我的文章",                        ID_VIEW_MYARTICLES
+        MENUITEM "文章首页",                        ID_VIEW_WEBARTICLES
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Toolbar
+//
+
+IDR_TOOLBAR_BLOG TOOLBAR  16, 15
+BEGIN
+    BUTTON      ID_BLG_FONTNAME
+    BUTTON      ID_BLG_FONTSIZE
+    SEPARATOR
+    BUTTON      ID_BLG_BOLD
+    BUTTON      ID_BLG_ITALIC
+    BUTTON      ID_BLG_UNDERLINE
+    BUTTON      ID_BLG_COLORMENU
+    SEPARATOR
+    BUTTON      ID_BLG_NUMBER
+    BUTTON      ID_BLG_BULLETS
+    SEPARATOR
+    BUTTON      ID_FORMAT_ALIGN_LEFT
+    BUTTON      ID_FORMAT_ALIGN_CENTER
+    BUTTON      ID_FORMAT_ALIGN_RIGHT
+    BUTTON      ID_WEBFACE
+    BUTTON      ID_LINK
+END
+
+IDR_TOOL_BUTTONS TOOLBAR  19, 18
+BEGIN
+    BUTTON      ID_BUTTON_NEW
+    BUTTON      ID_BUTTON_OPEN
+    BUTTON      ID_BUTTON_SAVE
+    BUTTON      ID_BUTTON_POST
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_TOOLBAR_BLOG        BITMAP                  "res\\toolbar_.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_WRITE_BLOG_PANEL, DIALOG
+    BEGIN
+        RIGHTMARGIN, 137
+        BOTTOMMARGIN, 339
+    END
+
+    IDD_DIALOG_WRITEBLOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 496
+        BOTTOMMARGIN, 379
+    END
+
+    IDD_MAINFRAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 179
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 83
+    END
+
+    IDD_DIALOG_OPEN, DIALOG
+    BEGIN
+        RIGHTMARGIN, 416
+        BOTTOMMARGIN, 246
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PROJNAME            "WriteArticle"
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "WriteArticle.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

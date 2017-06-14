@@ -1,0 +1,36 @@
+#!/bin/sh
+
+source /etc/profile
+
+cd `dirname $0`
+
+#sh imstop
+sh imkill
+#rm -rf ./Log
+
+ulimit -c unlimited
+
+MASTERIP=`cat ../config/Config.ini | grep -A 1 "\[ShellConfig\]" | grep MasterIp | awk -F "[=]" '{print $2}'`
+MYIP=`ifconfig | grep -A 2 eth | grep "inet addr" | awk -F "[:]" '{print $2}' |  awk '{print $1}'`
+echo $MASTERIP $MYIP
+if [ $MASTERIP = $MYIP ];then
+	echo -e "\nStarting IM Service ......"
+	nohup ../bin_Access/AccessServer &> /dev/null&
+	sleep 1
+	echo -e "[AccessServer]..........started!"
+	nohup ../bin/ImServer &> /dev/null&
+	sleep 1
+	echo -e "[ImServer]..........started!"
+	nohup ../bin/WebMsgNotify &> /dev/null&
+	sleep 1
+	echo -e "[WebMsgNotify]..........started!"
+	sleep 1
+	#nohup ../bin/MsgNotify &> /dev/null&
+        #sleep 1
+        #echo -e "[MsgNotify]..........started!"
+	echo -e "\nAll IM Service Started"
+	sh imlps
+	nohup sh immonitor &>/dev/null&
+else
+	sh imstart_1
+fi

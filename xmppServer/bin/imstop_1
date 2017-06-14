@@ -1,0 +1,60 @@
+#!/bin/sh
+
+stop_process()
+{
+prc_name1=$1
+prc_name2=$2
+
+if [ -z "${prc_name2}" ]; then
+    v_proc="${prc_name1}"
+else
+    v_proc="${prc_name1} ${prc_name2}"
+fi
+
+pids=`ps -fu im | grep "\${v_proc}" | grep -v grep |grep -v tail| awk '{print $2}'`
+if [ "$pids" = "" ]
+then
+    echo -e "[${v_proc}]..........not running!"
+else
+	kill -9 $pids
+	echo -e "[${v_proc}]..........stopped!(PID=$pids)"
+fi
+
+if [ -z "${prc_name2}" ]; then
+    return;
+fi
+
+pids=`ps -fu im | grep "\${prc_name2}" | grep -v grep | grep -v "\${prc_name1}" |grep -v sh|grep -v tail| awk '{print $2}'|head -1`
+pids1=`ps -fu im | grep "\${prc_name2}" | grep -v grep | grep -v "\${prc_name1}" |grep -v sh|grep -v tail| awk '{print $2}'|wc -l`
+if [ "$pids" = "" ]
+then
+    echo -e "[${prc_name2}]..........not running!"
+else
+	kill -9 $pids
+    echo -e "[${prc_name2}]..........stopped!(PID=$pids,$pids1 threads)"
+fi
+}
+
+HOLD=/tmp/imhold0.$$
+ps -aef| grep immonitor | grep -v grep | awk '{print $2}' > $HOLD
+if [ -s $HOLD ]
+
+then
+	while read PID 
+        do
+	kill -9 $PID
+        done < $HOLD	
+fi
+
+cd `dirname $0`
+
+echo -e "\nStopping IM Services ...... "
+stop_process ImServer
+
+./ImServer -quitall > /dev/null 2>&1
+sleep 1
+
+echo -e "\nAll IM Services Stoped"
+
+sh imlps_1
+

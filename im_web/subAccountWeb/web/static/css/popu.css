@@ -1,0 +1,13 @@
+@charset "utf-8";
+/* CSS Document */
+
+.popup_wrap{ width:910px; height:520px; background:#555555;}
+.popup_wrap img{ width:890px; height:433px; margin:10px 10px 10px 10px;}
+
+.popup_wrap .btn{ width:283px; margin:0 auto; height:50px;}
+.popup_wrap .btn_1{ width:125px; height:50px; margin:0 auto;}
+.popup_wrap a.sh{ display:block; width:125px; height:50px; background:url(../images/shang.jpg) no-repeat; float:left; margin-right:15px; cursor:pointer;}
+.popup_wrap a.xia{ display:block; width:125px; height:50px; background:url(../images/xia.jpg) no-repeat; float:left;cursor:pointer;}
+
+.popup_wrap a.know{ display:block; width:125px; height:50px; background:url(../images/know.jpg) no-repeat; float:left;cursor:pointer;}
+

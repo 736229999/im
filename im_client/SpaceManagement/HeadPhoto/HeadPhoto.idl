@@ -1,0 +1,40 @@
+// HeadPhoto.idl : HeadPhoto 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(HeadPhoto.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(3F43214B-BEC5-48CC-9ECC-9508ED982C70),
+	dual,
+	nonextensible,
+	helpstring("IHeadPhotoX 接口"),
+	pointer_default(unique)
+]
+interface IHeadPhotoX : IDispatch{
+	[id(1), helpstring("方法Show")] HRESULT Show(void);
+	[id(2), helpstring("方法Close")] HRESULT Close(void);
+	[id(3), helpstring("方法GetUserInfo")] HRESULT GetUserInfo([out,retval] LONG* pVal);
+	[id(4), helpstring("方法SetMessageWndHandle")] HRESULT SetMessageWndHandle([in] LONG hWnd);
+};
+[
+	uuid(7406E3B6-0387-4A0E-9940-919220609B0F),
+	version(1.0),
+	helpstring("HeadPhoto 1.0 类型库")
+]
+library HeadPhotoLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(C5EF8615-CA55-4E3A-887D-8D910F783EC2),
+		helpstring("HeadPhotoX Class")
+	]
+	coclass HeadPhotoX
+	{
+		[default] interface IHeadPhotoX;
+	};
+};

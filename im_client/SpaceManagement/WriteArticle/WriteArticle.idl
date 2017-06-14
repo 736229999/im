@@ -1,0 +1,49 @@
+// WriteArticle.idl : WriteArticle 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(WriteArticle.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+//
+//typedef [uuid(48960ABE-262B-4ECD-9FBF-6573110489C2)]
+//CList<TSavedArticleItem,TSavedArticleItem> TSavedArticleList;//未发表的文章列表
+
+[
+	object,
+	uuid(D8960ABE-262A-4ECD-9FBF-6573110489C0),
+	dual,
+	nonextensible,
+	helpstring("IWriteArticleX 接口"),
+	pointer_default(unique)
+]
+
+interface IWriteArticleX : IDispatch{
+	[id(1), helpstring("方法Show")] HRESULT Show(void);
+	[id(2), helpstring("方法Close")] HRESULT Close(void);
+	[propget, id(3), helpstring("属性 UserInfo")] HRESULT UserInfo([out, retval] LONG* pVal);
+	[id(4), helpstring("方法SelectMyArticlesX")] HRESULT SelectMyArticlesX([in] LONG pMyArticlesX);
+	[id(5), helpstring("方法NewArticle")] HRESULT NewArticle(void);
+	[id(6), helpstring("方法EditLocalSavedArticle")] HRESULT EditLocalSavedArticle([in] LONG pLocalSaveArticleInfo, [in] LONG nSavedID);
+	[id(7), helpstring("方法EditWebArticle")] HRESULT EditWebArticle([in] LONG pWebArticleInfo);
+};
+
+[
+	uuid(FFA518EF-8716-4FEB-B0B9-A9400EFA14D0),
+	version(1.0),
+	helpstring("WriteArticle 1.0 类型库")
+]
+library WriteArticleLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(77250F8F-CA90-4842-917B-2B71AFACE11A),
+		helpstring("WriteArticleX Class")
+	]
+	coclass WriteArticleX
+	{
+		[default] interface IWriteArticleX;
+	};
+};

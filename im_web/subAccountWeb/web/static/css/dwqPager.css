@@ -1,0 +1,128 @@
+#dwqPager{
+    clear:both;
+    color:#999;
+    padding:5px 0px 5px 0px;
+    font-size:13px;
+}
+#dwqPager a{
+    float: left;
+    /*border: 1px solid #ccc;*/
+    display: inline;
+    padding: 3px 10px 3px 10px;
+    margin-right: 5px;
+    /*border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;*/
+    cursor: pointer;
+    background: #fff;
+    text-decoration:none;
+    color:#999;
+}
+
+#dwqPager span.disabled{
+    float: left;
+    display: inline;
+    padding: 3px 10px 3px 10px;
+    margin-right: 5px;
+    /*border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border:1px solid #DFDFDF;*/
+    /*background-color:#FFF;*/
+    color:#999;
+}
+#dwqPager span.curr{
+    float: left;
+    /*border: 1px solid #31ACE2;*/
+    display: inline;
+    padding: 3px 10px 3px 10px;
+    margin-right: 5px;
+    /*border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    background: #F0FDFF;*/
+    color: #f00;
+}
+#dwqPager a:hover{
+    /*border:1px solid #31ACE2; */
+    /*background-color:#31ACE2; */
+    /*color:#fff;*/
+    color: #f00;
+}
+#dwqPager span.normalsize{
+}
+#dwqPager_gopage_wrap{
+    position:relative;
+    left:0px;
+    top:0px;
+}
+#dwqPager_btn_go {
+    width:44px;
+    height:18px;
+    border:0px;
+    overflow:hidden;
+    line-height:140%;
+    padding:0px;
+    margin:0px;
+    text-align:center;
+    cursor:pointer;
+    background-color:#ddd;
+    color:#000;
+    position:absolute;
+    left:0px;
+    top:-2px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    display:none;
+}
+#dwqPager_btn_go_input{
+    width:36px;
+    height:14px;
+    line-height: 14px;
+    color:#999;
+    text-align:center;
+    margin-left:1px;
+    margin-right:1px;
+    border:1px solid #DFDFDF;
+    position:relative;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    left:0px;
+    top:0px;
+    outline:none;
+}
+
+#dwqPager_btn_go_input.focus{
+    border-color:#31ACE2;
+}
+
+#dwqPager .pageBtnWrap{
+    /*float:left;*/
+}
+#dwqPager .infoTextAndGoPageBtnWrap{
+    float:right;
+}
+#dwqPager .spanDot{
+    float:left;
+    margin-right:5px;
+}
+
+#dwqPager .currPageNum{
+    color:#FD7F4D;
+}
+
+#dwqPager .infoTextAndGoPageBtnWrap{
+    padding-top:5px;
+}
+
+/*Desc 修改风格
+Create By Damon.dai
+time 2015-06-23 18:56:55*/
+#dwqPager .ui_border{border: 1px solid #ddd;}
+#dwqPager .pageExtraWrap{float: left;}
+#dwqPager .pageMainWrap{float: right;}
+#dwqPager .selectPageSize{line-height: 25px;}
+#dwqPager .selectPageSize select{width:40px;}
+
+/*#dwqPager .totalText{float: left;}
+#dwqPager .pageBtnWrap,#dwqPager .selectPageSize,#dwqPager .goPageBox {float: right;}*/

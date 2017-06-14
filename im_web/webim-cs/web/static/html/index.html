@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>飞牛客服</title>
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-dialog.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="js/jquery/fn-login/base.css"/>
+    <link rel="stylesheet" type="text/css" href="js/jquery/fn-login/fn_login.css"/>
+    <link href="http://static02.fn-mart.com/images/feiniu_favicon.ico" rel="shortcut icon">
+</head>
+
+<body>
+<!--建议整个宽度定最大值和最小值（设计图定的是560像素）-->
+<div class="all">
+    <div id="header-area">
+        <div class="head"><img src="images/logo_1.jpg"></div>
+    </div>
+    <div id="nav">
+        <p>您前面还有<span class="ui-hight-light queue-seq"></span>位客人正在等候服务…</p>
+        <!-- <div class="ico">
+           <a class="close" href="#" onclick="if(confirm('是否关闭该窗口？')==true){window.open('about:blank','_self'); window.close();}"></a>
+       </div> -->
+    </div>
+    <div class="content">
+
+        <!-- 联系人栏目 -->
+        <div class="person" style="height: 499px;display: none;">
+            <h2>
+                <ins></ins>
+                <p>正在联系人（8人）</p></h2>
+            <div class="clear"></div>
+            <h2 class="have_msg">
+                <ins></ins>
+                <p>最近联系人（23人）</p>
+
+                <div class="msg-num-box">99</div>
+            </h2>
+            <ul style="display:none;">
+                <li class="have_msg ui-off-line"><em class="tuxiang"></em><span>客户名称路人A</span>
+
+                    <div class="msg-num-box">99</div>
+                </li>
+                <li class="read_msg ui-off-line"><em class="tuxiang"></em><span>韩流时尚女装品牌店...</span></li>
+                <li><em class="tuxiang"></em><span>客户名称路人C</span></li>
+                <li class="have_msg"><em class="tuxiang"></em><span>客户名称路人D</span>
+
+                    <div class="msg-num-box">99</div>
+                </li>
+                <li><em class="tuxiang"></em><span>客户名称路人E</span></li>
+                <li><em class="tuxiang"></em><span>客户名称路人F</span></li>
+            </ul>
+            <div class="clear"></div>
+            <h2>
+                <ins></ins>
+                <p>其他（123人）</p></h2>
+            <ul style="display:none;">
+                <li><em class="tuxiang"></em><span>客户名称路人A</span>
+
+                    <div class="msg-num-box">99</div>
+                </li>
+                <li class="on"><span>韩流时尚女装品牌店...</span>
+
+                    <div class="msg-num-box">99</div>
+                </li>
+                <li><em class="tuxiang"></em><span>客户名称路人C</span></li>
+                <li><em class="tuxiang"></em><span>客户名称路人D</span>
+
+                    <div class="msg-num-box">99</div>
+                </li>
+                <li><em class="tuxiang"></em><span>客户名称路人E</span></li>
+                <li><em class="tuxiang"></em><span>客户名称路人F</span></li>
+            </ul>
+            <div class="clear"></div>
+            <h2>
+                <ins></ins>
+                <p>其他（35人）</p></h2>
+        </div>
+
+        <!--左侧对话框要百分比缩放-->
+        <div id="D_right_ifm">
+            <iframe src="" frameborder="0" scrolling="no" style="width:100%;height: 100%;"></iframe>
+        </div>
+        <!--右侧信息栏目宽固定度是190像素-->
+        <div id="D_left">
+            <div class="top">
+                <div class="speak">
+                </div>
+            </div>
+            <div class="typing">
+                <!--点击图标出现改变字体效果的选择列表-->
+                <div id="J_ti_tb" class="click" style="display: none;">
+                    <div class="choose">
+                        <select class="font-family-select">
+                            <option value="SimSun">宋体</option>
+                            <option value="SimHei">黑体</option>
+                            <option value="Microsoft YaHei" selected>微软雅黑</option>
+                        </select>
+                        <select class="font-size-select">
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12" selected>12</option>
+                            <option value="13">13</option>
+                            <option value="14">14</option>
+                            <option value="15">15</option>
+                            <option value="16">16</option>
+                            <option value="17">17</option>
+                            <option value="18">18</option>
+                            <option value="19">19</option>
+                            <option value="20">20</option>
+                            <option value="21">21</option>
+                            <option value="22">22</option>
+                        </select>
+                    </div>
+                    <div class="font">
+                        <a href="javascript:void(0);" class="b" act="b"></a>
+                        <a href="javascript:void(0);" class="i" act="i"></a>
+                        <a href="javascript:void(0);" class="u" act="u"></a>
+                        <a href="javascript:void(0);" class="color" act="color"></a>
+                    </div>
+                    <a class="cha" act="cha"></a>
+                </div>
+
+                <div class="title">
+                    <a href="javascript:void(0);" class="ti" act="ti"></a>
+                    <a href="javascript:void(0);" class="face" act="face"></a>
+                    <a id="audioSwitcher" href="javascript:void(0);" class="voice" act="voice"></a>
+                    <span id="photoUploader" class="send-photo" act="send-photo"
+                          title="发送图片">
+                        <i style="display: inline-block;width: 21px;height: 21px;z-index: 3"></i>
+                    </span>
+
+                    <a href="javascript:void(0);" class="make-evaluation satisfaction" act="satisfaction">满意度评价</a>
+                </div>
+
+                <div id="textareaSend" contenteditable="true" class="textarea"></div>
+
+
+                <div class="send">
+                    <a id="J_send" class="btn" href="#">发 送</a>
+                    <a id="J_send_state" class="up" href="#"></a>
+
+                    <div id="J_send_state_warp" class="eject" style="display: none;">
+                        <a id="J_send_state_enter" href="#" class="gou">按Enter键发送</a>
+                        <a id="J_send_state_ctrlEnter" href="#">按Ctrl+Enter键发送</a>
+                    </div>
+                </div>
+                <!-- 表情弹出窗口 -->
+                <div id="J_face_popup" class="face_popup" style="display: none;">
+                    <table class="heads">
+                        <tr>
+                            <td><a href="javascript:void(0);" title="大笑"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="害羞"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="欢喜"><img src="images/icon/face_huanxi.gif"/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="开心"><img src="images/icon/face_kaixin.gif"/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="流汗"><img src="images/icon/face_liuhan.gif"/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="流泪"><img src="images/icon/face_liulei.gif"/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0);" title="大笑"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="害羞"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="欢喜"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="开心"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="流汗"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="流泪"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0);" title="大笑"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="害羞"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="欢喜"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="开心"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="流汗"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="流泪"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0);" title="大笑"><img/></a>
+                                </td>
+                            <td><a href="javascript:void(0);" title="害羞"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="欢喜"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="开心"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="流汗"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="流泪"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                        </tr>
+                        <tr>
+                            <td><a href="javascript:void(0);" title="大笑"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="害羞"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="欢喜"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="开心"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="流汗"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="流泪"><img/></a>
+                            </td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                            <td><a href="javascript:void(0);" title="牛B"><img/></a></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div id="audioPlayerPanel" style="height: 0px; width: 0px;position: fixed;left: 0;bottom: 0;">
+    </div>
+</div>
+
+<script id="evaluationWindow_tpl" type="text/html">
+    <div id="evaluationWindow" class="evaluation-window">
+        <p class="eval-desc">非常感谢您的支持，为了使我们更好的为您服务，请您给本次服务一个评价：</p>
+
+        <div class="eval-ipt">
+            <label><input type="radio" name="evaluation" checked value="5"/><span>非常满意</span></label>
+            <label><input type="radio" name="evaluation" value="4"/><span>满意</span></label>
+            <label><input type="radio" name="evaluation" value="3"/><span>一般</span></label>
+            <label><input type="radio" name="evaluation" value="2"/><span>不满意</span></label>
+            <label class="last"><input type="radio" name="evaluation" value="1"/><span>非常不满意</span></label>
+        </div>
+        <div class="eval-txt">
+            <textarea></textarea>
+
+            <div class="tip">还可以输入<span class="remaining">100</span>个字</div>
+        </div>
+        <div class="eval-submit" style="cursor: pointer">
+            <span href="javascript:void(0);" class="submit">提交</span>
+        </div>
+    </div>
+</script>
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/util/generalUtil.js"></script>
+<script type="text/javascript" src="js/sea.js"></script>
+<script type="text/javascript" src="js/jquery/fn-login/fnDialog.js" async="async"></script>
+<script type="text/javascript" src="js/modules/init/webim.js"></script>
+</body>
+</html>

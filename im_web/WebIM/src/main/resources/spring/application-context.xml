@@ -1,0 +1,30 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>${kafka.config.path}</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="topicClient" class="com.feiniu.kafka.client.TopicClient">
+        <property name="zkList" value="${zookeeper.connect}"></property>
+        <property name="factor" value="2"></property>
+        <property name="partition" value="3"></property>
+    </bean>
+
+    <bean id="businessHandler" class="com.feiniu.webim.component.IMQueueMessageHandler"/>
+
+    <bean id="kafkaConfig" class="com.feiniu.webim.bean.domain.KafkaConfig">
+        <property name="zookeeperConnectString" value="${zookeeper.connect}"></property>
+        <property name="groupId" value="${kafka.group.id}"></property>
+        <property name="topicName" value="${kafka.queueLength_topic}"></property>
+        <property name="timeoutMilis" value="${zookeeper.connection.timeout.ms}"></property>
+        <property name="offsetReset" value="${auto.offset.reset}"></property>
+        <property name="kafkaStreamHandler" ref="businessHandler"></property>
+    </bean>
+</beans>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-3.1.xsd">
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>${config.path}</value>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="dataSource" name="b2bDataSource"  class="com.alibaba.druid.pool.DruidDataSource"  init-method="init"  destroy-method="close">
+        <!-- 基本属性 url、user、password -->
+        <property name="url" value="${jdbc.url}" />
+        <property name="username" value="${jdbc.user}" />
+        <property name="password" value="${jdbc.password}" />
+        <!-- 配置初始化大小、最小、最大 -->
+        <property name="initialSize" value="${jdbc.initialSize}" />
+        <property name="minIdle" value="${jdbc.minIdle}" />
+        <property name="maxActive" value="${jdbc.maxActive}" />
+        <!-- 配置获取连接等待超时的时间 -->
+        <property name="maxWait" value="60000" />
+        <!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+        <property name="timeBetweenEvictionRunsMillis" value="60000" />
+        <!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+        <property name="minEvictableIdleTimeMillis" value="300000" />
+        <property name="testWhileIdle" value="true" />
+        <property name="testOnBorrow" value="true" />
+        <property name="testOnReturn" value="false" />
+        <property name="validationQuery" value="jdbc.validationQuery" />
+        <!-- 打开PSCache，并且指定每个连接上PSCache的大小 mysql false -->
+        <property name="poolPreparedStatements" value="false" />
+        <property name="maxPoolPreparedStatementPerConnectionSize" value="20" />
+        <!-- 配置监控统计拦截的filters -->
+        <property name="filters" value="stat,slf4j" />
+        <property name="connectionProperties" value="config.decrypt=false" />
+    </bean>
+
+    <bean id="sessionFactory"
+          class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="packagesToScan" value="com.feiniu.csWebIm.domain"/>
+        <property name="hibernateProperties">
+            <props>
+                <prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+                <prop key="hibernate.show_sql">true</prop>
+                <prop key="hibernate.hbm2ddl.auto">validate</prop>
+            </props>
+        </property>
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+
+    <bean id="jdbcTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <tx:annotation-driven proxy-target-class="true"/>
+
+    <!--连接池配置-->
+    <bean id="cachePool" class="com.fn.cache.client.pool.CachePool">
+        <property name="zkAddress" value="${feiniu.redisIpAddress}"/>
+        <property name="appName" value="${feiniu.redisAppName}"/>
+        <!--连接池属性配置  可选-->
+        <property name="initConn" value="10"/>
+        <property name="minConn" value="5"/>
+        <property name="maxConn" value="50"/>
+    </bean>
+
+    <!--cache客户端实例-->
+    <bean id="cacheClient" class="com.fn.cache.client.CacheClient" init-method="init">
+        <!--缓存类型 可选 memcached或redis 默认为memcached-->
+        <property name="cacheType" value="redis"/>
+        <!--缓存连接池-->
+        <property name="cachePool" ref="cachePool"/>
+        <!--全局默认过期时间  可选 单位：秒 api可显示设置-->
+        <!--
+        <property name="expire" value="60"/>
+        -->
+    </bean>
+
+</beans>

@@ -1,0 +1,29 @@
+#!/bin/sh
+
+source ~/.bash_profile
+
+cd `dirname $0`
+
+#sh imstop
+sh imkill
+#rm -rf ./Log
+
+echo -e "\nStarting IM Service ......"
+
+nohup ../bin/UserOnlineManager &> /dev/null&
+sleep 1
+echo -e "[UserOnlineManager]..........started!"
+nohup ../bin/ClusterOnlineManager &> /dev/null&
+sleep 1
+echo -e "[ClusterManager]..........started!"
+nohup ../bin/ImServer &> ../Log/dylog &
+sleep 1
+echo -e "[ImServer]..........started!"
+nohup ../bin/WebMsgNotify &> /dev/null&
+sleep 1
+echo -e "[WebMsgNotify]..........started!"
+
+echo -e "\nAll IM Service Started"
+sh imlps
+
+sh immonitor &

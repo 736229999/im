@@ -1,0 +1,248 @@
+
+#include "stdafx.h"
+#include <sqlca.h>
+#include <oraca.h>
+#include <sqlcpr.h>
+#include <oci.h>
+
+
+#define SQLCA_NONE 
+#define ORACA_NONE
+#include <sqlcpr.h>
+
+
+
+#include "StdPublic.h"
+#include "Log.h"
+#include "DatabaseGW.h"
+EXEC SQL INCLUDE SQLCA;
+EXEC SQL INCLUDE ORACA;
+
+EXEC ORACLE OPTION (RELEASE_CURSOR = YES);  
+EXEC ORACLE OPTION (ORACA=YES);
+extern struct oraca oraca;
+
+
+
+extern void sqlgls(char*,size_t*,size_t *);
+
+//线程运行上下文
+EXEC SQL BEGIN DECLARE SECTION;
+	sql_context m_ctx[ 200 ];
+EXEC SQL END DECLARE SECTION;
+
+	
+	
+int  CDatabaseGW::m_nConnectCount = 0;
+int	 CDatabaseGW::m_nContextid = 0;	
+char CDatabaseGW::miniuid[32] = "";
+char CDatabaseGW::minipwd[32] = "";
+char CDatabaseGW::minisid[32] = "";
+char CDatabaseGW::webuid[32] = "";
+char CDatabaseGW::webpwd[32] = "";
+char CDatabaseGW::websid[32] = "";
+char CDatabaseGW::familyuid[32] = "";
+char CDatabaseGW::familypwd[32] = "";
+char CDatabaseGW::familysid[32] = "";
+
+CSyncCritical	CDatabaseGW::m_CriticalLock;
+
+CDatabaseGW::CDatabaseGW(void)
+{
+	m_Connect[0] = '\0';
+	m_nMyContextid = -1;
+}
+
+CDatabaseGW::~CDatabaseGW(void)
+{
+	DisConnect();
+}
+  
+bool CDatabaseGW::connect(char* pUserName,char* pPassword,char* pServerName)
+{
+	DEF_ORASET;
+	assert(pUserName);
+	assert(pPassword);
+	assert(pServerName);
+	
+	EXEC SQL BEGIN DECLARE SECTION;
+		
+		VARCHAR username[41] ;
+		VARCHAR password[32] ;
+		VARCHAR servername[32];
+		VARCHAR db_link_name[32] ;
+
+	EXEC SQL END DECLARE SECTION;
+	
+
+	if (m_Connect[0] == '\0' && m_nMyContextid == -1) //如果超时断开重连继续使用原连接名和上下文
+	{
+		//自动分配一个连接标识符，不同的类对象有不同的连接标识符，以便支持多线程
+		m_CriticalLock.Lock();
+		
+		++m_nConnectCount;
+		sprintf(m_Connect,"connect%d",m_nConnectCount);
+		
+		//为多线程连接做准备运行上下文
+		EXEC SQL ENABLE THREADS;
+		m_nMyContextid = m_nContextid++;
+		
+		EXEC SQL CONTEXT ALLOCATE :m_ctx[m_nMyContextid];				
+		m_CriticalLock.Unlock(); 
+		
+		strncpy((char*)db_link_name.arr , m_Connect,32);
+		db_link_name.len = (short)strlen(m_Connect);
+	}
+// 	else
+// 	{
+// 		try
+// 		{
+// 			strncpy((char*)db_link_name.arr , m_Connect,32);
+// 			db_link_name.len = (short)strlen(m_Connect);
+// 			EXEC SQL WHENEVER SQLERROR CONTINUE;
+// 			EXEC SQL AT :db_link_name COMMIT RELEASE;
+// 		}
+// 		catch(...)
+// 		{
+// 			CLog::Log("CDatabaseGW::connect",CLog::TYPE_IMPORTANT,"断开%s连接后出现异常!",m_Connect);
+// 		}
+// 	}
+	
+	
+// 	try
+// 	{	
+	
+		//初始化数据
+		strncpy((char*)db_link_name.arr , m_Connect,32);
+		db_link_name.len = (short)strlen(m_Connect);
+
+		strncpy((char*)username.arr , pUserName,MAX_USERNAME_LEN+1);
+		username.len = (short)strlen(pUserName);
+		strncpy((char*)password.arr , pPassword,32);
+		password.len = (short)strlen(pPassword) ;
+		strncpy((char*)servername.arr , pServerName,32);
+		servername.len = (short)strlen(pServerName);
+
+
+		//执行连接
+		EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+		EXEC SQL CONNECT	:username 
+		IDENTIFIED BY		:password
+		AT					:db_link_name
+		USING				:servername;
+		
+		int dbret = sqlca.sqlcode;
+		if (dbret != 0)
+		{
+			sql_error(sqlca, oraca);
+			return false;
+		}
+// 	}
+// 	catch(...)
+// 	{
+// 		CLog::Log("CDatabaseGW::connect",CLog::TYPE_IMPORTANT,"断开%s连接后重新连接出现异常!",m_Connect);
+// 	}
+
+	CLog::Log("CDatabaseGW::connect",CLog::TYPE_IMPORTANT,"database %s connect OK",pServerName);
+	return true;
+	
+}
+
+bool CDatabaseGW::ConnectMini()
+{
+	oraca.oradbgf = 1; 
+	oraca.oracchf = 1; 
+	oraca.orastxtf = 3; 
+	return connect(miniuid,minipwd,minisid);
+} 
+
+
+bool CDatabaseGW::ConnectWeb()
+{
+	oraca.oradbgf = 1; 
+	oraca.oracchf = 1; 
+	oraca.orastxtf = 3; 
+	return connect(webuid,webpwd,websid);
+}
+
+bool CDatabaseGW::ConnectFamily()
+{
+	oraca.oradbgf = 1; 
+	oraca.oracchf = 1; 
+	oraca.orastxtf = 3; 
+	return connect(familyuid,familypwd,familysid);
+}
+
+void CDatabaseGW::DisConnect()
+{
+
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+	
+		VARCHAR db_link_name[32];
+
+	EXEC SQL END DECLARE SECTION;
+	
+	
+	if( m_Connect[0] != '\0' )
+	{
+		EXEC SQL WHENEVER SQLERROR CONTINUE;
+		
+		strncpy((char*)db_link_name.arr , m_Connect,32);
+		db_link_name.len = (short)strlen(m_Connect);
+		
+		EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+			
+		EXEC SQL AT :db_link_name COMMIT RELEASE;
+		
+		EXEC SQL CONTEXT FREE :m_ctx[m_nMyContextid];
+		m_nMyContextid = -1;
+	}
+}
+
+//SQL错误处理
+void CDatabaseGW::sql_error(struct sqlca sqlca,struct oraca oraca)
+{
+	char stm[250];
+	size_t sqlfc,stmlen=250;
+	 
+	//取得错误SQL语句
+	sqlgls(stm,&stmlen,&sqlfc);
+
+	CLog::Log("CDatabaseGW",CLog::TYPE_ERROR,
+			"\n允许打开的最大游标个数: %d \t打开的最大游标个数: %d \t当前打开游标数: %d \t重新分配的游标高速缓存数: %d \n解析SQL语句的条数: %d \t执行的SQL语句数: %d \n最近执行的SQL语句: %.*s\n文件:%.*s\t行号:%d\t错误码:%d\t原因:%.*s\n",
+			oraca.orahoc, oraca.oramoc,oraca.oracoc,oraca.oranor,oraca.oranpr,oraca.oranex,
+			oraca.orastxt.orastxtl,oraca.orastxt.orastxtc,
+			oraca.orasfnm.orasfnml,oraca.orasfnm.orasfnmc,
+			oraca.oraslnr,sqlca.sqlcode, sqlca.sqlerrm.sqlerrml,sqlca.sqlerrm.sqlerrmc);	
+
+			
+}
+
+bool CDatabaseGW::conn_error(int db_ret)
+{
+	if( -1012 == db_ret ||	//"not logged on"
+			-3114 == db_ret ||	//"not connected to ORACLE"
+			-3113 == db_ret ||	//"end-of-file on communication channel"
+			-2396 == db_ret || 	//"exceeded maximum idle time, please connect again"
+			-12547 == db_ret || //"TNS:lost contact"
+			-12152 == db_ret || //"TNS:unable to send break message"
+			-1092 == db_ret ||	//"ORACLE instance terminated. Disconnection forced"
+			-12170 == db_ret ||	//"TNS:Connect timeout occurred"
+			-24324 == db_ret ||	//"service handle not initialized"
+			-24338 == db_ret ||	//"statement handle not executed"
+			-28 == db_ret				//"your session has been killed"
+	)
+		return true;
+	else
+		return false;
+}
+
+void ForDisableBuildWarningGW()
+{
+	unsigned int nTest =  sqlstm.sqlvsn;
+	nTest++;
+}
+
+

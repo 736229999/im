@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+#content .table-panel {
+    border: 1px solid #a5a5a5;
+    padding-top: 0px;
+}
+
+#content .table-panel .title_nav {
+    border-bottom: 1px solid #a5a5a5;
+    background-color: #E4E4E4;
+}
+
+.padd_b_10 {
+    padding-bottom: 0px;
+}
+
+.chat-message-panel .datagrid-header {
+    border-bottom-width: 0px;
+}
+
+.chat-message-panel .panel {
+    margin-top: 5px;
+}
+
+.chat-message-panel .panel-header {
+    padding: 0px;
+}
+
+.chat-message-panel .panel-header .panel-title {
+    line-height: 24px;
+    background-color: #F2F2F2;
+    color: #5e5e5e;
+}
+
+.chat-message-panel .datagrid .panel,
+.chat-message-panel .datagrid .panel .panel-header,
+.chat-message-panel .datagrid .panel .panel-body {
+    min-width: 100%;
+}
+
+.chat-message-panel .datagrid .panel-title {
+    margin-left: 5px;
+}
+
+.chat-message-panel .message-panel p {
+    margin: 10px 8px;
+}
+
+.chat-message-panel .message-panel p.message-body {
+    text-indent: 1em;
+}
+
+.datagrid-header-row td {
+    background-color: #eaf5ff;
+}
+
+.datagrid-header-inner {
+    width: 100%;
+}
+
+.datagrid-header-inner .datagrid-htable {
+    width: 100%;
+}
+
+.datagrid-body .datagrid-btable {
+    width: 100%;
+}
+
+.datagrid-btable {
+    width: 100%;
+}
+
+.datagrid-row-alt {
+    background: #ffffff;
+}
+
+.fancybox-wrap {
+    max-width: 1600px !important;
+    max-height: 750px !important;
+    overflow-x: hidden;
+}
+
+.fancybox-inner {
+    max-width: 1600px !important;
+    max-height: 750px !important;
+}
+
+.fancybox-inner img {
+    max-width: 1600px !important;
+    max-height: 750px !important;
+}
+
+.fancybox-skin {
+    padding: 0px !important;
+}
+
+.fn-fancy-item {
+    display: inline-block;
+    position: relative;
+    max-width: 450px !important;
+    max-height: 450px !important;
+    margin-right: 5px;
+}
+
+.fn-fancy-item img {
+    max-width: 450px !important;
+    max-height: 450px !important;
+    float: left;
+    border-radius: 4px;
+}
+
+.fn-fancy-item::after {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 16px;
+    height: 16px;
+    content: ' ';
+    background: url("../../images/magnifier_zoom_in.png") no-repeat rgb(255, 255, 255);
+}
+
+.table-panel .messager-body {
+    border: 2px solid #dedede;
+}
+
+.table-panel .table-sort-endicator-panel {
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: -14px;
+    vertical-align: middle;
+}
+
+.table-panel .table-sort-indicator {
+    cursor: pointer;
+    float: left;
+    clear: both;
+    height: 4px;
+    font-size: 18px !important;
+    z-index: 3;
+}
+
+.table-panel .table-sort-indicator.fa-sort-desc {
+    z-index: 1;
+}
+
+.table-panel .table-sort-indicator:hover {
+    color: #0099FF;
+}
+
+.table-panel .table-sort-indicator.fa-sort-desc:hover {
+    color: #ffb3b3;
+}
+
+.intervene-session {
+    cursor: pointer;
+}
+
+.intervene-session:hover {
+    font-weight: bold;
+    color: #0099FF;
+}
+
+.chat-message-panel .chat-session-panel {
+    position: relative;
+    overflow: auto;
+    height: 100%;
+}
+
+.bordertop_1 span {
+    float: left;
+    display: inline-block;
+}
+
+#refreshBtn {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    height: 30px;
+    line-height: 30px;
+    margin-left: 10px;
+    margin-top: 3px;
+}
+
+#refreshBtn:hover {
+    color: #0099FF;
+    transform: scale(1.1) rotate(10deg);
+}

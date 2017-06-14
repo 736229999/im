@@ -1,0 +1,27 @@
+HKCR
+{
+	HeadPhoto.HeadPhotoX.1 = s 'HeadPhotoX Class'
+	{
+		CLSID = s '{C5EF8615-CA55-4E3A-887D-8D910F783EC2}'
+	}
+	HeadPhoto.HeadPhotoX = s 'HeadPhotoX Class'
+	{
+		CLSID = s '{C5EF8615-CA55-4E3A-887D-8D910F783EC2}'
+		CurVer = s 'HeadPhoto.HeadPhotoX.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {C5EF8615-CA55-4E3A-887D-8D910F783EC2} = s 'HeadPhotoX Class'
+		{
+			ProgID = s 'HeadPhoto.HeadPhotoX.1'
+			VersionIndependentProgID = s 'HeadPhoto.HeadPhotoX'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{7406E3B6-0387-4A0E-9940-919220609B0F}'
+		}
+	}
+}

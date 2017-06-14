@@ -1,0 +1,2 @@
+alter table im.IM_OFFLINETALKMSG add uuid varchar(41);
+ALTER TABLE IM_CSGROUP ADD EMBED_SET VARCHAR(40);

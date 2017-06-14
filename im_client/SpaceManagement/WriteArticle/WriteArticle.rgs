@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'WriteArticle'
+		'WriteArticle.DLL'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

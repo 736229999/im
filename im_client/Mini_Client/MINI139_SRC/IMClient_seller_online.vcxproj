@@ -1,0 +1,1096 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Business|Win32">
+      <Configuration>Debug_Business</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Business|Win32">
+      <Configuration>Release_Business</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Template|Win32">
+      <Configuration>Template</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectName>Mini139_src</ProjectName>
+    <ProjectGuid>{78212BB0-1D25-44CA-9517-365F72243225}</ProjectGuid>
+    <RootNamespace>Mini139_src</RootNamespace>
+    <SccProjectName />
+    <SccAuxPath />
+    <SccLocalPath />
+    <SccProvider />
+    <Keyword>MFCProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+    <UseOfAtl>Static</UseOfAtl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfAtl>Static</UseOfAtl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+    <UseOfAtl>Static</UseOfAtl>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+    <UseOfAtl>Static</UseOfAtl>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <UseOfAtl>Static</UseOfAtl>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\bin$(Configuration)</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">..\..\bin$(Configuration)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">$(Configuration)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">..\..\bin$(Configuration)</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">..\..\bin$(Configuration)</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'" />
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:\Program Files (x86)\Microsoft DirectX SDK (February 2010)\Lib\x86;D:\Program Files (x86)\Microsoft DirectX SDK (February 2010)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">C:\Program Files (x86)\Microsoft DirectX SDK (February 2010)\Lib\x86;D:\Program Files (x86)\Microsoft DirectX SDK (February 2010)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\Program Files (x86)\Microsoft DirectX SDK (February 2010)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <LibraryPath Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">D:\Program Files (x86)\Microsoft DirectX SDK (February 2010)\Lib\x86;$(LibraryPath)</LibraryPath>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">moumou</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">moumou</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">MouMou</TargetName>
+    <TargetName Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">MouMou</TargetName>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.exe</TargetExt>
+    <TargetExt Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">.exe</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\HmgSkin\Export\include;..\..\HmgSkin\Export;..\..\SpaceManagement\public\web;..\..\SpaceManagement\public\public_controls;..\..\fcl\include;..\..\include;..\minidata\minidata\inc;.\controls;..\..\common\boost_1_57_0;.\Gips;..\..\libcef_dll_wrapper\include;..\..\libcef_dll_wrapper\;.\sqlite\;.\Log\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;IM_UNIT_TEST;MSG_JSON_;_BUSINESS_VESION;CS_PLAT_;VER_PREVIEW_;_VER_ONLINE_;VER_INTERNAL_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <StringPooling>
+      </StringPooling>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>gdiplus.lib ws2_32.lib Ws2_32.lib HmgSkin.lib MiniNetTrans.lib MiniData_dll.lib hmgcrtlib.lib winmm.lib  comsuppw.lib GipsVoiceEngine.lib GipsVideoEngine.lib %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(SolutionDir)bin$(Configuration)\MouMou.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)/Common/boost_1_57_0/lib;$(SolutionDir)/lib$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>minid.map</MapFileName>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ForceFileOutput>Enabled</ForceFileOutput>
+      <RegisterOutput>true</RegisterOutput>
+      <AdditionalDependencies>libcef.lib;libcef_dll_wrapper.lib;sqlite3.lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;_BUSINESS_VESION;VER_PREVIEW_;_VER_ONLINE_;VER_INTERNAL_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>..\..\HmgSkin\Export\include;..\..\HmgSkin\Export;..\..\SpaceManagement\public\web;..\..\SpaceManagement\public\public_controls;..\..\fcl\include;..\..\include;..\minidata\minidata\inc;.\controls;..\..\common\boost_1_57_0;..\..\webrtc-test\client;..\..\webrtc-test;D:\work\webrtc\src\chromium\src\third_party\jsoncpp\source\include;D:\work\webrtc\src;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;IM_UNIT_TEST;V8_DEPRECATION_WARNINGS;EXPAT_RELATIVE_PATH;FEATURE_ENABLE_VOICEMAIL;GTEST_RELATIVE_PATH;JSONCPP_RELATIVE_PATH;LOGGING=1;SRTP_RELATIVE_PATH;FEATURE_ENABLE_SSL;FEATURE_ENABLE_PSTN;HAVE_SCTP;HAVE_SRTP;HAVE_WEBRTC_VIDEO;HAVE_WEBRTC_VOICE;USE_WEBRTC_DEV_BRANCH;_WIN32_WINNT=0x0602;WINVER=0x0602;PSAPI_VERSION=1;_CRT_RAND_S;CERT_CHAIN_PARA_HAS_EXTRA_FIELDS;WIN32_LEAN_AND_MEAN;_ATL_NO_OPENGL;_HAS_EXCEPTIONS=0;CHROMIUM_BUILD;TOOLKIT_VIEWS=1;USE_AURA=1;USE_ASH=1;USE_DEFAULT_RENDER_THEME=1;USE_LIBJPEG_TURBO=1;ENABLE_ONE_CLICK_SIGNIN;ENABLE_PRE_SYNC_BACKUP;ENABLE_REMOTING=1;ENABLE_WEBRTC=1;ENABLE_PEPPER_CDMS;ENABLE_CONFIGURATION_POLICY;ENABLE_NOTIFICATIONS;ENABLE_HIDPI=1;ENABLE_EGLIMAGE=1;__STD_C;_CRT_SECURE_NO_DEPRECATE;_SCL_SECURE_NO_DEPRECATE;NTDDI_VERSION=0x06020000;_USING_V110_SDK71_;ENABLE_TASK_MANAGER=1;ENABLE_EXTENSIONS=1;ENABLE_PLUGIN_INSTALLATION=1;ENABLE_PLUGINS=1;ENABLE_SESSION_SERVICE=1;ENABLE_THEMES=1;ENABLE_AUTOFILL_DIALOG=1;ENABLE_BACKGROUND=1;ENABLE_GOOGLE_NOW=1;CLD_VERSION=2;CLD2_DATA_SOURCE=static;ENABLE_FULL_PRINTING=1;ENABLE_PRINTING=1;ENABLE_SPELLCHECK=1;ENABLE_CAPTIVE_PORTAL_DETECTION=1;ENABLE_APP_LIST=1;ENABLE_SETTINGS_APP=1;ENABLE_MANAGED_USERS=1;ENABLE_MDNS=1;ENABLE_SERVICE_DISCOVERY=1;ENABLE_WIFI_BOOTSTRAPPING=1;ENABLE_LOAD_COMPLETION_HACKS=1;LIBPEERCONNECTION_LIB=1;WEBRTC_WIN;_CRT_NONSTDC_NO_WARNINGS;_CRT_NONSTDC_NO_DEPRECATE;DYNAMIC_ANNOTATIONS_ENABLED=1;WTF_USE_DYNAMIC_ANNOTATIONS=1;BUSINESS_VESION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <StringPooling>
+      </StringPooling>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>gdiplus.lib ws2_32.lib Ws2_32.lib HmgSkin.lib MiniNetTrans.lib MiniData_dll.lib hmgcrtlib.lib winmm.lib  comsuppw.lib %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(SolutionDir)bin$(Configuration)\MouMou.exe</OutputFile>
+      <AdditionalLibraryDirectories>$(SolutionDir)/Common/boost_1_57_0/lib;$(SolutionDir)/lib$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>minid.map</MapFileName>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ForceFileOutput>Enabled</ForceFileOutput>
+      <RegisterOutput>true</RegisterOutput>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\common\boost_1_57_0;..\..\HmgSkin\Export\include;..\..\HmgSkin\Export;..\..\SpaceManagement\public\web;..\..\SpaceManagement\public\public_controls;..\..\fcl\include;..\..\include;..\minidata\minidata\inc;.\controls;..\..\..\audio_video\third_party\jsoncpp\source\include;.\Gips;..\..\libcef_dll_wrapper\include;..\..\libcef_dll_wrapper\;.\sqlite\;.\Log\;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>NDEBUG;WIN32;_WINDOWS;_BUSINESS_VESION;CS_PLAT_;VER_PREVIEW_;_VER_ONLINE_;VER_INTERNAL_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>gdiplus.lib ws2_32.lib Ws2_32.lib HmgSkin.lib MiniNetTrans.lib MiniData_dll.lib hmgcrtlib.lib winmm.lib  comsuppw.lib  GipsVoiceEngine.lib GipsVideoEngine.lib %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>$(SolutionDir)/Common/boost_1_57_0/lib;$(SolutionDir)/lib$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>minid.map</MapFileName>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ForceFileOutput>Enabled</ForceFileOutput>
+      <RegisterOutput>true</RegisterOutput>
+      <AdditionalDependencies>libcef.lib;libcef_dll_wrapper.lib;sqlite3.lib</AdditionalDependencies>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;_BUSINESS_VESION;VER_PREVIEW_;_VER_ONLINE_;VER_INTERNAL_;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>..\..\common\boost_1_57_0;..\..\HmgSkin\Export\include;..\..\HmgSkin\Export;..\..\SpaceManagement\public\web;..\..\SpaceManagement\public\public_controls;..\..\fcl\include;..\..\include;..\minidata\minidata\inc;.\controls;..\..\..\audio_video;..\..\..\audio_video\third_party\jsoncpp\source\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;BUSINESS_VESION;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>gdiplus.lib ws2_32.lib Ws2_32.lib HmgSkin.lib MiniNetTrans.lib MiniData_dll.lib hmgcrtlib.lib winmm.lib  comsuppw.lib peerconnection_client.lib %(AdditionalOptions)</AdditionalOptions>
+      <AdditionalLibraryDirectories>$(SolutionDir)/Common/boost_1_57_0/lib;$(SolutionDir)/lib$(Configuration);%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <GenerateMapFile>true</GenerateMapFile>
+      <MapFileName>minid.map</MapFileName>
+      <MapExports>true</MapExports>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+      <ForceFileOutput>Enabled</ForceFileOutput>
+      <RegisterOutput>true</RegisterOutput>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">
+    <ResourceCompile>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+    <Link>
+      <RegisterOutput>true</RegisterOutput>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Common\Common.cpp" />
+    <ClCompile Include="..\..\Common\WndShadow.cpp" />
+    <ClCompile Include="..\..\Excel\CSVFile.cpp" />
+    <ClCompile Include="..\..\Excel\ExcelOpt.cpp" />
+    <ClCompile Include="..\..\SpaceManagement\PUBLIC\public_controls\buttonext.cpp" />
+    <ClCompile Include="..\..\tinyxml\tinystr.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinyxml.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinyxmlerror.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinyxmlparser.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">NotUsing</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="AutoAcceptDlg.cpp" />
+    <ClCompile Include="AutoReplyDlg.cpp" />
+    <ClCompile Include="CefWebUI.cpp" />
+    <ClCompile Include="CExitMsgWarning.cpp" />
+    <ClCompile Include="CExitWarning.cpp" />
+    <ClCompile Include="CharacterConvert.cpp" />
+    <ClCompile Include="ClusterInfo.cpp" />
+    <ClCompile Include="ClusterMember.cpp" />
+    <ClCompile Include="ClusterParamSetting.cpp" />
+    <ClCompile Include="ClusterProfile.cpp" />
+    <ClCompile Include="ClusterSecurity.cpp" />
+    <ClCompile Include="CSPlatDlg.cpp" />
+    <ClCompile Include="CustSerTranDlg.cpp" />
+    <ClCompile Include="DialogClusterManage.cpp" />
+    <ClCompile Include="DuiMfRecentList.cpp" />
+    <ClCompile Include="DuiModHeadIconDlg.cpp" />
+    <ClCompile Include="DuiSelfInfoDlg.cpp" />
+    <ClCompile Include="GroupSendAddOtherDlg.cpp" />
+    <ClCompile Include="GroupSendDlg.cpp" />
+    <ClCompile Include="Im\DuiCounselNone.cpp" />
+    <ClCompile Include="Im\FastWordExport.cpp" />
+    <ClCompile Include="Im\FastWordGroupRename.cpp" />
+    <ClCompile Include="Im\FastWordImport.cpp" />
+    <ClCompile Include="Im\FastWordNew.cpp" />
+    <ClCompile Include="Im\FastWordSelectMenu.cpp" />
+    <ClCompile Include="Im\P2PSendMsgDlg.cpp" />
+    <ClCompile Include="Im\P2PSendMsgDlgCloseHint.cpp" />
+    <ClCompile Include="Log\Log.cpp" />
+    <ClCompile Include="Log\LogManager.cpp" />
+    <ClCompile Include="MainFrame.cpp" />
+    <ClCompile Include="DuiMfClusterList.cpp" />
+    <ClCompile Include="DuiMfClusterListPage.cpp" />
+    <ClCompile Include="DuiMfFriendList.cpp" />
+    <ClCompile Include="DuiMfFriendListPage.cpp" />
+    <ClCompile Include="DuiMfRecentListPage.cpp" />
+    <ClCompile Include="EditAutoReplyDlg.cpp" />
+    <ClCompile Include="EditFastWordDlg.cpp" />
+    <ClCompile Include="EditNoticeDlg.cpp" />
+    <ClCompile Include="EvalueDlg.cpp" />
+    <ClCompile Include="FriendInfoArchDlg.cpp" />
+    <ClCompile Include="FriendInfoDlg.cpp" />
+    <ClCompile Include="FriendMsgManageDlg.cpp" />
+    <ClCompile Include="HangupSessionNumSettingDlg.cpp" />
+    <ClCompile Include="ImTest\ImTest.cpp" />
+    <ClCompile Include="ImTest\TestDialog.cpp" />
+    <ClCompile Include="ImTest\TestSession.cpp" />
+    <ClCompile Include="Im\AddBlackDlg.cpp" />
+    <ClCompile Include="Im\139MsgDlg.cpp" />
+    <ClCompile Include="Im\139NoteDlg.cpp" />
+    <ClCompile Include="Im\AboutBoxDlg.cpp" />
+    <ClCompile Include="Im\ActionTextReader.cpp" />
+    <ClCompile Include="Im\AddEmotionDlg.cpp" />
+    <ClCompile Include="Im\AdvancedFileTransSession.cpp" />
+    <ClCompile Include="Im\AdvertisePanel.cpp" />
+    <ClCompile Include="Im\BasicSocket.cpp" />
+    <ClCompile Include="Im\BkgFrame.cpp" />
+    <ClCompile Include="Im\ChangeAccount.cpp" />
+    <ClCompile Include="Im\ClusterAgreeDlg.cpp" />
+    <ClCompile Include="Im\ClusterCreateDlg.cpp" />
+    <ClCompile Include="Im\ClusterIconCtrl.cpp" />
+    <ClCompile Include="Im\ClusterInfoDlg.cpp" />
+    <ClCompile Include="Im\ClusterPage1.cpp" />
+    <ClCompile Include="Im\ClusterPage2.cpp" />
+    <ClCompile Include="Im\ClusterPage3.cpp" />
+    <ClCompile Include="Im\ClusterPanel.cpp" />
+    <ClCompile Include="Im\ClusterSendMsgDlg.cpp" />
+    <ClCompile Include="Im\ClusterSettingDlg.cpp" />
+    <ClCompile Include="Im\ContactInviteDlg.cpp" />
+    <ClCompile Include="Im\CustomEmotionInfoDlg.cpp" />
+    <ClCompile Include="im\CustomListCtrl.cpp" />
+    <ClCompile Include="Im\CustomToolBar.cpp" />
+    <ClCompile Include="Im\DailogClusterCheck.cpp" />
+    <ClCompile Include="..\..\SpaceManagement\public\public_controls\dhtmledit_blog.cpp" />
+    <ClCompile Include="Im\DialogClusterAuth.cpp" />
+    <ClCompile Include="Im\DialogShowHelp.cpp" />
+    <ClCompile Include="Im\DlgSCreenCtrlColor.cpp" />
+    <ClCompile Include="Im\DlgSCreenCtrlTool.cpp" />
+    <ClCompile Include="Im\DuiCounsel.cpp" />
+    <ClCompile Include="Im\DuiGuidePage.cpp" />
+    <ClCompile Include="Im\DuiP2PSendMsgDlg.cpp" />
+    <ClCompile Include="Im\EditScreen.cpp" />
+    <ClCompile Include="Im\HistoryFindToolBar.cpp" />
+    <ClCompile Include="Im\HistoryToolBar.cpp" />
+    <ClCompile Include="Im\PictureCtrl.cpp" />
+    <ClCompile Include="Im\PictureCtrlClose.cpp" />
+    <ClCompile Include="Im\PictureCtrlPic.cpp" />
+    <ClCompile Include="Im\PopupHistoryDlg.cpp" />
+    <ClCompile Include="Im\RectTrackerEx.cpp" />
+    <ClCompile Include="Im\ScreenCtrl.cpp" />
+    <ClCompile Include="IniFile.cpp" />
+    <ClCompile Include="InternalFriendInfoDlg.cpp" />
+    <ClCompile Include="json\json_reader.cpp" />
+    <ClCompile Include="json\json_value.cpp" />
+    <ClCompile Include="json\json_writer.cpp" />
+    <ClCompile Include="MemCrypt.cpp" />
+    <ClCompile Include="MMTalk\DirectSound.cpp" />
+    <ClCompile Include="Im\EmotionDlg.cpp" />
+    <ClCompile Include="Im\EmotionManageDlg.cpp" />
+    <ClCompile Include="..\..\SpaceManagement\public\public_controls\explorer1.cpp" />
+    <ClCompile Include="Im\FaceIconCtrl.cpp" />
+    <ClCompile Include="Im\FaceWndCtrl.cpp" />
+    <ClCompile Include="Im\FamilyFaceDlg.cpp" />
+    <ClCompile Include="controls\Floor_Wnd_Ctrl\FloorLabeObject.cpp" />
+    <ClCompile Include="controls\Floor_Wnd_Ctrl\FloorObject.cpp" />
+    <ClCompile Include="controls\Floor_Wnd_Ctrl\FloorPageObject.cpp" />
+    <ClCompile Include="Im\FloorPageWoku.cpp" />
+    <ClCompile Include="Im\FloorWebPage.cpp" />
+    <ClCompile Include="controls\FolderList.cpp" />
+    <ClCompile Include="Im\FormProgress.cpp" />
+    <ClCompile Include="Im\FSCluster.cpp" />
+    <ClCompile Include="Im\FSDialog.cpp" />
+    <ClCompile Include="Im\FSPageResult.cpp" />
+    <ClCompile Include="Im\FSPageSelect.cpp" />
+    <ClCompile Include="Im\FSXtream.cpp" />
+    <ClCompile Include="ModHeadIconDlg.cpp" />
+    <ClCompile Include="MsgManageDlg.cpp" />
+    <ClCompile Include="NearCommCustDlg.cpp" />
+    <ClCompile Include="OleImage.cpp" />
+    <ClCompile Include="RoundFaceCtrl.cpp" />
+    <ClCompile Include="SearchListWnd.cpp" />
+    <ClCompile Include="SelCustomHeadIconDlg.cpp" />
+    <ClCompile Include="SelDefHeadIconDlg.cpp" />
+    <ClCompile Include="SelfInfoDlg.cpp" />
+    <ClCompile Include="SelfInfoEditDlg.cpp" />
+    <ClCompile Include="SelfInfoPreviewDlg.cpp" />
+    <ClCompile Include="SkinPickerDialog.cpp" />
+    <ClCompile Include="SkinPickerPictureItem.cpp" />
+    <ClCompile Include="SpecifySendDlg.cpp" />
+    <ClCompile Include="sqlite\CppSQLite3.cpp" />
+    <ClCompile Include="SysCommonAudio.cpp" />
+    <ClCompile Include="SysCommonAutoReply.cpp" />
+    <ClCompile Include="SysCommonBasic.cpp" />
+    <ClCompile Include="SysCommonFastWord.cpp" />
+    <ClCompile Include="SysCommonFile.cpp" />
+    <ClCompile Include="SysCommonMsg.cpp" />
+    <ClCompile Include="SysCommonSoftwareUpdate.cpp" />
+    <ClCompile Include="SysCommonVoice.cpp" />
+    <ClCompile Include="SysSecurityFileTransfer.cpp" />
+    <ClCompile Include="SysSecurityMsglog.cpp" />
+    <ClCompile Include="SysSecurityPwd.cpp" />
+    <ClCompile Include="SysSecurityVerify.cpp" />
+    <ClCompile Include="SystemSettingCommonDlg.cpp" />
+    <ClCompile Include="SystemSettingDlg.cpp" />
+    <ClCompile Include="SystemSettingSecurityDlg.cpp" />
+    <ClCompile Include="TabWndSearch.cpp" />
+    <ClCompile Include="tone.cpp" />
+    <ClCompile Include="UIControls\UIAddrComboBox.cpp" />
+    <ClCompile Include="utils\Function.cpp" />
+    <ClCompile Include="Im\HintDlg.cpp" />
+    <ClCompile Include="Im\HintDlg2.cpp" />
+    <ClCompile Include="Im\HttpDownload.cpp" />
+    <ClCompile Include="..\..\SpaceManagement\public\public_controls\IconCtrl.cpp" />
+    <ClCompile Include="Im\imaddresslistctrl.cpp" />
+    <ClCompile Include="Im\ImageDataObject.cpp" />
+    <ClCompile Include="Im\ImageFileDialog.cpp" />
+    <ClCompile Include="Im\ImagePreviewStatic.cpp" />
+    <ClCompile Include="Im\ImageToolBar.cpp" />
+    <ClCompile Include="IMClient.cpp" />
+    <ClCompile Include="Im\imfriendlistctrl.cpp" />
+    <ClCompile Include="Im\IMListCtrl.cpp" />
+    <ClCompile Include="Im\IMProtocol.cpp" />
+    <ClCompile Include="Im\impublic.cpp" />
+    <ClCompile Include="Im\InputLanguage.cpp" />
+    <ClCompile Include="controls\LabelEdit.cpp" />
+    <ClCompile Include="Im\LblEdit.cpp" />
+    <ClCompile Include="Im\LinkResDlg.cpp" />
+    <ClCompile Include="Im\LocalData.cpp" />
+    <ClCompile Include="Im\LoginDlg.cpp" />
+    <ClCompile Include="Im\MagicFaceDlg.cpp" />
+    <ClCompile Include="Im\MainToolBar.cpp" />
+    <ClCompile Include="Im\MessageBox.cpp" />
+    <ClCompile Include="MiniData\MessageData.cpp" />
+    <ClCompile Include="Im\MessageHandleWnd.cpp" />
+    <ClCompile Include="MMTalk\MMAudio.cpp" />
+    <ClCompile Include="MMTalk\MMAudioPlayer.cpp" />
+    <ClCompile Include="MMTalk\MMData.cpp" />
+    <ClCompile Include="MMTalk\MMDataMaker.cpp" />
+    <ClCompile Include="MMTalk\MMTalker.cpp" />
+    <ClCompile Include="MMTalk\MMVideoCap.cpp" />
+    <ClCompile Include="MMTalk\MMVideoPlayer.cpp" />
+    <ClCompile Include="Im\ModfCommNameDlg.cpp" />
+    <ClCompile Include="Im\MsgDlg.cpp" />
+    <ClCompile Include="Im\MsgObj.cpp" />
+    <ClCompile Include="Im\NamedPipe.cpp" />
+    <ClCompile Include="Im\OutlookContactSelDlg.cpp" />
+    <ClCompile Include="Im\P2PAudioPanel.cpp" />
+    <ClCompile Include="Im\P2PFile.cpp" />
+    <ClCompile Include="Im\P2PFileTransProgressBar.cpp" />
+    <ClCompile Include="Im\P2PInviteDlg.cpp" />
+    <ClCompile Include="Im\P2PUserList.cpp" />
+    <ClCompile Include="Im\P2PUserPanel.cpp" />
+    <ClCompile Include="Im\P2PVedioPanel.cpp" />
+    <ClCompile Include="..\..\SpaceManagement\public\public_controls\ResGdiObj.cpp" />
+    <ClCompile Include="Im\RichEditCtrlEx.cpp" />
+    <ClCompile Include="Im\SABasePage.cpp" />
+    <ClCompile Include="Im\SAConfig.cpp" />
+    <ClCompile Include="Im\SAPage1.cpp" />
+    <ClCompile Include="Im\SAPage2.cpp" />
+    <ClCompile Include="Im\SAPage3.cpp" />
+    <ClCompile Include="Im\SAPage4.cpp" />
+    <ClCompile Include="Im\SAPage5.cpp" />
+    <ClCompile Include="Im\SAPage6.cpp" />
+    <ClCompile Include="Im\SAPage7.cpp" />
+    <ClCompile Include="Im\SAPageBasicSet.cpp" />
+    <ClCompile Include="Im\SAPageClusterMsgSet.cpp" />
+    <ClCompile Include="Im\SAPageHotkey.cpp" />
+    <ClCompile Include="Im\SAPageVedio.cpp" />
+    <ClCompile Include="Im\ScreenCopyDlg.cpp" />
+    <ClCompile Include="Im\SelectGroupDlg.cpp" />
+    <ClCompile Include="Im\SelfFaceDlg.cpp" />
+    <ClCompile Include="Im\SendMsgActionDlg.cpp" />
+    <ClCompile Include="Im\ServerListFile.cpp" />
+    <ClCompile Include="Im\shockwaveflash.cpp" />
+    <ClCompile Include="Im\SimpleFileTransSession.cpp" />
+    <ClCompile Include="controls\SkinCtrl.cpp" />
+    <ClCompile Include="Im\SMSDlg.cpp" />
+    <ClCompile Include="..\..\SpaceManagement\Public\web\SpaceData.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="Im\StickDlg\StickDlg.cpp" />
+    <ClCompile Include="Im\StickDlg\StickMainDlg.cpp" />
+    <ClCompile Include="Im\SysMsgDlg.cpp" />
+    <ClCompile Include="Im\TabPage2.cpp" />
+    <ClCompile Include="Im\TabPage3.cpp" />
+    <ClCompile Include="controls\Floor_Wnd_Ctrl\TLabelComboBox.cpp" />
+    <ClCompile Include="controls\Floor_Wnd_Ctrl\TLabelEdit.cpp" />
+    <ClCompile Include="controls\Floor_Wnd_Ctrl\TLabelList.cpp" />
+    <ClCompile Include="Im\UserAuthDlg.cpp" />
+    <ClCompile Include="Im\UserAuthInfoDlg.cpp" />
+    <ClCompile Include="Im\UserCardDlg.cpp" />
+    <ClCompile Include="Im\UserGuideDlg.cpp" />
+    <ClCompile Include="Im\UserIPWnd.cpp" />
+    <ClCompile Include="Im\UserLevelCtrl.cpp" />
+    <ClCompile Include="Im\VersionInfoDlg.cpp" />
+    <ClCompile Include="Im\VersionUpdatgeDlg.cpp" />
+    <ClCompile Include="MMTalk\VideoCodec.cpp" />
+    <ClCompile Include="controls\VoiceSlider.cpp" />
+    <ClCompile Include="Im\WebDataProcess.cpp" />
+    <ClCompile Include="..\..\SpaceManagement\Public\web\WebInterfaceWrapper.cpp" />
+    <ClCompile Include="Im\WebPictureProcess.cpp" />
+    <ClCompile Include="Im\WebProcess.cpp" />
+    <ClCompile Include="Im\WinAddrBook.cpp" />
+    <ClCompile Include="Im\WizardPage.cpp" />
+    <ClCompile Include="MMTalk\XDataPool.cpp" />
+    <ClCompile Include="controls\Floor_Wnd_Ctrl\XFloorWndCtl.cpp" />
+    <ClCompile Include="Im\XLabel.cpp" />
+    <ClCompile Include="WebClient.cpp" />
+    <ClCompile Include="XmlAddress.cpp" />
+    <ClCompile Include="xpicture1.cpp" />
+    <ClCompile Include="Im\xtpacket.cpp" />
+    <ClCompile Include="Im\DialogAddAddress.cpp" />
+    <ClCompile Include="Im\FloorPageAddbook.cpp" />
+    <ClCompile Include="Im\FormViewCtrl.cpp" />
+    <ClCompile Include="Im\personinfo.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\..\audio_video\talk\examples\peerconnection\client\conductor.h" />
+    <ClInclude Include="..\..\..\audio_video\talk\examples\peerconnection\client\defaults.h" />
+    <ClInclude Include="..\..\..\audio_video\talk\examples\peerconnection\client\peer_connection_client.h" />
+    <ClInclude Include="..\..\Common\Common.h" />
+    <ClInclude Include="..\..\Common\WndShadow.h" />
+    <ClInclude Include="..\..\Excel\CSVFile.h" />
+    <ClInclude Include="..\..\Excel\ExcelApplication.h" />
+    <ClInclude Include="..\..\Excel\ExcelOpt.h" />
+    <ClInclude Include="..\..\Excel\ExcelRange.h" />
+    <ClInclude Include="..\..\Excel\ExcelWorkbook.h" />
+    <ClInclude Include="..\..\Excel\ExcelWorkbooks.h" />
+    <ClInclude Include="..\..\Excel\ExcelWorksheet.h" />
+    <ClInclude Include="..\..\Excel\ExcelWorksheets.h" />
+    <ClInclude Include="..\..\tinyxml\tinystr.h" />
+    <ClInclude Include="..\..\tinyxml\tinyxml.h" />
+    <ClInclude Include="AutoAcceptDlg.h" />
+    <ClInclude Include="AutoReplyDlg.h" />
+    <ClInclude Include="CefWebUI.h" />
+    <ClInclude Include="CExitMsgWarning.h" />
+    <ClInclude Include="CExitWarning.h" />
+    <ClInclude Include="CharacterConvert.h" />
+    <ClInclude Include="ClusterInfo.h" />
+    <ClInclude Include="ClusterMember.h" />
+    <ClInclude Include="ClusterParamSetting.h" />
+    <ClInclude Include="ClusterProfile.h" />
+    <ClInclude Include="ClusterSecurity.h" />
+    <ClInclude Include="CSPlatDlg.h" />
+    <ClInclude Include="CustSerTranDlg.h" />
+    <ClInclude Include="DialogClusterManage.h" />
+    <ClInclude Include="DuiMfRecentList.h" />
+    <ClInclude Include="DuiModHeadIconDlg.h" />
+    <ClInclude Include="DuiSelfInfoDlg.h" />
+    <ClInclude Include="GroupSendAddOtherDlg.h" />
+    <ClInclude Include="GroupSendDlg.h" />
+    <ClInclude Include="Im\DuiCounselNone.h" />
+    <ClInclude Include="Im\FastWordExport.h" />
+    <ClInclude Include="Im\FastWordGroupRename.h" />
+    <ClInclude Include="Im\FastWordImport.h" />
+    <ClInclude Include="Im\FastWordNew.h" />
+    <ClInclude Include="Im\FastWordSelectMenu.h" />
+    <ClInclude Include="Im\P2PSendMsgDlg.h" />
+    <ClInclude Include="Im\P2PSendMsgDlgCloseHint.h" />
+    <ClInclude Include="Log\Log.h" />
+    <ClInclude Include="Log\LogManager.h" />
+    <ClInclude Include="MainFrame.h" />
+    <ClInclude Include="DuiMfClusterList.h" />
+    <ClInclude Include="DuiMfFriendList.h" />
+    <ClInclude Include="EditAutoReplyDlg.h" />
+    <ClInclude Include="EditFastWordDlg.h" />
+    <ClInclude Include="EditNoticeDlg.h" />
+    <ClInclude Include="EvalueDlg.h" />
+    <ClInclude Include="FriendInfoArchDlg.h" />
+    <ClInclude Include="FriendInfoDlg.h" />
+    <ClInclude Include="FriendMsgManageDlg.h" />
+    <ClInclude Include="GipsVoiceEngine.h" />
+    <ClInclude Include="HangupSessionNumSettingDlg.h" />
+    <ClInclude Include="ImTest\ImTest.h" />
+    <ClInclude Include="ImTest\TestDialog.h" />
+    <ClInclude Include="ImTest\TestSession.h" />
+    <ClInclude Include="Im\AddBlackDlg.h" />
+    <ClInclude Include="Im\139MsgDlg.h" />
+    <ClInclude Include="Im\139NoteDlg.h" />
+    <ClInclude Include="Im\AboutBoxDlg.h" />
+    <ClInclude Include="Im\ActionTextReader.h" />
+    <ClInclude Include="Im\AddEmotionDlg.h" />
+    <ClInclude Include="Im\AdvancedFileTransSession.h" />
+    <ClInclude Include="Im\AdvertisePanel.h" />
+    <ClInclude Include="Im\BasicSocket.h" />
+    <ClInclude Include="Im\BkgFrame.h" />
+    <ClInclude Include="..\..\SpaceManagement\public\public_controls\buttonext.h" />
+    <ClInclude Include="Im\ChangeAccount.h" />
+    <ClInclude Include="..\..\include\ClientProtocol.h" />
+    <ClInclude Include="Im\ClusterAgreeDlg.h" />
+    <ClInclude Include="Im\ClusterCreateDlg.h" />
+    <ClInclude Include="Im\ClusterIconCtrl.h" />
+    <ClInclude Include="Im\ClusterInfoDlg.h" />
+    <ClInclude Include="Im\ClusterPage1.h" />
+    <ClInclude Include="Im\ClusterPage2.h" />
+    <ClInclude Include="Im\ClusterPage3.h" />
+    <ClInclude Include="Im\ClusterPanel.h" />
+    <ClInclude Include="Im\ClusterSendMsgDlg.h" />
+    <ClInclude Include="Im\ClusterSettingDlg.h" />
+    <ClInclude Include="Im\ContactInviteDlg.h" />
+    <ClInclude Include="Im\CustomEmotionInfoDlg.h" />
+    <ClInclude Include="im\CustomListCtrl.h" />
+    <ClInclude Include="Im\CustomToolBar.h" />
+    <ClInclude Include="Im\DailogClusterCheck.h" />
+    <ClInclude Include="Im\DataPacketFilter.h" />
+    <ClInclude Include="Im\DataPackId.h" />
+    <ClInclude Include="..\..\SpaceManagement\public\public_controls\dhtmledit_blog.h" />
+    <ClInclude Include="Im\DialogClusterAuth.h" />
+    <ClInclude Include="Im\DialogShowHelp.h" />
+    <ClInclude Include="Im\DlgSCreenCtrlColor.h" />
+    <ClInclude Include="Im\DlgSCreenCtrlTool.h" />
+    <ClInclude Include="Im\DuiCounsel.h" />
+    <ClInclude Include="Im\DuiGuidePage.h" />
+    <ClInclude Include="Im\DuiP2PSendMsgDlg.h" />
+    <ClInclude Include="Im\EditScreen.h" />
+    <ClInclude Include="Im\HistoryFindToolBar.h" />
+    <ClInclude Include="Im\HistoryToolBar.h" />
+    <ClInclude Include="Im\PictureCtrl.h" />
+    <ClInclude Include="Im\PictureCtrlClose.h" />
+    <ClInclude Include="Im\PictureCtrlPic.h" />
+    <ClInclude Include="Im\PopupHistoryDlg.h" />
+    <ClInclude Include="Im\RectTrackerEx.h" />
+    <ClInclude Include="Im\ScreenCtrl.h" />
+    <ClInclude Include="IniFile.h" />
+    <ClInclude Include="InternalFriendInfoDlg.h" />
+    <ClInclude Include="json\json\autolink.h" />
+    <ClInclude Include="json\json\config.h" />
+    <ClInclude Include="json\json\features.h" />
+    <ClInclude Include="json\json\forwards.h" />
+    <ClInclude Include="json\json\json.h" />
+    <ClInclude Include="json\json\reader.h" />
+    <ClInclude Include="json\json\value.h" />
+    <ClInclude Include="json\json\writer.h" />
+    <ClInclude Include="json\json_batchallocator.h" />
+    <ClInclude Include="MemCrypt.h" />
+    <ClInclude Include="DumpFile.h" />
+    <ClInclude Include="MMTalk\DirectSound.h" />
+    <ClInclude Include="Im\EmotionDlg.h" />
+    <ClInclude Include="Im\EmotionManageDlg.h" />
+    <ClInclude Include="..\..\SpaceManagement\public\public_controls\explorer1.h" />
+    <ClInclude Include="Im\FaceIconCtrl.h" />
+    <ClInclude Include="Im\FaceWndCtrl.h" />
+    <ClInclude Include="Im\FamilyFaceDlg.h" />
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\FloorLabeObject.h" />
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\FloorObject.h" />
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\FloorPageObject.h" />
+    <ClInclude Include="Im\FloorPageWoku.h" />
+    <ClInclude Include="Im\FloorWebPage.h" />
+    <ClInclude Include="controls\FolderList.h" />
+    <ClInclude Include="Im\FormProgress.h" />
+    <ClInclude Include="Im\FSCluster.h" />
+    <ClInclude Include="Im\FSDialog.h" />
+    <ClInclude Include="Im\FSPageResult.h" />
+    <ClInclude Include="Im\FSPageSelect.h" />
+    <ClInclude Include="Im\FSXtream.h" />
+    <ClInclude Include="ModHeadIconDlg.h" />
+    <ClInclude Include="MsgManageDlg.h" />
+    <ClInclude Include="NearCommCustDlg.h" />
+    <ClInclude Include="OleImage.h" />
+    <ClInclude Include="RoundFaceCtrl.h" />
+    <ClInclude Include="SearchListWnd.h" />
+    <ClInclude Include="SelCustomHeadIconDlg.h" />
+    <ClInclude Include="SelDefHeadIconDlg.h" />
+    <ClInclude Include="SelfInfoDlg.h" />
+    <ClInclude Include="SelfInfoEditDlg.h" />
+    <ClInclude Include="SelfInfoPreviewDlg.h" />
+    <ClInclude Include="SkinPickerDialog.h" />
+    <ClInclude Include="SkinPickerPictureItem.h" />
+    <ClInclude Include="SpecifySendDlg.h" />
+    <ClInclude Include="sqlite\CppSQLite3.h" />
+    <ClInclude Include="SysCommonAudio.h" />
+    <ClInclude Include="SysCommonAutoReply.h" />
+    <ClInclude Include="SysCommonBasic.h" />
+    <ClInclude Include="SysCommonFastWord.h" />
+    <ClInclude Include="SysCommonFile.h" />
+    <ClInclude Include="SysCommonMsg.h" />
+    <ClInclude Include="SysCommonSoftwareUpdate.h" />
+    <ClInclude Include="SysCommonVoice.h" />
+    <ClInclude Include="SysSecurityFileTransfer.h" />
+    <ClInclude Include="SysSecurityMsglog.h" />
+    <ClInclude Include="SysSecurityPwd.h" />
+    <ClInclude Include="SysSecurityVerify.h" />
+    <ClInclude Include="SystemSettingCommonDlg.h" />
+    <ClInclude Include="SystemSettingDlg.h" />
+    <ClInclude Include="SystemSettingSecurityDlg.h" />
+    <ClInclude Include="TabWndSearch.h" />
+    <ClInclude Include="tone.h" />
+    <ClInclude Include="UIControls\UIAddrComboBox.h" />
+    <ClInclude Include="urlop.h" />
+    <ClInclude Include="utils\Function.h" />
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\gdi.h" />
+    <ClInclude Include="controls\GraphCheckComboBox.h" />
+    <ClInclude Include="Im\HintDlg.h" />
+    <ClInclude Include="Im\HintDlg2.h" />
+    <ClInclude Include="Im\HttpDownload.h" />
+    <ClInclude Include="..\..\SpaceManagement\public\public_controls\IconCtrl.h" />
+    <ClInclude Include="Im\imaddresslistctrl.h" />
+    <ClInclude Include="Im\ImageDataObject.h" />
+    <ClInclude Include="Im\ImageFileDialog.h" />
+    <ClInclude Include="Im\ImagePreviewStatic.h" />
+    <ClInclude Include="Im\ImageToolBar.h" />
+    <ClInclude Include="IMClient.h" />
+    <ClInclude Include="Im\imfriendlistctrl.h" />
+    <ClInclude Include="Im\IMListCtrl.h" />
+    <ClInclude Include="Im\IMProtocol.h" />
+    <ClInclude Include="Im\impublic.h" />
+    <ClInclude Include="Im\InputLanguage.h" />
+    <ClInclude Include="controls\LabelEdit.h" />
+    <ClInclude Include="Im\LblEdit.h" />
+    <ClInclude Include="Im\LinkResDlg.h" />
+    <ClInclude Include="Im\LocalData.h" />
+    <ClInclude Include="Im\LoginDlg.h" />
+    <ClInclude Include="Im\MagicFaceDlg.h" />
+    <ClInclude Include="Im\MainToolBar.h" />
+    <ClInclude Include="Im\MessageBox.h" />
+    <ClInclude Include="MiniData\MessageData.h" />
+    <ClInclude Include="Im\MessageHandleWnd.h" />
+    <ClInclude Include="..\..\include\MiniNetTrans.h" />
+    <ClInclude Include="MMTalk\MMAudio.h" />
+    <ClInclude Include="MMTalk\MMAudioPlayer.h" />
+    <ClInclude Include="MMTalk\MMCommon.h" />
+    <ClInclude Include="MMTalk\MMData.h" />
+    <ClInclude Include="MMTalk\MMDataMaker.h" />
+    <ClInclude Include="MMTalk\MMTalk.h" />
+    <ClInclude Include="MMTalk\MMTalker.h" />
+    <ClInclude Include="MMTalk\MMVideoCap.h" />
+    <ClInclude Include="MMTalk\MMVideoPlayer.h" />
+    <ClInclude Include="Im\ModfCommNameDlg.h" />
+    <ClInclude Include="Im\MsgDlg.h" />
+    <ClInclude Include="Im\MsgObj.h" />
+    <ClInclude Include="Im\NamedPipe.h" />
+    <ClInclude Include="Im\OutlookContactSelDlg.h" />
+    <ClInclude Include="Im\P2PAudioPanel.h" />
+    <ClInclude Include="Im\P2PFile.h" />
+    <ClInclude Include="Im\P2PFileTransProgressBar.h" />
+    <ClInclude Include="Im\P2PInviteDlg.h" />
+    <ClInclude Include="Im\P2PUserList.h" />
+    <ClInclude Include="Im\P2PUserPanel.h" />
+    <ClInclude Include="Im\P2PVedioPanel.h" />
+    <ClInclude Include="..\..\include\protocol.h" />
+    <ClInclude Include="..\..\include\PublicType.h" />
+    <ClInclude Include="..\..\SpaceManagement\public\public_controls\ResGdiObj.h" />
+    <ClInclude Include="..\Mini139_res\resource.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="Im\RichEditCtrlEx.h" />
+    <ClInclude Include="Im\SABasePage.h" />
+    <ClInclude Include="Im\SAConfig.h" />
+    <ClInclude Include="Im\SAPage1.h" />
+    <ClInclude Include="Im\SAPage2.h" />
+    <ClInclude Include="Im\SAPage3.h" />
+    <ClInclude Include="Im\SAPage4.h" />
+    <ClInclude Include="Im\SAPage5.h" />
+    <ClInclude Include="Im\SAPage6.h" />
+    <ClInclude Include="Im\SAPage7.h" />
+    <ClInclude Include="Im\SAPageBasicSet.h" />
+    <ClInclude Include="Im\SAPageClusterMsgSet.h" />
+    <ClInclude Include="Im\SAPageHotkey.h" />
+    <ClInclude Include="Im\SAPageVedio.h" />
+    <ClInclude Include="Im\ScreenCopyDlg.h" />
+    <ClInclude Include="Im\SelectGroupDlg.h" />
+    <ClInclude Include="Im\SelfFaceDlg.h" />
+    <ClInclude Include="Im\SendMsgActionDlg.h" />
+    <ClInclude Include="Im\ServerListFile.h" />
+    <ClInclude Include="Im\shockwaveflash.h" />
+    <ClInclude Include="Im\SimpleFileTransSession.h" />
+    <ClInclude Include="controls\SkinCtrl.h" />
+    <ClInclude Include="Im\SMSDlg.h" />
+    <ClInclude Include="..\..\SpaceManagement\Public\web\SpaceData.h" />
+    <ClInclude Include="..\..\include\SrvFrameProtocol.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Im\StickDlg\StickDlg.h" />
+    <ClInclude Include="Im\StickDlg\StickMainDlg.h" />
+    <ClInclude Include="Im\SysMsgDlg.h" />
+    <ClInclude Include="Im\TabPage2.h" />
+    <ClInclude Include="Im\TabPage3.h" />
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\TLabelComboBox.h" />
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\TLabelEdit.h" />
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\TLabelList.h" />
+    <ClInclude Include="Im\UserAuthDlg.h" />
+    <ClInclude Include="Im\UserAuthInfoDlg.h" />
+    <ClInclude Include="Im\UserCardDlg.h" />
+    <ClInclude Include="Im\UserGuideDlg.h" />
+    <ClInclude Include="Im\UserIPWnd.h" />
+    <ClInclude Include="Im\UserLevelCtrl.h" />
+    <ClInclude Include="Im\VersionInfoDlg.h" />
+    <ClInclude Include="Im\VersionUpdatgeDlg.h" />
+    <ClInclude Include="MMTalk\VideoCodec.h" />
+    <ClInclude Include="controls\VoiceSlider.h" />
+    <ClInclude Include="Im\WebDataProcess.h" />
+    <ClInclude Include="..\..\SpaceManagement\Public\web\WebInterfaceWrapper.h" />
+    <ClInclude Include="Im\WebPictureProcess.h" />
+    <ClInclude Include="Im\WebProcess.h" />
+    <ClInclude Include="Im\WinAddrBook.h" />
+    <ClInclude Include="Im\WizardPage.h" />
+    <ClInclude Include="MMTalk\XDataPool.h" />
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\XFloorWndCtl.h" />
+    <ClInclude Include="Im\XLabel.h" />
+    <ClInclude Include="WebClient.h" />
+    <ClInclude Include="XmlAddress.h" />
+    <ClInclude Include="xpicture1.h" />
+    <ClInclude Include="Im\xtpacket.h" />
+    <ClInclude Include="MMTalk\xvid.h" />
+    <ClInclude Include="Im\DialogAddAddress.h" />
+    <ClInclude Include="Im\FloorPageAddbook.h" />
+    <ClInclude Include="Im\FormViewCtrl.h" />
+    <ClInclude Include="Im\personinfo.h" />
+    <ClInclude Include="_IOleImageEvents_CP.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\HmgSkin\HmgSkin\res\切片(滚动条).bmp" />
+    <None Include="Im\ServerListFile.inl" />
+    <None Include="json\json_internalarray.inl" />
+    <None Include="json\json_internalmap.inl" />
+    <None Include="json\json_valueiterator.inl" />
+    <None Include="json\sconscript" />
+    <None Include="Mini139_src.rgs" />
+    <None Include="OleImage.bmp" />
+    <None Include="OleImage.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="OleImage.rgs" />
+    <None Include="Res\52x52_border.png" />
+    <None Include="Res\52x52_border_sel.png" />
+    <None Include="Res\88x88_border.png" />
+    <None Include="Res\add_group_disable.png" />
+    <None Include="Res\add_group_hover.png" />
+    <None Include="Res\add_group_normal.png" />
+    <None Include="Res\add_group_pressed.png" />
+    <None Include="Res\bitmap1.bmp" />
+    <None Include="Res\button_accept_hover.png" />
+    <None Include="Res\button_accept_normal.png" />
+    <None Include="Res\button_accept_pressed.png" />
+    <None Include="Res\button_hover.png" />
+    <None Include="Res\button_normal.png" />
+    <None Include="Res\button_pressed.png" />
+    <None Include="Res\button_refused_hover.png" />
+    <None Include="Res\button_refused_normal.png" />
+    <None Include="Res\button_refused_pressed.png" />
+    <None Include="Res\chat_normal.png" />
+    <None Include="Res\close_hover.png" />
+    <None Include="Res\close_leave.png" />
+    <None Include="Res\fastword_disable.png" />
+    <None Include="Res\fastword_hover.png" />
+    <None Include="Res\fastword_normal.png" />
+    <None Include="Res\fastword_pressed.png" />
+    <None Include="Res\files_disable.png" />
+    <None Include="Res\files_hover.png" />
+    <None Include="Res\files_normal.png" />
+    <None Include="Res\files_pressed.png" />
+    <None Include="Res\hangup_disable.png" />
+    <None Include="Res\hangup_hover.png" />
+    <None Include="Res\hangup_normal.png" />
+    <None Include="Res\hangup_pressed.png" />
+    <None Include="Res\icon_100x100.png" />
+    <None Include="Res\icon_100x100_bg.png" />
+    <None Include="Res\icon_100x100_disable.png" />
+    <None Include="Res\icon_arrow_hover.png" />
+    <None Include="Res\icon_arrow_normal.png" />
+    <None Include="Res\icon_arrow_pressed.png" />
+    <None Include="Res\icon_backend_hover.png" />
+    <None Include="Res\icon_backend_normal-.png" />
+    <None Include="Res\icon_backend_pressed.png" />
+    <None Include="Res\icon_busy.ico" />
+    <None Include="Res\icon_close_hover.png" />
+    <None Include="Res\icon_close_normal.png" />
+    <None Include="Res\icon_close_pressed.png" />
+    <None Include="Res\icon_connection _hover.png" />
+    <None Include="Res\icon_connection _normal.png" />
+    <None Include="Res\icon_connection _pressed.png" />
+    <None Include="Res\icon_disable.ico" />
+    <None Include="Res\icon_done_hover.png" />
+    <None Include="Res\icon_done_normal.png" />
+    <None Include="Res\icon_done_pressed.png" />
+    <None Include="Res\icon_fonts_hover.png" />
+    <None Include="Res\icon_fonts_normal.png" />
+    <None Include="Res\icon_fonts_pressed.png" />
+    <None Include="Res\icon_group.ico" />
+    <None Include="Res\icon_group_100x100.png" />
+    <None Include="Res\icon_leave.ico" />
+    <None Include="Res\icon_normal.ico" />
+    <None Include="Res\icon_offline.ico" />
+    <None Include="Res\icon_round_hover.png" />
+    <None Include="Res\icon_round_normal.png" />
+    <None Include="Res\icon_round_pressed.png" />
+    <None Include="Res\icon_save_hover.png" />
+    <None Include="Res\icon_save_normal.png" />
+    <None Include="Res\icon_save_pressed.png" />
+    <None Include="Res\icon_shape_1_hover.png" />
+    <None Include="Res\icon_shape_1_normal.png" />
+    <None Include="Res\icon_shape_1_pressed.png" />
+    <None Include="Res\icon_shape_2_hover.png" />
+    <None Include="Res\icon_shape_2_normal.png" />
+    <None Include="Res\icon_shape_2_pressed.png" />
+    <None Include="Res\icon_shape_3_hover.png" />
+    <None Include="Res\icon_shape_3_normal.png" />
+    <None Include="Res\icon_shape_3_pressed.png" />
+    <None Include="Res\icon_sound_disable.png" />
+    <None Include="Res\icon_sound_hover.png" />
+    <None Include="Res\icon_sound_normal.png" />
+    <None Include="Res\icon_sound_off_img.png" />
+    <None Include="Res\icon_sound_on_img.png" />
+    <None Include="Res\icon_sound_pressed.png" />
+    <None Include="Res\icon_square_hover.png" />
+    <None Include="Res\icon_square_normal.png" />
+    <None Include="Res\icon_square_pressed.png" />
+    <None Include="Res\icon_stealth.ico" />
+    <None Include="Res\icon_undo_hover.png" />
+    <None Include="Res\icon_undo_normal.png" />
+    <None Include="Res\icon_undo_pressed.png" />
+    <None Include="Res\icon_video_img.png" />
+    <None Include="res\IMClient.rc2" />
+    <None Include="Res\ImClient.zip" />
+    <None Include="Res\logo_128.png" />
+    <None Include="Res\long_button_hover.png" />
+    <None Include="Res\long_button_normal.png" />
+    <None Include="Res\long_button_pressed.png" />
+    <None Include="res\Main.ico" />
+    <None Include="Res\msg_num_S.png" />
+    <None Include="Res\p2p_cchat_normal.png" />
+    <None Include="Res\p2p_cchat_pressed.png" />
+    <None Include="Res\p2p_chat_hover.png" />
+    <None Include="Res\p2p_video_hover.png" />
+    <None Include="Res\p2p_video_normal.png" />
+    <None Include="Res\p2p_video_pressed.png" />
+    <None Include="Res\pic_window_close_hover.png" />
+    <None Include="Res\pic_window_close_normal.png" />
+    <None Include="Res\quick_hover.png" />
+    <None Include="Res\quick_normal.png" />
+    <None Include="Res\quick_pressed.png" />
+    <None Include="Res\screenshots_choose_hover.png" />
+    <None Include="Res\screenshots_choose_normal.png" />
+    <None Include="Res\screenshots_choose_pressed.png" />
+    <None Include="Res\screenshots_hover.png" />
+    <None Include="Res\screenshots_normal.png" />
+    <None Include="Res\screenshots_pressed.png" />
+    <None Include="Res\seach_disable.png" />
+    <None Include="Res\seach_hover.png" />
+    <None Include="Res\seach_normal.png" />
+    <None Include="Res\seach_pressed.png" />
+    <None Include="Res\sendfiles_hover.png" />
+    <None Include="Res\sendfiles_normal.png" />
+    <None Include="Res\sendfiles_pressed.png" />
+    <None Include="Res\senior_button_hover.png" />
+    <None Include="Res\senior_button_normal.png" />
+    <None Include="Res\senior_button_pressed.png" />
+    <None Include="Res\senior_long_button_hover.png" />
+    <None Include="Res\senior_long_button_normal.png" />
+    <None Include="Res\senior_long_button_pressed.png" />
+    <None Include="Res\status_busy.png" />
+    <None Include="Res\status_busy_small.png" />
+    <None Include="Res\status_leave.png" />
+    <None Include="Res\status_leave_small.png" />
+    <None Include="Res\status_offline-.png" />
+    <None Include="Res\status_offline.png" />
+    <None Include="Res\status_online-.png" />
+    <None Include="Res\status_online.png" />
+    <None Include="Res\status_stealth.png" />
+    <None Include="Res\status_stealth_small.png" />
+    <None Include="Res\system_message_pressed.png" />
+    <None Include="Res\toolbar_.bmp" />
+    <None Include="Res\voice-_setting_disable.png" />
+    <None Include="Res\voice-_setting_hover.png" />
+    <None Include="Res\voice-_setting_normal.png" />
+    <None Include="Res\voice-_setting_pressed.png" />
+    <None Include="Res\未命名.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="IMClient.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\Src\MININETTRANS\MiniNetTrans.vcxproj">
+      <Project>{96caae28-e968-4d8f-8b49-731fd417c500}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\HmgCrtLib\HmgCrtLib\HmgCrtLib.vcxproj">
+      <Project>{483aeb3a-1b62-4863-9468-e1bbf29c7a3a}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+    <ProjectReference Include="..\MiniData\minidata_dll.vcxproj">
+      <Project>{b4d22633-a417-46bf-bdd4-0a3c1e9900d1}</Project>
+      <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Res\backwardest_disable.png" />
+    <Image Include="Res\backwardest_hover.png" />
+    <Image Include="Res\backwardest_normal.png" />
+    <Image Include="Res\backwardest_pressed.png" />
+    <Image Include="Res\backward_disable.png" />
+    <Image Include="Res\backward_hover.png" />
+    <Image Include="Res\backward_normal.png" />
+    <Image Include="Res\backward_pressed.png" />
+    <Image Include="Res\forwardest_disable.png" />
+    <Image Include="Res\forwardest_hover.png" />
+    <Image Include="Res\forwardest_normal.png" />
+    <Image Include="Res\forwardest_pressed.png" />
+    <Image Include="Res\forward_disable.png" />
+    <Image Include="Res\forward_hover.png" />
+    <Image Include="Res\forward_normal.png" />
+    <Image Include="Res\forward_pressed.png" />
+    <Image Include="Res\icon_historical_disable.png" />
+    <Image Include="Res\icon_historical_hover.png" />
+    <Image Include="Res\icon_historical_normal.png" />
+    <Image Include="Res\icon_historical_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="Mini139_src.idl">
+      <MkTypLibCompatible Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">false</MkTypLibCompatible>
+      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">Win32</TargetEnvironment>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">$(ProjectName)_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">$(ProjectName)_i.c</InterfaceIdentifierFileName>
+      <GenerateStublessProxies Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">true</GenerateStublessProxies>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">$(IntDir)$(ProjectName).tlb</TypeLibraryName>
+      <MkTypLibCompatible Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</MkTypLibCompatible>
+      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Win32</TargetEnvironment>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Mini139_src_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Mini139_src_i.c</InterfaceIdentifierFileName>
+      <GenerateStublessProxies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</GenerateStublessProxies>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)$(ProjectName).tlb</TypeLibraryName>
+      <MkTypLibCompatible Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">false</MkTypLibCompatible>
+      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">Win32</TargetEnvironment>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">Mini139_src_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">Mini139_src_i.c</InterfaceIdentifierFileName>
+      <GenerateStublessProxies Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">true</GenerateStublessProxies>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">$(IntDir)$(ProjectName).tlb</TypeLibraryName>
+      <MkTypLibCompatible Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</MkTypLibCompatible>
+      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Win32</TargetEnvironment>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Mini139_src_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Mini139_src_i.c</InterfaceIdentifierFileName>
+      <GenerateStublessProxies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</GenerateStublessProxies>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)$(ProjectName).tlb</TypeLibraryName>
+      <MkTypLibCompatible Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">false</MkTypLibCompatible>
+      <TargetEnvironment Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">Win32</TargetEnvironment>
+      <PreprocessorDefinitions Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <HeaderFileName Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">Mini139_src_i.h</HeaderFileName>
+      <InterfaceIdentifierFileName Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">Mini139_src_i.c</InterfaceIdentifierFileName>
+      <GenerateStublessProxies Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">true</GenerateStublessProxies>
+      <TypeLibraryName Condition="'$(Configuration)|$(Platform)'=='Template|Win32'">$(IntDir)$(ProjectName).tlb</TypeLibraryName>
+    </Midl>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="IMClient.rc" _x007B_2D360200-FFF5-11D1-8D03-00A0C959BC0A_x007D_="CDHtmlEditCtrl" _x007B_3DB2B896-2396-4313-9B02-C90667FE91EA_x007D_="CUploadpicactivexctrl" _x007B_66A6E47D-69F0-4E38-80B9-01F096B05CAA_x007D_="CHpactxctrl_control" _x007B_8856F961-340A-11D0-A96B-00C04FD705A2_x007D_="CExplorer1" _x007B_D27CDB6E-AE6D-11CF-96B8-444553540000_x007D_="CShockwaveflash" _x007B_E81F4AAD-F89C-4444-824A-B2B762587399_x007D_="CShowimage1" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,479 @@
+.window {
+    overflow: visible;
+}
+
+.datagrid-header-row td {
+    background-color: #eaf5ff;
+}
+
+.clear_data_btn {
+    vertical-align: baseline;
+}
+
+.searchbar li > span:first-child {
+    float: left;
+    height: 100%;
+    line-height: 28px;
+}
+
+#editGroup,
+#addGroup {
+    box-sizing: border-box;
+    width: auto;
+    border: none;
+    font-family: '宋体', ​arial, ​Tahoma;
+    background: rgba(0, 0, 0, 0) url("../../images/btn_2.gif") no-repeat scroll 0 0;
+    background-size: 100% 100%;
+}
+
+.count-tab {
+    height: 30px;
+    color: #000000;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+.count-tab > span {
+    margin-left: 0px;
+    cursor: pointer;
+}
+
+.count-tab > span.tab-btn.active {
+    background: rgba(0, 0, 0, 0) url("../../images/btn_1.gif") no-repeat scroll 0 0;
+    color: #FFFFFF;
+}
+
+.count-tab > .chart-entrance,
+.count-tab > .template-download {
+    color: #0099FF;
+    text-decoration: underline;
+    font-size: 12px;
+    margin-left: 10px;
+}
+
+.datagrid-header-inner {
+    width: 100%;
+}
+
+.datagrid-header-inner .datagrid-htable {
+    width: 100%;
+}
+
+.datagrid-body .datagrid-btable {
+    width: 100%;
+}
+
+.operation_btn_bg {
+    box-sizing: border-box;
+}
+
+#phraseEditWindow {
+    overflow: visible;
+}
+
+#phraseEditWindow .wrapper .phrase-field > input {
+    height: 28px;
+}
+
+#phraseEditWindow .wrapper .phrase-field input {
+    width: 220px;
+}
+
+#phraseEditWindow .wrapper .phrase-field {
+    padding: 10px;
+}
+
+#phraseEditWindow .wrapper .phrase-field .summary {
+    clear: left;
+    margin: 10px 0px;
+    height: 150px;
+    resize: none;
+    border: 1px solid #C3C4C5;
+    font-size: 14px;
+    overflow-y: auto;
+    outline: none;
+    word-wrap: break-word;
+}
+
+#phraseEditWindow .wrapper .phrase-field .summary a {
+    text-decoration: underline;
+    color: #3399FF;
+}
+
+#phraseEditWindow .wrapper .phrase-field .phrase-label {
+    font-size: 14px;
+    font-family: "Microsoft Yahei", 微软雅黑, "Tahoma", "SimSun";
+    font-weight: 500;
+    color: #000000;
+}
+
+#phraseEditWindow .wrapper .phrase-field .phrase-label .required {
+    color: #FF0000;
+}
+
+#phraseEditWindow .wrapper .phrase-field .phrase-notice,
+#phraseEditWindow .wrapper .phrase-field .phrase-error {
+    font-size: 12px;
+}
+
+#phraseEditWindow .wrapper .phrase-field .phrase-notice {
+    color: #a5a5a5;
+}
+
+#phraseEditWindow .wrapper .phrase-field .phrase-error {
+    color: #FF0000;
+}
+
+#phraseEditWindow .wrapper .phrase-field.normal .phrase-error {
+    visibility: hidden;
+}
+
+#phraseEditWindow .wrapper .phrase-field.error .phrase-error {
+    visibility: visible;
+}
+
+#phraseEditWindow {
+    position: relative;
+}
+
+#phraseEditWindow > .mask {
+    position: absolute;
+    z-index: 10;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    background-color: #7C7B7D;
+}
+
+#phraseEditWindow > .mask > .add-link-panel {
+    position: absolute;
+    width: 60%;
+    top: 10%;
+    left: 20%;
+    z-index: 111;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    padding-bottom: 10px;
+}
+
+#phraseEditWindow > .mask > .add-link-panel .panel-header {
+    height: 15px;
+    margin-bottom: 5px;
+    background-color: #f2f2f2;
+}
+
+#phraseEditWindow > .mask > .add-link-panel .panel-header .close {
+    float: right;
+    margin-right: 5px;
+    color: #999999;
+    cursor: pointer;
+}
+
+#phraseEditWindow > .mask > .add-link-panel .panel-header .close:hover {
+    color: #555555;
+}
+
+#phraseEditWindow > .mask > .add-link-panel .link-field {
+    padding: 5px 20px;
+}
+
+#phraseEditWindow > .mask > .add-link-panel p,
+#phraseEditWindow > .mask > .add-link-panel input {
+    height: 28px;
+    font-weight: 700;
+    font-family: "Microsoft Yahei", 微软雅黑, "Tahoma", "SimSun";
+}
+
+#phraseEditWindow > .mask > .add-link-panel input {
+    display: block;
+    width: 100%;
+}
+
+#phraseEditWindow > .mask > .add-link-panel .panel-footer {
+    padding-top: 10px;
+    text-align: center;
+}
+
+#phraseEditWindow > .mask > .add-link-panel .panel-footer .save {
+    display: inline-block;
+    height: 20px;
+    font-size: 14px;
+}
+
+#content .datagrid-btable .datagrid-cell a.phrase-edit,
+#content .datagrid-btable .datagrid-cell a.phrase-delete,
+#content .datagrid-btable .datagrid-cell a.phrase-cancel-show {
+    color: #134da5;
+    display: inline-block;
+    margin: 10px 10px 10px 0px;
+    cursor: pointer;
+}
+
+#content .datagrid-btable .datagrid-cell a.move-up,
+#content .datagrid-btable .datagrid-cell a.move-down,
+#content .datagrid-btable .datagrid-cell a.move-top,
+#content .datagrid-btable .datagrid-cell a.move-bottom {
+    font-size: 20px;
+    display: inline-block;
+    margin: 5px 4px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+#content .datagrid-btable .datagrid-cell a.move-up:hover,
+#content .datagrid-btable .datagrid-cell a.move-down:hover,
+#content .datagrid-btable .datagrid-cell a.move-top:hover,
+#content .datagrid-btable .datagrid-cell a.move-bottom:hover {
+    color: #0099FF;
+}
+
+.chart-mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 999;
+    padding-top: 30px;
+    padding-left: 20px;
+    background-color: #FFFFFF;
+    box-sizing: border-box;
+}
+
+.chart-mask > .wrapper {
+    width: 500px;
+    height: 500px;
+}
+
+.chart-mask > .wrapper .chart-tab-bar {
+    border-bottom: 1px solid #E1E1E1;
+}
+
+.chart-mask > .wrapper .chart-tab-bar > .chart-tab {
+    margin-left: 0px;
+    margin-bottom: -1px;
+}
+
+.chart-mask > .wrapper .chart-tab-bar > .chart-tab.active {
+    background: rgba(0, 0, 0, 0) url("../../images/btn_1.gif") no-repeat scroll 0 0;
+    color: #FFFFFF;
+}
+
+.chart-mask > .wrapper .chart-container {
+    border: 1px solid #e1e1e1;
+    margin: 20px 30px 20px 0px;
+    height: 420px;
+    overflow: hidden;
+    position: relative;
+}
+
+.chart-mask > .wrapper .chart-container > .chart-to-show {
+    height: 420px;
+    padding-top: 20px;
+    box-sizing: border-box;
+}
+
+.chart-mask > .wrapper .chart-container > .loading {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0px;
+    left: 0px;
+    z-index: 9999;
+    background: #FFFFFF;
+}
+
+.chart-mask > .wrapper .chart-container > .loading > .loading-indicator {
+    position: absolute;
+    top: 48%;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+
+#contentGroup .datagrid .field-error {
+    display: inline-block;
+    margin-left: 10px;
+    color: #ff0000;
+}
+
+#contentGroup .datagrid .field-info {
+    display: inline-block;
+    margin-left: 10px;
+    color: #a5a5a5;
+}
+
+#contentGroup .datagrid .group-save,
+#contentGroup .datagrid .group-cancel,
+#contentGroup .datagrid .group-edit {
+    cursor: pointer;
+    color: #0000FF;
+}
+
+.datagrid-header-row, .datagrid-row {
+    height: 35px;
+}
+
+#phraseEditWindow .phrase-field .toolbar {
+    display: block;
+    height: 25px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #f8f8f8 none repeat scroll 0 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar select {
+    float: left;
+    height: 21px;
+    margin: 2px 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar select.font-family-select {
+    width: 137px;
+}
+
+#phraseEditWindow .phrase-field .toolbar select.font-size-select {
+    width: 55px;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a {
+    float: left;
+    height: 22px;
+    margin: 2px 5px 2px 0;
+    width: 22px;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a.b {
+    background: rgba(0, 0, 0, 0) url("../../images/B.gif") no-repeat scroll 0 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a.b:hover {
+    background: rgba(0, 0, 0, 0) url("../../images/B_mouserover.gif") no-repeat scroll 0 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a.i {
+    background: rgba(0, 0, 0, 0) url("../../images/I.gif") no-repeat scroll 0 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a.i:hover {
+    background: rgba(0, 0, 0, 0) url("../../images/I_mouserover.gif") no-repeat scroll 0 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a.u {
+    background: rgba(0, 0, 0, 0) url("../../images/U.gif") no-repeat scroll 0 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a.u:hover {
+    background: rgba(0, 0, 0, 0) url("../../images/U_mouserover.gif") no-repeat scroll 0 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a.color {
+    background: rgba(0, 0, 0, 0) url("../../images/color.gif") no-repeat scroll 0 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a.color:hover {
+    background: rgba(0, 0, 0, 0) url("../../images/color_mouserover.gif") no-repeat scroll 0 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a.face {
+    background: rgba(0, 0, 0, 0) url("../../images/face.gif") no-repeat scroll 0 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a.face:hover {
+    background: rgba(0, 0, 0, 0) url("../../images/face_mouserover.gif") no-repeat scroll 0 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a.b_up.b,
+#phraseEditWindow .phrase-field .toolbar > a.b_up.b:hover {
+    background: rgba(0, 0, 0, 0) url("../../images/B_up.gif") no-repeat scroll 0 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a.u_up.u,
+#phraseEditWindow .phrase-field .toolbar > a.u_up.u:hover {
+    background: rgba(0, 0, 0, 0) url("../../images/U_up.gif") no-repeat scroll 0 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a.i_up.i,
+#phraseEditWindow .phrase-field .toolbar > a.i_up.i:hover {
+    background: rgba(0, 0, 0, 0) url("../../images/I_up.gif") no-repeat scroll 0 0;
+}
+
+#phraseEditWindow .phrase-field .toolbar > a.color_up.color,
+#phraseEditWindow .phrase-field .toolbar > a.color_up.color:hover {
+    background: rgba(0, 0, 0, 0) url("../../images/color_up.gif") no-repeat scroll 0 0;
+}
+
+#addGroupWindow .wrapper .group-field input {
+    height: 28px;
+    width: 200px;
+}
+
+#addGroupWindow .group-field {
+    padding: 10px;
+}
+
+#addGroupWindow .wrapper .group-field .group-label {
+    font-size: 14px;
+    font-family: "Microsoft Yahei", 微软雅黑, "Tahoma", "SimSun";
+    font-weight: 500;
+    color: #000000;
+}
+
+#addGroupWindow .wrapper .group-field .group-label .required {
+    color: #FF0000;
+}
+
+#addGroupWindow .wrapper .group-field .group-notice,
+#addGroupWindow .wrapper .group-field .group-error {
+    font-size: 12px;
+}
+
+#addGroupWindow .wrapper .group-field .group-info {
+    color: #a5a5a5;
+}
+
+#addGroupWindow .wrapper .group-field .group-error {
+    color: #FF0000;
+}
+
+#colorpanel {
+    z-index: 99999;
+}
+
+#J_face_popup {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #d8dae4;
+    height: 256px;
+    left: 15px;
+    overflow: hidden;
+    position: absolute;
+    top: -272px;
+    width: 422px;
+    z-index: 9999;
+}
+
+#J_face_popup .heads {
+    border: 1px solid #d8dae4;
+    margin: 3px 5px;
+}
+
+#J_face_popup .heads td {
+    border: 1px solid #d8dae4;
+}
+
+#J_face_popup .heads a {
+    border: 1px solid #ffffff;
+    display: block;
+    height: 35px;
+    width: 35px;
+}
+
+#J_face_popup .heads a:hover {
+    border-color: #d8dae4;
+}
+
+#J_face_popup .heads a img {
+    height: 100%;
+    width: 100%;
+}

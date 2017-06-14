@@ -1,0 +1,225 @@
+@charset "utf-8";
+/* CSS Document */
+.colff0000{ color:#ff0000;}
+.col0066cc{ color:#0066cc;}
+.col666666{ color:#666666;}
+.w55{ width:55px;}
+.w106{ width:106px;}
+.w120{ width:120px;}
+.w130{ width:130px;}
+.w168{ width:168px;}
+.w182{ width:182px;}
+.pl10{ padding-left:10px;}
+.pl20{ padding-left:20px;}
+.pr20{ padding-right:20px;}
+.pt20{ padding-top:20px;}
+.pb10{ padding-bottom:10px;}
+.pb20{ padding-bottom:20px;}
+.mt5{ margin-top:5px;}
+.mt6{ margin-top:6px;}
+.mb5{ margin-bottom:5px;}
+.mt10{ margin-top:10px;}
+.mt13{ margin-top:13px;}
+.mt15{ margin-top:15px;}
+.mt18{ margin-top:18px;}
+.mt20{ margin-top:20px;}
+.mt27{ margin-top:27px;}
+.mt34{ margin-top:34px;}
+.mt39{ margin-top:39px;}
+.ml10{ margin-left:10px;}
+.mb10{ margin-bottom:10px;}
+.mb30{ margin-bottom:30px;}
+.ml20{ margin-left:20px;}
+.ml80{ margin-left:80px;}
+.mr10{ margin-right:10px;}
+.mr15{ margin-right:15px;}
+.mr20{ margin-right:20px;}
+.lh28{line-height:28px;}
+.bb1s{ border-bottom:1px #e0e0e0 solid;}
+.p-contnet{ width:100%; min-width:1000px;}
+/*=mbx 面包屑 */
+.mbx{ width:100%; height:25px; background:#fefefe url(../images/pbx_bg.gif) bottom repeat-x; vertical-align:top; text-indent:10px; color:#3c3c3c; margin-top:10px; margin-bottom:17px;}
+.mbx b{ font-weight:bold;}
+.mbx a{ padding:0px 7px;}
+.mbx em.cur{color:#f22e00;}
+.mbx a.cur{ color:#f22e00;}
+
+
+/*=tabsDiv 品牌管理Tabs */
+.tabsDiv{ font-family:"微软雅黑"; overflow:hidden; border-bottom:2px #f4614d solid; margin:20px 0px;_display:inline-block;}
+.tabsDiv ul{ margin:0px 20px; overflow:hidden;}
+.tabsDiv ul li{ list-style:none; display:inline-block; float:left;}
+.tabsDiv ul li a{ display:block; padding:13px 40px; cursor:pointer; font-size:16px; font-family:"微软雅黑"; }
+.tabsDiv ul li a:hover{ background:#eeeeee;}
+.tabsDivSelect{ background:#f4614d; color:#ffffff;display:block; padding:13px 40px; cursor:pointer; }
+.tabsDiv ul li a.tabsDivSelect:hover{ background:#f4614d;}
+
+/*=ppglBorderDiv 品牌管理明细页面div样式 */
+.ppglBorderDiv{ margin:0px; border:1px #e9e9e9 solid;margin-bottom:20px;font-family:"宋体"; }
+.ppglBorderDiv h2{ height:40px; line-height:40px; font-size:14px; color:#3c3c3c; padding-left:10px; font-weight:bold; background:#fafafa;}
+.ppglBorderDiv h2 .h2-title{  font-size:14px; font-weight:bold; color:#3c3c3c; float:left;}
+.ppglBorderDiv h2 .h2-notice{ font-size:12px; font-weight:100; color:#999999; float:right;}
+.ppglBorderDiv h2 .h2-notice b{ color:#f22e00;}
+
+/*=button,text的统一样式 */
+.buiness_btn_69{ width:69px; height:28px; text-align:center; border:none; line-height:28px; color:#ffffff; cursor:pointer; font-size:12px; background:url(../images/employee/employ_icon.png) no-repeat; background-position:-22px -61px;}
+.buiness_btn_69:hover{ background-position:-105px -61px;}
+.buiness_btn_148{ width:148px; height:28px; text-align:center; border:none; line-height:28px; color:#ffffff; cursor:pointer; font-size:12px; background:url(../images/employee/employ_icon.png) no-repeat; background-position:-22px -17px;}
+.buiness_btn_148:hover{ background-position:-194px -17px;}
+.smallTips{ *margin-left:10px !important; _margin-left:10px;}
+.attentionPic{ margin:5px 10px 0px;position:relative; top:3px;*margin-left:0px !important; }
+.employeeTxt{ width:190px; height:26px; border:1px #e1e1e1 solid; color:#333333; font-size:12px; text-indent:10px; line-height:13px;line-height:26px; float:left;}
+.searchTxt{ width:240px ;height:26px; line-height:13px; line-height:26px \9; border:1px #dfdfdf solid; text-indent:10px; color:#999999; font-size:12px; float:left; font-size:12px;}
+.searchBtn{ width:60px; height:28px; border:none; cursor:pointer; float:left; margin-left:-1px; background:url(../images/employee/employ_icon.png) no-repeat; background-position:-182px -61px;}
+.dateSettingTxt{ width:190px; height:26px; border:1px #e1e1e1 solid; color:#333333; text-indent:10px;line-height:13px;line-height:26px;}
+.roleUpdateTxt{ width:188px; height:26px; border:1px #dddddd solid; text-indent:10px;  line-height:13px;line-height:26px; color:#333333; float:left; margin-right:10px;}
+.roleUpdateBtn{ width:63px; height:28px; border:none; cursor:pointer; background:url(../images/employee/employ_icon.png) no-repeat; background-position:-22px -104px; float:left;}
+.roleUpdateBtn:hover{ background-position:-97px -104px;}
+
+
+/*子账号提交左右排列*/
+.zzhBasic{ padding:0px 40px;background:#ffffff; clear:both;}
+.formbox{overflow:hidden; margin:10px auto 20px; color:#333333;}
+.formbox ul li.short{ display:block; overflow:hidden; _height:40px; _overflow:visible;}
+.formbox ul li.autoright{ padding:0px 0px 5px 108px; overflow:hidden;margin-top:-10px;}
+.formname{text-align:right; float:left; width:108px; line-height:28px; padding:5px 0px; display:block; float:left;}
+.formtext{float:left; display:block; padding:5px 0px;}
+.formtext font{ font-family:"宋体"; font-size:12px;_margin:0px 5px;}
+.formbox ul li .formtext input[type=checkbox]{-webkit-appearance: none;appearance: none;width:13px; height:13px;cursor: pointer;vertical-align: bottom;background: #fff; border:1px #dedede solid; vertical-align:text-top; margin-right:3px;}
+.formbox ul li .formtext input[type=checkbox]:checked::after {content:url(../images/checkbg.gif);display: block;}
+.formbox ul li .formtext font{ display:inline-block; padding-right:20px;}
+.formbox ul li .formtext .formlabel{ line-height:28px;}
+.formbox ul li .formtext .formA{ line-height:28px; color:#0066cc; text-decoration:underline; cursor:pointer;}
+.formbox ul li .sq{  background:url(../images/employee/li_change1.gif) right center no-repeat; cursor:pointer; }
+.formbox ul li .sqs{background:url(../images/employee/li_change.gif) right center no-repeat;}
+.formbox ul li .structureDiv {border:1px #EEE  solid; background:#f8f8f8; padding:20px; display:block;}
+.formbox ul li i.structureTopBg{ display:block;width:9px; height:6px; background:url(../images/employee/rolebg.gif) no-repeat; position:relative; left:8px; top:1px; _top:7px; }
+.zzhmessage{ padding:10px 30px 0px;background:#ffffff; clear:both;}
+.zzhmessage .formname{text-align:right; float:left; width:60px; line-height:28px; padding:5px 0px; display:block; float:left;}
+
+
+/* 公共commonSelect控件 */
+.commonSelect{position:absolute;float:left;margin-right:15px; z-index:50;}
+.commonSelect dt{height:26px;display:inline-block;border:1px solid #d2ccc4;line-height:26px;padding-left:10px;cursor:pointer;padding-right:12px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;position:relative;z-index:99;}
+.commonSelect .dtBGpostion116{background:#fcfcfb url(../images/employee/ico.gif) no-repeat 116px center;}
+.commonSelect .dtBGpostion176{background:#fcfcfb url(../images/employee/ico.gif) no-repeat 176px center;}
+.commonSelect dt:hover,.commonSelect dt.cur{border:1px solid #409DFE;box-shadow:0 0 3px #409DFE;}
+.commonSelect dd{position:relative;left:0;top:-3px;border:1px solid #d2ccc4;background:#fff;display:none; z-index:1000;*width:190px;}
+.commonSelect dd ul{padding:4px;max-height:250px;overflow:auto; z-index:100;}
+.commonSelect dd ul li{_display:inline;}
+.commonSelect dd ul li a{line-height:26px;display:block;padding:0 8px;color:#333333;*line-height:24px;_line-height:28px;_padding-left:6px;}
+.commonSelect dd ul li a:hover{background:#f5f5f5; color:#f22e00;}
+.commonSelect dd ul li ul li a{ text-indent:10px;}
+
+
+/* 员工管理界面员工结构div */
+.structure-content{ border:1px #e1e1e1 solid; overflow:hidden; background:url(../images/employee/employee_tabs_bg.gif) repeat-y left; padding-bottom:50px;}
+.structure-content .structureUL{ width:200px; float:left;*zoom: 1; overflow:hidden;}
+.structure-content .structureUL .structureTitle{ height:48px; line-height:48px; padding:0px 12px 0px 20px;border-bottom:1px #e1e1e1 solid; }
+.structure-content .structureUL .structureTitle h2{ display:inline-block; color:#333333; font-family:"微软雅黑"; font-size:18px; float:left;}
+.structure-content .structureUL .structureTitle .newDepartment{ display:block; width:52px; height:22px; background:url(../images/employee/employ_icon.png) no-repeat; background-position:-250px -61px; cursor:pointer; float:right; margin-top:14px;}
+.structure-content .structureUL .departName{ height:38px; display:block; padding-left:30px; line-height:38px; color:#333333; font-size:14px;}
+
+
+.structure-content .li-content{ margin-left:200px; _overflow:hidden; _zoom:1;}
+.structure-content .li-content .li-content-title{padding-left:18px; *padding-left:22px !important; _padding-left:22px; height:48px; line-height:48px; border-bottom:1px #e1e1e1 solid; color:#333333; font-size:12px;}
+.structure-content .li-content .li-content-title b{ padding-left:5px; padding-right:20px;}
+.structure-content .li-content .li-content-title em{ height:20px; padding:0px 10px; float:left;}
+.structure-content .li-content .li-box{ padding:15px 15px 0px 15px; }
+.structure-content .li-content .role-editDiv{ padding:20px; overflow:hidden; }
+.structure-content .li-content .role-editDiv .role-editDiv-title{ padding:0px 10px 0px 0px; border-bottom:1px #e1e1e1 solid; overflow:hidden; _display:inline-block;}
+.structure-content .li-content .role-editDiv .role-editDiv-title font{ display:inline-block; font-weight:bold; font-size:14px; color:#333333; border-bottom:2px #f4614d solid; padding:0px 10px 6px; float:left;}
+.structure-content .li-content .role-editDiv .role-editDiv-title a{ display:inline-block; font-weight:100; color:#0066cc; font-size:12px;padding-top:2px; float:right;}
+.structure-content .li-content .li-box .search{ float:right; display:inline; margin-bottom:15px;}
+.structure-content .li-content .li-content-title a{ display:block; float:left;}
+/*编辑角色描述div*/
+.li-content .show-roleEdit{  float:left; display:inline-block; margin-top:10px;display:none; }
+.structure-content .li-content .role-editDiv .role-editContent{ overflow:hidden; position:relative; }
+.structure-content .li-content .role-editDiv .role-editContent .roleList{ width:81px; overflow:hidden; padding:0px 5px; border:1px #e1e1e1 solid; position:absolute; right:0px; top:20px; background: #fff;}
+.structure-content .li-content .role-editDiv .role-editContent .roleList li{ height:28px; border-top:1px #e1e1e1 solid; line-height:28px;}
+.structure-content .li-content .role-editDiv .role-editContent .roleList li.first{ border-top:none;}
+.structure-content .li-content .role-editDiv .role-editContent .roleList li a{ padding-left:15px; background:url(../images/employee/roleList.gif) no-repeat 3px 10px; color:#333333;cursor:pointer;}
+.structure-content .li-content .role-editDiv .role-editContent .roleList li a:hover{background:url(../images/employee/roleListHover.png) no-repeat 3px 10px; color:#f22e00;}
+
+
+.structure-content .structure-Table{  border:1px #dedede solid;}
+.structure-content .structure-Table thead tr th{ height:35px; line-height:35px; padding-left:10px;border:1px #dedede solid; }
+.structure-content .structure-Table thead tr th span{ position:relative;}
+.structure-content .structure-Table tbody tr td{ height:35px; line-height:35px; border:1px #dedede solid; padding-left:10px; }
+.structure-content .structure-Table input[type=checkbox]{-webkit-appearance: none;appearance: none;width:12px; height:12px;cursor: pointer;background: #fff; border:1px #dedede solid; margin-right:20px; overflow:hidden; position:relative; top:2px;}
+.structure-content .structure-Table input[type=checkbox]:checked::after { content:url(../images/employee/checkbg.gif);display: block;}
+.structure-content .structure-Table .commonCheckBox{width:12px; height:12px;cursor: pointer;background: #fff; border:1px #dedede solid; margin-right:20px;}
+.structure-content .structure-Table tbody td a:hover{ color:#f22e00; text-decoration:underline; cursor:pointer;}
+
+.structure-content .structure-Table thead tr th .aShowSelectBox{ display:inline-block; padding-right:15px; background:url(../images/employee/table_list.gif) right center no-repeat; cursor:pointer;}
+
+.structure-content .structure-Table thead tr th .showMoreUlBox{ display:none; width:168px; border:1px #bebebe solid; overflow:hidden; position:absolute; z-index:2; left:-10px; background:#ffffff; *margin-top:35px !important; }
+.structure-content .structure-Table thead tr th .showMoreUlBox h2{ height:24px; line-height:24px; padding-left:10px; color:#333333; font-size:12px;}
+.structure-content .structure-Table thead tr th .showMoreUlBox ul li{ *line-height:25px !important;*overflow:visible !important;}
+.structure-content .structure-Table thead tr th .showMoreUlBox ul li a{ display:block; height:25px; line-height:25px; padding-left:28px; *height:25px !important;}
+.structure-content .structure-Table thead tr th .showMoreUlBox ul li ul li a{ display:block; height:25px; line-height:25px; padding-left:46px;}
+.structure-content .structure-Table thead tr th .showMoreUlBox ul li a:hover{ background:#eeeeee;  color:#f22e00;}
+
+.structure-content .structure-Table thead tr th .showSingleUlBox{ display:none; width:168px; border:1px #bebebe solid; overflow:hidden; position:absolute; z-index:2; left:-10px; background:#ffffff;*margin-top:35px !important;}
+.structure-content .structure-Table thead tr th .showSingleUlBox li{*height:25px !important; *line-height:25px !important;}
+.structure-content .structure-Table thead tr th .showSingleUlBox a{ display:block; height:25px; line-height:25px; padding-left:28px;}
+.structure-content .structure-Table thead tr th .showSingleUlBox li a:hover{ background:#eeeeee;  color:#f22e00;}
+.structure-content .structure-Table tr td .td-btn{ display:inline-block; width:22px; height:22px; cursor:pointer; border:none; position:relative; top:7px; *top:3px !important;_top:3px; margin-right:10px; }
+.structure-content .structure-Table tr td .start{ background:url(../images/employee/employ_icon.png) no-repeat -217px -106px;}
+.structure-content .structure-Table tr td .stop{ background:url(../images/employee/employ_icon.png) no-repeat -266px -106px;}
+
+
+/*公共分页控件*/
+.employeepage{text-align:center;font-family:"微软雅黑";margin-top:10px;}
+.employeepage a{text-decoration:none;color:#6c6c6c;background:#fff;border:1px solid #ffffff;padding:1px 6px;margin-right:10px;*display:inline-block;}
+.employeepage a.active{border:1px solid #ffffff;color:#f22e00}
+.employeepage a:hover{text-decoration:none;color:#f22e00;border:1px solid #dddddd}
+.employeepage .pageLeftBg{ display:inline-block;background:url(../images/employee/page_left_bg.gif) left no-repeat; text-indent:10px;border:1px solid #dddddd; }
+.employeepage .pageRightBg{ display:inline-block;background:url(../images/employee/page_right_bg.gif) right no-repeat; padding-right:17px;border:1px solid #dddddd;}
+
+
+/*服务评价页table*/
+.zzhmessage .serverTable{ clear:both; border:1px #dedede solid; margin-top:30px;}
+.zzhmessage .serverTable thead tr th{ height:34px; line-height:34px; padding-left:10px; border:1px #dedede solid;text-align: center}
+.zzhmessage .serverTable tbody tr td{ height:34px; line-height:34px;padding-left:10px;  border:1px #dedede solid;text-align: center}
+.zzhmessage .serverTable tbody tr td a:hover{ color:#f22e00; text-decoration:underline; cursor:pointer;}
+
+
+
+
+/*评价table*/
+.zzhmessage .appraiseTable{ clear:both; margin-top:30px; width:100%; border:1px #dedede solid;}
+.zzhmessage .appraiseTable thead{ background-color:#f6f6f6;}
+.zzhmessage .appraiseTable th{ border:1px #dedede solid; height:34px; color:#333333; padding-left:10px;}
+.zzhmessage .appraiseTable td{ height:210px; overflow:hidden; vertical-align:top; padding-left:10px; padding-top:10px; padding-bottom:10px; border:1px #dedede solid;}
+/*.zzhmessage .appraiseTable td p{height:23px; line-height:23px;}*/
+.zzhmessage .appraiseTable td p{padding:5px;}
+.zzhmessage .appraiseTable td.none_message{height:20px; line-height:20px;}
+
+
+.attentionPic{position:relative;top:3px; margin-right:5px;}
+
+
+/*日历*/
+.icon_calendar{background:url(../images/calendar.png) no-repeat 160px 4px; cursor:pointer;}
+.icon_red_calendar{background:url(../images/rl.gif) no-repeat 65px 4px; cursor:pointer;}
+
+
+/*警告段落*/
+.warnBox{border:1px #ffe3e0 solid; padding:15px 5px; background:#fff2f2 url(../images/warn.gif) left center no-repeat ; text-indent:40px;}
+
+/*js positionNative*/
+/*临时*/
+.mybox{background:gray;width:100%;margin-bottom:20px;color:red;font-size:30px;}
+.structure-content .li-content .role-editDiv .role-editContent .roleList{position:fixed;top:239px;right:22px;}
+.roleList a{display:block;}
+.structure-content .li-content .role-editDiv .role-editContent .roleList li a.cur{color:#f22e00;}
+
+/**分页*/
+.employeepage a {
+    cursor: pointer;
+}
+#historyMessageListPanel img {
+    max-width: 300px !important;
+    max-height: 300px !important;
+}

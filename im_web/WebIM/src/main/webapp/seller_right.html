@@ -1,0 +1,162 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <base target="_blank"/>
+    <title>哞哞右侧</title>
+    <link href="static/css/seller/reset.css" rel="stylesheet" type="text/css"/>
+    <link href="static/css/seller/mou_right.css" rel="stylesheet" type="text/css"/>
+</head>
+
+<body>
+<div class="mou_width">
+    <div class="title">
+        <span class="customer-header on" style="display: none;">客户</span>
+        <span class="product-header">商品</span>
+        <span class="order order-header" style="display: none;">订单</span>
+    </div>
+
+    <!--客户-->
+    <div class="content customer-tab">
+        <div class="content_c">
+            <!--买家信息-->
+            <div class="buyer_name">
+                <div class="pic_name">
+                    <img class="user-img" width="35" height="35"/>
+
+                    <p class="nick-name">&nbsp;&nbsp;...</p>
+                    <span class="user-level">&nbsp;&nbsp;...</span>
+                </div>
+                <ul>
+                    <li class="user-name">&nbsp;&nbsp;...</li>
+                    <li>成交金额：<b style="font-weight:normal;" class="total-trade-info">&nbsp;&nbsp;...</b></li>
+                </ul>
+            </div>
+            <!--买家信息-->
+
+            <!--正在咨询-->
+            <div class="consultation" style="display: none">
+                <h2>正在咨询：</h2>
+
+                <a class="photo" href="#"><img border="0"/></a>
+
+                <ul>
+                    <li><a class="lan" href="#">&nbsp;&nbsp;...</a></li>
+                    <li class="fn-price">&nbsp;&nbsp;...</li>
+                    <li class="price">&nbsp;&nbsp;...</b></li>
+                    <li class="num">&nbsp;&nbsp;...</li>
+                </ul>
+            </div>
+            <!--正在咨询-->
+
+            <!--订单记录-->
+            <div class="Record">
+                <h2>订单记录：</h2>
+                <ul>
+                    <li>未完成<b class="b_u"><a class="lan uncompleted" href="#">&nbsp;&nbsp;...</a></b></li>
+                    <li>已完成<b class="b_u"><a class="lan completed" href="#">&nbsp;&nbsp;...</a></b></li>
+                    <li class="on">已取消<b class="b_u"><a class="lan cancelled" href="#">&nbsp;&nbsp;...</a></b></li>
+                </ul>
+            </div>
+
+            <!--订单记录-->
+
+
+        </div>
+        <!--备注-->
+        <div class="Remarks">
+            <div>
+                备注：<span class="value">很希望包邮，喜欢催</span>
+            </div>
+
+            <div class="word" style="margin-bottom:5px; display:none;">
+                <textarea></textarea>
+            </div>
+            <a class="lan bj" href="#">编辑</a>
+
+            <div class="anniu" style="display:none;">
+                <a class="lan fl m_10 pre" href="#">保存</a>
+                <a class="lan fl cancel" href="#">取消</a>
+            </div>
+        </div>
+
+        <!--备注-->
+
+    </div>
+    <!--客户-->
+
+    <!--商品-->
+    <div class="content product-tab" style="display:none;">
+        <div class="clum">
+            <span class="on">热销</span>
+            <span>店内商品</span>
+            <span>搜索</span>
+        </div>
+        <!--热销-->
+        <div class="content_c js_tab hot">
+        </div>
+        <!--热销-->
+
+        <!--店内商品-->
+        <div class="content_c js_tab general" style="display:none;">
+            <div class="loading-indicator" style="position: absolute;top: 45%;width: 100%">正在加载中...</div>
+        </div>
+        <!--店内商品-->
+
+        <!--搜索-->
+        <div class="content_c js_tab search" style="display:none;">
+            <div class="bd">
+                <em id="cha" class="search"></em>
+                <input id="inp_name" name="" type="text" title="按Enter键执行搜索" placeholder="输入商品ID/关键字，按回车键搜索">
+            </div>
+            <div class="loading-indicator" style="position: absolute;top: 40%;width: 100%">正在加载中...</div>
+        </div>
+        <!--搜索-->
+    </div>
+
+    <!--商品-->
+
+    <!--订单-->
+    <div class="content order-tab" style="display:none;">
+        <div class="head">
+            <span class="on uncompleted">未完成</span>
+            <span class="completed">已完成</span>
+            <span class="cancelled">已取消</span>
+
+            <p id="refreshCurrentTabOrder"></p>
+        </div>
+
+        <!--未完成-->
+        <div class="complete uncompleted">
+            <div class="loading-indicator" style="position: absolute;top: 40%;width: 100%">正在加载中...</div>
+        </div>
+        <!--未完成-->
+
+        <!--已完成-->
+        <div class="complete completed" style="display:none;">
+            <div class="loading-indicator" style="position: absolute;top: 40%;width: 100%">正在加载中...</div>
+        </div>
+        <!--已完成-->
+
+        <!--已取消-->
+        <div class="complete cancelled" style="display:none;">
+            <div class="loading-indicator" style="position: absolute;top: 40%;width: 100%">正在加载中...</div>
+        </div>
+        <!--已取消-->
+
+    </div>
+
+    <!--订单-->
+
+</div>
+
+<script type="text/javascript" src="static/js/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="static/js/modules/jq.tab.js"></script>
+<script type="text/javascript" src="static/js/sea.js"></script>
+<script type="text/javascript" src="static/js/modules/init/im-seller.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,43 @@
+option optimize_for = LITE_RUNTIME;
+
+message MsgInfo
+{
+ optional uint32 msgid = 1;
+ optional string uuid = 2;
+ optional uint32 fromid = 3;
+ optional uint32 toid = 4;
+ optional uint32 send_time = 5;
+ optional string data = 6;
+ optional string fromnickname = 7;
+ optional uint32 fontSize = 8;
+ optional uint32 fontColor = 9;
+ optional uint32 fontStyle = 10;
+ optional string fontName = 11;
+ optional uint32 datatype = 12;
+}
+
+// 历史消息请求
+message MsgListReq
+{
+ required uint32 fromid = 1;
+ required uint32 toid = 2;
+ required uint32 bgntime = 3;
+ optional uint32 endtime = 4;
+ optional uint32 maxmsg = 5; 
+ optional uint32 bgnmsgid = 6;	// 当bgnmsgid > 0时，忽略bgntime
+}
+
+message MsgList
+{
+ optional uint32 ret = 1;
+ required uint32 isend = 2;		// 为0表示还有历史消息没拉取完，为1表示所有历史消息都拉取完
+ optional uint32 lastmsgid = 3;	// 只有isend为0时才有效，表示当前拉取到了哪一条消息记录
+ optional uint32 userid = 4;	// 好友id
+ repeated MsgInfo msglist = 15;
+}
+
+// 用户退出的消息
+message UserOfflineIND
+{
+ required uint32 userid = 1;	// 用户id
+}

@@ -1,0 +1,48 @@
+#!/bin/sh
+
+source /etc/profile
+export PATH=$PATH:/usr/local/bin
+
+Time=`date -d "now" +%Y%m%d_%H_%M`
+cd `dirname $0`
+
+sh imkill
+
+ulimit -c unlimited
+
+MASTERIP=`cat ../config/Config.ini | grep -A 1 "\[ShellConfig\]" | grep MasterIp | awk -F "[=]" '{print $2}'`
+MYIP=`ifconfig | grep -A 2 eth | grep "inet addr" | awk -F "[:]" '{print $2}' |  awk '{print $1}'`
+VALGRIND=`cat ../config/Config.ini | grep -A 3 "\[ShellConfig\]" | grep valgrind | awk -F "[=]" '{print $2}'`
+VALGRIND_CMD=`which valgrind`
+if [[ $VALGRIND = "true" ]] && [[ -n $VALGRIND_CMD ]];then
+	ImserverCmd=$VALGRIND_CMD" --tool=memcheck --log-file=../Log/imserver_valgrind_$Time.log --leak-check=yes --show-reachable=yes -v ../bin/ImServer"
+else
+	ImserverCmd="../bin/ImServer"
+fi
+echo $ImserverCmd
+echo $MASTERIP $MYIP 
+
+echo -e "\nStarting IM Service ......"
+mkdir ../Log/
+nohup ../bin/AccessServer &> ../Log/xmppLogAccess &
+sleep 3
+echo -e "[AccessServer]..........started!"
+
+nohup $ImserverCmd &> ../Log/xmppLogIm &
+sleep 3 
+echo -e "[ImServer]..........started!"
+
+#if [ $MASTERIP = $MYIP ];then
+
+#	nohup ../bin/WebMsgNotify &> /dev/null&
+#	sleep 3
+#	echo -e "[WebMsgNotify]..........started!"
+
+#fi
+
+
+echo -e "\nAll IM Service Started"
+nohup sh immonitor &>/dev/null&
+sleep 1
+
+sh imlps

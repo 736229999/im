@@ -1,0 +1,76 @@
+@charset "utf-8";
+/* CSS Document */
+
+.all_cus{ width:100%; font-family:"微软雅黑","宋体";}
+
+/*公用样式*/
+a.btn{ display:block; width:75px; height:30px; background:url(../images/btn.jpg) no-repeat; color:#fff; line-height:30px; text-align:center;}
+a.btn_can{ display:block; width:87px; height:30px; background:url(../images/btn_can.jpg) no-repeat; color:#6c6c6c; line-height:30px; text-align:center;}
+.page{ width:975px; height:35px; float:right; margin-right:10px; margin-top:10px;}
+.m_c{ margin:0 auto;}
+
+/*链接样式*/
+a.c_bule:link {color:#256fb0;  text-decoration:none;}
+a.c_bule:visited{color:#256fb0;text-decoration:none;}
+a.c_bule:hover {color:#256fb0;  text-decoration:none;}
+
+/*面包屑*/
+.crumbs{ height:44px; background:url(../images/bg_crumbs.jpg) repeat-x bottom;}
+.crumbs p{ display:block; margin-left:5px; color:#3c3c3c; line-height:44px;}
+.crumbs p i{ color:#f22e00; font-style:normal;}
+
+/*头部*/
+.cus_head{ height:38px; border-bottom:2px solid #F4614D; margin-top:15px;}
+.cus_head ul{ margin-left:39px;}
+.cus_head ul li{ display:block; width:125px; height:38px; float:left; text-align:center; color:#3c3c3c; line-height:38px; font-size:16px; cursor:pointer;}
+.cus_head ul li.on{ color:#fff;background:#F4614D;}
+
+/*出勤情况*/
+.content_cus{ margin-top:15px;}
+.content_cus .time .cale{ width:450px; float:left; margin-right:5px; height:30px; line-height:30px; margin-left:10px;}
+.content_cus .time .cale p{ display:block; width:65px; float:left; color:#3C3C3C;}
+.content_cus .time .cale p.on{ width:15px; text-align:center; margin-right:5px;}
+.content_cus .time .cale p.on_1{ width:85px;}
+.content_cus input{ width:170px; border:1px solid #DDDDDD; float:left; height:22px; background:url(../images/ico.jpg) no-repeat 143px; margin:3px 0 3px 0; text-indent:5px; }
+.content_cus .data{ margin:15px 5px 0 5px;}
+.content_cus .data table{ width:100%;}
+.content_cus .data table td{ height:35px; line-height:35px;color:#3C3C3C; text-align:center; border:1px solid #DDDDDD;}
+
+.content_cus .data table td.on{ background:#FAFAFA;}
+
+/*查看明细*/
+.Detailed{ margin-top:15px; padding:0 5px 0 5px;}
+.Detailed table td{ height:35px; line-height:35px;color:#3C3C3C; text-align:center; border:1px solid #DDDDDD;}
+.Detailed table td.on{background:#FAFAFA;}
+
+/*促成订单*/
+.content_cus ul{ display:block; width:260px; float:left; margin-right:10px;}
+.content_cus ul li{ display:block;  height:24px; line-height:24px;}
+.content_cus ul li p{ display:block; width:80px; float:left;color:#3C3C3C; text-align:center; height:24px; line-height:24px;}
+.content_cus select{width:168px; border:1px solid #DDDDDD; float:left; height:22px;margin:3px 0 3px 0;}
+.content_cus input.on{ background:none;}
+
+/*设置*/
+.content_cus ul li p.on_3{ display:block; width:90px; float:left;color:#3C3C3C; text-align:left;}
+.content_cus ul li p.on_4{ width:50px;}
+.content_cus em{ display:block; font-style:normal; height:24px; line-height:24px; color:#6c6c6c; margin-left:10px; margin-top:10px;}
+.content_cus input.none{ background:none; width:auto; height:auto; border:none; margin-top:5px;}
+.content_cus ul li p span{ display:block; width:96px; float:left;height:24px; line-height:24px;color:#256fb0; text-decoration:underline; margin-top:10px;}
+
+/*设置弹窗*/
+.set_up{ width:379px; border:5px solid #6B6B6B; height:auto; background:#fff;}
+.set_up .head{ height:34px; background:#f6f6f6; overflow:hidden;}
+.set_up .head h2{ display:block; width:90px; color:#000; line-height:34px; margin-left:15px; float:left; font-weight:normal;}
+.set_up .head ins{ display:block; width:12px; height:12px; background:url(../images/ico_1.jpg) no-repeat; float:right; margin:11px 5px 11px 0; cursor:pointer;}
+.set_up .set_content{ margin:15px 35px 15px 35px;}
+.set_up .set_content p{ display:block; color:#000; height:24px; line-height:24px; margin-bottom:15px;}
+.set_up .set_content .frame{ width:299px; border:1px solid #dedede; padding:0 5px 0 5px; margin-bottom:20px;}
+.set_up .set_content .frame span{ display:block; color:#000; height:24px; line-height:24px;}
+
+
+/*重置 bootstra 下拉框样式*/
+
+
+.SearchDiv .button_input{ width:80px; border:0px solid #DDDDDD; float:left; height:32px;  margin:0px 0 0px 0; text-indent:5px; }
+
+

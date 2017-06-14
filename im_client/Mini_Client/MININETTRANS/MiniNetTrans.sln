@@ -1,0 +1,28 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MiniNetTrans", "MiniNetTrans.vcxproj", "{96CAAE28-E968-4D8F-8B49-731FD417C500}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test", "..\test\test.vcproj", "{DCF5EBC4-F282-44C6-ABC1-12CA116EDBD3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{96CAAE28-E968-4D8F-8B49-731FD417C500} = {96CAAE28-E968-4D8F-8B49-731FD417C500}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Default = Debug|Default
+		Release|Default = Release|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{96CAAE28-E968-4D8F-8B49-731FD417C500}.Debug|Default.ActiveCfg = Debug|Win32
+		{96CAAE28-E968-4D8F-8B49-731FD417C500}.Debug|Default.Build.0 = Debug|Win32
+		{96CAAE28-E968-4D8F-8B49-731FD417C500}.Release|Default.ActiveCfg = Release|Win32
+		{96CAAE28-E968-4D8F-8B49-731FD417C500}.Release|Default.Build.0 = Release|Win32
+		{DCF5EBC4-F282-44C6-ABC1-12CA116EDBD3}.Debug|Default.ActiveCfg = Debug|Win32
+		{DCF5EBC4-F282-44C6-ABC1-12CA116EDBD3}.Debug|Default.Build.0 = Debug|Win32
+		{DCF5EBC4-F282-44C6-ABC1-12CA116EDBD3}.Release|Default.ActiveCfg = Release|Win32
+		{DCF5EBC4-F282-44C6-ABC1-12CA116EDBD3}.Release|Default.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

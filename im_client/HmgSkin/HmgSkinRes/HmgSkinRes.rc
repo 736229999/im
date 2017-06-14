@@ -1,0 +1,151 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(简体，中国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_UPDOWN_NORMAL       BITMAP                  "res\\im\\上下移动-暗.bmp"
+IDB_UPDOWN_HOT          BITMAP                  "res\\im\\上下移动-亮.bmp"
+IDB_SLIDER_THUM_NORMAL  BITMAP                  "res\\im\\slider_thum_normal.bmp"
+IDB_SLIDER_THUM_HOT     BITMAP                  "res\\im\\slider_thum_hot.bmp"
+IDB_SLIDER_THUM_DOWN    BITMAP                  "res\\im\\silder_thum_down.bmp"
+IDB_RESTORE_NORMAL      BITMAP                  "res\\im\\还原_normal副本.bmp"
+IDB_RESTORE_HOT         BITMAP                  "res\\im\\还原_hot副本.bmp"
+IDB_RESTORE_DOWN        BITMAP                  "res\\im\\还原_down副本.bmp"
+IDB_MIN_NORMAL          BITMAP                  "RES\\im\\min_normal.bmp"
+IDB_MIN_HOT             BITMAP                  "RES\\im\\min_hot.bmp"
+IDB_MIN_DOWN            BITMAP                  "res\\im\\min_down.bmp"
+IDB_MAX_NORMAL          BITMAP                  "RES\\im\\max_normal.bmp"
+IDB_MAX_HOT             BITMAP                  "RES\\im\\max_hot.bmp"
+IDB_MAX_DOWN            BITMAP                  "res\\im\\max_down.bmp"
+IDB_IM_SCROLLBAR        BITMAP                  "res\\im\\scrollbar.BMP"
+IDB_IM_COMBO_BUTTON     BITMAP                  "RES\\im\\combo_right.bmp"
+IDB_IM_CLUSTER          BITMAP                  "res\\im\\im_cluster.bmp"
+IDB_IM_BTN_NORMAL       BITMAP                  "res\\im\\button_normal.bmp"
+IDB_IM_BTN_HOVER        BITMAP                  "res\\im\\button_hover.bmp"
+IDB_IM_BTN_DOWN         BITMAP                  "res\\im\\button_down.bmp"
+IDB_IM_BTN_DISABLE      BITMAP                  "res\\im\\button_disable.bmp"
+IDB_HELP_NORMAL         BITMAP                  "res\\im\\help_normal.bmp"
+IDB_HELP_HOT            BITMAP                  "res\\im\\help_hot.bmp"
+IDB_HELP_DOWN           BITMAP                  "res\\im\\help_down.bmp"
+IDB_DLG_CAPTION_R       BITMAP                  "res\\im\\dlg_caption_right.bmp"
+IDB_DLG_CAPTION_M       BITMAP                  "res\\im\\dlg_caption_mid.bmp"
+IDB_DLG_CAPTION_L       BITMAP                  "res\\im\\dlg_caption_left.bmp"
+IDB_DLG_CAPTION_BAR     BITMAP                  "res\\im\\dlg_caption_bar.bmp"
+IDB_COLUMN_BTN_TOP_NORMAL BITMAP                  "res\\im\\column_btn_top.bmp"
+IDB_COLUMN_BTN_TOP_HOT  BITMAP                  "res\\im\\column_b.bmp"
+IDB_COLUMN_BTN_TOP_DOWN BITMAP                  "res\\im\\bmp00009.bmp"
+IDB_COLUMN_BTN_TOP_DISABLE BITMAP                  "res\\im\\bmp00006.bmp"
+IDB_COLUMN_BTN_MID_NORMAL BITMAP                  "res\\im\\column_btn_mid.bmp"
+IDB_COLUMN_BTN_MID_HOT  BITMAP                  "res\\im\\column_btn_mid_hot.bmp"
+IDB_COLUMN_BTN_MID_DOWN BITMAP                  "res\\im\\bmp00008.bmp"
+IDB_COLUMN_BTN_MID_DISABLE1 BITMAP                  "res\\im\\bmp00001.bmp"
+IDB_COLUMN_BTN_MID_DISABLE BITMAP                  "res\\im\\bmp00005.bmp"
+IDB_COLUMN_BTN_BOTTOM_NORMAL BITMAP                  "res\\im\\column_btn_bottom.bmp"
+IDB_COLUMN_BTN_BOTTOM_HOT BITMAP                  "res\\im\\column_btn_bottom_hot.bmp"
+IDB_COLUMN_BTN_BOTTOM_DOWN BITMAP                  "res\\im\\bmp00007.bmp"
+IDB_COLUMN_BTN_BOTTOM_DISABLE BITMAP                  "res\\im\\column_btn_bottom_disable.bmp"
+IDB_COLUMN_BTN_ARROW_RIGHT BITMAP                  "res\\im\\right_btn_arrow.bmp"
+IDB_COLUMN_BTN_ARROW_LEFT BITMAP                  "res\\im\\left_btn_arrow.bmp"
+IDB_CLOSE_NORMAL        BITMAP                  "RES\\im\\close_normal.bmp"
+IDB_CLOSE_HOT           BITMAP                  "RES\\im\\close_hot.bmp"
+IDB_CLOSE_DOWN          BITMAP                  "res\\im\\close_down.bmp"
+IDB_ARROW_UP            BITMAP                  "res\\im\\arrow_up.bmp"
+IDB_ARROW_DOWN          BITMAP                  "res\\im\\arrow_down.bmp"
+IDB_CHAT_CLOSE_NORMAL   BITMAP                  "res\\im\\chat_close_normal.bmp"
+IDB_CHAT_CLOSE_HOT      BITMAP                  "res\\im\\chat_close_hot.bmp"
+IDB_CHAT_CLOSE_DOWN     BITMAP                  "res\\im\\chat_close_down.bmp"
+IDB_CHAT_MAX_HOT        BITMAP                  "res\\im\\chat_max_hot.bmp"
+IDB_CHAT_MAX_DOWN       BITMAP                  "res\\im\\chat_max_down.bmp"
+IDB_CHAT_MAX_NORMAL     BITMAP                  "res\\im\\chat_max_normal.bmp"
+IDB_CHAT_MIN_HOT        BITMAP                  "res\\im\\chat_min_hot.bmp"
+IDB_CHAT_MIN_DOWN       BITMAP                  "res\\im\\chat_min_down.bmp"
+IDB_CHAT_MIN_NORMAL     BITMAP                  "res\\im\\chat_min_normal.bmp"
+IDB_BITMAP_SCROLL       BITMAP                  "res\\切片(滚动条).bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME1          ICON                    "Res\\idr_main.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// PNG
+//
+
+IDB_PNG_CLOSE_HOVER     PNG                     "res\\close_hover.png"
+IDB_PNG_CLOSE_NORMAL    PNG                     "res\\close_normal.png"
+IDB_PNG_CHECK_BOX_HOVER PNG                     "res\\check_box_hover.png"
+IDB_PNG_CHECK_BOX_NORMAL PNG                     "res\\check_box_normal.png"
+IDB_PNG_CHECK_BOX_PRESSED PNG                     "res\\check_box_pressed.png"
+IDB_PNG_CHECKED_BOX_HOVER PNG                     "res\\checked_box_hover.png"
+IDB_PNG_RADIO_BOX_HOVER PNG                     "res\\radiobox_hover.png"
+IDB_PNG_RADIO_BOX_NORMAL PNG                     "res\\radiobox_normal.png"
+IDB_PNG_RADIO_BOX_PRESSED PNG                     "res\\radiobox_pressed.png"
+IDB_PNG_RADIOED_BOX_HOVER PNG                     "res\\radioboxed_hover.png"
+
+#endif    // 中文(简体，中国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

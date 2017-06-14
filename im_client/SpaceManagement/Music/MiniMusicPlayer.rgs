@@ -1,0 +1,27 @@
+HKCR
+{
+	Music.MiniMusicPlayer.1 = s 'MiniMusicPlayer Class'
+	{
+		CLSID = s '{E557CAC8-C429-4EC3-BCE1-51B6367420D6}'
+	}
+	Music.MiniMusicPlayer = s 'MiniMusicPlayer Class'
+	{
+		CLSID = s '{E557CAC8-C429-4EC3-BCE1-51B6367420D6}'
+		CurVer = s 'Music.MiniMusicPlayer.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {E557CAC8-C429-4EC3-BCE1-51B6367420D6} = s 'MiniMusicPlayer Class'
+		{
+			ProgID = s 'Music.MiniMusicPlayer.1'
+			VersionIndependentProgID = s 'Music.MiniMusicPlayer'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{E725EA0B-9AAA-44E0-B63F-7CE0682A827E}'
+		}
+	}
+}

@@ -1,0 +1,4 @@
+1. cs-webim 与 webim 共享session；
+2. cs-webim token验证走session-cookie；
+3. cs-webim 收发消息各自独立，不能相互影响；
+

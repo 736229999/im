@@ -1,0 +1,3 @@
+---- list Matches (2 in 2 files) ----
+Adlist.h (f:\hiredis-vip-master):/* Node, List, and Iterator are the only data structures used currently. */
+Async.h (f:\hiredis-vip-master):/* List of callbacks for either regular replies or pub/sub */

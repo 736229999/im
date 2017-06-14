@@ -1,0 +1,737 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Business|Win32">
+      <Configuration>Debug_Business</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Business|Win32">
+      <Configuration>Release_Business</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{40524EE9-E645-428E-B187-46104DD2F67A}</ProjectGuid>
+    <SccProjectName />
+    <SccAuxPath />
+    <SccLocalPath />
+    <SccProvider />
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <UseOfMfc>false</UseOfMfc>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">Debug\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MINI139_RES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(SolutionDir)/bin$(Configuration)/$(ProjectName).dll</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)Mini139_res.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <NoEntryPoint>true</NoEntryPoint>
+      <ImportLibrary>$(SolutionDir)/lib$(Configuration)/$(ProjectName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;MINI139_RES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(SolutionDir)/bin$(Configuration)/$(ProjectName).dll</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ProgramDatabaseFile>$(OutDir)Mini139_res.pdb</ProgramDatabaseFile>
+      <SubSystem>Windows</SubSystem>
+      <NoEntryPoint>true</NoEntryPoint>
+      <ImportLibrary>$(SolutionDir)/lib$(Configuration)/$(ProjectName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MINI139_RES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(SolutionDir)/bin$(Configuration)/$(ProjectName).dll</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <NoEntryPoint>true</NoEntryPoint>
+      <ImportLibrary>$(SolutionDir)/lib$(Configuration)/$(ProjectName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">
+    <ClCompile>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;MINI139_RES_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <OutputFile>$(SolutionDir)/bin$(Configuration)/$(ProjectName).dll</OutputFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <NoEntryPoint>true</NoEntryPoint>
+      <ImportLibrary>$(SolutionDir)/lib$(Configuration)/$(ProjectName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="resource.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\..\..\..\images\clear_contents_icon.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backwardest_disable.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backwardest_hover.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backwardest_normal.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backwardest_pressed.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backward_disable.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backward_hover.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backward_normal.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\backward_pressed.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\forwardest_disable.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\forwardest_hover.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\forwardest_normal.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\forwardest_pressed.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\forward_hover.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\forward_normal.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\friends_record_hover.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\friends_record_normal.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\friends_record_pressed.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\group_record_hover.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\group_record_normal.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\group_record_pressed.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\seach_disable.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\seach_hover.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\seach_normal.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\seach_pressed.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\system_message_hover.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\system_message_normal.bmp" />
+    <None Include="C:\Users\chenwuming\Desktop\消息管理相关切片images\system_message_pressed.bmp" />
+    <None Include="res\add_any_disable.bmp" />
+    <None Include="res\add_any_hover.bmp" />
+    <None Include="res\add_any_normal.bmp" />
+    <None Include="res\add_any_pressed.bmp" />
+    <None Include="res\chat_hover.bmp" />
+    <None Include="res\chat_normal.bmp" />
+    <None Include="res\chat_pressed.bmp" />
+    <None Include="res\choose_icon.png" />
+    <None Include="res\clear_contents_icon.bmp" />
+    <None Include="res\icon_menu_disable.bmp" />
+    <None Include="res\icon_menu_hover.bmp" />
+    <None Include="res\icon_menu_normal.bmp" />
+    <None Include="res\icon_menu_pressed.bmp" />
+    <None Include="res\im\arrow_right.bmp" />
+    <None Include="res\im\backwardest_disable.bmp" />
+    <None Include="res\im\backwardest_hover.bmp" />
+    <None Include="res\im\backwardest_normal.bmp" />
+    <None Include="res\im\backwardest_pressed.bmp" />
+    <None Include="res\im\backward_disable.bmp" />
+    <None Include="res\im\backward_hover.bmp" />
+    <None Include="res\im\backward_normal.bmp" />
+    <None Include="res\im\backward_pressed.bmp" />
+    <None Include="res\im\bitmap7.bmp" />
+    <None Include="Res\im\btn_historical.bmp" />
+    <None Include="Res\im\btn_login_down.bmp" />
+    <None Include="Res\im\btn_login_hot.bmp" />
+    <None Include="Res\im\btn_login_normal.bmp" />
+    <None Include="Res\im\color_sel.bmp" />
+    <None Include="res\im\emotion_disable.bmp" />
+    <None Include="res\im\emotion_down.bmp" />
+    <None Include="res\im\emotion_hot.bmp" />
+    <None Include="res\im\emotion_normal.bmp" />
+    <None Include="res\im\forwardest_disable.bmp" />
+    <None Include="res\im\forwardest_hover.bmp" />
+    <None Include="res\im\forwardest_normal.bmp" />
+    <None Include="res\im\forwardest_pressed.bmp" />
+    <None Include="res\im\forward_disable.bmp" />
+    <None Include="res\im\forward_hover.bmp" />
+    <None Include="res\im\forward_normal.bmp" />
+    <None Include="res\im\forward_pressed.bmp" />
+    <None Include="res\im\friends_normal.bmp" />
+    <None Include="res\im\friends_pressed.bmp" />
+    <None Include="res\im\friends_record_hover.bmp" />
+    <None Include="res\im\friends_record_normal.bmp" />
+    <None Include="res\im\friends_record_pressed.bmp" />
+    <None Include="res\im\group_normal.bmp" />
+    <None Include="res\im\group_pressed.bmp" />
+    <None Include="res\im\group_record_hover.bmp" />
+    <None Include="res\im\group_record_normal.bmp" />
+    <None Include="res\im\group_record_pressed.bmp" />
+    <None Include="res\im\hint_cluster_dlg.bmp" />
+    <None Include="res\im\history_down.bmp" />
+    <None Include="res\im\history_normal.bmp" />
+    <None Include="Res\im\icon_100x100.bmp" />
+    <None Include="Res\im\icon_24x24.bmp" />
+    <None Include="Res\im\icon_30x30.bmp" />
+    <None Include="Res\im\icon_30x30_group.bmp" />
+    <None Include="Res\im\icon_35x35.bmp" />
+    <None Include="Res\im\icon_35x35_group.bmp" />
+    <None Include="Res\im\icon_47x47.bmp" />
+    <None Include="Res\im\icon_47x47_group.bmp" />
+    <None Include="Res\im\icon_52x52.bmp" />
+    <None Include="Res\im\icon_88x88.bmp" />
+    <None Include="Res\im\icon_88x88_group.bmp" />
+    <None Include="res\im\list_delete_hover.bmp" />
+    <None Include="res\im\list_delete_normal.bmp" />
+    <None Include="res\im\list_delete_pressed.bmp" />
+    <None Include="res\im\message_record_icon.bmp" />
+    <None Include="res\im\p2p_audio_down.bmp" />
+    <None Include="res\im\p2p_audio_hot.bmp" />
+    <None Include="res\im\p2p_audio_normal.bmp" />
+    <None Include="res\im\p2p_font_disable.bmp" />
+    <None Include="res\im\p2p_font_down.bmp" />
+    <None Include="res\im\p2p_font_hot.bmp" />
+    <None Include="res\im\p2p_font_normal.bmp" />
+    <None Include="res\im\p2p_sendfile_down.bmp" />
+    <None Include="res\im\p2p_sendfile_hot.bmp" />
+    <None Include="res\im\p2p_sendfile_normal.bmp" />
+    <None Include="res\im\p2p_vedio_down.bmp" />
+    <None Include="res\im\p2p_vedio_hot.bmp" />
+    <None Include="res\im\p2p_vedio_normal.bmp" />
+    <None Include="res\im\pictures_disable.bmp" />
+    <None Include="res\im\pictures_down.bmp" />
+    <None Include="res\im\pictures_hot.bmp" />
+    <None Include="res\im\pictures_normal.bmp" />
+    <None Include="res\im\recent_normal.bmp" />
+    <None Include="res\im\recent_pressed.bmp" />
+    <None Include="res\im\score_disable.bmp" />
+    <None Include="res\im\score_down.bmp" />
+    <None Include="res\im\score_hot.bmp" />
+    <None Include="res\im\score_normal.bmp" />
+    <None Include="res\im\screen_copy_disable.bmp" />
+    <None Include="res\im\screen_copy_down.bmp" />
+    <None Include="res\im\screen_copy_hot.bmp" />
+    <None Include="res\im\screen_copy_normal.bmp" />
+    <None Include="res\im\seach_disable.bmp" />
+    <None Include="res\im\seach_hover.bmp" />
+    <None Include="res\im\seach_normal.bmp" />
+    <None Include="res\im\seach_pressed.bmp" />
+    <None Include="res\im\sound_disable.bmp" />
+    <None Include="res\im\sound_down.bmp" />
+    <None Include="res\im\sound_hot.bmp" />
+    <None Include="res\im\sound_normal.bmp" />
+    <None Include="res\im\system_message_hover.bmp" />
+    <None Include="res\im\system_message_normal.bmp" />
+    <None Include="res\im\system_message_pressed.bmp" />
+    <None Include="res\im\vibration_disable.bmp" />
+    <None Include="res\im\vibration_down.bmp" />
+    <None Include="res\im\vibration_hot.bmp" />
+    <None Include="res\im\vibration_normal.bmp" />
+    <None Include="res\im\window_drop_down_hover.bmp" />
+    <None Include="res\im\window_drop_down_normal.bmp" />
+    <None Include="res\im\window_drop_down_pressed.bmp" />
+    <None Include="res\long_button_hover.bmp" />
+    <None Include="res\long_button_normal.bmp" />
+    <None Include="res\long_button_pressed.bmp" />
+    <None Include="res\main.bmp" />
+    <None Include="res\model_button_left_hover.png" />
+    <None Include="res\model_button_left_normal.png" />
+    <None Include="res\model_button_left_pressed.png" />
+    <None Include="res\model_button_left_right.png" />
+    <None Include="res\model_button_right_hover.png" />
+    <None Include="res\model_button_right_pressed.png" />
+    <None Include="res\othersico\001.bmp" />
+    <None Include="res\othersico\004.bmp" />
+    <None Include="res\im\139note.bmp" />
+    <None Include="res\139note.ico" />
+    <None Include="res\im\139note2.bmp" />
+    <None Include="Res\screenshots_choose_hover.png" />
+    <None Include="Res\screenshots_choose_normal.png" />
+    <None Include="Res\screenshots_choose_pressed.png" />
+    <None Include="Res\screenshots_hover.png" />
+    <None Include="Res\screenshots_normal.png" />
+    <None Include="Res\screenshots_pressed.png" />
+    <None Include="res\seach_icon.bmp" />
+    <None Include="res\senior_button_hover.bmp" />
+    <None Include="res\senior_button_normal.bmp" />
+    <None Include="res\senior_button_pressed.bmp" />
+    <None Include="res\setting_disable.bmp" />
+    <None Include="res\setting_group_hover.bmp" />
+    <None Include="res\setting_group_normal.bmp" />
+    <None Include="res\setting_group_pressed.bmp" />
+    <None Include="res\setting_hover.bmp" />
+    <None Include="res\setting_normal.bmp" />
+    <None Include="res\setting_pressed.bmp" />
+    <None Include="res\voice _setting_disable.bmp" />
+    <None Include="res\voice _setting_hover.bmp" />
+    <None Include="res\voice _setting_normal.bmp" />
+    <None Include="res\voice _setting_pressed.bmp" />
+    <None Include="res\zone\account.bmp" />
+    <None Include="res\im\action_btn.bmp" />
+    <None Include="res\im\actor_boy.bmp" />
+    <None Include="res\im\actor_girl.bmp" />
+    <None Include="res\im\album_all.bmp" />
+    <None Include="res\im\album_custom.bmp" />
+    <None Include="res\im\album_draft.bmp" />
+    <None Include="res\im\album_mobile.bmp" />
+    <None Include="res\im\arrow_down.bmp" />
+    <None Include="res\im\arrow_up.bmp" />
+    <None Include="res\im\article2.bmp" />
+    <None Include="res\im\article_icon.bmp" />
+    <None Include="res\im\ARTICLE_SEL.bmp" />
+    <None Include="res\im\arts_del.bmp" />
+    <None Include="res\im\arts_del_D.bmp" />
+    <None Include="res\im\arts_del_H.bmp" />
+    <None Include="res\im\arts_del_N.bmp" />
+    <None Include="res\im\arts_insert_woku.bmp" />
+    <None Include="res\im\arts_item.bmp" />
+    <None Include="res\im\big_head_btn.bmp" />
+    <None Include="res\zone\bighead.bmp" />
+    <None Include="res\bighead.ico" />
+    <None Include="res\im\bighead1.bmp" />
+    <None Include="res\im\bitmap1.bmp" />
+    <None Include="res\im\bitmap2.bmp" />
+    <None Include="res\im\bitmap4.bmp" />
+    <None Include="res\im\bitmap5.bmp" />
+    <None Include="res\im\bitmap6.bmp" />
+    <None Include="res\im\bitmap_folder_close.bmp" />
+    <None Include="res\im\bitmap_folder_expand.bmp" />
+    <None Include="res\im\bitmap_right2.bmp" />
+    <None Include="res\im\blog_logo.bmp" />
+    <None Include="res\im\blog_post.bmp" />
+    <None Include="res\im\blog_reset.bmp" />
+    <None Include="res\im\bmp00001.bmp" />
+    <None Include="res\im\bmp00002.bmp" />
+    <None Include="res\im\bmp00003.bmp" />
+    <None Include="res\im\bmp00004.bmp" />
+    <None Include="res\im\bmp00005.bmp" />
+    <None Include="res\im\bmp00006.bmp" />
+    <None Include="res\im\bmp00007.bmp" />
+    <None Include="res\im\bmp00008.bmp" />
+    <None Include="res\im\bmp00009.bmp" />
+    <None Include="res\im\bmp00010.bmp" />
+    <None Include="res\bmpDel.bmp" />
+    <None Include="res\bmpNew.bmp" />
+    <None Include="res\bmpOpen.bmp" />
+    <None Include="res\bmpPost.bmp" />
+    <None Include="res\bmpSave.bmp" />
+    <None Include="res\im\bold_down.bmp" />
+    <None Include="res\im\bold_normal.bmp" />
+    <None Include="res\im\bold_sel.bmp" />
+    <None Include="res\im\btn1_disable.bmp" />
+    <None Include="res\im\btn1_down.bmp" />
+    <None Include="res\im\btn1_hover.bmp" />
+    <None Include="res\im\btn1_normal.bmp" />
+    <None Include="res\addbook\btn_add.bmp" />
+    <None Include="res\im\btn_addfriend.bmp" />
+    <None Include="res\im\btn_audio.bmp" />
+    <None Include="res\im\btn_audio_close_D.bmp" />
+    <None Include="res\im\btn_audio_hover.bmp" />
+    <None Include="res\im\btn_audio_normal.bmp" />
+    <None Include="res\im\btn_big_head.bmp" />
+    <None Include="res\addbook\btn_cfg.bmp" />
+    <None Include="res\im\btn_close.bmp" />
+    <None Include="res\addbook\btn_del.bmp" />
+    <None Include="res\im\btn_export.bmp" />
+    <None Include="res\im\btn_first.bmp" />
+    <None Include="res\im\btn_first_disable.bmp" />
+    <None Include="res\im\btn_last.bmp" />
+    <None Include="res\im\btn_last_disable.bmp" />
+    <None Include="res\im\btn_level.bmp" />
+    <None Include="res\im\btn_main_icon.bmp" />
+    <None Include="res\im\btn_media.bmp" />
+    <None Include="res\im\btn_minilink.bmp" />
+    <None Include="res\im\btn_modi.bmp" />
+    <None Include="res\addbook\btn_modify.bmp" />
+    <None Include="res\im\btn_next.bmp" />
+    <None Include="res\im\btn_next_disable.bmp" />
+    <None Include="res\im\btn_prev.bmp" />
+    <None Include="res\im\btn_prev_disable.bmp" />
+    <None Include="res\im\btn_refresh.bmp" />
+    <None Include="res\im\btn_screen_copy.bmp" />
+    <None Include="res\im\btn_search.bmp" />
+    <None Include="res\im\btn_sendfile.bmp" />
+    <None Include="res\im\btn_status_down.bmp" />
+    <None Include="res\im\btn_status_hover.bmp" />
+    <None Include="res\im\btn_status_normal.bmp" />
+    <None Include="res\im\btn_tab_normal2.bmp" />
+    <None Include="res\im\btn_talk_linkres.bmp" />
+    <None Include="res\im\btn_uppic.bmp" />
+    <None Include="res\im\btn_vedio.bmp" />
+    <None Include="res\im\btn_vedio_close_D.bmp" />
+    <None Include="res\im\btn_vedio_close_n.bmp" />
+    <None Include="res\im\btn_vedio_hover.bmp" />
+    <None Include="res\im\btn_websms.bmp" />
+    <None Include="res\im\btn_writeblog.bmp" />
+    <None Include="res\im\btn_zone.bmp" />
+    <None Include="res\im\button_disable.bmp" />
+    <None Include="res\im\button_down.bmp" />
+    <None Include="res\im\button_hover.bmp" />
+    <None Include="res\im\button_normal.bmp" />
+    <None Include="res\zone\changehead.bmp" />
+    <None Include="res\im\check.bmp" />
+    <None Include="res\im\close_down.bmp" />
+    <None Include="res\im\close_folder_hover.bmp" />
+    <None Include="res\im\close_hot.bmp" />
+    <None Include="res\im\hintdlg\close_hover.bmp" />
+    <None Include="res\im\close_normal.bmp" />
+    <None Include="res\im\hintdlg\close_normal.bmp" />
+    <None Include="res\im\cluster_acceptMsg.bmp" />
+    <None Include="res\im\cluster_admin.bmp" />
+    <None Include="res\im\cluster_creator.bmp" />
+    <None Include="res\im\cluster_refuse.bmp" />
+    <None Include="res\im\color_down.bmp" />
+    <None Include="res\im\color_normal.bmp" />
+    <None Include="res\im\column_b.bmp" />
+    <None Include="res\im\column_btn_bottom.bmp" />
+    <None Include="res\im\column_btn_bottom_disable.bmp" />
+    <None Include="res\im\column_btn_bottom_hot.bmp" />
+    <None Include="res\im\column_btn_mid.bmp" />
+    <None Include="res\im\column_btn_mid_hot.bmp" />
+    <None Include="res\im\column_btn_top.bmp" />
+    <None Include="res\im\combo_button.bmp" />
+    <None Include="res\im\combo_right.bmp" />
+    <None Include="res\im\contact_.bmp" />
+    <None Include="res\im\contact_inviate.bmp" />
+    <None Include="res\im\contact_mini.bmp" />
+    <None Include="res\im\contact_outlook.bmp" />
+    <None Include="res\im\contact_sendmail.bmp" />
+    <None Include="res\im\create_family.bmp" />
+    <None Include="res\im\default_adv.bmp" />
+    <None Include="res\im\dlg_caption_bar.bmp" />
+    <None Include="res\im\dlg_caption_left.bmp" />
+    <None Include="res\im\dlg_caption_mid.bmp" />
+    <None Include="res\im\dlg_caption_right.bmp" />
+    <None Include="res\im\floor_wnd_ctl\down.bmp" />
+    <None Include="res\im\family.bmp" />
+    <None Include="res\im\family16.bmp" />
+    <None Include="res\im\family40.bmp" />
+    <None Include="res\im\family_group_bar_hover.bmp" />
+    <None Include="res\im\family_group_bar_normal.bmp" />
+    <None Include="res\im\family_group_bar_open.bmp" />
+    <None Include="res\im\family_group_bar_status.bmp" />
+    <None Include="res\im\family_group_tool.bmp" />
+    <None Include="res\im\family_h.bmp" />
+    <None Include="res\im\family_head.bmp" />
+    <None Include="res\im\filetrans_btn.bmp" />
+    <None Include="res\im\flag_login.bmp" />
+    <None Include="res\flagicon.ico" />
+    <None Include="res\im\folder_close.bmp" />
+    <None Include="res\im\folder_close_hover.bmp" />
+    <None Include="res\im\folder_close_normal.bmp" />
+    <None Include="res\im\folder_show.bmp" />
+    <None Include="res\im\folder_show_hover.bmp" />
+    <None Include="res\im\folder_show_normal.bmp" />
+    <None Include="res\im\folder_title.bmp" />
+    <None Include="res\im\friend_139_new_published.bmp" />
+    <None Include="res\im\friend_b.bmp" />
+    <None Include="res\im\friend_blog.bmp" />
+    <None Include="res\im\friend_entry_dock_tool.bmp" />
+    <None Include="res\friend_l.ico" />
+    <None Include="res\im\friend_log_btn.bmp" />
+    <None Include="res\friend_log_entry.ico" />
+    <None Include="res\im\friend_mobile.bmp" />
+    <None Include="res\im\friend_p.bmp" />
+    <None Include="res\friend_p.ico" />
+    <None Include="res\im\friend_pic_btn.bmp" />
+    <None Include="res\friend_pic_entry.ico" />
+    <None Include="res\im\friend_v.bmp" />
+    <None Include="res\im\friend_vedio.bmp" />
+    <None Include="res\im\grouplist_button.bmp" />
+    <None Include="res\im\head20.bmp" />
+    <None Include="res\im\head40.bmp" />
+    <None Include="res\im\header_back.bmp" />
+    <None Include="res\im\hintdlg\hint_dlg.bmp" />
+    <None Include="res\im\hint_fla.bmp" />
+    <None Include="res\im\hintdlg\hint_icon.bmp" />
+    <None Include="res\im\hint_icon.bmp" />
+    <None Include="res\im\hint_vedio.bmp" />
+    <None Include="res\im\horn.bmp" />
+    <None Include="res\im\floor_wnd_ctl\hot.bmp" />
+    <None Include="res\icodown.ico" />
+    <None Include="res\zone\icon1.bmp" />
+    <None Include="res\icon3.ico" />
+    <None Include="res\icon4.ico" />
+    <None Include="res\iconup.ico" />
+    <None Include="res\idr_main.ico" />
+    <None Include="res\chanel\IM.bmp" />
+    <None Include="res\im\im_cluster.bmp" />
+    <None Include="res\im\im_face.bmp" />
+    <None Include="res\im\im_no_image.bmp" />
+    <None Include="res\im\im_service.bmp" />
+    <None Include="res\im\im_tabhot.bmp" />
+    <None Include="res\im\image_cluster.bmp" />
+    <None Include="res\im\imtab_normal.bmp" />
+    <None Include="res\im\insert_internet_image.bmp" />
+    <None Include="res\im\insert_link.bmp" />
+    <None Include="res\im\insert_local_image.bmp" />
+    <None Include="res\im\italic_down.bmp" />
+    <None Include="res\im\italic_normal.bmp" />
+    <None Include="res\im\italic_sel.bmp" />
+    <None Include="res\im\left_btn_arrow.bmp" />
+    <None Include="res\im\level.bmp" />
+    <None Include="res\im\link_res.bmp" />
+    <None Include="res\im\login_pass_hint.bmp" />
+    <None Include="res\im\logining_pause.bmp" />
+    <None Include="res\im\logining_title.bmp" />
+    <None Include="res\im\logo_hmg.bmp" />
+    <None Include="res\im\mailinvite.bmp" />
+    <None Include="res\im\main_btn_gold.bmp" />
+    <None Include="res\im\main_btn_home.bmp" />
+    <None Include="res\im\main_btn_msg.bmp" />
+    <None Include="res\main_dlg_caption.bmp" />
+    <None Include="res\main_dlg_menu.bmp" />
+    <None Include="res\im\main_menu.bmp" />
+    <None Include="res\im\main_menu_icon.bmp" />
+    <None Include="res\im\main_title_back.bmp" />
+    <None Include="res\im\main_toolbtnbk_left.bmp" />
+    <None Include="res\im\main_toolbtnbk_mid.bmp" />
+    <None Include="res\im\main_toolbtnbk_right.bmp" />
+    <None Include="res\im\max_down.bmp" />
+    <None Include="res\im\max_hot.bmp" />
+    <None Include="res\im\max_normal.bmp" />
+    <None Include="res\im\menu_title.bmp" />
+    <None Include="res\im\microphone.bmp" />
+    <None Include="res\im\min_down.bmp" />
+    <None Include="res\im\min_hot.bmp" />
+    <None Include="res\im\min_normal.bmp" />
+    <None Include="res\im\mobile.bmp" />
+    <None Include="res\im\mobile_bind.bmp" />
+    <None Include="res\im\msg_line.bmp" />
+    <None Include="res\im\msg_list_tree.bmp" />
+    <None Include="res\my_artic.ico" />
+    <None Include="res\im\my_article_btn.bmp" />
+    <None Include="res\zone\my_home.bmp" />
+    <None Include="res\my_pic1.ico" />
+    <None Include="res\im\my_pic_btn.bmp" />
+    <None Include="res\zone\myarticle.bmp" />
+    <None Include="res\zone\mypicture.bmp" />
+    <None Include="res\nodrop.cur" />
+    <None Include="res\im\floor_wnd_ctl\normal.bmp" />
+    <None Include="res\im\note_btn.bmp" />
+    <None Include="res\im\note_btn1.bmp" />
+    <None Include="res\im\p2p_btn_card.bmp" />
+    <None Include="res\im\p2p_btn_invite.bmp" />
+    <None Include="res\im\p2p_btn_visit.bmp" />
+    <None Include="res\im\p2p_filetrans_tabbtn.bmp" />
+    <None Include="res\im\p2p_toolfont_back.bmp" />
+    <None Include="res\picture_broad_button_click.bmp" />
+    <None Include="res\picture_broad_button_down_click.bmp" />
+    <None Include="res\picture_broad_button_down_hot.bmp" />
+    <None Include="res\picture_broad_button_down_normal.bmp" />
+    <None Include="res\picture_broad_button_hot.bmp" />
+    <None Include="res\picture_broad_button_normal.bmp" />
+    <None Include="res\picture_broad_button_up_click.bmp" />
+    <None Include="res\picture_broad_button_up_hot.bmp" />
+    <None Include="res\picture_broad_button_up_normal.bmp" />
+    <None Include="res\picture_broad_caption.bmp" />
+    <None Include="res\picture_broad_menu.bmp" />
+    <None Include="res\picture_broad_menu_click.bmp" />
+    <None Include="res\picture_broad_menu_hot.bmp" />
+    <None Include="res\picture_broad_menu_normal.bmp" />
+    <None Include="res\picture_broad_min.bmp" />
+    <None Include="res\picture_broad_min_click.bmp" />
+    <None Include="res\picture_broad_min_hot.bmp" />
+    <None Include="res\picture_broad_min_normal.bmp" />
+    <None Include="res\picture_broad_scroll_dlg.bmp" />
+    <None Include="res\picture_broad_scroll_dlg_click.bmp" />
+    <None Include="res\picture_broad_scroll_dlg_hot.bmp" />
+    <None Include="res\picture_broad_scroll_dlg_normal.bmp" />
+    <None Include="res\picture_broad_tray.ico" />
+    <None Include="res\picture_broadcase_tray.ico" />
+    <None Include="res\picture_broadcast_tray.ico" />
+    <None Include="res\im\picture_error.bmp" />
+    <None Include="res\im\picture_frame.bmp" />
+    <None Include="res\pointer_.cur" />
+    <None Include="res\register.bmp" />
+    <None Include="res\im\restore_hot.bmp" />
+    <None Include="res\im\restore_normal.bmp" />
+    <None Include="res\im\right_btn_arrow.bmp" />
+    <None Include="res\im\right_menu_imagelist.bmp" />
+    <None Include="res\im\sa_caption.bmp" />
+    <None Include="res\im\screen_cut_tip.bmp" />
+    <None Include="res\im\scrollbar.BMP" />
+    <None Include="res\im\search.bmp" />
+    <None Include="res\sel_pic1.ico" />
+    <None Include="res\zone\setting.bmp" />
+    <None Include="res\zone\shop.bmp" />
+    <None Include="res\im\show_p2p.bmp" />
+    <None Include="res\im\show_p2pfolder_hover.bmp" />
+    <None Include="res\im\silder_thum_down.bmp" />
+    <None Include="res\im\slider_thum_hot.bmp" />
+    <None Include="res\im\slider_thum_normal.bmp" />
+    <None Include="res\im\status16.bmp" />
+    <None Include="res\im\status20.bmp" />
+    <None Include="res\im\status40.bmp" />
+    <None Include="res\im\status_foot20.bmp" />
+    <None Include="res\im\status_foot40.bmp" />
+    <None Include="res\im\tab_btn_hot.bmp" />
+    <None Include="res\im\tab_btn_normal.bmp" />
+    <None Include="res\im\tab_btn_normal0.bmp" />
+    <None Include="res\im\tab_btn_normal1.bmp" />
+    <None Include="res\im\tab_btn_sel.bmp" />
+    <None Include="res\im\tab_frie.bmp" />
+    <None Include="res\im\tab_friends.bmp" />
+    <None Include="res\im\tab_norm.bmp" />
+    <None Include="res\im\tab_woku.bmp" />
+    <None Include="res\im\tabpage_.bmp" />
+    <None Include="res\im\talk_emotion.bmp" />
+    <None Include="res\im\talk_emotion_1.bmp" />
+    <None Include="res\im\talk_emotion_2.bmp" />
+    <None Include="res\im\talk_emotion_3.bmp" />
+    <None Include="res\im\talk_emotion_4.bmp" />
+    <None Include="res\im\talk_font.bmp" />
+    <None Include="res\im\talk_magicface.bmp" />
+    <None Include="res\im\talk_sendpic.bmp" />
+    <None Include="res\im\talk_textcolor.bmp" />
+    <None Include="res\im\talk_title_back.bmp" />
+    <None Include="res\im\toolbar_blog24.bmp" />
+    <None Include="res\im\top_down.bmp" />
+    <None Include="res\im\top_hot.bmp" />
+    <None Include="res\im\top_normal.bmp" />
+    <None Include="res\im\uncheck.bmp" />
+    <None Include="res\im\underline_down.bmp" />
+    <None Include="res\im\underline_normal.bmp" />
+    <None Include="res\im\underline_sel.bmp" />
+    <None Include="res\im\upload_picture_btn.bmp" />
+    <None Include="res\zone\uploadpicture.bmp" />
+    <None Include="res\userguide\userguidedlg.bmp" />
+    <None Include="res\im\vedio.bmp" />
+    <None Include="res\im\vedio_back_small.bmp" />
+    <None Include="res\im\vedio_big.bmp" />
+    <None Include="res\im\vedio_off.bmp" />
+    <None Include="res\im\vedio_on.bmp" />
+    <None Include="res\im\vedio_snatch.bmp" />
+    <None Include="res\im\VIP.bmp" />
+    <None Include="res\im\voice_thum.bmp" />
+    <None Include="res\im\weather.bmp" />
+    <None Include="res\im\web_star.bmp" />
+    <None Include="res\im\webarticle.bmp" />
+    <None Include="res\im\webinf_focuson.bmp" />
+    <None Include="res\im\webinfo3.bmp" />
+    <None Include="res\im\webinfo_focusoff.bmp" />
+    <None Include="res\im\webpic.bmp" />
+    <None Include="res\im\win2k_icon.bmp" />
+    <None Include="res\im\winxp_cion.bmp" />
+    <None Include="res\zone\writearticle.bmp" />
+    <None Include="res\im\zone_media.bmp" />
+    <None Include="res\im\上下移动-亮.bmp" />
+    <None Include="res\im\上下移动-暗.bmp" />
+    <None Include="res\chanel\便利店.bmp" />
+    <None Include="res\chanel\图片.bmp" />
+    <None Include="res\chanel\客户端.bmp" />
+    <None Include="res\chanel\家族.bmp" />
+    <None Include="res\im\我的家族4副本.bmp" />
+    <None Include="res\chanel\播客图标.bmp" />
+    <None Include="res\chanel\标签.bmp" />
+    <None Include="res\im\猪头.bmp" />
+    <None Include="res\chanel\移动博客.bmp" />
+    <None Include="res\im\还原_down副本.bmp" />
+    <None Include="res\im\还原_hot副本.bmp" />
+    <None Include="res\im\还原_normal副本.bmp" />
+    <None Include="res\html1.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\html2.htm">
+      <DeploymentContent>true</DeploymentContent>
+    </None>
+    <None Include="res\im\loginWait.gif.dat" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Mini139_res.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

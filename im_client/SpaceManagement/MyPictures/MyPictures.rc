@@ -1,0 +1,195 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""MyPictures.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "InternalName", "MyPictures.dll"
+            VALUE "OriginalFilename", "MyPictures.dll"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_MYPICTURES          REGISTRY                "MyPictures.rgs"
+IDR_MYPICTURESX         REGISTRY                "MyPicturesX.rgs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_MYPICTURE DIALOGEX 0, 0, 408, 271
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+EXSTYLE WS_EX_STATICEDGE
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "传图片",IDC_BUTTON_PIC,3,17,50,14
+    PUSHBUTTON      "大头贴",IDC_BUTTON_BIGPHOTO,55,17,50,14
+    PUSHBUTTON      "同步",IDC_BUTTON_REFRESH,107,17,50,14
+    PUSHBUTTON      "删除图片",IDC_BUTTON_DELETEPIC,159,17,50,14
+    PUSHBUTTON      "备份",IDC_BUTTON_EXPORT,211,17,50,14
+    PUSHBUTTON      "设置",IDC_BUTTON_SETTING,263,17,50,14
+    PUSHBUTTON      "立即更改",IDC_BUTTON_SAVE,329,164,47,14
+    EDITTEXT        IDC_EDIT_DESCRIPTION,131,165,90,14,ES_AUTOHSCROLL
+    COMBOBOX        IDC_COMBO_VIEW,265,166,57,50,CBS_DROPDOWNLIST | 
+                    WS_VSCROLL | WS_TABSTOP
+    PUSHBUTTON      "",IDC_BUTTON_RIGHT,396,205,10,59
+    PUSHBUTTON      "",IDC_BUTTON_LEFT,103,204,10,59
+    CONTROL         "",IDC_SLIDER1,"Static",SS_BLACKFRAME,104,190,302,7
+    LTEXT           "图片描述",IDC_STATIC2,95,167,33,8
+    LTEXT           "设置隐私",IDC_STATIC3,231,168,32,8
+    PUSHBUTTON      "",IDC_BUTTON_LEFT2,95,38,10,119
+    PUSHBUTTON      "",IDC_BUTTON_RIGHT2,327,38,10,119
+    CONTROL         "",IDC_STATIC_ETCHED1,"Static",SS_ETCHEDHORZ | NOT 
+                    WS_VISIBLE,0,34,440,1
+    PUSHBUTTON      "",IDC_ALBUM_FOLDER,11,49,50,116
+    LTEXT           "",IDC_STATIC_TITLE,111,40,283,8
+    PUSHBUTTON      "删除相册",IDC_BUTTON_DELETEALBUM,358,36,50,14,NOT 
+                    WS_VISIBLE
+END
+
+IDD_DIALOG_PROGRESS3 DIALOGEX 0, 0, 132, 47
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,97,7,28,34
+    CONTROL         237,IDC_STATIC_PROGRESS,"Static",SS_BITMAP,7,29,80,13
+    LTEXT           "",IDC_STATIC1,7,7,85,17
+END
+
+IDD_DIALOG_PROGRESS2 DIALOGEX 0, 0, 96, 35
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         237,IDC_STATIC_PROGRESS,"Static",SS_BITMAP,7,18,80,10
+END
+
+IDD_DIALOG_PROGRESS DIALOGEX 0, 0, 132, 25
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,97,7,28,11
+    CONTROL         237,IDC_STATIC_PROGRESS,"Static",SS_BITMAP,7,8,80,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_TEMPLATE MENU 
+BEGIN
+    POPUP "templete"
+    BEGIN
+        MENUITEM "fordelete",                   ID_FORDELETE
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PROJNAME            "MyPictures"
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "MyPictures.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

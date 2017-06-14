@@ -1,0 +1,1928 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx</Extensions>
+    </Filter>
+    <Filter Include="PIM">
+      <UniqueIdentifier>{0980841d-a979-4710-bb46-cf8e80b67219}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImTest">
+      <UniqueIdentifier>{32cb0e79-87b7-46aa-97f4-cac99f560c6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Json">
+      <UniqueIdentifier>{8ab766b7-ffc9-4cfc-a731-ea61c399af4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Json\Json">
+      <UniqueIdentifier>{35bc3838-b7d0-44b2-ae8b-b252b7045dbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="tinyxml">
+      <UniqueIdentifier>{f860784b-0b2f-41fd-9bbb-f8719964f89b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UIControls">
+      <UniqueIdentifier>{0064dd3c-179e-4a92-a82e-72c359057946}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Excel">
+      <UniqueIdentifier>{05fced5a-d022-4568-9ac0-629f2f5242d6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Im\139MsgDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\139NoteDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\AboutBoxDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ActionTextReader.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\AddEmotionDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\AdvancedFileTransSession.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\AdvertisePanel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\BasicSocket.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\BkgFrame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ChangeAccount.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ClusterCreateDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ClusterIconCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ClusterInfoDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ClusterPage1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ClusterPage2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ClusterPage3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ClusterPanel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ClusterSendMsgDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ClusterSettingDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ContactInviteDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\CustomEmotionInfoDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="im\CustomListCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\CustomToolBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\DailogClusterCheck.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\DialogClusterAuth.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\DialogShowHelp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MMTalk\DirectSound.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\EmotionDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\EmotionManageDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FaceIconCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FaceWndCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FamilyFaceDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controls\Floor_Wnd_Ctrl\FloorLabeObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controls\Floor_Wnd_Ctrl\FloorObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controls\Floor_Wnd_Ctrl\FloorPageObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FloorPageWoku.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FloorWebPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controls\FolderList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FormProgress.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FSCluster.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FSDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FSPageResult.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FSPageSelect.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FSXtream.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="utils\Function.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\HintDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\HintDlg2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\HttpDownload.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\imaddresslistctrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ImageDataObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ImageFileDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ImagePreviewStatic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ImageToolBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IMClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\imfriendlistctrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\IMListCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\IMProtocol.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\impublic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\InputLanguage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controls\LabelEdit.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\LblEdit.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\LinkResDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\LocalData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\LoginDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\MagicFaceDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\MainToolBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\MessageBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MiniData\MessageData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\MessageHandleWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MMTalk\MMAudio.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MMTalk\MMAudioPlayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MMTalk\MMData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MMTalk\MMDataMaker.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MMTalk\MMTalker.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MMTalk\MMVideoCap.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MMTalk\MMVideoPlayer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ModfCommNameDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\MsgDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\MsgObj.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\NamedPipe.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\OutlookContactSelDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\P2PAudioPanel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\P2PFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\P2PFileTransProgressBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\P2PInviteDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\P2PUserList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\P2PUserPanel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\P2PVedioPanel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\RichEditCtrlEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SABasePage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SAConfig.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SAPage1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SAPage2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SAPage3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SAPage4.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SAPage5.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SAPage6.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SAPage7.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SAPageBasicSet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SAPageClusterMsgSet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SAPageHotkey.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SAPageVedio.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ScreenCopyDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SelectGroupDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SelfFaceDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SendMsgActionDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ServerListFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\shockwaveflash.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SimpleFileTransSession.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controls\SkinCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SMSDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\StickDlg\StickDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\StickDlg\StickMainDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\SysMsgDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\TabPage2.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\TabPage3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controls\Floor_Wnd_Ctrl\TLabelComboBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controls\Floor_Wnd_Ctrl\TLabelEdit.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controls\Floor_Wnd_Ctrl\TLabelList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\UserAuthDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\UserAuthInfoDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\UserCardDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\UserGuideDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\UserIPWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\UserLevelCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\VersionInfoDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\VersionUpdatgeDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MMTalk\VideoCodec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controls\VoiceSlider.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\WebDataProcess.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\WebPictureProcess.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\WebProcess.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\WinAddrBook.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\WizardPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MMTalk\XDataPool.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="controls\Floor_Wnd_Ctrl\XFloorWndCtl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\XLabel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="xpicture1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\xtpacket.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\DialogAddAddress.cpp">
+      <Filter>PIM</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FloorPageAddbook.cpp">
+      <Filter>PIM</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FormViewCtrl.cpp">
+      <Filter>PIM</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\personinfo.cpp">
+      <Filter>PIM</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SpaceManagement\PUBLIC\public_controls\buttonext.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SpaceManagement\public\public_controls\dhtmledit_blog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SpaceManagement\public\public_controls\explorer1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SpaceManagement\public\public_controls\IconCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SpaceManagement\public\public_controls\ResGdiObj.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SpaceManagement\Public\web\SpaceData.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\SpaceManagement\Public\web\WebInterfaceWrapper.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\AddBlackDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\PopupHistoryDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\HistoryFindToolBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\HistoryToolBar.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ClusterInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ClusterMember.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ClusterParamSetting.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ClusterProfile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ClusterSecurity.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DialogClusterManage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemSettingDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SysCommonAudio.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SysCommonBasic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SysCommonFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SysCommonMsg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SysCommonSoftwareUpdate.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SysCommonVoice.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SysSecurityFileTransfer.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SysSecurityMsglog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SysSecurityPwd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SysSecurityVerify.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemSettingCommonDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SystemSettingSecurityDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="TabWndSearch.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SysCommonAutoReply.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoReplyDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AutoAcceptDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SysCommonFastWord.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ImTest\TestSession.cpp">
+      <Filter>ImTest</Filter>
+    </ClCompile>
+    <ClCompile Include="ImTest\TestDialog.cpp">
+      <Filter>ImTest</Filter>
+    </ClCompile>
+    <ClCompile Include="ImTest\ImTest.cpp">
+      <Filter>ImTest</Filter>
+    </ClCompile>
+    <ClCompile Include="NearCommCustDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EvalueDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EditAutoReplyDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EditFastWordDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CExitWarning.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="IniFile.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="json\json_reader.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="json\json_value.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="json\json_writer.cpp">
+      <Filter>Json</Filter>
+    </ClCompile>
+    <ClCompile Include="MsgManageDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FriendMsgManageDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="OleImage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HangupSessionNumSettingDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EditNoticeDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ModHeadIconDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SelDefHeadIconDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RoundFaceCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SpecifySendDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinystr.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinyxml.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinyxmlerror.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\tinyxml\tinyxmlparser.cpp">
+      <Filter>tinyxml</Filter>
+    </ClCompile>
+    <ClCompile Include="tone.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SelfInfoPreviewDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="XmlAddress.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SelfInfoEditDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SelfInfoDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FriendInfoArchDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FriendInfoDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ClusterAgreeDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CharacterConvert.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\PictureCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\PictureCtrlClose.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\PictureCtrlPic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UriCodec.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UIControls\UIAddrComboBox.cpp">
+      <Filter>UIControls</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\DlgSCreenCtrlTool.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\RectTrackerEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\ScreenCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="InternalFriendInfoDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\Common.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\EditScreen.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\DlgSCreenCtrlColor.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SelCustomHeadIconDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MemCrypt.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CustSerTranDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Common\WndShadow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\DuiCounsel.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\DuiGuidePage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SkinPickerDialog.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SkinPickerPictureItem.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\DuiP2PSendMsgDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DuiMfClusterListPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DuiMfFriendList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DuiMfFriendListPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DuiMfRecentListPage.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DuiMfClusterList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MainFrame.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DuiSelfInfoDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DuiModHeadIconDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="DuiMfRecentList.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\P2PSendMsgDlgCloseHint.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\P2PSendMsgDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\DuiCounselNone.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GroupSendDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="GroupSendAddOtherDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CExitMsgWarning.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SearchListWnd.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Excel\CSVFile.cpp">
+      <Filter>Excel</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Excel\ExcelOpt.cpp">
+      <Filter>Excel</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FastWordExport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FastWordGroupRename.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FastWordImport.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FastWordNew.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Im\FastWordSelectMenu.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CefWebUI.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="WebClient.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="CSPlatDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="sqlite\CppSQLite3.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\Log.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Log\LogManager.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Im\139MsgDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\139NoteDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\AboutBoxDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ActionTextReader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\AddEmotionDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\AdvancedFileTransSession.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\AdvertisePanel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\BasicSocket.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\BkgFrame.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ChangeAccount.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ClusterCreateDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ClusterIconCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ClusterInfoDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ClusterPage1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ClusterPage2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ClusterPage3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ClusterPanel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ClusterSendMsgDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ClusterSettingDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ContactInviteDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\CustomEmotionInfoDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="im\CustomListCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\CustomToolBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\DailogClusterCheck.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\DataPacketFilter.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\DataPackId.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\DialogClusterAuth.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\DialogShowHelp.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MMTalk\DirectSound.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\EmotionDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\EmotionManageDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FaceIconCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FaceWndCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FamilyFaceDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\FloorLabeObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\FloorObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\FloorPageObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FloorPageWoku.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FloorWebPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controls\FolderList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FormProgress.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FSCluster.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FSDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FSPageResult.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FSPageSelect.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FSXtream.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="utils\Function.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\gdi.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controls\GraphCheckComboBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\HintDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\HintDlg2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\HttpDownload.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\imaddresslistctrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ImageDataObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ImageFileDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ImagePreviewStatic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ImageToolBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IMClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\imfriendlistctrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\IMListCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\IMProtocol.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\impublic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\InputLanguage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controls\LabelEdit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\LblEdit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\LinkResDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\LocalData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\LoginDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\MagicFaceDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\MainToolBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\MessageBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MiniData\MessageData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\MessageHandleWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MMTalk\MMAudio.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MMTalk\MMAudioPlayer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MMTalk\MMCommon.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MMTalk\MMData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MMTalk\MMDataMaker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MMTalk\MMTalk.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MMTalk\MMTalker.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MMTalk\MMVideoCap.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MMTalk\MMVideoPlayer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ModfCommNameDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\MsgDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\MsgObj.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\NamedPipe.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\OutlookContactSelDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\P2PAudioPanel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\P2PFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\P2PFileTransProgressBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\P2PInviteDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\P2PUserList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\P2PUserPanel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\P2PVedioPanel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Mini139_res\resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\RichEditCtrlEx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SABasePage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SAConfig.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SAPage1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SAPage2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SAPage3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SAPage4.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SAPage5.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SAPage6.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SAPage7.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SAPageBasicSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SAPageClusterMsgSet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SAPageHotkey.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SAPageVedio.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ScreenCopyDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SelectGroupDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SelfFaceDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SendMsgActionDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ServerListFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\shockwaveflash.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SimpleFileTransSession.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controls\SkinCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SMSDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\StickDlg\StickDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\StickDlg\StickMainDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\SysMsgDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\TabPage2.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\TabPage3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\TLabelComboBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\TLabelEdit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\TLabelList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\UserAuthDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\UserAuthInfoDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\UserCardDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\UserGuideDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\UserIPWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\UserLevelCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\VersionInfoDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\VersionUpdatgeDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MMTalk\VideoCodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controls\VoiceSlider.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\WebDataProcess.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\WebPictureProcess.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\WebProcess.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\WinAddrBook.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\WizardPage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MMTalk\XDataPool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="controls\Floor_Wnd_Ctrl\XFloorWndCtl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\XLabel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="xpicture1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\xtpacket.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MMTalk\xvid.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\DialogAddAddress.h">
+      <Filter>PIM</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FloorPageAddbook.h">
+      <Filter>PIM</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FormViewCtrl.h">
+      <Filter>PIM</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\personinfo.h">
+      <Filter>PIM</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SpaceManagement\public\public_controls\buttonext.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\ClientProtocol.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SpaceManagement\public\public_controls\dhtmledit_blog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SpaceManagement\public\public_controls\explorer1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SpaceManagement\public\public_controls\IconCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\MiniNetTrans.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\protocol.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\PublicType.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SpaceManagement\public\public_controls\ResGdiObj.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SpaceManagement\Public\web\SpaceData.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\include\SrvFrameProtocol.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\SpaceManagement\Public\web\WebInterfaceWrapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\AddBlackDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\PopupHistoryDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\HistoryFindToolBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\HistoryToolBar.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ClusterInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ClusterMember.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ClusterParamSetting.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ClusterProfile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ClusterSecurity.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DialogClusterManage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemSettingDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SysCommonAudio.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemSettingCommonDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SysSecurityVerify.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SysCommonBasic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SysCommonFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SysCommonMsg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SysCommonSoftwareUpdate.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SysCommonVoice.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SysSecurityFileTransfer.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SysSecurityMsglog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SysSecurityPwd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SystemSettingSecurityDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TabWndSearch.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\audio_video\talk\examples\peerconnection\client\conductor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\audio_video\talk\examples\peerconnection\client\defaults.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\audio_video\talk\examples\peerconnection\client\peer_connection_client.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SysCommonAutoReply.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoReplyDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="AutoAcceptDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SysCommonFastWord.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ImTest\TestDialog.h">
+      <Filter>ImTest</Filter>
+    </ClInclude>
+    <ClInclude Include="ImTest\TestSession.h">
+      <Filter>ImTest</Filter>
+    </ClInclude>
+    <ClInclude Include="ImTest\ImTest.h">
+      <Filter>ImTest</Filter>
+    </ClInclude>
+    <ClInclude Include="NearCommCustDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EvalueDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GipsVoiceEngine.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EditAutoReplyDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EditFastWordDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CExitWarning.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IniFile.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json_batchallocator.h">
+      <Filter>Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json\autolink.h">
+      <Filter>Json\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json\config.h">
+      <Filter>Json\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json\features.h">
+      <Filter>Json\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json\forwards.h">
+      <Filter>Json\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json\json.h">
+      <Filter>Json\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json\reader.h">
+      <Filter>Json\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json\value.h">
+      <Filter>Json\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="json\json\writer.h">
+      <Filter>Json\Json</Filter>
+    </ClInclude>
+    <ClInclude Include="MsgManageDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FriendMsgManageDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="OleImage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HangupSessionNumSettingDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="EditNoticeDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ModHeadIconDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SelDefHeadIconDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="RoundFaceCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SpecifySendDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tinyxml\tinystr.h">
+      <Filter>tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\tinyxml\tinyxml.h">
+      <Filter>tinyxml</Filter>
+    </ClInclude>
+    <ClInclude Include="tone.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SelfInfoPreviewDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="XmlAddress.h">
+      <Filter>源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SelfInfoEditDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SelfInfoDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FriendInfoArchDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FriendInfoDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ClusterAgreeDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CharacterConvert.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\PictureCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\PictureCtrlClose.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\PictureCtrlPic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UriCodec.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UIControls\UIAddrComboBox.h">
+      <Filter>UIControls</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\DlgSCreenCtrlTool.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\RectTrackerEx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\ScreenCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="InternalFriendInfoDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\Common.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\EditScreen.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\DlgSCreenCtrlColor.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SelCustomHeadIconDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MemCrypt.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CustSerTranDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Common\WndShadow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\DuiCounsel.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\DuiGuidePage.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="_IOleImageEvents_CP.h">
+      <Filter>UIControls</Filter>
+    </ClInclude>
+    <ClInclude Include="SkinPickerDialog.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SkinPickerPictureItem.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\DuiP2PSendMsgDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DuiMfFriendList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DuiMfClusterList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DuiSelfInfoDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DuiModHeadIconDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MainFrame.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="DuiMfRecentList.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\P2PSendMsgDlgCloseHint.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\P2PSendMsgDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\DuiCounselNone.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GroupSendDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="GroupSendAddOtherDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CExitMsgWarning.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchListWnd.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Excel\CSVFile.h">
+      <Filter>Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Excel\ExcelApplication.h">
+      <Filter>Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Excel\ExcelOpt.h">
+      <Filter>Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Excel\ExcelRange.h">
+      <Filter>Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Excel\ExcelWorkbook.h">
+      <Filter>Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Excel\ExcelWorkbooks.h">
+      <Filter>Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Excel\ExcelWorksheet.h">
+      <Filter>Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\Excel\ExcelWorksheets.h">
+      <Filter>Excel</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FastWordExport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FastWordGroupRename.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FastWordImport.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FastWordNew.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Im\FastWordSelectMenu.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CefWebUI.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="WebClient.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="CSPlatDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="sqlite\CppSQLite3.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\Log.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Log\LogManager.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Im\ServerListFile.inl">
+      <Filter>头文件</Filter>
+    </None>
+    <None Include="Res\bitmap1.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\IMClient.rc2">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="res\Main.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\toolbar_.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\未命名.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\icon_busy.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\icon_disable.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\icon_leave.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\icon_normal.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\icon_stealth.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\icon_group.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\icon_100x100.png" />
+    <None Include="Res\icon_100x100_bg.png" />
+    <None Include="Res\icon_100x100_disable.png" />
+    <None Include="Res\icon_group_100x100.png" />
+    <None Include="Res\icon_offline.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\logo_128.png" />
+    <None Include="Res\status_busy.png" />
+    <None Include="Res\status_leave.png" />
+    <None Include="Res\status_online-.png" />
+    <None Include="Res\status_stealth.png" />
+    <None Include="Res\status_offline-.png" />
+    <None Include="Res\status_online.png" />
+    <None Include="Res\status_offline.png" />
+    <None Include="json\json_internalarray.inl">
+      <Filter>Json</Filter>
+    </None>
+    <None Include="json\json_internalmap.inl">
+      <Filter>Json</Filter>
+    </None>
+    <None Include="json\json_valueiterator.inl">
+      <Filter>Json</Filter>
+    </None>
+    <None Include="json\sconscript">
+      <Filter>Json</Filter>
+    </None>
+    <None Include="Res\icon_sound_disable.png" />
+    <None Include="Res\icon_sound_hover.png" />
+    <None Include="Res\icon_sound_normal.png" />
+    <None Include="Res\icon_sound_pressed.png" />
+    <None Include="Res\voice-_setting_disable.png" />
+    <None Include="Res\voice-_setting_hover.png" />
+    <None Include="Res\voice-_setting_normal.png" />
+    <None Include="Res\voice-_setting_pressed.png" />
+    <None Include="Res\icon_sound_off_img.png" />
+    <None Include="Res\icon_sound_on_img.png" />
+    <None Include="Res\icon_video_img.png" />
+    <None Include="Res\button_accept_hover.png" />
+    <None Include="Res\button_accept_normal.png" />
+    <None Include="Res\button_accept_pressed.png" />
+    <None Include="Res\button_refused_hover.png" />
+    <None Include="Res\button_refused_normal.png" />
+    <None Include="Res\button_refused_pressed.png" />
+    <None Include="Mini139_src.rgs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="OleImage.htm" />
+    <None Include="OleImage.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="OleImage.rgs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="..\..\HmgSkin\HmgSkin\res\切片(滚动条).bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="Res\fastword_disable.png" />
+    <None Include="Res\fastword_hover.png" />
+    <None Include="Res\fastword_normal.png" />
+    <None Include="Res\fastword_pressed.png" />
+    <None Include="Res\hangup_disable.png" />
+    <None Include="Res\hangup_hover.png" />
+    <None Include="Res\hangup_normal.png" />
+    <None Include="Res\hangup_pressed.png" />
+    <None Include="Res\seach_disable.png" />
+    <None Include="Res\seach_hover.png" />
+    <None Include="Res\seach_normal.png" />
+    <None Include="Res\seach_pressed.png" />
+    <None Include="Res\add_group_disable.png" />
+    <None Include="Res\add_group_hover.png" />
+    <None Include="Res\add_group_normal.png" />
+    <None Include="Res\add_group_pressed.png" />
+    <None Include="Res\52x52_border.png" />
+    <None Include="Res\52x52_border_sel.png" />
+    <None Include="Res\88x88_border.png" />
+    <None Include="Res\files_disable.png" />
+    <None Include="Res\files_hover.png" />
+    <None Include="Res\files_normal.png" />
+    <None Include="Res\files_pressed.png" />
+    <None Include="Res\button_hover.png" />
+    <None Include="Res\button_normal.png" />
+    <None Include="Res\button_pressed.png" />
+    <None Include="Res\quick_hover.png" />
+    <None Include="Res\quick_normal.png" />
+    <None Include="Res\quick_pressed.png" />
+    <None Include="Res\screenshots_choose_hover.png" />
+    <None Include="Res\screenshots_choose_normal.png" />
+    <None Include="Res\screenshots_choose_pressed.png" />
+    <None Include="Res\screenshots_hover.png" />
+    <None Include="Res\screenshots_normal.png" />
+    <None Include="Res\screenshots_pressed.png" />
+    <None Include="Res\msg_num_S.png" />
+    <None Include="Res\status_busy_small.png" />
+    <None Include="Res\status_leave_small.png" />
+    <None Include="Res\status_stealth_small.png" />
+    <None Include="Res\close_hover.png" />
+    <None Include="Res\close_leave.png" />
+    <None Include="Res\ImClient.zip" />
+    <None Include="Res\chat_normal.png" />
+    <None Include="Res\system_message_pressed.png" />
+    <None Include="Res\long_button_hover.png" />
+    <None Include="Res\long_button_normal.png" />
+    <None Include="Res\long_button_pressed.png" />
+    <None Include="Res\icon_arrow_hover.png" />
+    <None Include="Res\icon_arrow_normal.png" />
+    <None Include="Res\icon_arrow_pressed.png" />
+    <None Include="Res\icon_done_hover.png" />
+    <None Include="Res\icon_done_normal.png" />
+    <None Include="Res\icon_done_pressed.png" />
+    <None Include="Res\icon_round_hover.png" />
+    <None Include="Res\icon_round_normal.png" />
+    <None Include="Res\icon_round_pressed.png" />
+    <None Include="Res\icon_save_hover.png" />
+    <None Include="Res\icon_save_normal.png" />
+    <None Include="Res\icon_save_pressed.png" />
+    <None Include="Res\icon_square_hover.png" />
+    <None Include="Res\icon_square_normal.png" />
+    <None Include="Res\icon_square_pressed.png" />
+    <None Include="Res\senior_button_hover.png" />
+    <None Include="Res\senior_button_normal.png" />
+    <None Include="Res\senior_button_pressed.png" />
+    <None Include="Res\senior_long_button_hover.png" />
+    <None Include="Res\senior_long_button_normal.png" />
+    <None Include="Res\senior_long_button_pressed.png" />
+    <None Include="Res\icon_close_hover.png" />
+    <None Include="Res\pic_window_close_hover.png" />
+    <None Include="Res\pic_window_close_normal.png" />
+    <None Include="Res\icon_close_normal.png" />
+    <None Include="Res\icon_close_pressed.png" />
+    <None Include="Res\icon_fonts_hover.png" />
+    <None Include="Res\icon_fonts_normal.png" />
+    <None Include="Res\icon_fonts_pressed.png" />
+    <None Include="Res\icon_shape_1_hover.png" />
+    <None Include="Res\icon_shape_1_normal.png" />
+    <None Include="Res\icon_shape_1_pressed.png" />
+    <None Include="Res\icon_shape_2_hover.png" />
+    <None Include="Res\icon_shape_2_normal.png" />
+    <None Include="Res\icon_shape_2_pressed.png" />
+    <None Include="Res\icon_shape_3_hover.png" />
+    <None Include="Res\icon_shape_3_normal.png" />
+    <None Include="Res\icon_shape_3_pressed.png" />
+    <None Include="Res\icon_undo_hover.png" />
+    <None Include="Res\icon_undo_normal.png" />
+    <None Include="Res\icon_undo_pressed.png" />
+    <None Include="Res\icon_connection _hover.png" />
+    <None Include="Res\icon_connection _normal.png" />
+    <None Include="Res\icon_connection _pressed.png" />
+    <None Include="Res\icon_backend_hover.png" />
+    <None Include="Res\icon_backend_normal-.png" />
+    <None Include="Res\icon_backend_pressed.png" />
+    <None Include="Res\p2p_cchat_normal.png" />
+    <None Include="Res\p2p_cchat_pressed.png" />
+    <None Include="Res\p2p_chat_hover.png" />
+    <None Include="Res\p2p_video_hover.png" />
+    <None Include="Res\p2p_video_normal.png" />
+    <None Include="Res\p2p_video_pressed.png" />
+    <None Include="Res\sendfiles_hover.png" />
+    <None Include="Res\sendfiles_normal.png" />
+    <None Include="Res\sendfiles_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="IMClient.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Res\icon_historical_disable.png" />
+    <Image Include="Res\icon_historical_hover.png" />
+    <Image Include="Res\icon_historical_normal.png" />
+    <Image Include="Res\icon_historical_pressed.png" />
+    <Image Include="Res\backward_disable.png" />
+    <Image Include="Res\backward_hover.png" />
+    <Image Include="Res\backward_normal.png" />
+    <Image Include="Res\backward_pressed.png" />
+    <Image Include="Res\backwardest_disable.png" />
+    <Image Include="Res\backwardest_hover.png" />
+    <Image Include="Res\backwardest_normal.png" />
+    <Image Include="Res\backwardest_pressed.png" />
+    <Image Include="Res\forward_disable.png" />
+    <Image Include="Res\forward_hover.png" />
+    <Image Include="Res\forward_normal.png" />
+    <Image Include="Res\forward_pressed.png" />
+    <Image Include="Res\forwardest_disable.png" />
+    <Image Include="Res\forwardest_hover.png" />
+    <Image Include="Res\forwardest_normal.png" />
+    <Image Include="Res\forwardest_pressed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="Mini139_src.idl">
+      <Filter>源文件</Filter>
+    </Midl>
+  </ItemGroup>
+</Project>

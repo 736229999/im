@@ -1,0 +1,127 @@
+.web-chat{
+	right:10px;
+	bottom:10px;
+	position: fixed;
+	width: 170px;
+	font-size: 12px;
+}
+
+.web-chat .chat-hd{
+	height: 30px;
+	line-height: 30px;
+	font-weight: bold;
+	font-size:12px;
+	background: #4D95C2;
+	color:#fff;
+	padding:0 0 0 5px;
+	position: relative;
+	cursor:pointer;
+	margin: 0;
+}
+
+.web-chat .chat-hd i{
+	height:0;
+    width:0;
+	overflow: hidden;
+	font-size: 0;
+    line-height: 0;
+    border-color:#fff transparent transparent transparent;
+    border-style:solid dashed dashed dashed;
+	border-width:5px;
+	position: absolute;
+	top:13px;
+	right:10px;
+}
+
+.web-chat .chat-list{
+	margin: 0;
+	padding: 0;
+	border:1px solid #ccc;
+	border-top-width: 0px;
+	max-height:155px;
+	overflow-y:scroll;
+	overflow-x:hidden;
+}
+
+.web-chat .chat-list li{
+	list-style: none;
+	overflow:hidden;
+	width: 170px;
+	border-top:1px solid #ccc;
+}
+
+.web-chat .chat-list li a{
+	display: block;
+	text-decoration: none;
+	color:#666;
+}
+
+.web-chat .chat-list li a:hover{
+	background: #f7f7f7;
+	color:#4D95C2;
+}
+
+.web-chat .chat-list li img{
+	height: 100%;
+	width: 100%;
+	display:block;
+	border: 0;
+}
+
+.web-chat .chat-list li i{
+	height: 26px;
+	width: 26px;
+	margin:2px 0 2px 5px;
+	background:#CBE4F4;
+	border-radius:50%; 
+	-moz-border-radius:50%;
+  	-webkit-border-radius: 50%;
+	float:left;
+	overflow:hidden;
+}
+
+.web-chat .chat-list li span{
+	display: inline-block;
+	vertical-align:middle;
+	margin-left:8px;
+	float:left;
+	width:120px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+	line-height: 30px;
+}
+
+.web-chat .chat-ignore{
+	text-align: right;
+	border:1px solid #ccc;
+	border-top-width: 0px;
+}
+
+.web-chat .chat-ignore a{
+	line-height:30px;
+	color:#666;
+	text-decoration: none;
+	margin-right:10px;
+}
+
+.web-chat .chat-icon a{
+	display: inline-block;
+	line-height:24px;
+	background: url('../images/niutou.png') #FFE9B5 0 -3px no-repeat;
+	border: 1px solid #E9D7AB;
+	text-decoration: none;
+	color:#C65B2B;
+	border-radius:2px; 
+	-moz-border-radius:2px;
+  	-webkit-border-radius: 2px;
+}
+
+.web-chat .chat-icon a:hover{
+	background-color: #FFDA80;
+}
+
+.web-chat .chat-icon a span{
+	padding:0 5px 0 30px;
+	
+}

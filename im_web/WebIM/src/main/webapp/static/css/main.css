@@ -1,0 +1,1477 @@
+@charset "utf-8";
+/* CSS Document */
+body {
+    font-family: "Arial", "微软雅黑";
+    margin: 0;
+    font-size: 12px;
+}
+
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, blockquote, p {
+    padding: 0;
+    margin: 0;
+}
+
+table, td, tr, th {
+    font-size: 12px;
+}
+
+li {
+    list-style-type: none;
+}
+
+img {
+    vertical-align: top;
+    border: 0;
+    max-width: 100%;
+}
+
+ol, ul {
+    list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+.clear {
+    clear: both;
+}
+
+.hide {
+    display: none;
+}
+
+.pull-left {
+    float: left;
+}
+
+.pull-right {
+    float: right !important;
+}
+
+/*链接样式*/
+a.lan:link {
+    color: #1086b8;
+    text-decoration: none;
+}
+
+a.lan:visited {
+    color: #1086b8;
+    text-decoration: none;
+}
+
+a.lan:hover {
+    color: #1086b8;
+    text-decoration: underline;
+}
+
+a.black:link {
+    color: #2e2e2e;
+    text-decoration: none;
+}
+
+a.black:visited {
+    color: #2e2e2e;
+    text-decoration: none;
+}
+
+a.black:hover {
+    color: #2e2e2e;
+    text-decoration: none
+}
+
+a.lookk {
+    color: #468bb6;
+    text-decoration: none;
+}
+
+/*a.lookk:link {color:#2e2e2e; text-decoration:none;}*/
+/*a.lookk:visited{color:#2e2e2e;text-decoration:none;}*/
+a.lookk:hover {
+    color: #4A7C9B;
+    text-decoration: underline;
+}
+
+a.white:link {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.white:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+a.white:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+html, body {
+    width: 100%;
+}
+
+/*对话框公用样式表*/
+.all {
+    width: 100%;
+    height: 100%;
+}
+
+/*头部样式表*/
+#nav {
+    height: 44px;
+    background: #f8f8f8;
+    margin-left: 195px;
+}
+
+#nav span.merchant-info {
+    display: inline-block;
+    line-height: 30px;
+    height: 26px;
+    margin-left: 10px;
+    color: #333;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: left;
+}
+
+#nav span.merchant-info.expand{
+    line-height: 45px;
+    height: 45px;
+}
+
+#nav > #J_current_service {
+    margin-left: 0px
+}
+
+#nav .ico {
+    width: 37px;
+    float: right;
+    margin-right: 16px;
+    height: 40px;
+    display: inline;
+}
+
+#nav .ico .big {
+    width: 14px;
+    height: 12px;
+    float: left;
+    margin: 15px 13px 0 0;
+    background: url(../images/icon_window.gif) no-repeat;
+}
+
+#nav .ico .close {
+    width: 10px;
+    height: 10px;
+    float: right;
+    margin: 15px 0 0 0;
+    background: url(../images/icon_window.gif) no-repeat -27px -1px;
+}
+
+#nav > .merchant-usersign {
+    font-size: 12px;
+    line-height: 20px;
+    color: #666666;
+    float: left;
+    padding-left: 10px;
+}
+/*鼠标移上去之后对话框右上角按钮样式*/
+/*#nav .ico .big_mouserover{ width:28px; height:26px; float:left; margin:7px 7px 7px 0; background:url(../images/big_mouserover.gif) no-repeat; cursor:pointer;}
+#nav .ico .close:hover{background:url(../images/close_mouserover.gif) no-repeat;}
+*/
+
+/*鼠标移上去之后对话框右上角按钮样式*/
+#nav .ico .big_mouserover {
+    width: 28px;
+    height: 26px;
+    float: left;
+    margin: 7px 7px 7px 0;
+    background: url(../images/big_mouserover.gif) no-repeat;
+    cursor: pointer;
+}
+
+#nav .ico .close:hover {
+    background: url(../images/close_mouserover.gif) no-repeat;
+}
+
+/*鼠标点击对话框右上角按钮样式*/
+#nav .ico .big_up {
+    width: 28px;
+    height: 26px;
+    float: left;
+    margin: 7px 7px 7px 0;
+    background: url(../images/big_up.gif) no-repeat;
+}
+
+#nav .ico .close_up {
+    width: 28px;
+    height: 26px;
+    float: left;
+    margin: 7px 7px 7px 0;
+    background: url(../images/close_up.gif) no-repeat;
+}
+
+/*右侧Iframe*/
+#D_right_ifm {
+    float: right;
+    width: 190px;
+    height: 100%;
+    overflow: hidden;
+}
+
+/*左侧内容样式表*/
+/*左侧内容样式表*/
+.content {
+    z-index: 0;
+    border: 1px solid #d8dae4;
+    height: 460px;
+}
+
+#D_left {
+    margin-right: 190px;
+    height: 100%;
+    position: relative;
+    border-right: 1px solid #D8DAE4;
+    background: #f8f8f8;
+}
+
+#D_left .wrapper {
+    position: relative
+}
+
+#D_left .top {
+    height: 330px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    width: 100%;
+    position: relative;
+    z-index: 2
+}
+
+#D_left .top .look {
+    margin-top: 10px;
+    width: 115px;
+    margin: 0 auto;
+    height: 30px;
+    line-height: 30px;
+    color: #2E2E2E;
+}
+
+#D_left .top .look img {
+    width: 15px;
+    height: 15px;
+    margin: 7px 10px 7px 0;
+    float: left;
+}
+
+#D_left .top .speak {
+    margin-left: 10px;
+    padding: 0px 0px 15px 0px;
+}
+
+#D_left .top .speak .msg-title {
+    line-height: 40px;
+    height: 40px;
+}
+
+#D_left .top .speak .seller .sender-name {
+    color: #666;
+    font-family: "Arial";
+}
+
+#D_left .top .speak .msg-time {
+    color: #666;
+    margin-left: 5px;
+}
+
+#D_left .top .speak .buyer .sender-name {
+    color: #666;
+    font-family: "Arial";
+}
+
+#D_left .top .speak .msg-box {
+    line-height: 1.5;
+    margin: 3px 0px 10px 10px;
+    max-width: 85%;
+}
+
+#D_left .top .speak .msg-box span {
+    vertical-align: bottom
+}
+
+#D_left .top .speak .msg-box span img {
+    vertical-align: bottom
+}
+
+#uploadQueue {
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+    height: 60px;
+}
+
+#D_left .typing {
+    height: 150px;
+    position: relative;
+}
+
+#D_left .typing .title {
+    height: 25px;
+    padding-left: 5px;
+    border-top: 1px solid #D8DAE4;
+}
+
+/*鼠标默认字体样式*/
+#D_left .typing .title a {
+    width: 22px;
+    height: 22px;
+    float: left;
+    margin-right: 7px;
+    margin-top: 3px;
+    position: relative;
+}
+
+#D_left .typing .title > span {
+    width: 22px;
+    height: 22px;
+    float: left;
+    margin-right: 7px;
+    margin-top: 3px;
+    position: relative;
+}
+
+#D_left .typing .title .ti {
+    background: url(../images/ti.gif) no-repeat;
+}
+
+#D_left .typing .title .face {
+    background: url(../images/face.gif) no-repeat;
+}
+
+#D_left .typing .title .voice {
+    background: url(../images/voice.gif) no-repeat;
+}
+
+#D_left .typing .title .send-photo {
+    background: url(../images/pictures_normal.png) no-repeat;
+}
+
+/*鼠标移上去改变字体样式*/
+#D_left .typing .title .ti:hover {
+    background: url(../images/ti_mouserover.gif) no-repeat;
+}
+
+#D_left .typing .title .face:hover {
+    background: url(../images/face_mouserover.gif) no-repeat;
+}
+
+#D_left .typing .title .voice:hover {
+    background: url(../images/voice_mouserover_no.gif) no-repeat;
+}
+
+#D_left .typing .title .send-photo:hover {
+    background: url(../images/pictures_hover.png) no-repeat;
+}
+
+/*鼠标点击改变字体样式*/
+#D_left .typing .title .ti_up, #D_left .typing .title .ti_up:hover {
+    background: url(../images/ti_up.gif) no-repeat;
+}
+
+#D_left .typing .title .face_up, #D_left .typing .title .face_up:hover {
+    background: url(../images/face_up.gif) no-repeat;
+}
+
+#D_left .typing .title .voice_up, #D_left .typing .title .voice_up:hover {
+    background: url(../images/voice_up_no.gif) repeat;
+}
+
+/*发送按钮默认样式*/
+#D_left .typing .send {
+    width: 90px;
+    height: 24px;
+    margin: 0 10px 10px 0;
+    float: right;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+#D_left .typing .send .btn {
+    float: left;
+    width: 62px;
+    height: 24px;
+    background: url(../images/send.jpg) no-repeat;
+    text-align: center;
+    color: #fff;
+    line-height: 24px;
+    text-decoration: none;
+}
+
+#D_left .typing .send .btn:hover {
+    background: url(../images/send_mouserover.gif) no-repeat;
+}
+
+#D_left .typing .send .btn_up {
+    background: url(../images/send_up.gif) no-repeat;
+}
+
+#D_left .typing .send .up {
+    float: left;
+    width: 28px;
+    height: 24px;
+    position: relative;
+    z-index: 1;
+    background: url(../images/up.jpg) no-repeat;
+}
+
+#D_left .typing .send .up:hover {
+    background: url(../images/up_mouserover.gif) no-repeat;
+}
+
+#D_left .typing .send .up_up {
+    background: url(../images/up_up.gif) no-repeat;
+}
+
+/*表情弹出框样式*/
+#D_left .typing .face_popup {
+    position: absolute;
+    z-index: 3;
+    width: 422px;
+    height: 256px;
+    border: 1px solid #D8DAE4;
+    background: #f8f8f8;
+    top: -272px;
+    left: 15px;
+    overflow: hidden;
+}
+
+#D_left .typing .face_popup .heads {
+    margin: 10px;
+    border: 1px solid #D8DAE4;
+}
+
+#D_left .typing .face_popup .heads td {
+    border: 1px solid #D8DAE4;
+}
+
+#D_left .typing .face_popup .heads a {
+    display: block;
+    height: 35px;
+    width: 35px;
+    border: 1px solid #fff;
+}
+
+#D_left .typing .face_popup .heads a:hover {
+    border-color: #D8DAE4;
+}
+
+#D_left .typing .face_popup .heads a img {
+    width: 100%;
+    height: 100%;
+}
+
+/*发送按钮移上去的样式*/
+#D_left .typing .send {
+    width: 90px;
+    height: 24px;
+    position: absolute;
+    bottom: 10px;
+    right: 25px;
+}
+
+#D_left .typing .send .btn_mouserover {
+    float: left;
+    width: 62px;
+    height: 24px;
+    background: url(../images/send_mouserover.gif) no-repeat;
+    text-align: center;
+    color: #fff;
+    line-height: 24px;
+}
+
+/*以下是对话框右侧——店铺信息所有样式表*/
+
+/*右侧店铺信息样式表*/
+#D_right_ifm {
+    float: right;
+    width: 190px;
+    height: 100%;
+    overflow: hidden;
+}
+
+#D_right_ifm.left {
+    float: left;
+    width: 190px;
+    height: 100%;
+    overflow: hidden;
+}
+
+
+#D_right_ifm .head {
+    margin-left: 20px;
+    margin-top: 10px;
+    overflow: hidden;
+    width: 150px;
+    margin-right: 20px;
+}
+
+#D_right_ifm .head p {
+    display: block;
+    width: 55px;
+    height: 25px;
+    line-height: 25px;
+    color: #2E2E2E;
+    font-weight: bold;
+    float: left;
+    cursor: pointer;
+    margin: 0 8px 0 8px;
+}
+
+#D_right_ifm .head p.on {
+    display: block;
+    width: 55px;
+    height: 25px;
+    line-height: 25px;
+    color: #468BB6;
+    font-weight: bold;
+    float: left;
+    border-bottom: 2px solid #468BB6;
+}
+
+#D_right_ifm .with {
+    margin-top: 15px;
+    color: #4F4F4F;
+    margin-left: 10px;
+    overflow: hidden;
+    width: 175px;
+}
+
+#D_right_ifm .with span {
+    display: block;
+    height: 24px;
+    line-height: 24px;
+    float: left;
+    width: 170px;
+}
+
+#D_right_ifm .with span.on {
+    width: 55px;
+    margin-top: 15px;
+    margin-right: 40px;
+}
+
+#D_right_ifm .with span.on1 {
+    width: 75px;
+    margin-top: 15px;
+}
+
+#D_right_ifm .with span.on2 {
+    width: 85px;
+}
+
+#D_right_ifm .with span.on3 {
+    width: 30px;
+    color: #CB2323;
+    text-indent: 10px;
+}
+
+#D_right_ifm .with img {
+    width: 13px;
+    height: 13px;
+    margin: 5px 0 5px 14px;
+    float: left;
+}
+
+/*进入店铺按默认钮样式*/
+#D_right_ifm .with .btnn {
+    margin-top: 12px;
+    float: left;
+    width: 90px;
+    height: 24px;
+    background: url(../images/bottom_jinru.gif) no-repeat;
+    color: #2E2E2E;
+    line-height: 24px;
+    text-align: center;
+}
+
+/*移上去进入店铺按钮样式*/
+#D_right_ifm .with .btnn_mouserover {
+    background: url(../images/bottom_jinru_mouserover.gif) no-repeat;
+}
+
+/*点击进入店铺按钮样式*/
+#D_right_ifm .with .btnn_up {
+    margin-left: 10px;
+    margin-top: 12px;
+    float: left;
+    width: 90px;
+    height: 24px;
+    background: url(../images/bottom_jinru_up.gif) no-repeat;
+    color: #2E2E2E;
+    line-height: 24px;
+    text-align: center;
+}
+
+#D_right_ifm .hot {
+    background: #E9E9E9;
+    left: 0;
+    bottom: 0px;
+    position: absolute;
+    z-index: 0;
+}
+
+#D_right_ifm .hot .title {
+    height: 30px;
+    overflow: hidden;
+    position: relative;
+    z-index: 100;
+    cursor: pointer
+}
+
+#D_right_ifm .hot .title .button {
+    width: 11px;
+    height: 10px;
+    background: url(../images/ico_on.png) no-repeat;
+    cursor: pointer;
+    position: absolute;
+    right: 6px;
+    top: 12px;
+    z-index: 100;
+}
+
+/*热销商品收缩三角样式表*/
+#D_right_ifm .hot .title .triangle {
+    background: url(../images/ico.png) no-repeat;
+}
+
+#D_right_ifm .hot .title p {
+    display: block;
+    color: #2E2E2E;
+    width: 190px;
+    float: left;
+    line-height: 35px;
+    font-size: 12px;
+    text-align: center;
+}
+
+#D_right_ifm .hot .title img {
+    width: 11px;
+    height: 40px;
+    float: left;
+    margin-right: 10px;
+}
+
+/*发送下拉菜单样式表*/
+#D_left .typing .textarea {
+    height: 124px;
+    font-size: 14px;
+    line-height: 1.8;
+    overflow-y: auto;
+    margin: 0 5px;
+    outline: none;
+    font-size: 14px;
+}
+
+#D_left .typing .textarea .face-img {
+    height: 50px;
+    width: 50px;
+    vertical-align: baseline;
+}
+
+#D_left .typing .send .eject {
+    height: 51px;
+    width: 135px;
+    background: #FFF;
+    border: #b0b0b0 solid 1px;
+    position: absolute;
+    left: 92px;
+    top: -20px;
+    z-index: 999999;
+}
+
+#D_left .typing .send .eject a {
+    display: block;
+    text-decoration: none;
+    height: 24px;
+    line-height: 24px;
+    margin: 1px 1px 0 1px;
+    color: #2E2E2E;
+    padding-left: 20px;
+}
+
+#D_left .typing .send .eject a:hover {
+    background: #3E9FDB;
+    color: #fff;
+}
+
+#D_left .typing .send .eject .gou {
+    background: url(../images/gou.jpg) no-repeat;
+}
+
+/*以下是对话框右侧——宝贝信息所有样式表*/
+
+/*右侧对话框点击图标出现选择改变字体的样式表*/
+#D_left .typing .click {
+    border-top: 1px solid #D8DAE4;
+    position: relative;
+    z-index: 3;
+    float: left;
+    width: 100%;
+    margin-top: -27px;
+    overflow: hidden;
+    background: #f8f8f8;
+    visibility: visible;
+}
+
+#D_left .typing .click .choose {
+    width: 197px;
+    margin-left: 5px;
+    float: left;
+}
+
+#D_left .typing .click .choose select {
+    margin: 2px 0px;
+    height: 21px;
+}
+
+#D_left .typing .click .choose .font-family-select {
+    width: 137px;
+}
+
+#D_left .typing .click .choose .font-size-select {
+    width: 55px;
+}
+
+/*默认选择字体样式*/
+#D_left .typing .click .font {
+    width: 158px;
+    float: left;
+    margin-left: 5px;
+}
+
+#D_left .typing .click .font a {
+    width: 22px;
+    height: 22px;
+    float: left;
+    margin: 2px 5px 2px 0px;
+}
+
+#D_left .typing .click .cha {
+    width: 22px;
+    height: 18px;
+    float: right;
+    margin: 4px 5px 0px 0px;
+    background: url(../images/cha.gif) no-repeat;
+}
+
+#D_left .typing .click .font .b {
+    background: url(../images/B.gif) no-repeat;
+}
+
+#D_left .typing .click .font .i {
+    background: url(../images/I.gif) no-repeat;
+}
+
+#D_left .typing .click .font .u {
+    background: url(../images/U.gif) no-repeat;
+}
+
+#D_left .typing .click .font .color {
+    background: url(../images/color.gif) no-repeat;
+}
+
+/*移上去之后选择字体的样式表*/
+#D_left .typing .click .font .b:hover {
+    background: url(../images/B_mouserover.gif) no-repeat;
+}
+
+#D_left .typing .click .font .i:hover {
+    background: url(../images/I_mouserover.gif) no-repeat;
+}
+
+#D_left .typing .click .font .u:hover {
+    background: url(../images/U_mouserover.gif) no-repeat;
+}
+
+#D_left .typing .click .font .color:hover {
+    background: url(../images/color_mouserover.gif) no-repeat;
+}
+
+#D_left .typing .click .cha:hover {
+    background: url(../images/cha_click.gif) no-repeat;
+}
+
+/*点击之后选择字体的样式表*/
+#D_left .typing .click .font .b_up, #D_left .typing .click .font .b_up:hover {
+    background: url(../images/B_up.gif) no-repeat;
+}
+
+#D_left .typing .click .font .i_up, #D_left .typing .click .font .i_up:hover {
+    background: url(../images/I_up.gif) no-repeat;
+}
+
+#D_left .typing .click .font .u_up, #D_left .typing .click .font .u_up:hover {
+    background: url(../images/U_up.gif) no-repeat;
+}
+
+#D_left .typing .click .font .color_up, #D_left .typing .click .font .color_up:hover {
+    background: url(../images/color_up.gif) no-repeat;
+}
+
+#D_left .typing .click .font .cha_up, #D_left .typing .click .font .cha_up:hover {
+    background: url(../images/cha_click.gif) no-repeat;
+}
+
+#colorpanel {
+    z-index: 4
+}
+
+/*右侧宝贝信息*/
+#D_right_ifm .pic {
+    width: 170px;
+    margin: 20px 10px 0 10px;
+}
+
+#D_right_ifm .pic img {
+    width: 130px;
+    height: 130px;
+    margin: 0 20px 0 20px;
+}
+
+#D_right_ifm .pic ul {
+    width: 130px;
+    overflow: hidden;
+}
+
+#D_right_ifm .pic ul li {
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    color: #2e2e2e;
+}
+
+#D_right_ifm .pic ul li.on {
+    color: #1086b8;
+}
+
+#D_right_ifm .pic ul li.on1 {
+    float: left;
+}
+
+#D_right_ifm .pic ul li.on2 {
+    color: #d34828;
+    float: left;
+}
+
+#D_right_ifm .pic ul li.on3 {
+    text-align: center;
+    width: 20px;
+}
+
+#D_right_ifm .pic ul li.on21 {
+    color: #1086b8;
+    float: left;
+}
+
+/*默认立即购买按钮样式*/
+#D_right_ifm .pic .buy {
+    margin-top: 5px;
+    float: left;
+    width: 90px;
+    height: 24px;
+    background: url(../images/buy.gif) no-repeat;
+    color: #fff;
+    line-height: 24px;
+    text-align: center;
+}
+
+#D_right_ifm .pic .buy .item-buy {
+    cursor: pointer;
+}
+
+/*移上去之后立即购买按钮样式*/
+#D_right_ifm .pic .buy_mouserover {
+    margin-top: 5px;
+    float: left;
+    width: 90px;
+    height: 24px;
+    background: url(../images/buy_mouserover.gif) no-repeat;
+    color: #fff;
+    line-height: 24px;
+    text-align: center;
+}
+
+/*点击立即购买按钮样式*/
+#D_right_ifm .pic .buy_up {
+    margin-top: 5px;
+    float: left;
+    width: 90px;
+    height: 24px;
+    background: url(../images/buy_up.gif) no-repeat;
+    color: #fff;
+    line-height: 24px;
+    text-align: center;
+}
+
+/*以下是对话框右侧-我的订单所有样式表*/
+#D_right_ifm .order {
+    width: 170px;
+    margin: 10px 10px 0 10px;
+    overflow: hidden;
+}
+
+#D_right_ifm .order ul li {
+    height: 22px;
+    line-height: 22px;
+    color: #2e2e2e;
+    overflow: hidden;
+}
+
+#D_right_ifm .order ul li.on {
+    color: #d34828;
+    width: 55px;
+    float: left;
+}
+
+#D_right_ifm .order ul li.on1 {
+    width: 20px;
+    text-align: center;
+}
+
+#D_right_ifm .order ul li.on2 {
+    width: 55px;
+    float: left;
+}
+
+#D_right_ifm .order .pc {
+    width: 166px;
+    margin: 5px 2px 0 2px;
+    height: 104px;
+}
+
+#D_right_ifm .order .pc img {
+    width: 77px;
+    height: 77px;
+    float: left;
+    margin: 0 3px 0 3px;
+}
+
+#D_right_ifm .order .pc p {
+    display: block;
+    color: #2e2e2e;
+    height: 24px;
+    line-height: 24px;
+    width: 166px;
+    margin-top: 5px;
+}
+
+/*确认收货默认样式*/
+#D_right_ifm .order .btn_n {
+    margin-top: 5px;
+    float: left;
+    width: 90px;
+    height: 24px;
+    background: url(../images/bottom_jinru.gif) no-repeat;
+    color: #2E2E2E;
+    line-height: 24px;
+    text-align: center;
+}
+
+#D_right_ifm .order .btn_n_mouserover {
+    margin-top: 5px;
+    float: left;
+    width: 90px;
+    height: 24px;
+    background: url(../images/bottom_jinru_mouserover.gif) no-repeat;
+    color: #2E2E2E;
+    line-height: 24px;
+    text-align: center;
+}
+
+#D_right_ifm .order .btn_n_up {
+    margin-top: 5px;
+    float: left;
+    width: 90px;
+    height: 24px;
+    background: url(../images/bottom_jinru_up.gif) no-repeat;
+    color: #2E2E2E;
+    line-height: 24px;
+    text-align: center;
+}
+
+/*移上去确认收货按钮样式*/
+#D_right_ifm .with .btn_mouserover {
+    margin-top: 5px;
+    float: left;
+    width: 90px;
+    height: 24px;
+    background: url(../images/bottom_jinru_mouserover.gif) no-repeat;
+    color: #2E2E2E;
+    line-height: 24px;
+    text-align: center;
+}
+
+/*点击确认收货按钮样式*/
+#D_right_ifm .with .btn_up {
+    margin-top: 5px;
+    float: left;
+    width: 90px;
+    height: 24px;
+    background: url(../images/bottom_jinru_up.gif) no-repeat;
+    color: #2E2E2E;
+    line-height: 24px;
+    text-align: center;
+}
+
+/*热销商品下拉菜单样式表*/
+#D_right_ifm .hot .commodity {
+    width: 170px;
+    padding: 5px 10px 0 10px;
+    background: #E9E9E9;
+    overflow: hidden;
+}
+
+#D_right_ifm .hot .commodity .pcc {
+    width: 77px;
+    height: 112px;
+    float: left;
+    margin: 0 4px 0 4px;
+    display: inline;
+}
+
+#D_right_ifm .hot .commodity .pcc span {
+    display: block;
+    line-height: 20px;
+    height: 20px;
+    overflow: hidden;
+    color: #2e2e2e;
+}
+
+#D_right_ifm .hot .commodity .pcc span.price {
+    width: 35px;
+    height: 20px;
+    line-height: 20px;
+    color: #d34828;
+    float: left;
+}
+
+#D_right_ifm .hot .commodity .slider {
+    height: 112px;
+    overflow: hidden;
+}
+
+#D_right_ifm .hot .commodity .slider li {
+    height: 112px;
+    float: left;
+}
+
+#D_right_ifm .hot .commodity .btn {
+    height: 20px;
+    display: block;
+    padding-left: 67px;
+}
+
+#D_right_ifm .hot .commodity .btn li {
+    width: 6px;
+    height: 6px;
+    margin: 5px 5px 0px 0px;
+    float: left;
+    background: url(../images/hui.jpg) no-repeat;
+    cursor: pointer;
+}
+
+#D_right_ifm .hot .commodity .btn li.current {
+    width: 6px;
+    height: 6px;
+    margin-right: 5px;
+    float: left;
+    background: url(../images/hui_on.jpg) no-repeat;
+}
+
+/*评价窗口*/
+.evaluation-window {
+    padding: 10px;
+    background: #E9E9E9;
+    color: #2e2e2e;
+}
+
+.evaluation-window .eval-desc {
+    line-height: 30px;
+}
+
+.evaluation-window .eval-ipt input {
+    vertical-align: -2px;
+    margin-right: 5px;
+}
+
+.evaluation-window .eval-ipt label {
+    margin-right: 30px;
+}
+
+.evaluation-window .eval-ipt .last {
+    margin-right: 0px !important;
+}
+
+.evaluation-window .eval-txt textarea {
+    width: 410px;
+    height: 100px;
+    resize: none;
+    margin-top: 5px;
+    border: 1px solid #C3C4C5;
+    font-size: 14px;
+}
+
+.evaluation-window .eval-txt .tip {
+    text-align: right;
+    color: #666;
+}
+
+.evaluation-window .submit {
+    display: inline-block;
+    padding: 3px 15px;
+    background: #fff;
+    color: #2e2e2e;
+    border: #BCBCBC 1px solid;
+    text-decoration: none;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+}
+
+.evaluation-window .submit {
+    cursor: pointer
+}
+
+.sys-message {
+    font-family: "Arial Normal", "Arial";
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    color: #666666;
+    padding: 0 0 10px 0;
+}
+
+/* = S = Create By Damon.dai
+time 2015-8-13 15:42:01 */
+
+/*增加左侧栏联系人*/
+.person {
+    width: 195px;
+    overflow: hidden;
+    background: #5c89a6;
+    position: absolute;
+    left: 0;
+    top: 0px;
+    padding-bottom: 40px;
+    z-index: 99;
+    height: 911px;
+}
+
+.person h2 {
+    display: block;
+    box-sizing: border-box;
+    height: 45px;
+    border-bottom: 1px solid #4d6e83;
+    position: relative;
+}
+
+.person h2 ins {
+    display: block;
+    width: 5px;
+    height: 9px;
+    background: url(../images/sj_ico.jpg) no-repeat;
+    margin: 18px 5px 15px 8px;
+    float: left;
+}
+
+.person h2.open ins {
+    display: block;
+    width: 9px;
+    height: 5px;
+    background: url(../images/sj_bottom.jpg) no-repeat;
+    margin: 17px 5px 18px 8px;
+    float: left;
+}
+
+.person h2 p {
+    display: block;
+    width: 120px;
+    float: left;
+    line-height: 45px;
+    color: #fff;
+    font-family: "微软雅黑", "宋体";
+    cursor: pointer;
+}
+
+.person ul {
+    background: #3c5c71;
+    display: block;
+    position: relative;
+    width: 195px;
+}
+
+.person ul li {
+    overflow: hidden;
+    height: 39px;
+    width: 185px;
+    border-bottom: 1px solid #284151;
+    padding-left: 10px;
+    position: relative;
+}
+
+.person ul li:hover {
+    background-color: #466579;
+}
+
+.person ul li span {
+    float: left;
+    line-height: 40px;
+    color: #fff;
+    cursor: pointer;
+    width: 110px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.person ul li.read_msg {
+    background: #f8f8f8;
+    border-left: 3px solid #456b84;
+    border-bottom: none;
+}
+
+.person ul li.read_msg span {
+    color: #333333;
+}
+
+/*一级目录hover效果*/
+.person h2:hover {
+    background-color: #6591ae;
+}
+
+/*二级目录hover效果*/
+.person ul li.read_msg:hover {
+    background: #f8f8f8;
+}
+
+#D_left {
+    margin-left: 194px;
+}
+
+/*对话框公用样式表*/
+.all {
+    position: relative;
+}
+
+.left_content {
+    position: absolute;
+    left: 164px;
+    right: 0;
+}
+
+/*左侧栏消息显示数字*/
+/*.l_num{ width:19px; height:19px; border-radius:20px; background:#ff7326; float:right; margin-right:3px; margin-top:3px; color:#fff; font-size:11px; text-align:center; line-height:18px;}*/
+
+/*消息数字背景*/
+.have_msg > .msg-num-box {
+    display: block;
+}
+
+.msg-num-box {
+    display: none;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    top: 3px;
+    right: 3px;
+    background: url(../images/yuan_bg.png) no-repeat;
+    color: #fff;
+    font-size: 11px;
+    text-align: center;
+    line-height: 20px;
+    float: right;
+}
+
+.ui-bubble-blue, .ui-bubble-gray {
+    border-radius: 6px;
+    padding: 5px 8px;
+    /*float: left;*/
+    margin-right: 12px;
+    position: relative;
+    /*display: inline-block;*/
+    /**display: inline;*/
+    /**zoom: 1;*/
+}
+
+.ui-bubble-blue {
+    background: #dfeffa;
+    border: 1px solid #c5d7e2;
+}
+
+.ui-bubble-blue .bar {
+    position: absolute;
+    width: 14px;
+    height: 18px;
+    right: -6px;
+    top: -1px;
+    background: url(../images/pao.jpg) no-repeat;
+}
+
+.ui-bubble-gray {
+    background: #fff;
+    border: 1px solid #dddddd;
+}
+
+.ui-bubble-gray .bar {
+    position: absolute;
+    width: 11px;
+    height: 17px;
+    left: -6px;
+    top: -1px;
+    background: url(../images/pao_hui.jpg) no-repeat;
+}
+
+.speak .seller, .speak .buyer {
+    overflow: hidden;
+    padding-top: 5px;
+}
+
+.seller-cont, .buyer-cont {
+    width: 80%;
+}
+
+.seller-cont {
+    float: left;
+    text-align: left;
+}
+
+.seller-cont .msg-title {
+    text-align: left;
+    padding-left: 10px;
+}
+
+.seller-cont .msg-box {
+    float: left;
+    clear: both;
+}
+
+.buyer-cont {
+    float: right;
+    padding-right: 10px;
+    text-align: right;
+}
+
+.buyer-cont .msg-title {
+    text-align: right;
+    padding-right: 10px;
+}
+
+.buyer-cont span.msg-time,
+.buyer-cont span.sender-name {
+    float: right;
+}
+
+.buyer-cont .msg-box {
+    float: right;
+    clear: both;
+}
+
+.msg-box .cont-wrap {
+    text-align: left;
+}
+
+/*链接类型 消息结构*/
+.link-type-msg {
+    margin-top: 3px;
+    text-align: left;
+}
+
+.link-type-box {
+}
+
+.link-type-box a {
+    font-family: 'Arial';
+    color: #1e85c6;
+    padding-bottom: 4px;
+    border-bottom: 1px solid #99c0d9;
+    display: block;
+    text-decoration: none;
+}
+
+.ui-bubble-gray .link-type-box a {
+    border-bottom: 1px solid #dfdfdf;
+}
+
+.link-type-cont {
+    padding-top: 8px;
+    overflow: hidden;
+}
+
+.link-type-cont img {
+    float: left;
+}
+
+.link-type-cont .txt-box {
+    margin-left: 88px;
+    width: 180px;
+}
+
+.txt-box {
+    font-family: 'microsoft yahei';
+}
+
+.txt-box h4 {
+    color: #468bb6;
+    font-weight: 700;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.txt-box p {
+    color: #2e2e2e;
+    font-size: 12px;
+}
+
+.tuxiang {
+    float: left;
+    margin: 5px 10px 0 0;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #cbe4f4 none repeat scroll 0 0;
+}
+
+.touxiang {
+    margin-top: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: #cbe4f4 none repeat scroll 0 0;
+}
+
+.touxiang.pull-left {
+    float: left;
+    margin-right: 10px;
+}
+
+.touxiang.pull-right {
+    float: right;
+    margin-left: 10px;
+}
+
+.person .ui-off-line .tuxiang {
+    opacity: 0.5;
+    filter: progid:DXImageTransform.Microsoft.Alpha(opacity=50);
+}
+
+.person .ui-off-line span {
+    color: #ababab;
+}

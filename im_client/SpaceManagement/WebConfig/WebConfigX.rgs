@@ -1,0 +1,24 @@
+HKCR
+{
+	WebConfig.WebConfigX.1 = s 'WebConfigX Class'
+	{
+		CLSID = s '{933EFD6C-970E-4C27-8B35-3BD17AF6C1E9}'
+	}
+	WebConfig.WebConfigX = s 'WebConfigX Class'
+	{
+		CLSID = s '{933EFD6C-970E-4C27-8B35-3BD17AF6C1E9}'
+		CurVer = s 'WebConfig.WebConfigX.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {933EFD6C-970E-4C27-8B35-3BD17AF6C1E9} = s 'WebConfigX Class'
+		{
+			ProgID = s 'WebConfig.WebConfigX.1'
+			VersionIndependentProgID = s 'WebConfig.WebConfigX'
+			ForceRemove 'Programmable'
+			LocalServer32 = s '%MODULE%'
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{24C1AACE-8551-445C-9899-9AB30A0FBCB9}'
+		}
+	}
+}

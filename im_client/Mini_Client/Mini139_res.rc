@@ -1,0 +1,322 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_BIG          BITMAP                  "res\\im\\bmp00003.bmp"
+IDB_BITMAP_BIG2         BITMAP                  "res\\im\\bmp00004.bmp"
+IDB_BITMAP_RIGHT2       BITMAP                  "res\\im\\bitmap_right2.bmp"
+IDB_BITMAP_RIGHT        BITMAP                  "res\\im\\bitmap1.bmp"
+IDB_BITMAP_LEFT2        BITMAP                  "res\\im\\bmp00002.bmp"
+IDB_BITMAP_LEFT         BITMAP                  "res\\im\\bmp00001.bmp"
+IDB_BLOG_LOGO           BITMAP                  "Res\\im\\blog_logo.bmp"
+IDB_WRITEBLOG           BITMAP                  "Res\\im\\btn_writeblog.bmp"
+IDB_WINXP_ICON          BITMAP                  "res\\im\\winxp_cion.bmp"
+IDB_WIN2K_ICON          BITMAP                  "res\\im\\win2k_icon.bmp"
+IDB_WEATHER             BITMAP                  "Res\\im\\weather.bmp"
+IDB_VIP_CLUSTER         BITMAP                  "res\\im\\bitmap6.bmp"
+IDB_UPPIC               BITMAP                  "Res\\im\\btn_uppic.bmp"
+IDB_TOOL_BLOG           BITMAP                  "Res\\im\\toolbar_blog24.bmp"
+IDB_TALK_TITLE_BACK     BITMAP                  "Res\\im\\talk_title_back.bmp"
+IDB_TALK_TEXTCOLOR      BITMAP                  "Res\\im\\talk_textcolor.bmp"
+IDB_TALK_SENDPIC        BITMAP                  "Res\\im\\talk_sendpic.bmp"
+IDB_TALK_MAGICFACE      BITMAP                  "Res\\im\\talk_magicface.bmp"
+IDB_TALK_FONT           BITMAP                  "Res\\im\\talk_font.bmp"
+IDB_TALK_EMOTION        BITMAP                  "Res\\im\\talk_emotion.bmp"
+IDB_TAB_SEL             BITMAP                  "Res\\im\\tab_btn_sel.bmp"
+IDB_TAB_NORMAL          BITMAP                  "Res\\im\\tab_btn_normal.bmp"
+IDB_TAB_HOT             BITMAP                  "Res\\im\\tab_btn_hot.bmp"
+IDB_STATUS_FOOT40       BITMAP                  "Res\\im\\status_foot40.bmp"
+IDB_STATUS_FOOT20       BITMAP                  "res\\im\\status_foot20.bmp"
+IDB_SEARCH              BITMAP                  "Res\\im\\search.bmp"
+IDB_SCREEN_CUT_TIP      BITMAP                  "Res\\im\\screen_cut_tip.bmp"
+IDB_RIGHT_MENU          BITMAP                  "Res\\im\\right_menu_imagelist.bmp"
+IDB_REGISTER            BITMAP                  "res\\register.bmp"
+IDB_P2PTOOLFONT_BACK    BITMAP                  "Res\\im\\p2p_toolfont_back.bmp"
+IDB_NO_IMAGE            BITMAP                  "res\\im\\im_no_image.bmp"
+IDB_MSG_LIST            BITMAP                  "Res\\im\\msg_list_tree.bmp"
+IDB_MSG_LINE            BITMAP                  "res\\im\\msg_line.bmp"
+IDB_MIN_NORMAL          BITMAP                  "RES\\im\\min_normal.bmp"
+IDB_MIN_HOT             BITMAP                  "RES\\im\\min_hot.bmp"
+IDB_MENU_TITLE          BITMAP                  "Res\\im\\menu_title.bmp"
+IDB_MAX_NORMAL          BITMAP                  "RES\\im\\max_normal.bmp"
+IDB_MAX_HOT             BITMAP                  "RES\\im\\max_hot.bmp"
+IDB_MAINICON            BITMAP                  "res\\im\\btn_main_icon.bmp"
+IDB_MAIN_TOOLBTNBK_MID  BITMAP                  "Res\\im\\main_toolbtnbk_mid.bmp"
+IDB_MAIN_TITLE_BACK     BITMAP                  "Res\\im\\main_title_back.bmp"
+IDB_LOGINING_TITLE      BITMAP                  "Res\\im\\logining_title.bmp"
+IDB_LOGINING_PAUSE      BITMAP                  "Res\\im\\logining_pause.bmp"
+IDB_LOGIN_PASSHINT      BITMAP                  "Res\\im\\login_pass_hint.bmp"
+IDB_IM_STATUS40         BITMAP                  "Res\\im\\status40.bmp"
+IDB_IM_STATUS20         BITMAP                  "Res\\im\\status20.bmp"
+IDB_IM_STATUS16         BITMAP                  "Res\\im\\status16.bmp"
+IDB_IM_SERVICE          BITMAP                  "Res\\im\\im_service.bmp"
+IDB_IM_SEARCHFRIEND     BITMAP                  "res\\othersico\\001.bmp"
+IDB_IM_SCROLLBAR        BITMAP                  "res\\im\\scrollbar.BMP"
+IDB_IM_SACAPTION        BITMAP                  "RES\\im\\sa_caption.bmp"
+IDB_IM_MOBILE           BITMAP                  "res\\othersico\\004.bmp"
+IDB_IM_HEAD40           BITMAP                  "Res\\im\\head40.bmp"
+IDB_IM_HEAD20           BITMAP                  "Res\\im\\head20.bmp"
+IDB_IM_FOLDER_EXPAND    BITMAP                  "res\\im\\bitmap_folder_expand.bmp"
+IDB_IM_FOLDER_CLOSE     BITMAP                  "res\\im\\bitmap_folder_close.bmp"
+IDB_IM_FOLDER           BITMAP                  "res\\im\\folder_title.bmp"
+IDB_IM_COMBO_BUTTON     BITMAP                  "RES\\im\\combo_right.bmp"
+IDB_IM_CLUSTER          BITMAP                  "res\\im\\im_cluster.bmp"
+IDB_IM_BTN_NORMAL       BITMAP                  "res\\im\\button_normal.bmp"
+IDB_IM_BTN_HOVER        BITMAP                  "res\\im\\button_hover.bmp"
+IDB_IM_BTN_DOWN         BITMAP                  "res\\im\\button_down.bmp"
+IDB_ICON_FAMILY16       BITMAP                  "Res\\im\\family16.bmp"
+IDB_ICON_CVIP           BITMAP                  "Res\\im\\VIP.bmp"
+IDB_HINT_ICON           BITMAP                  "Res\\im\\hintdlg\\hint_icon.bmp"
+IDB_HINT_DLG            BITMAP                  "Res\\im\\hintdlg\\hint_dlg.bmp"
+IDB_HINT_CLOSE_NORMAL   BITMAP                  "Res\\im\\hintdlg\\close_normal.bmp"
+IDB_HINT_CLOSE_HOVER    BITMAP                  "Res\\im\\hintdlg\\close_hover.bmp"
+IDB_GROUPLIST_BUTTON    BITMAP                  "res\\im\\grouplist_button.bmp"
+IDB_FRIEND_BLOG         BITMAP                  "res\\im\\friend_blog.bmp"
+IDB_FLOOR_NORMAL        BITMAP                  "Res\\im\\floor_wnd_ctl\\normal.bmp"
+IDB_FLOOR_HOT           BITMAP                  "Res\\im\\floor_wnd_ctl\\hot.bmp"
+IDB_FLOOR_DOWN          BITMAP                  "Res\\im\\floor_wnd_ctl\\down.bmp"
+IDB_FLAG_LOGIN          BITMAP                  "Res\\im\\icon_100x100.bmp"
+IDB_EMOTION2            BITMAP                  "Res\\im\\im_face.bmp"
+IDB_DLG_CAPTION_BAR     BITMAP                  "Res\\im\\dlg_caption_bar.bmp"
+IDB_CLUSTER_REFUSE      BITMAP                  "Res\\im\\cluster_refuse.bmp"
+IDB_CLUSTER_CREATOR     BITMAP                  "res\\im\\cluster_creator.bmp"
+IDB_CLUSTER_ADMIN       BITMAP                  "Res\\im\\cluster_admin.bmp"
+IDB_CLUSTER_ACCEPTMSG   BITMAP                  "Res\\im\\cluster_acceptMsg.bmp"
+IDB_CLUSTER             BITMAP                  "Res\\im\\image_cluster.bmp"
+IDB_CLOSE_NORMAL        BITMAP                  "RES\\im\\close_normal.bmp"
+IDB_CLOSE_HOT           BITMAP                  "RES\\im\\close_hot.bmp"
+IDB_CHANEL_TAG          BITMAP                  "Res\\chanel\\标签.bmp"
+IDB_CHANEL_SHOP         BITMAP                  "Res\\chanel\\便利店.bmp"
+IDB_CHANEL_MOBILE       BITMAP                  "Res\\chanel\\移动博客.bmp"
+IDB_CHANEL_MINI139      BITMAP                  "Res\\chanel\\客户端.bmp"
+IDB_CHANEL_IM           BITMAP                  "Res\\chanel\\IM.bmp"
+IDB_CHANEL_FAMILY       BITMAP                  "Res\\chanel\\家族.bmp"
+IDB_CHANEL_BODCAST      BITMAP                  "Res\\chanel\\播客图标.bmp"
+IDB_CHANEL_ALBUM        BITMAP                  "Res\\chanel\\图片.bmp"
+IDB_BTN1_NORMAL         BITMAP                  "Res\\im\\btn1_normal.bmp"
+IDB_BTN1_HOT            BITMAP                  "Res\\im\\btn1_hover.bmp"
+IDB_BTN1_DOWN           BITMAP                  "Res\\im\\btn1_down.bmp"
+IDB_BTN1_DISABLE        BITMAP                  "Res\\im\\btn1_disable.bmp"
+IDB_BTN_WEBSMS          BITMAP                  "Res\\im\\btn_websms.bmp"
+IDB_BTN_VISIT           BITMAP                  "Res\\im\\p2p_btn_visit.bmp"
+IDB_BTN_UNDERLINE_SEL   BITMAP                  "Res\\im\\underline_sel.bmp"
+IDB_BTN_UNDERLINE_NORMAL BITMAP                  "Res\\im\\underline_normal.bmp"
+IDB_BTN_UNDERLINE_DOWN  BITMAP                  "Res\\im\\underline_down.bmp"
+IDB_BTN_STATUS_NORMAL   BITMAP                  "Res\\im\\btn_status_normal.bmp"
+IDB_BTN_STATUS_HOVER    BITMAP                  "Res\\im\\btn_status_hover.bmp"
+IDB_BTN_STATUS_DOWN     BITMAP                  "Res\\im\\btn_status_down.bmp"
+IDB_BTN_SEARCH          BITMAP                  "Res\\im\\btn_search.bmp"
+IDB_BTN_SCREEN_COPY     BITMAP                  "Res\\im\\btn_screen_copy.bmp"
+IDB_BTN_REFRESH         BITMAP                  "Res\\im\\btn_refresh.bmp"
+IDB_BTN_PREV_DISABLE    BITMAP                  "Res\\im\\btn_prev_disable.bmp"
+IDB_BTN_PREV            BITMAP                  "Res\\im\\btn_prev.bmp"
+IDB_BTN_NEXT_DISABLE    BITMAP                  "Res\\im\\btn_next_disable.bmp"
+IDB_BTN_NEXT            BITMAP                  "Res\\im\\btn_next.bmp"
+IDB_BTN_MSG             BITMAP                  "Res\\im\\main_btn_msg.bmp"
+IDB_BTN_MODIFY          BITMAP                  "Res\\addbook\\btn_modify.bmp"
+IDB_BTN_LAST_DISABLE    BITMAP                  "Res\\im\\btn_last_disable.bmp"
+IDB_BTN_LAST            BITMAP                  "Res\\im\\btn_last.bmp"
+IDB_BTN_ITALIC_SEL      BITMAP                  "Res\\im\\italic_sel.bmp"
+IDB_BTN_ITALIC_NORMAL   BITMAP                  "Res\\im\\italic_normal.bmp"
+IDB_BTN_ITALIC_DOWN     BITMAP                  "Res\\im\\italic_down.bmp"
+IDB_BTN_INVITE          BITMAP                  "Res\\im\\p2p_btn_invite.bmp"
+IDB_BTN_HOME            BITMAP                  "Res\\im\\main_btn_home.bmp"
+IDB_BTN_GOLD            BITMAP                  "Res\\im\\main_btn_gold.bmp"
+IDB_BTN_FIRST_DISABLE   BITMAP                  "Res\\im\\btn_first_disable.bmp"
+IDB_BTN_FIRST           BITMAP                  "Res\\im\\btn_first.bmp"
+IDB_BTN_EXPORT          BITMAP                  "Res\\im\\btn_export.bmp"
+IDB_BTN_DEL             BITMAP                  "Res\\addbook\\btn_del.bmp"
+IDB_BTN_COLOR_NORMAL    BITMAP                  "Res\\im\\color_normal.bmp"
+IDB_BTN_COLOR_DOWN      BITMAP                  "Res\\im\\color_down.bmp"
+IDB_BTN_CFG             BITMAP                  "Res\\addbook\\btn_cfg.bmp"
+IDB_BTN_CARD            BITMAP                  "Res\\im\\p2p_btn_card.bmp"
+IDB_BTN_BOLD_SEL        BITMAP                  "Res\\im\\bold_sel.bmp"
+IDB_BTN_BOLD_NORMAL     BITMAP                  "Res\\im\\bold_normal.bmp"
+IDB_BTN_BOLD_DOWN       BITMAP                  "Res\\im\\bold_down.bmp"
+IDB_BTN_BIGHEAD         BITMAP                  "Res\\im\\btn_big_head.bmp"
+IDB_BTN_ADDFRIEND       BITMAP                  "Res\\im\\btn_addfriend.bmp"
+IDB_BTN_ADD             BITMAP                  "Res\\addbook\\btn_add.bmp"
+IDB_BMP_LEVEL           BITMAP                  "Res\\im\\level.bmp"
+IDB_BLOG_RESET          BITMAP                  "Res\\im\\blog_reset.bmp"
+IDB_BLOG_POST           BITMAP                  "Res\\im\\blog_post.bmp"
+IDB_LOGO_HMG            BITMAP                  "Res\\im\\logo_hmg.bmp"
+IDB_TALK_ACTION         BITMAP                  "res\\im\\action_btn.bmp"
+IDB_TALK_EMOTION1       BITMAP                  "res\\im\\talk_emotion_1.bmp"
+IDB_TALK_EMOTION4       BITMAP                  "res\\im\\talk_emotion_4.bmp"
+IDB_TALK_EMOTION2       BITMAP                  "res\\im\\talk_emotion_2.bmp"
+IDB_TALK_EMOTION3       BITMAP                  "res\\im\\talk_emotion_3.bmp"
+IDB_CHECK               BITMAP                  "res\\im\\check.bmp"
+IDB_UNCHECK             BITMAP                  "res\\im\\uncheck.bmp"
+IDB_CLOSE_P2PFOLDER_NORMAL BITMAP                  "res\\im\\folder_close_normal.bmp"
+IDB_SHOW_P2PFOLDER_NORMAL BITMAP                  "res\\im\\folder_show_normal.bmp"
+IDB_CLOSE_P2PFOLDER_HOVER BITMAP                  "res\\im\\folder_close_hover.bmp"
+IDB_SHOW_P2PFOLDER_HOVER BITMAP                  "res\\im\\folder_show_hover.bmp"
+IDB_ICON_FAMILY40       BITMAP                  "res\\im\\family40.bmp"
+IDB_TALK_LINKRES        BITMAP                  "res\\im\\btn_talk_linkres.bmp"
+IDB_LINK_RES            BITMAP                  "res\\im\\link_res.bmp"
+IDB_MAX_DOWN            BITMAP                  "res\\im\\max_down.bmp"
+IDB_CLOSE_DOWN          BITMAP                  "res\\im\\close_down.bmp"
+IDB_MIN_DOWN            BITMAP                  "res\\im\\min_down.bmp"
+IDB_DLG_CAPTION_R       BITMAP                  "res\\im\\dlg_caption_right.bmp"
+IDB_DLG_CAPTION_L       BITMAP                  "res\\im\\dlg_caption_left.bmp"
+IDB_DLG_CAPTION_M       BITMAP                  "res\\im\\dlg_caption_mid.bmp"
+IDB_IM_BTN_DISABLE      BITMAP                  "res\\im\\button_disable.bmp"
+IDB_ARROW_UP            BITMAP                  "res\\im\\arrow_up.bmp"
+IDB_ARROW_DOWN          BITMAP                  "res\\im\\arrow_down.bmp"
+IDB_COLUMN_BTN_TOP_NORMAL BITMAP                  "res\\im\\column_btn_top.bmp"
+IDB_COLUMN_BTN_BOTTOM_NORMAL BITMAP                  "res\\im\\column_btn_bottom.bmp"
+IDB_COLUMN_BTN_MID_NORMAL BITMAP                  "res\\im\\column_btn_mid.bmp"
+IDB_COLUMN_BTN_ARROW_LEFT BITMAP                  "res\\im\\left_btn_arrow.bmp"
+IDB_COLUMN_BTN_ARROW_RIGHT BITMAP                  "res\\im\\right_btn_arrow.bmp"
+IDB_PICTURE_DLG_TOOL    BITMAP                  "res\\im\\friend_entry_dock_tool.bmp"
+IDB_PICTURE_FRAME       BITMAP                  "res\\im\\picture_frame.bmp"
+IDB_ARTICLE             BITMAP                  "res\\im\\article_icon.bmp"
+IDB_HINT_FLAG           BITMAP                  "res\\im\\hint_icon.bmp"
+IDB_COLUMN_BTN_TOP_HOT  BITMAP                  "res\\im\\column_b.bmp"
+IDB_COLUMN_BTN_MID_HOT  BITMAP                  "res\\im\\column_btn_mid_hot.bmp"
+IDB_COLUMN_BTN_BOTTOM_HOT BITMAP                  "res\\im\\column_btn_bottom_hot.bmp"
+IDB_COLUMN_BTN_BOTTOM_DISABLE BITMAP                  "res\\im\\column_btn_bottom_disable.bmp"
+IDB_COLUMN_BTN_TOP_DISABLE BITMAP                  "res\\im\\bmp00006.bmp"
+IDB_COLUMN_BTN_MID_DISABLE BITMAP                  "res\\im\\bmp00005.bmp"
+IDB_COLUMN_BTN_TOP_DOWN BITMAP                  "res\\im\\bmp00009.bmp"
+IDB_COLUMN_BTN_MID_DOWN BITMAP                  "res\\im\\bmp00008.bmp"
+IDB_COLUMN_BTN_BOTTOM_DOWN BITMAP                  "res\\im\\bmp00007.bmp"
+IDB_SLIDER_THUM_NORMAL  BITMAP                  "res\\im\\slider_thum_normal.bmp"
+IDB_SLIDER_THUM_HOT     BITMAP                  "res\\im\\slider_thum_hot.bmp"
+IDB_SLIDER_THUM_DOWN    BITMAP                  "res\\im\\silder_thum_down.bmp"
+IDB_MAIN_MENU_ICON      BITMAP                  "res\\im\\main_menu_icon.bmp"
+IDB_FRIEND_PIC          BITMAP                  "res\\im\\friend_pic_btn.bmp"
+IDB_FRIEND_LOG          BITMAP                  "res\\im\\friend_log_btn.bmp"
+IDB_MY_PIC              BITMAP                  "res\\im\\my_pic_btn.bmp"
+IDB_MY_ARTICLE          BITMAP                  "res\\im\\my_article_btn.bmp"
+IDB_BIGHEAD             BITMAP                  "res\\im\\big_head_btn.bmp"
+IDB_UPLOAD_PIC          BITMAP                  "res\\im\\upload_picture_btn.bmp"
+IDB_MAIN_MENU           BITMAP                  "res\\im\\main_menu.bmp"
+IDB_WEBINFO             BITMAP                  "res\\im\\friend_139_new_published.bmp"
+IDB_TOP_DOWN            BITMAP                  "res\\im\\top_down.bmp"
+IDB_TOP_HOT             BITMAP                  "res\\im\\top_hot.bmp"
+IDB_TOP_NORMAIL         BITMAP                  "res\\im\\top_normal.bmp"
+IDB_UPDOWN_NORMAL       BITMAP                  "res\\im\\上下移动-暗.bmp"
+IDB_UPDOWN_HOT          BITMAP                  "res\\im\\上下移动-亮.bmp"
+IDB_BITMAP2             BITMAP                  "res\\im\\我的家族4副本.bmp"
+IDB_RESTORE_DOWN        BITMAP                  "res\\im\\还原_down副本.bmp"
+IDB_RESTORE_HOT         BITMAP                  "res\\im\\还原_hot副本.bmp"
+IDB_RESTORE_NORMAL      BITMAP                  "res\\im\\还原_normal副本.bmp"
+IDB_FOCUSON             BITMAP                  "res\\im\\webinf_focuson.bmp"
+IDB_FOCUSOFF            BITMAP                  "res\\im\\webinfo_focusoff.bmp"
+IDB_PICTURE_FLAG        BITMAP                  "res\\im\\猪头.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_SEL_PIC             ICON                    "res\\flagicon.ico"
+IDI_UPD_PIC             ICON                    "res\\sel_pic1.ico"
+IDR_MAINFRAME1          ICON                    "Res\\idr_main.ico"
+IDI_FRIEND_PIC_ENTRY    ICON                    "res\\friend_pic_entry.ico"
+IDI_FRIEND_LOG_ENTRY    ICON                    "res\\friend_log_entry.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// GIF
+//
+
+IDR_GIF_LOGIN           GIF                     "res\\im\\loginWait.gif.dat"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_NODROP              CURSOR                  "res\\nodrop.cur"
+IDC_DROP                CURSOR                  "res\\pointer_.cur"
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// 英语(美国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_UP             ICON                    "res\\iconup.ico"
+IDI_ICON_DOWN           ICON                    "res\\icodown.ico"
+#endif    // 英语(美国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

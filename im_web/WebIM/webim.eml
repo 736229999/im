@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component LANGUAGE_LEVEL="JDK_1_7" jdk="1.7 (1)" jdk_type="JavaSDK">
+	<output-test url="file://$MODULE_DIR$/target/test-classes"/>
+	<contentEntry url="file://$MODULE_DIR$">
+		<testFolder url="file://$MODULE_DIR$/src/test/java"/>
+		<excludeFolder url="file://$MODULE_DIR$/target"/>
+	</contentEntry>
+	<levels>
+		<level name="Maven: org.codehaus.jackson:jackson-core-lgpl:1.9.13" value="project"/>
+		<level name="Maven: org.codehaus.jackson:jackson-mapper-lgpl:1.9.13" value="project"/>
+		<level name="Maven: dom4j:dom4j:1.6.1" value="project"/>
+		<level name="Maven: xml-apis:xml-apis:1.0.b2" value="project"/>
+		<level name="Maven: log4j:log4j:1.2.17" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-databind:2.4.2" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-core:2.4.2" value="project"/>
+		<level name="Maven: com.fasterxml.jackson.core:jackson-annotations:2.4.2" value="project"/>
+		<level name="servlet-api" value="project"/>
+	</levels>
+</component>

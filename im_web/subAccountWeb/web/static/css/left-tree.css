@@ -1,0 +1,187 @@
+.left-tree {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  color:#333;
+}
+.left-tree li {
+  white-space: nowrap;
+}
+.left-tree li ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.left-tree .tree-node {
+  padding-left:10px;
+  height: 38px;
+  border-left: 2px #F6F6F6 solid;
+  border-top: 1px #ffffff solid;
+  border-bottom: 1px #e1e1e1 solid;
+  white-space: nowrap;
+  cursor: pointer;
+  position: relative;
+}
+.left-tree .tree-hit {
+  cursor: pointer;
+}
+.left-tree .tree-expanded,
+.left-tree .tree-collapsed,
+.left-tree .tree-indent {
+  display: inline-block;
+  width: 16px;
+  height: 18px;
+  margin-top:10px;
+  vertical-align: top;
+  overflow: hidden;
+}
+.left-tree .tree-expanded {
+  background: url('../images/tree_icons.png') no-repeat -18px 0px;
+}
+.left-tree .tree-expanded-hover {
+  background: url('../images/tree_icons.png') no-repeat -50px 0px;
+}
+.left-tree .tree-collapsed {
+  background: url('../images/tree_icons.png') no-repeat 0px 0px;
+}
+.left-tree .tree-collapsed-hover {
+  background: url('../images/tree_icons.png') no-repeat -32px 0px;
+}
+.left-tree .tree-lines .tree-expanded,
+.left-tree .tree-lines .tree-root-first .tree-expanded {
+  background: url('../images/tree_icons.png') no-repeat -144px 0;
+}
+.left-tree .tree-lines .tree-collapsed,
+.left-tree .tree-lines .tree-root-first .tree-collapsed {
+  background: url('../images/tree_icons.png') no-repeat -128px 0;
+}
+.left-tree .tree-lines .tree-node-last .tree-expanded,
+.left-tree .tree-lines .tree-root-one .tree-expanded {
+  background: url('../images/tree_icons.png') no-repeat -80px 0;
+}
+.left-tree .tree-lines .tree-node-last .tree-collapsed,
+.left-tree .tree-lines .tree-root-one .tree-collapsed {
+  background: url('../images/tree_icons.png') no-repeat -64px 0;
+}
+.left-tree .tree-title {
+  line-height: 38px;
+  font-size: 14px;
+  display: inline-block;
+  text-decoration: none;
+  vertical-align: top;
+  white-space: nowrap;
+  padding: 0 2px;
+  height: 38px;
+}
+.left-tree .tree-node-proxy {
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 2px 0 20px;
+  border-width: 1px;
+  border-style: solid;
+  z-index: 9900000;
+}
+.left-tree .tree-dnd-icon {
+  display: inline-block;
+  position: absolute;
+  width: 16px;
+  height: 18px;
+  left: 2px;
+  top: 50%;
+  margin-top: -9px;
+}
+.left-tree .tree-dnd-yes {
+  background: url('../images/tree_icons.png') no-repeat -256px 0;
+}
+.left-tree .tree-dnd-no {
+  background: url('../images/tree_icons.png') no-repeat -256px -18px;
+}
+.left-tree .tree-node-top {
+  border-top: 1px dotted red;
+}
+.left-tree .tree-node-bottom {
+  border-bottom: 1px dotted red;
+}
+.left-tree .tree-node-append .tree-title {
+  border: 1px dotted red;
+}
+.left-tree .tree-editor {
+  border: 1px solid #ccc;
+  font-size: 12px;
+  height: 14px !important;
+  height: 18px;
+  line-height: 14px;
+  padding: 1px 2px;
+  width: 80px;
+  position: absolute;
+  top: 0;
+}
+.left-tree .tree-node-proxy {
+  background-color: #ffffff;
+  color: #333;
+  border-color: #D4D4D4;
+}
+.left-tree .tree-node-hover {
+  background: #fff;
+  border-left-color: #fff;
+}
+
+.left-tree .tree-node-selected {
+  background: #fff;
+  border-left-color: #5c5c5c;
+  font-weight: bold;
+}
+.left-tree .tree-indent{
+	width:14px;
+}
+
+.left-tree .op-bar {
+	width: 18px;
+	height: 18px;
+	background: url(../images/tree/icon-drop.gif) no-repeat;
+	position: absolute;
+	right: 10px;
+	top: 12px;
+	visibility: hidden;
+	z-index: 0;
+}
+
+.left-tree .visible{
+	visibility: visible;
+}
+
+.left-tree .tree-node-hover .op-bar{
+	visibility: visible !important;
+}
+
+.left-tree-warp .op-panel{
+	position: absolute;
+	width: 79px;
+	border: 1px #e1e1e1 solid;
+	background: #fff;
+	z-index: 100;
+	left:0;
+	top:0;
+	display: none;
+}
+
+.left-tree-warp .op-panel a{
+	display: block;
+	line-height: 25px;
+	padding-left: 9px;
+	color: #333;
+}
+
+.left-tree-warp .op-panel a:hover{
+	background: #f6f6f6;
+	color: #f22e00;
+}
+
+.left-tree-warp .rename {
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 20px;
+	line-height: 20px;
+	width:100px;
+}

@@ -1,0 +1,378 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Business|Win32">
+      <Configuration>Debug_Business</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Business|Win32">
+      <Configuration>Release_Business</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{53ADF471-A7E4-41FD-B1D9-2575B0D6E466}</ProjectGuid>
+    <SccProjectName />
+    <SccAuxPath />
+    <SccLocalPath />
+    <SccProvider />
+    <Keyword>MFCDLLProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">..\..\lib</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">..\..\lib</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Debug\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">Debug\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">.\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Release\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">Release\</IntDir>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" />
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_AFXEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>gdiplus.lib DETOURS.LIB  coolsb.lib %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(SolutionDir)/bin$(Configuration)/$(ProjectName).dll</OutputFile>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>$(SolutionDir)/lib$(Configuration)/$(ProjectName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <InlineFunctionExpansion>Default</InlineFunctionExpansion>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_AFXEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>gdiplus.lib DETOURS.LIB  coolsb.lib %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(SolutionDir)/bin$(Configuration)/$(ProjectName).dll</OutputFile>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <ImportLibrary>$(SolutionDir)/lib$(Configuration)/$(ProjectName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>gdiplus.lib coolsb.lib %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(SolutionDir)/bin$(Configuration)/$(ProjectName).dll</OutputFile>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>$(SolutionDir)/lib$(Configuration)/$(ProjectName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">
+    <ClCompile>
+      <InlineFunctionExpansion>OnlyExplicitInline</InlineFunctionExpansion>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_AFXEXT;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <AdditionalOptions>gdiplus.lib coolsb.lib %(AdditionalOptions)</AdditionalOptions>
+      <OutputFile>$(SolutionDir)/bin$(Configuration)/$(ProjectName).dll</OutputFile>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <ImportLibrary>$(SolutionDir)/lib$(Configuration)/$(ProjectName).lib</ImportLibrary>
+      <TargetMachine>MachineX86</TargetMachine>
+      <IgnoreSpecificDefaultLibraries>LIBCMT</IgnoreSpecificDefaultLibraries>
+      <ImageHasSafeExceptionHandlers>false</ImageHasSafeExceptionHandlers>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="ButtonEx.cpp" />
+    <ClCompile Include="CheckButton.cpp" />
+    <ClCompile Include="CloseTabCtrl.cpp" />
+    <ClCompile Include="ColumnCtrl.cpp" />
+    <ClCompile Include="FlatHotKeyCtrl.cpp" />
+    <ClCompile Include="RadioButton.cpp" />
+    <ClCompile Include="Custdraw.cpp" />
+    <ClCompile Include="FlatDateTimeCtrl.cpp" />
+    <ClCompile Include="FlatEdit.cpp" />
+    <ClCompile Include="FlatPopupMenu.cpp" />
+    <ClCompile Include="GraphComboBox.cpp" />
+    <ClCompile Include="HmgSkin.cpp" />
+    <ClCompile Include="HyperBtn.cpp" />
+    <ClCompile Include="MenuCtrl.cpp" />
+    <ClCompile Include="MenuEx.cpp" />
+    <ClCompile Include="PictureEx.cpp" />
+    <ClCompile Include="ResGdiObj.cpp" />
+    <ClCompile Include="ScrollBarEx.cpp" />
+    <ClCompile Include="SplitterControl.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">Create</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="TabBtnCtrl.cpp" />
+    <ClCompile Include="XButton.cpp" />
+    <ClCompile Include="XHeaderCtrl.cpp" />
+    <ClCompile Include="XListCtrl.cpp" />
+    <ClCompile Include="XSkinDlg.cpp" />
+    <ClCompile Include="XSliderCtrl.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HmgSkin.def" />
+    <None Include="res\im\arrow_down.bmp" />
+    <None Include="res\im\arrow_up.bmp" />
+    <None Include="res\im\bmp00001.bmp" />
+    <None Include="res\im\bmp00002.bmp" />
+    <None Include="res\im\bmp00005.bmp" />
+    <None Include="res\im\bmp00006.bmp" />
+    <None Include="res\im\bmp00007.bmp" />
+    <None Include="res\im\bmp00008.bmp" />
+    <None Include="res\im\bmp00009.bmp" />
+    <None Include="res\im\btn1_disable.bmp" />
+    <None Include="res\im\btn1_down.bmp" />
+    <None Include="res\im\btn1_hover.bmp" />
+    <None Include="res\im\btn1_normal.bmp" />
+    <None Include="res\im\button_disable.bmp" />
+    <None Include="res\im\button_down.bmp" />
+    <None Include="res\im\button_hover.bmp" />
+    <None Include="res\im\button_normal.bmp" />
+    <None Include="res\im\close_do.bmp" />
+    <None Include="res\im\close_down.bmp" />
+    <None Include="res\im\close_hot.bmp" />
+    <None Include="res\im\close_no.bmp" />
+    <None Include="res\im\close_normal.bmp" />
+    <None Include="res\im\column_b.bmp" />
+    <None Include="res\im\column_btn_bottom.bmp" />
+    <None Include="res\im\column_btn_bottom_disable.bmp" />
+    <None Include="res\im\column_btn_bottom_hot.bmp" />
+    <None Include="res\im\column_btn_mid.bmp" />
+    <None Include="res\im\column_btn_mid_hot.bmp" />
+    <None Include="res\im\column_btn_top.bmp" />
+    <None Include="res\im\combo_right.bmp" />
+    <None Include="res\im\dlg_caption_bar.bmp" />
+    <None Include="res\im\dlg_caption_left.bmp" />
+    <None Include="res\im\dlg_caption_mid.bmp" />
+    <None Include="res\im\dlg_caption_right.bmp" />
+    <None Include="res\im\help_down.bmp" />
+    <None Include="res\im\help_hot.bmp" />
+    <None Include="res\im\help_normal.bmp" />
+    <None Include="res\HmgSkin.rc2" />
+    <None Include="res\idr_main.ico" />
+    <None Include="res\im\im_btn_d.bmp" />
+    <None Include="res\im\im_btn_h.bmp" />
+    <None Include="res\im\im_btn_n.bmp" />
+    <None Include="res\im\im_clust.bmp" />
+    <None Include="res\im\im_cluster.bmp" />
+    <None Include="res\im\im_combo.bmp" />
+    <None Include="res\im\left_btn_arrow.bmp" />
+    <None Include="res\im\max_down.bmp" />
+    <None Include="res\im\max_hot.bmp" />
+    <None Include="res\im\max_normal.bmp" />
+    <None Include="res\im\min_down.bmp" />
+    <None Include="res\im\min_hot.bmp" />
+    <None Include="res\im\min_normal.bmp" />
+    <None Include="res\im\right_btn_arrow.bmp" />
+    <None Include="res\im\scrollbar.BMP" />
+    <None Include="res\im\silder_thum_down.bmp" />
+    <None Include="res\im\slider_thum_hot.bmp" />
+    <None Include="res\im\slider_thum_normal.bmp" />
+    <None Include="res\im\上下移动-亮.bmp" />
+    <None Include="res\im\上下移动-暗.bmp" />
+    <None Include="res\im\还原_down副本.bmp" />
+    <None Include="res\im\还原_hot副本.bmp" />
+    <None Include="res\im\还原_normal副本.bmp" />
+    <None Include="ReadMe.txt" />
+    <None Include="res\切片(滚动条).bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ButtonEx.h" />
+    <ClInclude Include="CheckButton.h" />
+    <ClInclude Include="CloseTabCtrl.h" />
+    <ClInclude Include="ColumnCtrl.h" />
+    <ClInclude Include="coolscroll.h" />
+    <ClInclude Include="Detours.h" />
+    <ClInclude Include="FlatDateTimeCtrl.h" />
+    <ClInclude Include="FlatEdit.h" />
+    <ClInclude Include="FlatHotKeyCtrl.h" />
+    <ClInclude Include="FlatPopupMenu.h" />
+    <ClInclude Include="GraphComboBox.h" />
+    <ClInclude Include="HmgSkinPublic.h" />
+    <ClInclude Include="HyperBtn.h" />
+    <ClInclude Include="MemDC.h" />
+    <ClInclude Include="MenuCtrl.h" />
+    <ClInclude Include="MenuEx.h" />
+    <ClInclude Include="PictureEx.h" />
+    <ClInclude Include="RadioButton.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ScrollBarEx.h" />
+    <ClInclude Include="SkinBitmap.h" />
+    <ClInclude Include="SplitterControl.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="TabBtnCtrl.h" />
+    <ClInclude Include="XButton.h" />
+    <ClInclude Include="XHeaderCtrl.h" />
+    <ClInclude Include="XListCtrl.h" />
+    <ClInclude Include="XSkinDlg.h" />
+    <ClInclude Include="XSliderCtrl.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="HmgSkin.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Library Include="Coolsb.lib" />
+    <Library Include="CoolSBD.lib" />
+    <Library Include="Detours.lib" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+  <ProjectExtensions>
+    <VisualStudio>
+      <UserProperties RESOURCE_FILE="HmgSkin.rc" />
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,81 @@
+.mou-floor{
+	width:100%;
+	overflow: hidden;
+}
+.floor-1{
+	height: 665px;
+	background:url(../images/MouMou-Seller-Edition01.png) center no-repeat;	
+}
+.floor-2{
+	height: 800px;
+	background:url(../images/MouMou-Seller-Edition02.png) center no-repeat;
+}
+.floor-3{
+	height: 801px;
+	background:url(../images/MouMou-Seller-Edition03.png) center no-repeat;
+}
+.floor-4{
+	height: 800px;
+	background:url(../images/MouMou-Seller-Edition04.gif) center no-repeat;
+}
+.moumou-content{
+	width: 1200px;
+	margin: 0 auto;
+	height: inherit;
+	font-family: microsoft yahei;
+	color: #fff;
+	position: relative;
+}
+.floor-1 .logo{
+	display:inline-block;
+	height: 65px;
+	overflow: hidden;
+}
+.floor-1 .floor-1-word{
+	width: 383px;
+	position: absolute;
+	top: 235px;
+	right: 0px;
+	overflow: hidden;
+	
+}
+.floor-word{
+	width: 605px;
+	margin: 90px auto 0px;
+	text-align: center;
+}
+.floor-word h2{
+	font-size: 60px;
+	line-height: 60px;
+	margin-bottom: 20px;
+}
+.floor-word p{
+	font-size: 30px;
+	line-height: 30px;
+}
+.floor-1 .floor-1-word h1{
+ 	font-size: 52px;
+ 	line-height: 52px;
+ 	color: #fff;
+ 	margin: 20px 0px 25px 0px;
+}
+.floor-1 .floor-1-word span{
+	display: block;
+	padding-left: 5px;
+ 	font-size: 24px;
+ 	line-height: 24px;
+ 	margin-bottom: 22px;
+}
+.floor-1 .floor-1-word p{
+	font-size: 16px;
+	line-height: 16px;
+	margin: 5px 0px 5px 5px;
+}
+.floor-1 .floor-1-word .download{
+	display: block;
+	width: 220px;
+	height: 70px;
+	margin-top: 20px;
+	margin-left: 5px;
+	background: url(../images/download.png) no-repeat;
+}

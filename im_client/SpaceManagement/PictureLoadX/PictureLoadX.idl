@@ -1,0 +1,44 @@
+// PictureLoadX.idl : PictureLoadX 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(PictureLoadX.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(68FAC55A-B951-4C9B-8541-027A32390A79),
+	dual,
+	nonextensible,
+	helpstring("IIMiniPictureBroadCastX 接口"),
+	pointer_default(unique)
+]
+interface IIMiniPictureBroadCastX : IDispatch{
+	[id(1), helpstring("方法SetUserInfo")] HRESULT SetUserInfo([in]LONG nUserID, [in] BSTR strUserName, [in] BSTR strNickName);
+	[id(2), helpstring("方法Show")] HRESULT Show([in]BSTR strCatchPath);
+	[id(3), helpstring("方法Close")] HRESULT Close(void);
+	[id(4), helpstring("方法AddUser")] HRESULT AddUser([in] long nUserId);
+	[id(5), helpstring("方法SetWindowTop")] HRESULT SetWindowTop([in] BOOL bWndTop);
+	[id(6), helpstring("方法SetInterval")] HRESULT SetInterval([in] int nInterval);
+	[id(7), helpstring("方法SetInterval")] HRESULT SetMessageWndHandle([in] LONG hWnd);
+	[id(8), helpstring("方法EmptyPictures")] HRESULT EmptyPictures();
+};
+[
+	uuid(A8A6F23C-7025-42F7-9E73-73E5475B8A46),
+	version(1.0),
+	helpstring("PictureLoadX 1.0 类型库")
+]
+library PictureLoadXLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(D9D21C16-86BF-4165-8985-1E4227A95ED4),
+		helpstring("IMiniPictureBroadCastX Class")
+	]
+	coclass IMiniPictureBroadCastX
+	{
+		[default] interface IIMiniPictureBroadCastX;
+	};
+};

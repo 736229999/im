@@ -1,0 +1,4806 @@
+#include "stdafx.h"
+#define SQLCA_NONE 
+#define ORACA_NONE
+#include <sqlcpr.h>
+// extern struct sqlca sqlca;
+// extern struct oraca oraca;
+
+/*#include <oci.h>*/
+/*使用到的连接名与上下文
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+*/
+
+#include "DatabaseMini.h"
+#include <oci.h>
+
+EXEC SQL INCLUDE SQLCA;
+EXEC SQL INCLUDE ORACA;
+
+EXEC ORACLE OPTION (RELEASE_CURSOR = YES);  
+EXEC ORACLE OPTION (ORACA=YES);
+
+extern struct oraca oraca;
+extern void sqlgls(char*,size_t*,size_t *);
+
+ 
+typedef struct long_varraw {
+  unsigned int len;
+  char buf[1];
+} long_varraw;
+EXEC SQL TYPE long_varraw IS LONG VARRAW REFERENCE;
+
+//线程运行上下文
+EXEC SQL BEGIN DECLARE SECTION;
+	extern sql_context m_ctx[ 200 ];
+EXEC SQL END DECLARE SECTION;
+	
+
+CDatabaseMini::CDatabaseMini(void)
+{
+
+}
+
+CDatabaseMini::~CDatabaseMini(void)
+{
+
+}
+
+void CDatabaseMini::SetConnectDB(char* uid, char* pwd, char* sid)
+{
+	strncpy(miniuid, uid,32);
+	strncpy(minipwd,pwd,32);
+	strncpy(minisid, sid,32);
+}
+
+bool CDatabaseMini::ConnectDB()
+{
+	return ConnectMini();
+}
+
+/*================================================================ 
+*
+* 函 数 名：Get_User_GroupInfo 
+** 根据用户名分组信息
+* 参 数： 
+* const uint32 [[IN]] : 用户ID
+* XT_GROUPINFO_GET_ACK::tagGroupInfo* pGroupInfo [IN,OUT]: 用户分组信息
+* int &nGroupNum [IN,OUT] : 所要获取的分组数和返回的分组数，如果输入为0，则输出存在的数目。
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 数据库错误:DB_ERROR;
+* 
+================================================================*/ 
+int CDatabaseMini::Get_User_GroupInfo(const uint32 c_iUserID, XT_GROUPINFO_GET_ACK::tagGroupInfo* pGroupInfo, uint8 &nGroupNum, uint8 flag)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR var_groupname[21];
+		unsigned int     i_UserId,i_flag;
+		int				g_pid,g_id,ret_count;
+		VARCHAR db_link_name[32];
+		int		 retcode;	
+		SQL_CURSOR cur_group;
+	EXEC SQL END DECLARE SECTION;
+ 
+
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+
+	SET_INIT_NULL(var_groupname);
+	i_UserId = c_iUserID ;
+	i_flag = flag;
+	
+	ret_count = 0;
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;	
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+	EXEC SQL ALLOCATE :cur_group;
+
+start:	
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.GetGroupInfo(:i_UserId,:cur_group,:retcode,:i_flag);
+		end;
+	END-EXEC;	
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		EXEC SQL CLOSE :cur_group;
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 )
+	{
+		sql_error(sqlca, oraca);
+		nGroupNum = 0;
+		EXEC SQL CLOSE :cur_group;
+		EXEC SQL FREE  :cur_group;
+		return DB_ERROR;
+	}
+	
+	for(;;)
+	{  
+	 
+		EXEC SQL FETCH :cur_group INTO :g_pid,:g_id,:var_groupname;
+		db_ret = sqlca.sqlcode;
+		if (db_ret == 1403 )
+		{			
+			nGroupNum = ret_count; 
+			break;
+		}
+		
+		if( ret_count >= nGroupNum )//指定获取的数目
+		{
+			break;
+		}
+		
+		if( db_ret < 0 )
+		{
+			nGroupNum = ret_count; 
+			break;
+		}
+		SET_END_NULL(var_groupname);
+
+		pGroupInfo[ret_count].nGroupPid = g_pid;
+		pGroupInfo[ret_count].nGroupID = g_id;
+		strncpy(pGroupInfo[ret_count].szGroupName, (char*)var_groupname.arr, MAX_GROUPNAME_LEN);
+	
+		++ret_count;
+	}
+	
+	EXEC SQL CLOSE :cur_group;
+	EXEC SQL FREE  :cur_group;
+	
+	return  DB_SUCCESS;
+
+}
+
+int CDatabaseMini::WebMsgSave(XT_TALK* msg,uint32 logintime)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int from_id,to_id,data_type,version,send_time,recv_flag,fontSize,fontColor,fontStyle,recv_logintime,retcode;
+		VARCHAR var_fontName[50],var_nickname[41],var_msg[1315],db_link_name[32],var_uuid[80];
+	EXEC SQL END DECLARE SECTION;
+
+	from_id = msg->from_id;
+	to_id = msg->to_id;
+	data_type = msg->data_type;
+	version = msg->ver;
+	send_time = msg->send_time;
+	recv_flag = msg->recv_flag;
+	fontSize = msg->fontSize;
+	fontColor = msg->fontColor;
+	fontStyle = msg->fontStyle;
+	recv_logintime =logintime;
+	
+	SET_INIT_NULL(var_fontName);
+	SET_INIT_NULL(var_nickname);
+	SET_INIT_NULL(var_msg);
+	SET_INIT_NULL(var_uuid);
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	strncpy((char*)var_nickname.arr,msg->from_nickname,MAX_NICKNAME_LEN+1);/*4*/
+	var_nickname.len = (short)strlen((char *)var_nickname.arr);
+
+	strncpy((char*)var_fontName.arr,msg->fontName,50);
+	var_fontName.len = (short)strlen((char *)var_fontName.arr);
+	
+	strncpy((char*)var_msg.arr,msg->data,1315);
+	var_msg.len = (short)strlen((char *)var_msg.arr);
+
+	strncpy((char*)var_uuid.arr,msg->uuid,MAX_UUID_LEN);
+	var_uuid.len = (short)strlen((char *)var_uuid.arr);
+
+	int db_ret;
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+	int iReconnTimes;
+	bool bReconn;
+
+	start:	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_User_Pkg.WebIMMsgSave_20151222(:from_id,:to_id,:data_type,:version,:send_time,:recv_flag,:fontSize,:fontColor,:fontStyle,:recv_logintime,:var_fontName,:var_nickname,:var_msg,:var_uuid,:retcode);
+			end;
+	END-EXEC;
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+		
+	if (retcode == 1)
+	{
+		return DB_ERROR;
+	}
+	
+	return DB_SUCCESS;	
+}
+
+int CDatabaseMini::WebRecommSave(uint32 fid,uint32 did,uint16 recomm,uint32 time)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int from_id,to_id,recomment,send_time;
+		int	retcode;
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+
+	from_id = fid;
+	to_id = did;
+	recomment = recomm;
+	send_time = time;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	int db_ret;
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+	int iReconnTimes;
+	bool bReconn;
+
+	start:	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_User_Pkg.WebRecommSave(:from_id,:to_id,:recomment,:send_time,:retcode);
+		end;
+	END-EXEC;
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+		
+	if (retcode == 1 || retcode == 1403)
+	{
+		return DB_ERROR;
+	}
+	
+	return DB_SUCCESS;	
+}
+
+int CDatabaseMini::WebServiceSave(uint32 fid,uint32 did,uint16 recomm,uint32 time)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int from_id,to_id,recomment,send_time;
+		int	retcode;
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+
+	from_id = fid;
+	to_id = did;
+	recomment = recomm;
+	send_time = time;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	int db_ret;
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+	int iReconnTimes;
+	bool bReconn;
+
+	start:	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_User_Pkg.WebServiceSave(:from_id,:to_id,:recomment,:send_time,:retcode);
+		end;
+	END-EXEC;
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+		
+	if (retcode == 1)
+	{
+		return DB_ERROR;
+	}
+	
+	return DB_SUCCESS;	
+}
+
+int CDatabaseMini::WebBusiListReq(XT_WEB_BUSI_LIST_REQ* BusiListReq,XT_WEB_BUSI_LIST_ACK::BusiList* pListInfo,uint32& nRetCount)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR	db_link_name[32],var_nickname[41],var_headImg[101],var_usersign[250];
+		unsigned int id,msgnum,list_id,c_time;
+		int	retcode;
+		SQL_CURSOR cur_listInfo;
+	EXEC SQL END DECLARE SECTION;
+
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+	
+	id=BusiListReq->id;
+	msgnum=BusiListReq->msgnum;
+	
+	SET_INIT_NULL(var_nickname);
+	SET_INIT_NULL(var_headImg);
+	SET_INIT_NULL(var_usersign);
+  
+	int db_ret, iReconnTimes;
+	uint32 iNum = 0;	
+	bool bReconn;	
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];  
+
+start:  
+		EXEC SQL ALLOCATE :cur_listInfo;
+		EXEC SQL AT :db_link_name EXECUTE
+			begin
+				Mini_User_Pkg.WebListReq_20151020(:id,:msgnum,:cur_listInfo,:retcode);
+			end;
+		END-EXEC;
+
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			EXEC SQL CLOSE :cur_listInfo;
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if(db_ret < 0 && db_ret != -1405) 
+		{
+			sql_error(sqlca, oraca);		
+			EXEC SQL CLOSE :cur_listInfo;
+			EXEC SQL FREE  :cur_listInfo;
+			return DB_ERROR;
+		}
+
+		for(;;)
+		{  
+			EXEC SQL FETCH :cur_listInfo INTO :list_id,:c_time,:var_nickname,:var_headImg,:var_usersign;
+			db_ret = sqlca.sqlcode;
+			if (db_ret == 1403 )
+			{
+				nRetCount = iNum;
+				break;
+			}
+			if (iNum >= nRetCount)
+			{
+				break;
+			}	
+			if( db_ret < 0 && db_ret != -1405 )
+			{
+				sql_error(sqlca, oraca);
+				nRetCount = iNum;
+				break;
+			}		
+			pListInfo[iNum].id = list_id;
+			pListInfo[iNum].time = c_time;
+			
+			SET_END_NULL(var_nickname);
+			SET_END_NULL(var_headImg);
+			SET_END_NULL(var_usersign);
+			strncpy(pListInfo[iNum].nickname,(char*)var_nickname.arr,MAX_NICKNAME_LEN+1);	
+			strncpy(pListInfo[iNum].headImgUrl,(char*)var_headImg.arr,MAX_HEADURL_LEN+1);
+			strncpy(pListInfo[iNum].usersign,(char*)var_usersign.arr,MAX_USERSIGN_LEN+1);
+
+			++iNum;
+		}
+		EXEC SQL CLOSE :cur_listInfo;
+		EXEC SQL FREE  :cur_listInfo;
+		return DB_SUCCESS;		
+}
+
+int CDatabaseMini::XmppBusiListReq(XT_XMPP_BUSI_LIST_REQ* BusiListReq,XT_XMPP_BUSI_LIST_ACK::BusiList* pListInfo,uint32& nRetCount)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR	db_link_name[32],var_nickname[41],var_headImg[101],var_usersign[250];
+		unsigned int id,msgnum,list_id,c_time;
+		int	retcode;
+		SQL_CURSOR cur_listInfo;
+	EXEC SQL END DECLARE SECTION;
+
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+	
+	id=BusiListReq->id;
+	msgnum=BusiListReq->msgnum;
+	
+	SET_INIT_NULL(var_nickname);
+	SET_INIT_NULL(var_headImg);
+	SET_INIT_NULL(var_usersign);
+  
+	int db_ret, iReconnTimes;
+	uint32 iNum = 0;	
+	bool bReconn;	
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];  
+
+start:  
+		EXEC SQL ALLOCATE :cur_listInfo;
+		EXEC SQL AT :db_link_name EXECUTE
+			begin
+				Mini_User_Pkg.WebListReq_20151020(:id,:msgnum,:cur_listInfo,:retcode);
+			end;
+		END-EXEC;
+
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			EXEC SQL CLOSE :cur_listInfo;
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if(db_ret < 0 && db_ret != -1405) 
+		{
+			sql_error(sqlca, oraca);		
+			EXEC SQL CLOSE :cur_listInfo;
+			EXEC SQL FREE  :cur_listInfo;
+			return DB_ERROR;
+		}
+
+		for(;;)
+		{  
+			EXEC SQL FETCH :cur_listInfo INTO :list_id,:c_time,:var_nickname,:var_headImg,:var_usersign;
+			db_ret = sqlca.sqlcode;
+			if (db_ret == 1403 )
+			{
+				nRetCount = iNum;
+				break;
+			}
+			if (iNum >= nRetCount)
+			{
+				break;
+			}	
+			if( db_ret < 0 && db_ret != -1405 )
+			{
+				sql_error(sqlca, oraca);
+				nRetCount = iNum;
+				break;
+			}		
+			pListInfo[iNum].id = list_id;
+			pListInfo[iNum].time = c_time;
+			
+			SET_END_NULL(var_nickname);
+			SET_END_NULL(var_headImg);
+			SET_END_NULL(var_usersign);
+			strncpy(pListInfo[iNum].nickname,(char*)var_nickname.arr,MAX_NICKNAME_LEN+1);	
+			strncpy(pListInfo[iNum].headImgUrl,(char*)var_headImg.arr,MAX_HEADURL_LEN+1);
+			strncpy(pListInfo[iNum].usersign,(char*)var_usersign.arr,MAX_USERSIGN_LEN+1);
+
+			++iNum;
+		}
+		EXEC SQL CLOSE :cur_listInfo;
+		EXEC SQL FREE  :cur_listInfo;
+		return DB_SUCCESS;		
+}
+
+
+int CDatabaseMini::WebMsgReq(XT_WEB_MORE_MSG_REQ* msgReq,XT_WEB_MORE_MSG_ACK::MsgInfo* msgInfo,uint32& nRetCount)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR	db_link_name[32],var_fontName[50],var_nickName[41],var_data[1315];
+		unsigned int sid,did,msgtime,msgnum,msgid;
+		unsigned int id,send_time,fontSize,fontColor,fontStyle;
+		int	retcode;
+		SQL_CURSOR cur_msgInfo;
+	EXEC SQL END DECLARE SECTION;
+
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+	
+	sid=msgReq->sid;
+	did=msgReq->did;
+	msgtime=msgReq->msgtime;
+	msgnum=msgReq->msgnum;
+	msgid=msgReq->msgid;
+	
+	SET_INIT_NULL(var_fontName);
+	SET_INIT_NULL(var_nickName);
+	SET_INIT_NULL(var_data);
+
+  
+	int db_ret, iReconnTimes;
+	uint32 iNum = 0;	
+	bool bReconn;	
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];  
+
+start:  
+		EXEC SQL ALLOCATE :cur_msgInfo;
+		EXEC SQL AT :db_link_name EXECUTE
+			begin
+				Mini_User_Pkg.WebMsgReq(:sid,:did,:msgtime,:msgid,:msgnum,:cur_msgInfo,:retcode);
+			end;
+		END-EXEC;
+
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			EXEC SQL CLOSE :cur_msgInfo;
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if(db_ret < 0 && db_ret != -1405) 
+		{
+			sql_error(sqlca, oraca);		
+			EXEC SQL CLOSE :cur_msgInfo;
+			EXEC SQL FREE  :cur_msgInfo;
+			return DB_ERROR;
+		}
+
+		for(;;)
+		{  
+			EXEC SQL FETCH :cur_msgInfo INTO :id,:send_time,:fontSize,:fontColor,:fontStyle,:var_fontName,:var_nickName,:var_data,:msgid;
+			db_ret = sqlca.sqlcode;
+			if (db_ret == 1403 )
+			{
+				nRetCount = iNum;
+				break;
+			}
+			if (iNum >= nRetCount)
+			{
+				break;
+			}	
+			if( db_ret < 0 && db_ret != -1405 )
+			{
+				sql_error(sqlca, oraca);
+				nRetCount = iNum;
+				break;
+			}		
+			msgInfo[iNum].id = id;
+			msgInfo[iNum].send_time = send_time;
+			msgInfo[iNum].fontSize = fontSize;
+			msgInfo[iNum].fontColor = fontColor;
+			msgInfo[iNum].fontStyle = fontStyle;
+			msgInfo[iNum].msgid = msgid;
+			
+			SET_END_NULL(var_fontName);
+			SET_END_NULL(var_nickName);
+			SET_END_NULL(var_data);
+
+			
+			strncpy(msgInfo[iNum].fontName,(char*)var_fontName.arr,50);	
+			strncpy(msgInfo[iNum].nickName,(char*)var_nickName.arr,MAX_NICKNAME_LEN+1);
+			strncpy(msgInfo[iNum].data,(char*)var_data.arr,1315);	
+	
+		
+			
+			++iNum;
+		}
+		EXEC SQL CLOSE :cur_msgInfo;
+		EXEC SQL FREE  :cur_msgInfo;
+		return DB_SUCCESS;		
+}
+
+int CDatabaseMini::WebMsgMoreReq(XT_WEB_MORE_MSG_REQ* msgReq,XT_WEB_MORE_MSG_ACK::MsgInfo* msgInfo,std::vector<uint32_t> &ids, uint32& nRetCount)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR	db_link_name[32],var_fontName[50],var_nickName[41],var_data[1315];
+		VARCHAR merchant_ids[1024];
+		unsigned int sid,msgtime,msgnum,msgid;
+		unsigned int id,send_time,fontSize,fontColor,fontStyle;
+		int	retcode;
+		SQL_CURSOR cur_msgInfo;
+	EXEC SQL END DECLARE SECTION;
+
+	SET_INIT_NULL(merchant_ids);
+	for(unsigned int i = 0; i < ids.size();i++)
+	{
+		char buffer[64] = {0};
+		strcat((char *)merchant_ids.arr,itoa(ids[i],buffer,10));
+		strcat((char *)merchant_ids.arr,",");
+	}	
+	merchant_ids.arr[(short)strlen((char*)merchant_ids.arr)-1] = '\0';
+	merchant_ids.len = (short)strlen((char*)merchant_ids.arr);	
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+	
+	sid=msgReq->sid;
+//	did=msgReq->did;
+	msgtime=msgReq->msgtime;
+	msgnum=msgReq->msgnum;
+	msgid=msgReq->msgid;
+	
+	SET_INIT_NULL(var_fontName);
+	SET_INIT_NULL(var_nickName);
+	SET_INIT_NULL(var_data);
+
+  
+	int db_ret, iReconnTimes;
+	uint32 iNum = 0;	
+	bool bReconn;	
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];  
+
+start:  
+		EXEC SQL ALLOCATE :cur_msgInfo;
+		EXEC SQL AT :db_link_name EXECUTE
+			begin
+				Mini_User_Pkg.WebMsgMoreReq(:sid,:msgtime,:msgid,:msgnum,:merchant_ids,:cur_msgInfo,:retcode);
+			end;
+		END-EXEC;
+
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			EXEC SQL CLOSE :cur_msgInfo;
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if(db_ret < 0 && db_ret != -1405) 
+		{
+			sql_error(sqlca, oraca);		
+			EXEC SQL CLOSE :cur_msgInfo;
+			EXEC SQL FREE  :cur_msgInfo;
+			return DB_ERROR;
+		}
+
+		for(;;)
+		{  
+			EXEC SQL FETCH :cur_msgInfo INTO :id,:send_time,:fontSize,:fontColor,:fontStyle,:var_fontName,:var_nickName,:var_data,:msgid;
+			db_ret = sqlca.sqlcode;
+			if (db_ret == 1403 )
+			{
+				nRetCount = iNum;
+				break;
+			}
+			if (iNum >= nRetCount)
+			{
+				break;
+			}	
+			if( db_ret < 0 && db_ret != -1405 )
+			{
+				sql_error(sqlca, oraca);
+				nRetCount = iNum;
+				break;
+			}		
+			msgInfo[iNum].id = id;
+			msgInfo[iNum].send_time = send_time;
+			msgInfo[iNum].fontSize = fontSize;
+			msgInfo[iNum].fontColor = fontColor;
+			msgInfo[iNum].fontStyle = fontStyle;
+			msgInfo[iNum].msgid = msgid;
+			
+			SET_END_NULL(var_fontName);
+			SET_END_NULL(var_nickName);
+			SET_END_NULL(var_data);
+
+			
+			strncpy(msgInfo[iNum].fontName,(char*)var_fontName.arr,50);	
+			strncpy(msgInfo[iNum].nickName,(char*)var_nickName.arr,MAX_NICKNAME_LEN+1);
+			strncpy(msgInfo[iNum].data,(char*)var_data.arr,1315);	
+	
+		
+			
+			++iNum;
+		}
+		EXEC SQL CLOSE :cur_msgInfo;
+		EXEC SQL FREE  :cur_msgInfo;
+		return DB_SUCCESS;		
+}
+
+/*================================================================ 
+*
+* 函 数 名：Get_Family_MaxMsgID 
+** 根据家族ID获取当前家族最大和最小消息ID
+* 参 数： 
+* uint32 c_iFamilyID [[IN]] : 家族ID
+* uint32 & nMsgID [IN,OUT]: 家族当前消息ID
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 数据库错误:DB_ERROR;  如果家族创建后无任何消息，nMsgID = 0;
+* 
+================================================================*/ 
+int  CDatabaseMini::Get_Family_MaxMsgID(const uint32 c_iFamilyID, uint32 & nMaxMsgID, uint32 &nMinMsgID)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int      nFamilyID;
+		unsigned int      nmaxmsgid,nminmsgid;
+		VARCHAR db_link_name[32];
+		int		 retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	nMaxMsgID = 0;
+	nFamilyID = c_iFamilyID; 
+	nmaxmsgid = 0;
+	nminmsgid = 0;	 
+	 
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:	
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.GetFamilyMsgID(:nFamilyID,:nmaxmsgid,:nminmsgid,:retcode);
+		end;
+	END-EXEC;    
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 && db_ret != -1405) //数据库发生错误
+	{
+		sql_error(sqlca, oraca);
+		CLog::Log("Get_Family_MaxMsgID",CLog::TYPE_ERROR,"获取家族最大消息ID失败,nFamilyID:%d, db_ret:%d",nFamilyID,db_ret);
+		return DB_ERROR;
+	}
+	
+	if( db_ret >= 0 && db_ret != 1403)
+	{
+		nMaxMsgID = nmaxmsgid;
+		nMinMsgID = nminmsgid;
+	}
+	else	//初始ID从1开始
+	{
+		nMaxMsgID = 1;
+		nMinMsgID = 0;	
+	}	
+
+	return DB_SUCCESS;
+}
+
+/*================================================================ 
+*
+* 函 数 名：Save_Family_RequestMsg 
+** 保存家族请求消息ID
+* 参 数： 
+* uint32 c_iFamilyID	[IN] : 家族ID
+* uint32 iSenderID		[IN] : 发送者ID
+* uint32 iSendTime		[IN] : 请求时间
+* char   *strMsg		[IN] : 请求内容
+* int	 iMsgLen		[IN] : 内容长度
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 数据库错误:DB_ERROR; 
+* 
+================================================================*/ 
+int CDatabaseMini::Save_Family_RequestMsg(const uint32 c_iFamilyID, uint32 iSenderID,uint32 iSendTime,const char *strMsg, int iMsgLen)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		long_varraw * lvr;
+		unsigned int     nFamilyID, nSenderID, nSendTime, nMsgSeq;
+		int nMsgLen, nMsgType;
+		char*   pmsg;
+		OCIBlobLocator *blob;
+		unsigned int offset = 1; /* attention: typedef ub4 unsigned int */
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+
+	
+	nFamilyID = c_iFamilyID;
+	nSenderID = iSenderID;
+	nSendTime = iSendTime;
+	nMsgLen = iMsgLen;
+	nMsgType = CMD_CLUSTER_AUTH_REQ;
+	pmsg = (char*)strMsg;
+	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;	
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:   	
+	EXEC SQL AT :db_link_name ALLOCATE :blob;
+	
+	EXEC SQL AT :db_link_name SELECT IM_CLUSTERSYSMSG_SEQ_MSGID.nextval INTO :nMsgSeq FROM DUAL;
+	EXEC SQL AT :db_link_name INSERT INTO IM_CLUSTERSYSMSG(MSGID, CLUSTERID,SENDER,SRCIP,SRCPORT,SENDTIME,MSGTYPE,MSGLEN,MSG)
+		VALUES(:nMsgSeq, :nFamilyID,:nSenderID,0,0,:nSendTime,:nMsgType,:nMsgLen,empty_blob());
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 || db_ret == 1403 )
+	{
+		sql_error(sqlca, oraca);	
+		EXEC SQL AT :db_link_name ROLLBACK;
+		EXEC SQL AT :db_link_name FREE :blob;
+		return DB_ERROR;
+	} 
+	
+	EXEC SQL AT :db_link_name COMMIT; 
+
+	EXEC SQL AT :db_link_name SELECT MSG INTO :blob  FROM IM_CLUSTERSYSMSG 
+		WHERE MSGID = :nMsgSeq FOR UPDATE; 
+
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 || db_ret == 1403 )
+	{
+		sql_error(sqlca, oraca);	
+		EXEC SQL AT :db_link_name ROLLBACK;
+		EXEC SQL AT :db_link_name FREE :blob;
+		return DB_ERROR;
+	} 
+  
+	lvr = (long_varraw *)malloc(sizeof(ub4) + nMsgLen);
+	lvr->len = nMsgLen;
+	memcpy(lvr->buf,pmsg,nMsgLen);
+	EXEC SQL AT :db_link_name LOB WRITE ONE :nMsgLen 
+			FROM :lvr WITH LENGTH :nMsgLen INTO :blob AT :offset;
+
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 || db_ret == 1403 )
+	{
+		sql_error(sqlca, oraca);	
+		EXEC SQL AT :db_link_name ROLLBACK;
+		EXEC SQL AT :db_link_name FREE :blob;
+		free(lvr);
+		return DB_ERROR;
+	} 
+	free(lvr);
+
+	EXEC SQL AT :db_link_name UPDATE IM_CLUSTERSYSMSG SET MSG = :blob 
+		WHERE MSGID = :nMsgSeq;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 || db_ret == 1403 )
+	{
+		sql_error(sqlca, oraca);	
+		EXEC SQL AT :db_link_name ROLLBACK;
+		EXEC SQL AT :db_link_name FREE :blob;
+		return DB_ERROR;
+	} 
+  
+	EXEC SQL AT :db_link_name COMMIT WORK;
+	EXEC SQL AT :db_link_name FREE :blob;
+	EXEC SQL AT :db_link_name COMMIT;
+	
+	return DB_SUCCESS;
+}
+
+
+int CDatabaseMini::Save_Offline_Msg(uint32 iRecvID,uint32 iSendID,uint32 iNatIP,uint16 iNatPort,uint32 iTime,
+					uint16 iMsgType,const char *strMsg, uint16 iMsgLen, const char *strText,uint32 sendtime,char *uuid)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		long_varraw * lvr;
+		unsigned int	nRecvID,nSendID, nTime,nMsgLen;
+		unsigned int	int_tmp,natip,var_sendtime;
+		short	natport,nMsgType;
+		char*	pmsg;
+		OCIBlobLocator *blob;
+		unsigned int offset = 1;  /* attention: typedef ub4 unsigned int */
+		VARCHAR db_link_name[32], var_text[1315];
+		VARCHAR var_fromname[41], var_toname[41];
+		VARCHAR var_uuid[41],var_sendtime_1[64];
+	EXEC SQL END DECLARE SECTION;
+	CLog::Log("Save_Offline_Msg",CLog::TYPE_DEBUG,
+		"iRecvID is %d,iSendID is %d,iNatIP is %d,iNatPort is %d,iTime is %d,iMsgType is %d,strMsg is %s,iMsgLen is %d,strText is %s sendtime %u uuid %s",
+		iRecvID,iSendID,iNatIP,iNatPort,iTime,iMsgType,strMsg,iMsgLen,strText,sendtime,uuid); 
+	if( !strMsg )
+	{
+		CLog::Log("Save_Offline_Msg",CLog::TYPE_DEBUG,"strMsg is NULL");
+		return DB_PARAM;
+	}
+	if(strlen(strText) == 0 )
+	{
+		 CLog::Log("Save_Offline_Msg",CLog::TYPE_DEBUG,"strText len is 0");
+		 return DB_PARAM;
+	}
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+
+	SET_INIT_NULL(var_text);
+	SET_INIT_NULL(var_fromname);
+	SET_INIT_NULL(var_toname);
+	SET_INIT_NULL(var_uuid);
+	SET_INIT_NULL(var_sendtime_1);
+	nRecvID = iRecvID;
+	nSendID = iSendID;
+	var_sendtime = sendtime;
+	nTime = iTime;
+	nMsgLen = iMsgLen;
+	nMsgType = iMsgType;
+	pmsg = (char*)strMsg;
+	strncpy((char *)var_text.arr,strText,1315);
+	var_text.len=(unsigned short)strlen(strText);
+	strncpy((char *)var_uuid.arr,uuid,41);
+	var_uuid.len=(unsigned short)strlen(uuid);
+	natport = iNatPort;
+	natip = iNatIP;
+	//delline = 3;
+		
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+ 
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start: 
+	EXEC SQL AT :db_link_name ALLOCATE :blob;
+	if( nMsgType == CMD_P2PMSG_SEND )
+	{
+		EXEC SQL AT :db_link_name SELECT COUNT(MSGID) INTO :int_tmp FROM IM_OFFLINETALKMSG 
+			WHERE RECEIVER=:nRecvID;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start; 			
+		}
+		
+		if( db_ret < 0 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			return DB_ERROR;
+		}
+
+		if (db_ret == 1403)
+			int_tmp = 0;
+		
+		if( int_tmp >= OFFLINE_MAX_MSGNUM  && nRecvID != MANAGER_ID) 
+		{
+			EXEC SQL AT :db_link_name DELETE FROM IM_OFFLINETALKMSG WHERE  MSGID=(SELECT Min(MSGID) FROM IM_OFFLINETALKMSG WHERE RECEIVER=:nRecvID);
+			db_ret = sqlca.sqlcode;
+			if (conn_error(db_ret))
+			{
+				iReconnTimes=0;
+				bReconn=ConnectDB();
+				while(!bReconn)
+				{
+					iReconnTimes++;
+					sleep(iReconnTimes%10);
+					bReconn=ConnectDB();
+				}
+				goto start; 			
+			}
+			
+			if( db_ret < 0	)
+			{
+				sql_error(sqlca, oraca);
+				EXEC SQL AT :db_link_name FREE :blob;
+				EXEC SQL AT :db_link_name ROLLBACK;
+				return DB_ERROR;			
+			}
+			EXEC SQL AT :db_link_name COMMIT; 
+		}
+		
+		EXEC SQL AT :db_link_name select nickname into :var_fromname from im_userinfo where userid=:nSendID;
+		EXEC SQL AT :db_link_name select nickname into :var_toname from im_userinfo where userid=:nRecvID;
+		EXEC SQL AT :db_link_name SELECT IM_OFFLINETALKMSG_SEQ_MSGID.nextval into :int_tmp FROM DUAL;
+		/* 如果要用IM服务器时间，则 sendtime=cast(from_tz(to_timestamp ('19700101000000', 'yyyymmddhh24miss')+ numtodsinterval(:nTime, 'second'), 'gmt') at time zone sessiontimezone as date) */
+		
+		//EXEC SQL AT :db_link_name select   into :var_sendtime_1 from dual;
+
+		EXEC SQL AT :db_link_name INSERT INTO IM_OFFLINETALKMSG(MSGID, RECEIVER,SENDER,SRCIP,SRCPORT,SENDTIME,
+			MSGTYPE,MSGLEN,MSG,TEXT,SenderName,ReceiverName,UUID)
+			VALUES(:int_tmp, :nRecvID,:nSendID,:natip,:natport,to_date('1970-01-01 ','yyyy-MM-dd HH:MI:SS')+((:var_sendtime + 28800)/(3600*24)),
+			:nMsgType,:nMsgLen,empty_blob(),:var_text,:var_fromname,:var_toname,:var_uuid);
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start; 			
+		}
+		
+		if( db_ret < 0 || db_ret == 1403 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			EXEC SQL AT :db_link_name ROLLBACK;
+			return DB_ERROR;			
+		}
+		EXEC SQL AT :db_link_name COMMIT; 
+
+		EXEC SQL AT :db_link_name SELECT MSG INTO :blob  FROM IM_OFFLINETALKMSG 
+			WHERE MSGID = :int_tmp FOR UPDATE;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start; 			
+		}
+		
+		if( sqlca.sqlcode < 0 || sqlca.sqlcode == 1403 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			EXEC SQL AT :db_link_name ROLLBACK;
+			return DB_ERROR;			
+		} 
+	}
+
+
+	lvr = (long_varraw *)malloc(sizeof(ub4) + nMsgLen);
+	lvr->len = nMsgLen;
+	memcpy(lvr->buf,pmsg,nMsgLen);
+	EXEC SQL AT :db_link_name LOB WRITE ONE :nMsgLen
+			FROM :lvr WITH LENGTH :nMsgLen INTO :blob AT :offset;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start; 			
+	}
+	
+	if( db_ret < 0 || db_ret == 1403 )
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL AT :db_link_name FREE :blob;
+		EXEC SQL AT :db_link_name ROLLBACK;
+		free(lvr);
+		return DB_ERROR;			
+	} 
+	free(lvr);
+
+	if( nMsgType == CMD_P2PMSG_SEND )
+	{
+		EXEC SQL AT :db_link_name UPDATE IM_OFFLINETALKMSG SET MSG = :blob 
+			WHERE MSGID = :int_tmp;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start; 			
+		}
+		
+		if( db_ret < 0 || db_ret == 1403 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			EXEC SQL AT :db_link_name ROLLBACK;
+			return DB_ERROR;			
+		} 
+		EXEC SQL AT :db_link_name COMMIT; 
+	}
+	
+
+	EXEC SQL AT :db_link_name COMMIT WORK;
+	EXEC SQL AT :db_link_name FREE :blob;
+	EXEC SQL AT :db_link_name COMMIT;
+
+	return DB_SUCCESS;
+}
+
+/*================================================================ 
+*
+* 函 数 名：Save_User_Msg 
+** 保存用户的消息，包括系统消息
+* 参 数： 
+* uint32 iRecvID	[IN] : 家族ID
+* uint32 iSendID		[IN] : 发送者ID
+* uint32 iNatIP,uint16 iNatPort,uint32 iTime [IN] 
+* uint16 iMsgType		[IN] : 消息类型
+* char   *strMsg		[IN] : 消息内容
+* uint16	 iMsgLen		[IN] : 内容长度
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 数据库错误:DB_ERROR; 
+* 
+================================================================*/ 
+int CDatabaseMini::Save_User_Msg(uint32 iRecvID,uint32 iSendID,uint32 iNatIP,uint16 iNatPort,uint32 iTime,uint16 iMsgType,const char *strMsg, uint16 iMsgLen,const char *strText)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		long_varraw * lvr;
+		unsigned int    nRecvID,nSendID, nTime,nMsgLen;
+		unsigned int	int_tmp,natip;
+		short   natport,nMsgType;
+		char*   pmsg;
+		OCIBlobLocator *blob;
+		unsigned int offset = 1;  /* attention: typedef ub4 unsigned int */
+		VARCHAR db_link_name[32], var_text[1315];
+		VARCHAR var_fromname[41], var_toname[41];
+	EXEC SQL END DECLARE SECTION;
+ 	CLog::Log("Save_User_Msg",CLog::TYPE_DEBUG,"iRecvID is %d,iSendID is %d,iNatIP is %d,iNatPort is %d,iTime is %d,iMsgType is %d,strMsg is %s,iMsgLen is %d,strText is %s",
+	iRecvID,iSendID,iNatIP,iNatPort,iTime,iMsgType,strMsg,iMsgLen,strText);	
+	if( !strMsg )
+	{
+		CLog::Log("Save_User_Msg",CLog::TYPE_DEBUG,"strMsg is NULL");
+		return DB_PARAM;
+	}
+	if(strlen(strText) == 0 )
+	{
+         CLog::Log("Save_User_Msg",CLog::TYPE_DEBUG,"strText len is 0");
+         return DB_PARAM;
+    }
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+
+	SET_INIT_NULL(var_text);
+	SET_INIT_NULL(var_fromname);
+	SET_INIT_NULL(var_toname);
+
+	nRecvID = iRecvID;
+	nSendID = iSendID;
+	nTime = iTime;
+	nMsgLen = iMsgLen;
+	nMsgType = iMsgType;
+	pmsg = (char*)strMsg;
+	strncpy((char *)var_text.arr,strText,1315);
+	var_text.len=(unsigned short)strlen(strText);
+	natport = iNatPort;
+	natip = iNatIP;
+	//delline = 3;
+		
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+ 
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start: 
+	EXEC SQL AT :db_link_name ALLOCATE :blob;
+	if( nMsgType == CMD_P2PMSG_SEND )
+	{
+		EXEC SQL AT :db_link_name SELECT COUNT(MSGID) INTO :int_tmp FROM IM_OFFLINETALKMSG 
+			WHERE RECEIVER=:nRecvID;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( db_ret < 0 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			return DB_ERROR;
+		}
+
+		if (db_ret == 1403)
+			int_tmp = 0;
+		
+		if( int_tmp >= OFFLINE_MAX_MSGNUM  && nRecvID != MANAGER_ID) 
+		{
+			EXEC SQL AT :db_link_name DELETE FROM IM_OFFLINETALKMSG WHERE  MSGID=(SELECT Min(MSGID) FROM IM_OFFLINETALKMSG WHERE RECEIVER=:nRecvID);
+			db_ret = sqlca.sqlcode;
+			if (conn_error(db_ret))
+			{
+				iReconnTimes=0;
+				bReconn=ConnectDB();
+				while(!bReconn)
+				{
+					iReconnTimes++;
+					sleep(iReconnTimes%10);
+					bReconn=ConnectDB();
+				}
+				goto start;				
+			}
+			
+			if( db_ret < 0  )
+			{
+				sql_error(sqlca, oraca);
+				EXEC SQL AT :db_link_name FREE :blob;
+				EXEC SQL AT :db_link_name ROLLBACK;
+				return DB_ERROR;			
+			}
+			EXEC SQL AT :db_link_name COMMIT; 
+		}
+		
+		EXEC SQL AT :db_link_name select nickname into :var_fromname from im_userinfo where userid=:nSendID;
+		EXEC SQL AT :db_link_name select nickname into :var_toname from im_userinfo where userid=:nRecvID;
+		EXEC SQL AT :db_link_name SELECT IM_OFFLINETALKMSG_SEQ_MSGID.nextval into :int_tmp FROM DUAL;
+		/* 如果要用IM服务器时间，则 sendtime=cast(from_tz(to_timestamp ('19700101000000', 'yyyymmddhh24miss')+ numtodsinterval(:nTime, 'second'), 'gmt') at time zone sessiontimezone as date) */
+		EXEC SQL AT :db_link_name INSERT INTO IM_OFFLINETALKMSG(MSGID, RECEIVER,SENDER,SRCIP,SRCPORT,SENDTIME,
+			MSGTYPE,MSGLEN,MSG,TEXT,SenderName,ReceiverName)
+			VALUES(:int_tmp, :nRecvID,:nSendID,:natip,:natport,sysdate,
+			:nMsgType,:nMsgLen,empty_blob(),:var_text,:var_fromname,:var_toname);
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( db_ret < 0 || db_ret == 1403 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			EXEC SQL AT :db_link_name ROLLBACK;
+			return DB_ERROR;			
+		}
+		EXEC SQL AT :db_link_name COMMIT; 
+
+		EXEC SQL AT :db_link_name SELECT MSG INTO :blob  FROM IM_OFFLINETALKMSG 
+			WHERE MSGID = :int_tmp FOR UPDATE;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( sqlca.sqlcode < 0 || sqlca.sqlcode == 1403 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			EXEC SQL AT :db_link_name ROLLBACK;
+			return DB_ERROR;			
+		} 
+	}
+	else
+	{
+		EXEC SQL AT :db_link_name SELECT COUNT(MSGID) INTO :int_tmp FROM IM_OFFLINESYSMSG 
+			WHERE RECEIVER=:nRecvID;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( db_ret < 0 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			return DB_ERROR;			
+		}
+		if( int_tmp >= OFFLINE_MAX_MSGNUM ) 
+		{
+			EXEC SQL AT :db_link_name DELETE FROM IM_OFFLINESYSMSG WHERE  MSGID=(SELECT Min(MSGID) FROM IM_OFFLINESYSMSG WHERE RECEIVER=:nRecvID);
+			db_ret = sqlca.sqlcode;
+			if (conn_error(db_ret))
+			{
+				iReconnTimes=0;
+				bReconn=ConnectDB();
+				while(!bReconn)
+				{
+					iReconnTimes++;
+					sleep(iReconnTimes%10);
+					bReconn=ConnectDB();
+				}
+				goto start;				
+			}
+			
+			if( db_ret < 0 )
+			{
+				sql_error(sqlca, oraca);
+				EXEC SQL AT :db_link_name FREE :blob;
+				EXEC SQL AT :db_link_name ROLLBACK;
+				return DB_ERROR;			
+			}
+			EXEC SQL AT :db_link_name COMMIT; 
+		} 
+		
+		EXEC SQL AT :db_link_name SELECT IM_OFFLINESYSMSG_SEQ_MSGID.nextval into :int_tmp FROM DUAL;
+		
+		EXEC SQL AT :db_link_name INSERT INTO IM_OFFLINESYSMSG(MSGID, RECEIVER,SENDER,SRCIP,SRCPORT,SENDTIME,MSGTYPE,MSGLEN,MSG)
+			VALUES(:int_tmp, :nRecvID,:nSendID,:natip,:natport,:nTime,:nMsgType,:nMsgLen,empty_blob());
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( db_ret < 0 || db_ret == 1403 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			EXEC SQL AT :db_link_name ROLLBACK;
+			return DB_ERROR;			
+		}
+		EXEC SQL AT :db_link_name COMMIT; 
+
+		EXEC SQL AT :db_link_name SELECT MSG INTO :blob  FROM IM_OFFLINESYSMSG 
+			WHERE MSGID = :int_tmp FOR UPDATE; 
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( db_ret < 0 || db_ret == 1403 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			EXEC SQL AT :db_link_name ROLLBACK;
+			return DB_ERROR;			
+		} 
+	}
+
+	lvr = (long_varraw *)malloc(sizeof(ub4) + nMsgLen);
+	lvr->len = nMsgLen;
+	memcpy(lvr->buf,pmsg,nMsgLen);
+	EXEC SQL AT :db_link_name LOB WRITE ONE :nMsgLen
+			FROM :lvr WITH LENGTH :nMsgLen INTO :blob AT :offset;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 || db_ret == 1403 )
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL AT :db_link_name FREE :blob;
+		EXEC SQL AT :db_link_name ROLLBACK;
+		free(lvr);
+		return DB_ERROR;			
+	} 
+	free(lvr);
+
+	if( nMsgType == CMD_P2PMSG_SEND )
+	{
+		EXEC SQL AT :db_link_name UPDATE IM_OFFLINETALKMSG SET MSG = :blob 
+			WHERE MSGID = :int_tmp;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( db_ret < 0 || db_ret == 1403 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			EXEC SQL AT :db_link_name ROLLBACK;
+			return DB_ERROR;			
+		} 
+		EXEC SQL AT :db_link_name COMMIT; 
+	}
+	else
+	{
+		EXEC SQL AT :db_link_name UPDATE IM_OFFLINESYSMSG SET MSG = :blob 
+			WHERE MSGID = :int_tmp;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( db_ret < 0 || db_ret == 1403 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			EXEC SQL AT :db_link_name ROLLBACK;
+			return DB_ERROR;			
+		} 
+	}
+
+	EXEC SQL AT :db_link_name COMMIT WORK;
+	EXEC SQL AT :db_link_name FREE :blob;
+	EXEC SQL AT :db_link_name COMMIT;
+
+	return DB_SUCCESS;
+}
+
+/*================================================================ 
+*
+* 函 数 名：Delete_Family_Msg 
+** 删除家族的消息
+* 参 数：
+const uint32 iFamilyID	[IN] : 删除家族
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 操作失败: DB_ERROR;
+* 
+================================================================*/
+int CDatabaseMini::Delete_Family_Msg(const uint32 iFamilyID)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int      nFamilyID;
+		VARCHAR db_link_name[32];
+		int		 retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	nFamilyID		= iFamilyID;
+	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.DeleteFamilyMsg(:nFamilyID,:retcode);
+		end;
+	END-EXEC;	    
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 )
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}   
+
+	return DB_SUCCESS;
+
+}
+int CDatabaseMini::Delete_FamilyMem_RecvMsg(const uint32 iFamilyID, uint32 iUserID)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int      nFamilyID, nUserID;
+		VARCHAR db_link_name[32];
+		int		 retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	nFamilyID		= iFamilyID;
+	nUserID			= iUserID;
+	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.DeleteFamilyMemRecvMsg(:nFamilyID,:nUserID,:retcode);
+		end;
+	END-EXEC;
+
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 )
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	} 
+	return DB_SUCCESS;
+}
+
+/*================================================================ 
+*
+* 函 数 名：Save_Family_Msg 
+** 保存家族请求消息ID获取当前家族最大消息ID
+* 参 数： 
+* uint32 familyMsgID	[IN] : 家族消息ID
+* uint32 familyID		[IN] : 家族ID
+* uint32 senderID		[IN] : 发送者ID
+* uint32 tm				[IN] : 发送时间
+* int	 msgType		[IN] : 消息类型
+* char   *msg			[IN] : 消息内容
+* int	 msgLen			[IN] : 内容长度
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 数据库错误:DB_ERROR; 
+* 
+================================================================*/ 
+int CDatabaseMini::Save_Family_Msg(uint32 familyMsgID,uint32 familyID,uint32 senderID, int tm, int msgType,int msgLen,char *msg)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		long_varraw * lvr;
+		unsigned int    cid,sno;
+		int				time,msglen;
+		unsigned int int_tmp, cmid, minmsgid;
+		unsigned int natip;
+		short   natport,msgtype;
+		char*   pmsg;
+		OCIBlobLocator *blob;
+		unsigned int offset = 1;  /* attention: typedef ub4 unsigned int */
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+  
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	int_tmp = 0;
+	
+	cmid = familyMsgID;
+	cid = familyID;
+	sno = senderID;
+	natip = 0;
+	natport = 0;
+	time = tm;
+	msglen = msgLen;
+	msgtype = msgType;
+	pmsg = msg;
+	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;	
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+	
+start:	
+
+	EXEC SQL AT :db_link_name ALLOCATE :blob;
+	EXEC SQL AT :db_link_name SELECT COUNT(MSGID) INTO :int_tmp FROM IM_CLUSTERTALKMSG 
+		WHERE CLUSTERID=:cid;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( sqlca.sqlcode < 0 )
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL AT :db_link_name FREE :blob;
+		return DB_ERROR;
+	}
+
+	bool isupdate = false;
+	if( int_tmp >= FAMILE_MAX_MSGNUM ) 
+	{
+		EXEC SQL AT :db_link_name SELECT MIN(MSGID) INTO :minmsgid FROM IM_CLUSTERTALKMSG 
+			WHERE CLUSTERID=:cid;
+		db_ret = sqlca.sqlcode;
+		if (db_ret < 0)
+		{
+			EXEC SQL AT :db_link_name FREE :blob;
+			return DB_ERROR;
+		}
+		isupdate = true;
+	}
+	
+	EXEC SQL AT :db_link_name SELECT MAX(MSGID) INTO :int_tmp FROM IM_CLUSTERTALKMSG 
+		WHERE CLUSTERID=:cid;
+	db_ret = sqlca.sqlcode;
+	if ((db_ret < 0 && db_ret != -1405) || db_ret == 1403)
+	{
+		EXEC SQL AT :db_link_name FREE :blob;
+		return DB_ERROR;
+	}
+	if (db_ret == -1405)
+		int_tmp = 1;
+	
+	if (isupdate == false)
+	{
+		EXEC SQL AT :db_link_name INSERT INTO IM_CLUSTERTALKMSG(MSGID,CLUSTERID,SENDER,SRCIP,SRCPORT,SENDTIME,MSGTYPE,MSGLEN,MSG)
+			VALUES(:cmid,:cid,:sno,:natip,:natport,:time,:msgtype,:msglen,empty_blob());
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( sqlca.sqlcode < 0 || sqlca.sqlcode == 1403 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name ROLLBACK;
+			EXEC SQL AT :db_link_name FREE :blob;
+			return DB_ERROR;
+		} 
+		EXEC SQL AT :db_link_name COMMIT; 
+	}
+	else
+	{
+		EXEC SQL AT :db_link_name UPDATE IM_CLUSTERTALKMSG 
+				SET MSGID=:cmid,SENDER=:sno,SRCIP=:natip,SRCPORT=:natport,SENDTIME=:time,MSGTYPE=:msgtype,MSGLEN=:msglen,MSG=empty_blob() 
+				where MSGID = :minmsgid and CLUSTERID = :cid;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( sqlca.sqlcode < 0 || sqlca.sqlcode == 1403 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name ROLLBACK;
+			EXEC SQL AT :db_link_name FREE :blob;
+			return DB_ERROR;
+		} 
+		EXEC SQL AT :db_link_name COMMIT; 
+		
+	}
+
+	EXEC SQL AT :db_link_name SELECT MSG INTO :blob  FROM IM_CLUSTERTALKMSG 
+		WHERE MSGID=:cmid AND CLUSTERID=:cid FOR UPDATE; 
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( sqlca.sqlcode < 0 || sqlca.sqlcode == 1403 )
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL AT :db_link_name ROLLBACK;
+		EXEC SQL AT :db_link_name FREE :blob;
+		if( db_ret == -2112)
+		{
+			EXEC SQL AT :db_link_name ROLLBACK;
+			EXEC SQL AT :db_link_name delete IM_CLUSTERTALKMSG t where rowid > (
+				select min(rowid) from IM_CLUSTERTALKMSG y where t.MSGID=y.msgid and t.CLUSTERID=y.clusterid );
+			EXEC SQL AT :db_link_name SELECT MSG INTO :blob  FROM IM_CLUSTERTALKMSG 
+				WHERE MSGID=:cmid AND CLUSTERID=:cid FOR UPDATE;  
+		}
+		else
+			return DB_ERROR;
+	} 
+  
+	lvr = (long_varraw *)malloc(sizeof(ub4) + msglen);
+	lvr->len = msglen;  memcpy(lvr->buf,pmsg,msglen);
+	EXEC SQL AT :db_link_name LOB WRITE ONE :msglen
+			FROM :lvr WITH LENGTH :msglen INTO :blob AT :offset;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( sqlca.sqlcode < 0 || sqlca.sqlcode == 1403 )
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL AT :db_link_name ROLLBACK;
+		EXEC SQL AT :db_link_name FREE :blob;
+		free(lvr);
+		return DB_ERROR;
+	} 
+
+	free(lvr);
+
+	EXEC SQL AT :db_link_name UPDATE IM_CLUSTERTALKMSG SET MSG = :blob 
+		WHERE MSGID=:cmid AND CLUSTERID=:cid;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( sqlca.sqlcode < 0 || sqlca.sqlcode == 1403 )
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL AT :db_link_name ROLLBACK;
+		EXEC SQL AT :db_link_name FREE :blob;
+		return DB_ERROR;
+	} 
+  
+	EXEC SQL AT :db_link_name COMMIT WORK;
+	EXEC SQL AT :db_link_name FREE :blob;
+	EXEC SQL AT :db_link_name COMMIT;
+
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::Get_User_OnlineTime(uint32 iUserID,uint32 &OnlineTime)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int	nUserID;
+		double			timelen;
+		VARCHAR db_link_name[32];
+		int		 retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	nUserID = iUserID;
+	timelen = 0;
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.GetUserOnlineTime(:nUserID,:timelen,:retcode);
+		end;
+	END-EXEC;
+
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if ((db_ret < 0  && db_ret != -1405)) //出错
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+
+	OnlineTime = (uint32)timelen;
+	return DB_SUCCESS;
+}
+
+/*================================================================ 
+*
+* 函 数 名：Add_Group 
+** 添加分组
+* 参 数： 
+* uint32 iUserID [[IN]] : 用户ID
+* uint8 &iGroupID [IN,OUT]: 组ID，输入指定的ID。输出数据库中存储的ID
+* char * strGroupName	[IN] : 组名
+* 返 回 值：int -	SUCCESS: DB_SUCCESS; 数据库错误:DB_ERROR;  用所能创建的组已满：DB_GROUP_FULL; 组名已经存在:DB_GROUP_EXIST;
+* 
+================================================================*/ 
+int CDatabaseMini::Add_Group(uint32 iUserID, uint8 &iGroupID, char * strGroupName, uint8 &iGroupPid)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR var_groupname[21];
+		unsigned int nUserID;
+		int     g_id;
+		int     g_pid;
+		int		retcode;
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+
+	SET_INIT_NULL(var_groupname);
+	nUserID = iUserID;
+	g_id = iGroupID;
+	g_pid = iGroupPid;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	if( strlen(strGroupName) > 20 )
+		return DB_PARAM;
+	
+	strncpy((char*)var_groupname.arr, strGroupName,MAX_GROUPNAME_LEN);
+	var_groupname.len = (unsigned short)strlen(strGroupName);
+	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:  
+	
+	EXEC SQL AT :db_link_name EXECUTE
+	begin
+		Mini_Local_Pkg.AddGroup(:nUserID,:g_id,:var_groupname,:g_pid,:retcode);
+	end;
+	END-EXEC;	
+		
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if ( db_ret < 0)
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;	
+	}    
+	
+	if( retcode == DB_GROUP_FULL )
+		return DB_GROUP_FULL;
+	
+	if( retcode == DB_GROUP_EXIST )
+		return DB_GROUP_EXIST;
+		
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::Mod_Cust_Info(uint32 id, char* account, char* time)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR var_account[40];
+		VARCHAR var_time[32];
+		VARCHAR db_link_name[32];
+		unsigned int nID;
+		int retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	SET_INIT_NULL(var_account);
+	SET_INIT_NULL(var_time);
+	nID = id;
+
+	var_account.len = (unsigned short)strlen(account);
+	strncpy((char*)var_account.arr,account,MAX_CUST_ACCOUNT_LEN);
+
+	var_time.len = (unsigned short)strlen(time);
+	strncpy((char*)var_time.arr,time,MAX_CUST_TIME_LEN);
+	 
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	int	db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.ModifyCustInfo(:nID,:var_account,:var_time,:retcode);
+		end;
+	END-EXEC;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if(db_ret == 1403 || db_ret < 0)
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+	if (retcode == 1)
+		return DB_ERROR;
+
+	return DB_SUCCESS;
+}
+
+
+int CDatabaseMini::Mod_Cust_Remark(uint32 id, char* account, char* time,char* remark)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR var_account[40];
+		VARCHAR var_time[32];
+		VARCHAR var_remark[201];
+		VARCHAR db_link_name[32];
+		unsigned int nID;
+		int retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	SET_INIT_NULL(var_account);
+	SET_INIT_NULL(var_time);
+	SET_INIT_NULL(var_remark);
+	
+	nID = id;
+
+	var_account.len = (unsigned short)strlen(account);
+	strncpy((char*)var_account.arr,account,MAX_CUST_ACCOUNT_LEN);
+
+	var_time.len = (unsigned short)strlen(time);
+	strncpy((char*)var_time.arr,time,MAX_CUST_TIME_LEN);
+
+	var_remark.len = (unsigned short)strlen(remark);
+	strncpy((char*)var_remark.arr,remark,MAX_CUST_REMAKE_LEN);
+	 
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	int	db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.ModifyCustRemark(:nID,:var_account,:var_time,:var_remark,:retcode);
+		end;
+	END-EXEC;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	CLog::Log("CBusinessModCustRemark", CLog::TYPE_DEBUG, "id:%d, db_ret:%d, retcode:%d", id, db_ret, retcode);
+	
+	if(db_ret == 1403 || db_ret < 0)
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+	
+	if (retcode == 1)
+		return DB_ERROR;
+
+	return DB_SUCCESS;
+}
+
+
+
+
+int CDatabaseMini::Get_Cust_Remark(uint32 id, char* account, char* time, char* remark)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR db_link_name[32];
+		VARCHAR var_account[40];
+		VARCHAR var_time[32];
+		VARCHAR var_remark[201];
+		unsigned int nID;
+		int retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	strncpy((char*)var_account.arr, account,MAX_CUST_ACCOUNT_LEN);
+	var_account.len = (short)strlen(account);
+	
+	nID=id;
+
+	SET_INIT_NULL(var_time);
+	SET_INIT_NULL(var_remark);
+	
+	int	db_ret, iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.GetCustRemark(:nID,:var_account,:var_time,:var_remark,:retcode);
+		end;
+	END-EXEC;
+
+
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	CLog::Log("CDatabaseMini::Get_Cust_Remark", CLog::TYPE_DEBUG, "id:%d, db_ret:%d, retcode:%d",id, db_ret, retcode);
+
+		if( db_ret < 0 && db_ret != -1405) 
+	{	
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+	
+	if (retcode == 1)
+	{
+		return DB_ERROR;
+	}
+	
+	strncpy(time,(char*)var_time.arr,32);	
+	strncpy(remark,(char*)var_remark.arr,MAX_CUST_REMAKE_LEN);
+	
+	return DB_SUCCESS;
+}
+
+
+
+
+int CDatabaseMini::Get_Cust_Num(uint32 id, char* btime, char* etime, uint32& nRetCount)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR db_link_name[32];
+		VARCHAR var_btime[32];
+		VARCHAR var_etime[32];
+		unsigned int nID, nCount;
+		int retcode;
+	EXEC SQL END DECLARE SECTION;
+	 
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	strncpy((char*)var_btime.arr, btime,32);
+	var_btime.len = (short)strlen(btime);
+	
+	strncpy((char*)var_etime.arr, etime,32);
+	var_etime.len = (short)strlen(etime);
+
+	nID=id;
+	nCount=nRetCount;
+	
+	int	db_ret, iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.GetCustNum(:nID,:var_btime,:var_etime,:nCount,:retcode);
+		end;
+	END-EXEC;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if(db_ret == 1403 || db_ret < 0)
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+	
+	if (retcode == 1)
+		return DB_ERROR;
+		
+	nRetCount=nCount;
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::Get_Cust_Info(uint32 id, char* btime, char* etime, uint32 count, uint16 start_pos, uint16 iNeedCustCount, uint8 bDirect, XT_GET_NEAR_COMM_CUST_ACK::TagCommInfo* CliInfo, uint32& nRetCount)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR	db_link_name[32],var_btime[32],var_etime[32],var_account[40],var_conntime[32],var_orderid[64],var_comment[128];
+		unsigned int nID,nMaxCount,nPos,nCount,nDirect;
+		int	retcode;
+		SQL_CURSOR cur_cliInfo;
+	EXEC SQL END DECLARE SECTION;
+
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+	
+	strncpy((char*)var_btime.arr, btime,32);
+	var_btime.len = (short)strlen(btime);
+	
+	strncpy((char*)var_etime.arr, etime,32);
+	var_etime.len = (short)strlen(etime);
+
+	nID=id;
+	nMaxCount=count;
+	nPos=start_pos;
+	nCount=iNeedCustCount;
+	nDirect=bDirect;
+	SET_INIT_NULL(var_account);
+	SET_INIT_NULL(var_conntime);
+	SET_INIT_NULL(var_orderid);
+	SET_INIT_NULL(var_comment);
+  
+	int db_ret, iReconnTimes;
+	uint32 iNum = 0;	
+	bool bReconn;	
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];  
+
+start:  
+		EXEC SQL ALLOCATE :cur_cliInfo;
+		EXEC SQL AT :db_link_name EXECUTE
+			begin
+				Mini_Local_Pkg.GetCustInfo(:nID,:var_btime,:var_etime,:nMaxCount,:nPos,:nCount,:nDirect,:cur_cliInfo,:retcode);
+			end;
+		END-EXEC;
+
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			EXEC SQL CLOSE :cur_cliInfo;
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		CLog::Log("Get_Cust_Info",CLog::TYPE_DEBUG,"id:%d, db_ret:%d, retcode:%d ",id, db_ret, retcode);
+		
+		if(db_ret < 0 && db_ret != -1405) 
+		{
+			sql_error(sqlca, oraca);		
+			EXEC SQL CLOSE :cur_cliInfo;
+			EXEC SQL FREE  :cur_cliInfo;
+			return DB_ERROR;
+		}
+
+		for(;;)
+		{  
+			EXEC SQL FETCH :cur_cliInfo INTO :var_account,:var_conntime,:var_orderid,:var_comment;
+			db_ret = sqlca.sqlcode;
+			if (db_ret == 1403 )
+			{
+				nRetCount = iNum;
+				break;
+			}
+			if (iNum >= nRetCount)
+			{
+				break;
+			}	
+			if( db_ret < 0 && db_ret != -1405 )
+			{
+				sql_error(sqlca, oraca);
+				nRetCount = iNum;
+				break;
+			}		
+			SET_END_NULL(var_account);
+			SET_END_NULL(var_conntime);
+			SET_END_NULL(var_orderid);
+			SET_END_NULL(var_comment);
+			
+			strncpy(CliInfo[iNum].szCommAccount,(char*)var_account.arr,MAX_CUST_ACCOUNT_LEN);					
+			strncpy(CliInfo[iNum].szCommTime,(char*)var_conntime.arr,MAX_CUST_TIME_LEN);						
+			strncpy(CliInfo[iNum].szTransInfo,(char*)var_orderid.arr,MAX_CUST_ORDER_LEN);	
+			strncpy(CliInfo[iNum].szRemarks,(char*)var_comment.arr,MAX_CUST_REMAKE_LEN);
+
+			++iNum;
+		}
+		EXEC SQL CLOSE :cur_cliInfo;
+		EXEC SQL FREE  :cur_cliInfo;
+		return DB_SUCCESS;		
+}
+
+int CDatabaseMini::Modify_Group(uint32 iUserID, uint8 iGroupID, char *strGroupName)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR var_groupname[21];
+		VARCHAR db_link_name[32];
+		unsigned int     nUserID;
+		int		g_id;
+		int		 retcode;
+	EXEC SQL END DECLARE SECTION;
+	SET_INIT_NULL(var_groupname);
+	nUserID = iUserID;
+	g_id = iGroupID;
+	if( strlen(strGroupName) > 20 )
+		return DB_PARAM;
+	var_groupname.len = (unsigned short)strlen(strGroupName);
+	strncpy((char*)var_groupname.arr,strGroupName,MAX_GROUPNAME_LEN);
+	 
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	int	db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.ModifyGroup(:nUserID,:g_id,:var_groupname,:retcode);
+		end;
+	END-EXEC;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if(db_ret == 1403 || db_ret < 0)
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+	
+	if (retcode == DB_GROUP_EXIST)
+		return DB_GROUP_EXIST;
+
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::Delete_Group(uint32 iUserID, uint8 iGroupID)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int     nUserID;
+		int g_id;
+		int		 retcode;
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+
+	nUserID = iUserID;
+	g_id = iGroupID;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.DeleteGroup(:nUserID,:g_id,:retcode);
+		end;
+	END-EXEC;	
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if(db_ret < 0)
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}  
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::Save_User_Login(uint32 userid,uint32 userip, uint16 userport, int serverno)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int clientno;
+		unsigned int clientip;
+		int thissrvno;
+		short clientport;
+		int		 retcode;
+		VARCHAR nowdate[24];
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	SET_INIT_NULL(nowdate);
+	
+	if (userid ==0)
+		return DB_PARAM;
+	clientno = userid;
+	clientip = userip;
+	thissrvno = serverno;
+	char strTime[20];
+	time_t ntm;
+	time(&ntm);
+	struct tm *newtime;
+	newtime = localtime(&ntm);
+	sprintf(strTime, "%d-%d-%d", newtime->tm_year + 1900, newtime->tm_mon + 1, newtime->tm_mday);
+	strncpy((char*)nowdate.arr, strTime,19);
+	nowdate.len = (short)strlen((char*)nowdate.arr);	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.SaveUserLogin(:clientno,:clientip,:clientport,:thissrvno,:retcode);
+		end;
+	END-EXEC;	
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 )
+	{		
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+	
+	
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::Save_User_Logout(uint32 userid)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int clientno;
+		int		 retcode;
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	if (userid ==0)
+		return DB_PARAM;
+	clientno = userid;
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.SaveUserLogout(:clientno,:retcode);
+		end;
+	END-EXEC;	
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 )
+	{		
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+	
+	return DB_SUCCESS;
+}
+
+int	CDatabaseMini::Update_All_Logout(int serverno)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		int	v_serverno;
+		int	retcode;
+		VARCHAR	db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+
+	SET_INIT_NULL(db_link_name);
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	v_serverno = serverno;
+	int	db_ret;
+	int	iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+
+	EXEC SQL AT	:db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.UpdateAllLogout(:v_serverno,:retcode);
+		end;
+	END-EXEC;
+
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;
+	}
+
+	if(	db_ret < 0 )
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::Save_User_Action(uint32 userid,XT_USER_ACTION_AUDIT_REQ::Action *action,uint16 count)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int clientno,actionno;
+		int actioncount;
+		int		 retcode;
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	
+	if (userid <=0)
+		return 1;
+
+	clientno = userid;
+	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;	
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+	
+start:
+	
+	for(int i = 0; i < count; ++i)
+	{
+		actionno = action[i].OpeId;
+		actioncount = action[i].count;
+
+		EXEC SQL AT :db_link_name EXECUTE
+			begin
+				Mini_Local_Pkg.SaveUserAction(:clientno,:actionno,:actioncount,:retcode);
+			end;
+		END-EXEC;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( db_ret < 0 )
+		{		
+			sql_error(sqlca, oraca);
+			continue;
+		}
+	}
+	
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::Save_User_Timelen(uint32 userid, int logintm, int logouttm)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int		clientno,onlinetm;
+		int		 retcode;
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	clientno = userid;
+	
+	CTime intm(logintm);
+	CTime outtm(logouttm);
+
+	onlinetm = 0;
+	
+	if ( intm.GetDay() == outtm.GetDay())
+	{	
+		onlinetm = (unsigned int)(logouttm - logintm)/60;	//按分钟记时
+	}
+	else
+	{
+		onlinetm = outtm.GetHour() * 60 + outtm.GetMinute();
+		onlinetm = onlinetm + (24*60-intm.GetHour()*60-intm.GetMinute());
+	}
+	if(onlinetm ==0)
+		return DB_SUCCESS;
+	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.SaveUserTimelen(:clientno,:onlinetm,:retcode);
+		end;
+	END-EXEC;	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if (db_ret < 0 && db_ret != -1405) //出错
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::Save_Merchant_Login(uint32 userid,int logintm)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int merchantid,thisintm;
+		int		 retcode;
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	merchantid = userid;
+	thisintm = logintm;
+	if (userid ==0)
+		return DB_PARAM;
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.SaveMerchantLogin(:merchantid,:thisintm,:retcode);
+		end;
+	END-EXEC;	
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 )
+	{		
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+	EXEC SQL AT :db_link_name COMMIT;
+	return DB_SUCCESS;
+}
+
+
+
+int CDatabaseMini::Save_Merchant_Logout(uint32 userid,int logouttm)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int merchantid,thisouttm;
+		int		 retcode;
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	merchantid = userid;
+	thisouttm = logouttm;
+	if (userid ==0)
+		return DB_PARAM;
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.SaveMerchantLogout(:merchantid,:thisouttm,:retcode);
+		end;
+	END-EXEC;	
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	if( db_ret < 0 )
+	{		
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+	EXEC SQL AT :db_link_name COMMIT;
+	return DB_SUCCESS;
+}
+int CDatabaseMini::Save_User_OnlineTime(uint32 clientno,int logintm,int logouttm, int &money)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int		userid,lstouttm, thisintm, thisouttm;
+		int					sendmoney, daymoney;
+		int					countFlag;
+		float				onlinetime, todayonlinetm;
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	userid = clientno;
+	thisintm = logintm;
+	thisouttm = logouttm;
+	sendmoney = DAY_SEND_MONEY;
+	todayonlinetm = 0;
+	countFlag = 0;
+	money = 0;
+	lstouttm = 0;
+	todayonlinetm = 0;
+
+	unsigned int onlinetm = (unsigned int)(logouttm - logintm);
+	char buf[10];
+	sprintf(buf, "%.1f", float(onlinetm)/60.0/60);	//六分钟记时
+	float onlinetimelen = (float)atof(buf);
+	if (onlinetimelen < 0.1)	//小时
+		return DB_SUCCESS;
+	onlinetime = onlinetimelen;
+		
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;	
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	EXEC SQL AT :db_link_name 
+		SELECT LstLogoutTime, CountFlag, TodayLineTime INTO :lstouttm, :countFlag, :todayonlinetm 
+		FROM IM_USERSTAT
+		WHERE UserId=:userid;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if (db_ret < 0 && db_ret != -1405) //出错
+	{
+		sql_error(sqlca, oraca);
+		money = 0;
+		return DB_ERROR;
+	}
+	if (db_ret == 1403)//没有该用户
+	{
+		if (onlinetimelen >= 2.0)
+		{
+			EXEC SQL AT :db_link_name INSERT INTO IM_USERSTAT (UserId,LstLoginTime,LstLogoutTime,TotalLineTime,
+						 LoginCount, CountFlag,TotalMoney, TodayLineTime)
+				values(:userid, :thisintm,:thisouttm,:onlinetime,1, 1, :sendmoney, :onlinetime);
+			db_ret = sqlca.sqlcode;
+			if (conn_error(db_ret))
+			{
+				iReconnTimes=0;
+				bReconn=ConnectDB();
+				while(!bReconn)
+				{
+					iReconnTimes++;
+					sleep(iReconnTimes%10);
+					bReconn=ConnectDB();
+				}
+				goto start;				
+			}
+			
+			if (db_ret < 0 ) //出错
+			{
+				sql_error(sqlca, oraca);
+				money = 0;
+				return DB_ERROR;
+			}
+			EXEC SQL AT :db_link_name COMMIT;
+			money = DAY_SEND_MONEY;		
+		}
+		else
+		{		
+			EXEC SQL AT :db_link_name INSERT INTO  IM_USERSTAT (UserId,LstLoginTime,LstLogoutTime,TotalLineTime,
+						 LoginCount, TodayLineTime)
+				values(:userid, :thisintm,:thisouttm,:onlinetime,1, :onlinetime);
+			db_ret = sqlca.sqlcode;
+			if (db_ret < 0 ) //出错
+			{
+				return DB_ERROR;
+			}
+			EXEC SQL AT :db_link_name COMMIT;
+		}
+
+		return DB_SUCCESS;	
+	}
+
+	if (lstouttm == 0)
+		lstouttm = logouttm - 24*60*60;
+	
+	//用户登录过
+	//上次登出时间与本次登出时间比较
+
+	CTime lst(lstouttm);	//上次登出时间
+	CTime logout(logouttm);	//本次登出时间
+	CTime login(logintm);	//本次登录时间
+
+
+	//当天非第一次登出
+	if (logout.GetYear() == lst.GetYear() && logout.GetMonth() == lst.GetMonth() && logout.GetDay() == lst.GetDay())//年月日相同
+	{
+		if (countFlag == 0)//当日未充金币
+		{
+			float tmlen = todayonlinetm + onlinetimelen;
+			if ( tmlen >= 2.0)//当日在线时长超过两小时
+			{
+				EXEC SQL AT :db_link_name UPDATE IM_USERSTAT SET lstLoginTime=:thisintm,LstLogoutTime=:thisouttm,
+					TotalLineTime = TotalLineTime+:onlinetime, LoginCount=LoginCount+1, 
+					CountFlag = 1,TotalMoney= TotalMoney + :sendmoney, TodayLineTime = TodayLineTime + :onlinetime 
+					WHERE UserId=:userid;
+				db_ret = sqlca.sqlcode;
+				if (db_ret < 0 ) //出错
+				{
+					return DB_ERROR;
+				}
+				EXEC SQL AT :db_link_name COMMIT;				
+				money = DAY_SEND_MONEY;	
+			}
+			else//不足两小时
+			{
+				EXEC SQL AT :db_link_name UPDATE IM_USERSTAT SET lstLoginTime=:thisintm,LstLogoutTime=:thisouttm,
+					TotalLineTime = TotalLineTime+:onlinetime, LoginCount=LoginCount+1, 
+					CountFlag = 0, TodayLineTime = TodayLineTime + :onlinetime WHERE UserId=:userid;
+				db_ret = sqlca.sqlcode;
+				if (db_ret < 0 ) //出错
+				{
+					return DB_ERROR;
+				}
+				EXEC SQL AT :db_link_name COMMIT;
+			}			
+		}
+		else//已充金币
+		{
+			EXEC SQL AT :db_link_name UPDATE IM_USERSTAT SET lstLoginTime=:thisintm,LstLogoutTime=:thisouttm,
+				TotalLineTime = TotalLineTime+:onlinetime, LoginCount=LoginCount+1, 
+				TodayLineTime = TodayLineTime + :onlinetime WHERE UserId=:userid;
+			db_ret = sqlca.sqlcode;
+			if (db_ret < 0 ) //出错
+			{
+				return DB_ERROR;
+			}
+			EXEC SQL AT :db_link_name COMMIT;				
+		}
+		return DB_SUCCESS;
+	
+	}
+	else//与上次登出年月日有一个不同 当天第一次登出。
+	{
+		if (logout.GetDay() == login.GetDay())//同一天登录登出,表示当天第一次上线离线(丢弃在线一个月)
+		{
+			if ( onlinetimelen >= 2.0)//本次在线时长超过两小时
+			{
+				EXEC SQL AT :db_link_name UPDATE IM_USERSTAT SET lstLoginTime=:thisintm,LstLogoutTime=:thisouttm,
+					TotalLineTime = TotalLineTime+:onlinetime, LoginCount=LoginCount+1, 
+					CountFlag = 1,TotalMoney= TotalMoney + :sendmoney, TodayLineTime =  :onlinetime 
+					WHERE UserId=:userid;
+				db_ret = sqlca.sqlcode;
+				if (db_ret < 0 ) //出错
+				{
+					return DB_ERROR;
+				}
+				EXEC SQL AT :db_link_name COMMIT;				
+				money = DAY_SEND_MONEY;		
+			}			
+			else//不足两小时
+			{
+				EXEC SQL AT :db_link_name UPDATE IM_USERSTAT SET lstLoginTime=:thisintm,LstLogoutTime=:thisouttm,
+					TotalLineTime = TotalLineTime+:onlinetime, LoginCount=LoginCount+1, 
+					CountFlag = 0, TodayLineTime = :onlinetime WHERE UserId=:userid;
+				db_ret = sqlca.sqlcode;
+				if (db_ret < 0 ) //出错
+				{
+					return DB_ERROR;
+				}
+				EXEC SQL AT :db_link_name COMMIT;				
+			}
+			return DB_SUCCESS;
+		}
+		else//上下线不在同一天。
+		{
+			char buf[10];
+			sprintf(buf, "%.1f", login.GetMinute()/60.0);
+			float fintm = (float)atof(buf);
+			fintm = float(24.0 -(float)login.GetHour()-fintm);//登录当天在线时长
+			sprintf(buf, "%.1f", logout.GetMinute()/60.0);
+			float fouttm = (float)atof(buf);
+			fouttm = (float)logout.GetHour()+fouttm;//登出当天在线时长
+			
+			if (fintm >= 2.0)//登录当天在线时长超过两小时
+			{
+				if (login.GetYear() == lst.GetYear() && login.GetMonth() == lst.GetMonth() && login.GetDay() == lst.GetDay())//当天有登出过
+				{
+					if (countFlag == 0)//前一天未充金币
+					{				
+						EXEC SQL AT :db_link_name UPDATE IM_USERSTAT SET TotalMoney= TotalMoney + :sendmoney 
+						WHERE UserId=:userid;
+						db_ret = sqlca.sqlcode;
+						if (db_ret < 0 ) //出错
+						{
+							return DB_ERROR;
+						}
+						EXEC SQL AT :db_link_name COMMIT;
+						money = DAY_SEND_MONEY;
+					}
+				}
+				else
+				{
+					EXEC SQL AT :db_link_name UPDATE IM_USERSTAT SET TotalMoney= TotalMoney + :sendmoney 
+					WHERE UserId=:userid;
+					db_ret = sqlca.sqlcode;
+					if (db_ret < 0 ) //出错
+					{
+						return DB_ERROR;
+					}
+					EXEC SQL AT :db_link_name COMMIT;
+					money = DAY_SEND_MONEY;
+
+				}
+			}
+			else//22点以后登录
+			{
+				if (login.GetYear() == lst.GetYear() && login.GetMonth() == lst.GetMonth() && login.GetDay() == lst.GetDay())//前一天有登出过
+				{
+					if (countFlag == 0)//前一天未充金币
+					{
+						float tmlen = todayonlinetm + fintm;
+						if ( tmlen >= 2.0)//前一天在线时长累计超过两小时
+						{
+							EXEC SQL AT :db_link_name UPDATE IM_USERSTAT SET TotalMoney= TotalMoney + :sendmoney 
+							WHERE UserId=:userid;
+							db_ret = sqlca.sqlcode;
+							if (db_ret < 0 ) //出错
+							{
+								return DB_ERROR;
+							}
+							EXEC SQL AT :db_link_name COMMIT;
+							money = DAY_SEND_MONEY;//登入当天发送的金币										
+						}					
+					}						
+				}
+			}
+
+
+			float tmlen = onlinetimelen-fintm-fouttm;//除登入登出天在线时间
+			
+			int day = int(tmlen)/24;//登录登出间隔天数
+			if (day != 0)
+			{
+				daymoney = sendmoney * day;
+				EXEC SQL AT :db_link_name UPDATE IM_USERSTAT SET TotalMoney= TotalMoney + :daymoney 
+				WHERE UserId=:userid;
+				db_ret = sqlca.sqlcode;
+				if (db_ret < 0 ) //出错
+				{
+					return DB_SUCCESS;
+				}
+				EXEC SQL AT :db_link_name COMMIT;
+				money = money  + daymoney;
+				
+			}
+			onlinetime = fouttm;
+			if( fouttm >= 2.0)//登出当天在线时长超过两小时
+			{
+				EXEC SQL AT :db_link_name UPDATE IM_USERSTAT SET lstLoginTime=:thisintm,LstLogoutTime=:thisouttm,
+					TotalLineTime = TotalLineTime+:onlinetime, LoginCount=LoginCount+1, 
+					CountFlag = 1,TotalMoney= TotalMoney + :sendmoney, TodayLineTime =  :onlinetime 
+					WHERE UserId=:userid;
+				db_ret = sqlca.sqlcode;
+				if (db_ret < 0 ) //出错
+				{
+					return DB_SUCCESS;
+				}
+				EXEC SQL AT :db_link_name COMMIT;				
+				money = money  + DAY_SEND_MONEY;
+			}			
+			else//不足两小时
+			{
+				EXEC SQL AT :db_link_name UPDATE IM_USERSTAT SET lstLoginTime=:thisintm,LstLogoutTime=:thisouttm,
+					TotalLineTime = TotalLineTime+:onlinetime, LoginCount=LoginCount+1, 
+					CountFlag = 0, TodayLineTime = :onlinetime WHERE UserId=:userid;
+				db_ret = sqlca.sqlcode;
+				if (db_ret < 0 ) //出错
+				{
+					return DB_SUCCESS;
+				}
+				EXEC SQL AT :db_link_name COMMIT;				
+			}
+		}
+	}
+	
+	return DB_SUCCESS;	
+}
+
+int CDatabaseMini::Save_User_RecvFamilyMsgID(uint32 uid, uint32 cid, uint32 mid)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int  clusterid,clientid,msgid;
+		VARCHAR db_link_name[32];
+		int		 retcode;
+	EXEC SQL END DECLARE SECTION;
+  
+	clusterid = cid;
+	clientid=uid;
+	msgid = mid;
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;	
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];	
+
+start:
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.SaveUserRecvFamilyMsg(:clusterid,:clientid,:msgid,:retcode);
+		end;
+	END-EXEC;	
+
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 )
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+
+	return DB_SUCCESS;
+}
+
+   
+int CDatabaseMini::Get_User_FamilyMsgID(uint32 userID, uint32 familyID, uint32 &msgID)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int      clusterid,mid,clientno;
+		VARCHAR db_link_name[32];
+		int	 retcode;
+	EXEC SQL END DECLARE SECTION;
+
+	clientno=userID;
+	clusterid = familyID;   
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.GetUserFamilyMsgID(:clientno,:clusterid,:mid,:retcode);
+		end;
+	END-EXEC;	
+
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 && db_ret != -1405)
+	{
+		mid = 0;
+		sql_error(sqlca, oraca);
+	} 
+	
+	if (db_ret == 1403 || retcode == 1403 || db_ret == -1405)
+		mid = 0;
+		
+	msgID = mid;
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::Delete_All_Offline_Msg(uint32 userID)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int     recv;
+		VARCHAR db_link_name[32];
+		int		 retcode;
+	EXEC SQL END DECLARE SECTION;
+	recv = userID;
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+start:
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.DeleteAllOfflineMsg(:recv,:retcode);
+		end;
+	END-EXEC;	
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 && db_ret != -1405)
+	{
+		sql_error(sqlca, oraca);
+	} 
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::Get_Family_Offline_Msg(uint32 userID, uint32 familyID, uint32 &msgID, ST_OFFLINE_MSG *pFamilyMsg, uint8 &nRetCount)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		long_varraw *lvr;
+		unsigned int     origin,time,msglen,msgid,int_tmp;
+		short   msgtype;
+		OCIBlobLocator *blob;
+		unsigned int amt,offset,bufsize,clusid,msgno;
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);	
+		
+	amt = 0; offset=1;bufsize = MAX_MSG_LEN;
+	clusid = familyID;
+	msgid = msgID;
+	unsigned int nowmid=msgid;
+	int db_ret;
+	msgID = 0;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];	
+
+start: 
+	if (nRetCount == 0)
+	{
+		EXEC SQL AT :db_link_name SELECT COUNT(MsgId) INTO :int_tmp
+			FROM  IM_CLUSTERTALKMSG 
+			WHERE ClusterId= :clusid AND MsgId > :msgid;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( db_ret < 0 )
+		{
+			sql_error(sqlca, oraca);
+			return DB_ERROR;
+		}
+		nRetCount = int_tmp;
+		return DB_SUCCESS;
+	}	
+	
+	EXEC SQL AT :db_link_name DECLARE cur_getfamilymsg CURSOR FOR
+		SELECT MsgId,SENDER,SENDTIME,MSGTYPE,MSGLEN,MSG 
+		FROM  IM_CLUSTERTALKMSG WHERE ClusterId= :clusid AND MsgId > :msgid ORDER BY MsgId;
+	
+	EXEC SQL OPEN cur_getfamilymsg;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		EXEC SQL CLOSE cur_getfamilymsg;
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0  && db_ret != -1405)
+	{
+		
+		sql_error(sqlca, oraca);
+		EXEC SQL CLOSE cur_getfamilymsg;
+		return DB_ERROR;
+	}
+  
+	EXEC SQL AT :db_link_name ALLOCATE :blob;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		EXEC SQL CLOSE cur_getfamilymsg;
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if (db_ret == 1403 || (db_ret < 0  && db_ret != -1405 ))
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL AT :db_link_name FREE :blob;
+		EXEC SQL CLOSE cur_getfamilymsg;
+		return DB_ERROR;
+	}
+ 
+	lvr = (long_varraw *)malloc(sizeof(unsigned int) + bufsize);
+	lvr->len = bufsize;
+	
+	int iNum = 0;
+	for(;;)
+	{  
+		msglen=0;
+		amt = 0; offset=1;bufsize = MAX_MSG_LEN;
+		EXEC SQL FETCH cur_getfamilymsg INTO :msgno,:origin,:time,:msgtype,:msglen,:blob;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			EXEC SQL CLOSE cur_getfamilymsg;
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if ((db_ret < 0 && db_ret != -1405)|| db_ret == 1403 || iNum >= nRetCount)
+		{
+			if (db_ret != 1403)
+				sql_error(sqlca, oraca);
+			
+			EXEC SQL AT :db_link_name FREE :blob;
+			EXEC SQL CLOSE cur_getfamilymsg;
+			free(lvr);
+			msgID = nowmid;
+			nRetCount = iNum;
+			return DB_SUCCESS;
+		} 
+
+		pFamilyMsg[iNum].msgid		= msgno;
+		pFamilyMsg[iNum].recvID		= userID;
+		pFamilyMsg[iNum].sendID		= origin;
+		pFamilyMsg[iNum].tm			= (unsigned int)time;
+		pFamilyMsg[iNum].msgtype	= (unsigned short)msgtype;  
+		pFamilyMsg[iNum].msglen		= msglen + 1;
+
+ 
+		EXEC SQL AT :db_link_name LOB READ :amt FROM :blob AT :offset INTO :lvr WITH LENGTH :msglen;
+		if (sqlca.sqlcode == 1403 )
+		{
+			memcpy((char*)pFamilyMsg[iNum].msg,lvr->buf,msglen + 1);
+			memset(lvr->buf, 0, msglen);
+			nowmid = msgno;
+		}
+		++iNum;
+	}
+
+	EXEC SQL AT :db_link_name FREE :blob;
+	EXEC SQL CLOSE cur_getfamilymsg;
+	free(lvr);
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::Get_Family_Offline_SysMsg(uint32 userID, uint32 familyID,ST_OFFLINE_MSG *pFamilyMsg, uint8 &nRetCount)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		long_varraw *lvr;
+		unsigned int     sendno,time,msglen, int_tmp;
+		short   msgtype;
+		OCIBlobLocator *blob;
+		unsigned int amt,offset,bufsize;
+		unsigned int clusid;
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+		
+	//unsigned int nowmid=0;
+	amt = 0; offset=1;
+	bufsize = MAX_MSG_LEN;
+	clusid = familyID;
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:  
+	if (nRetCount == 0)
+	{
+		EXEC SQL AT :db_link_name SELECT COUNT(MsgId) INTO :int_tmp 
+			FROM IM_CLUSTERSYSMSG
+			WHERE ClusterId= :clusid;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( db_ret < 0 )
+		{
+			sql_error(sqlca, oraca);
+			return DB_ERROR;
+		}
+		nRetCount = int_tmp;
+		return DB_SUCCESS;
+	}			
+
+	EXEC SQL AT :db_link_name DECLARE cur_familysysmsg CURSOR FOR
+		SELECT MsgId,SendTime,MsgType,MsgLen,MSG 
+		FROM   IM_CLUSTERSYSMSG WHERE ClusterId= :clusid;
+	EXEC SQL OPEN cur_familysysmsg;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		EXEC SQL CLOSE cur_familysysmsg;
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 )
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL CLOSE cur_familysysmsg;
+		return DB_ERROR;
+	}
+	
+	EXEC SQL AT :db_link_name ALLOCATE :blob;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		EXEC SQL CLOSE cur_familysysmsg;
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if (db_ret == 1403 || db_ret < 0)
+	{
+		if (db_ret != 1403)
+			sql_error(sqlca, oraca);
+		EXEC SQL AT :db_link_name FREE :blob;
+		EXEC SQL CLOSE cur_familysysmsg;
+		return DB_ERROR;
+	}
+	
+	lvr = (long_varraw *)malloc(sizeof(unsigned int) + bufsize);
+	lvr->len = bufsize;
+	
+	int iNum = 0;
+	for(;;)
+	{  
+		amt = 0; offset=1;bufsize = MAX_MSG_LEN;
+		EXEC SQL FETCH cur_familysysmsg INTO :sendno,:time,:msgtype,:msglen,:blob;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			EXEC SQL CLOSE cur_familysysmsg;
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if ( db_ret < 0 || db_ret == 1403 || iNum >= nRetCount)
+		{
+			if (db_ret != 1403)
+				sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			free(lvr);
+			EXEC SQL CLOSE cur_familysysmsg;
+			if (iNum > 0)
+			{
+				EXEC SQL AT :db_link_name DELETE FROM IM_CLUSTERSYSMSG WHERE  ClusterId = :clusid;//清除验证记录
+				EXEC SQL AT :db_link_name COMMIT;
+			}
+			nRetCount = iNum;
+			return DB_SUCCESS;
+		} 
+		 
+		pFamilyMsg[iNum].recvID		= userID;
+		pFamilyMsg[iNum].sendID		= sendno;
+		pFamilyMsg[iNum].tm			= (unsigned int)time;
+		pFamilyMsg[iNum].msgtype	= (unsigned short)msgtype;  
+		pFamilyMsg[iNum].msglen		= msglen + 1;
+
+ 
+		EXEC SQL AT :db_link_name LOB READ :amt FROM :blob AT :offset INTO :lvr WITH LENGTH :msglen;
+		if (sqlca.sqlcode == 1403 )
+		{
+			memcpy((char*)pFamilyMsg[iNum].msg,lvr->buf,msglen + 1);
+		}
+		++iNum;
+	}
+	
+	EXEC SQL AT :db_link_name DELETE FROM IM_CLUSTERSYSMSG WHERE  ClusterId = :clusid;//清除验证记录
+	
+
+	EXEC SQL AT :db_link_name FREE :blob;
+	EXEC SQL CLOSE cur_familysysmsg;
+	free(lvr);
+	return DB_SUCCESS;
+}
+
+/* 获取某个用户的离线聊天信息 */
+int  CDatabaseMini::Get_User_Offline_Msg(uint32 userID,ST_OFFLINE_MSG *pFamilyMsg, uint8 &nRetCount)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		long_varraw *lvr;
+		unsigned int     recv,origin,time,msglen, int_tmp;
+		short   msgtype;
+		OCIBlobLocator *blob;
+		unsigned int amt,offset,bufsize;
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	amt = 0; offset=1;bufsize = MAX_MSG_LEN;
+
+	recv = userID;
+
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	if (nRetCount == 0)
+	{
+		EXEC SQL AT :db_link_name SELECT COUNT(Sender) INTO :int_tmp 
+			FROM  IM_OFFLINETALKMSG WHERE Receiver= :recv; 
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( db_ret < 0 )
+		{
+			sql_error(sqlca, oraca);
+			return DB_ERROR;
+		}
+		nRetCount = int_tmp;
+		return DB_SUCCESS;	
+	}
+
+	EXEC SQL AT :db_link_name DECLARE cur_getusermsg CURSOR FOR
+		SELECT Sender,
+			(cast(cast(SendTime as timestamp) at time zone 'gmt' as date)-to_date('19700101 00:00:00','yyyymmdd hh24:mi:ss'))*24*60*
+60 as SendTime, MsgType,MsgLen,MSG
+		FROM  IM_OFFLINETALKMSG WHERE Receiver= :recv order by SendTime;
+	EXEC SQL OPEN cur_getusermsg;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		EXEC SQL CLOSE cur_familysysmsg;
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 && db_ret != -1405)
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL CLOSE cur_familysysmsg;
+		return DB_ERROR;
+	}
+	
+	EXEC SQL AT :db_link_name ALLOCATE :blob;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		EXEC SQL CLOSE cur_familysysmsg;
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if (db_ret == 1403 || db_ret < 0)
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL AT :db_link_name FREE :blob;
+		EXEC SQL CLOSE cur_familysysmsg;
+		return DB_ERROR;
+	}
+ 
+	lvr = (long_varraw *)malloc(sizeof(unsigned int) + bufsize);
+	lvr->len = bufsize;
+	
+	int iNum = 0;
+
+	for(;;)
+	{  
+		amt = 0; offset=1;bufsize = MAX_MSG_LEN;
+	 
+		EXEC SQL FETCH cur_getusermsg INTO :origin,:time,:msgtype,:msglen,:blob;
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			EXEC SQL CLOSE cur_getusermsg;
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if (( db_ret < 0  && db_ret != -1405)|| db_ret == 1403 || iNum >= nRetCount)
+		{
+			if (db_ret != 1403)
+				sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			EXEC SQL CLOSE cur_getusermsg;
+			free(lvr);
+			nRetCount = iNum;
+			return DB_SUCCESS;
+		} 
+		 
+		pFamilyMsg[iNum].recvID		= userID;
+		pFamilyMsg[iNum].sendID		= origin;
+		pFamilyMsg[iNum].tm			= (unsigned int)time;
+		pFamilyMsg[iNum].msgtype	= (unsigned short)msgtype;  
+		pFamilyMsg[iNum].msglen		= msglen + 1;
+
+ 
+		EXEC SQL AT :db_link_name LOB READ :amt FROM :blob AT :offset INTO :lvr WITH LENGTH :msglen;
+		if (sqlca.sqlcode == 1403 )
+		{
+			memcpy((char*)pFamilyMsg[iNum].msg,lvr->buf,msglen + 1);
+		}
+		++iNum;
+		
+	}
+
+	EXEC SQL AT :db_link_name FREE :blob;
+	EXEC SQL CLOSE cur_getusermsg;
+	free(lvr);
+	return DB_SUCCESS;
+}
+
+
+//   获取某个用户的离线系统信息 
+int  CDatabaseMini::Get_User_Offline_SysMsg(uint32 userID,ST_OFFLINE_MSG *pFamilyMsg, uint8 &nRetCount)
+{ 
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		long_varraw *lvr;
+		unsigned int     recv,origin,time,msglen, int_tmp;
+		short   msgtype;
+		OCIBlobLocator *blob;
+		unsigned int amt,offset,bufsize;
+		VARCHAR db_link_name[32];
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+
+	amt = 0; offset=1;bufsize = MAX_MSG_LEN;
+
+	recv = userID;
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:
+	if (nRetCount == 0)
+	{
+		EXEC SQL AT :db_link_name SELECT COUNT(Sender) INTO :int_tmp 
+			FROM  IM_OFFLINESYSMSG WHERE Receiver= :recv; 
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if( db_ret < 0 )
+		{
+			sql_error(sqlca, oraca);
+			return DB_ERROR;
+		}
+		nRetCount = int_tmp;
+		return DB_SUCCESS;	
+	}
+	 
+	EXEC SQL AT :db_link_name DECLARE cur_getusersysmsg CURSOR FOR
+		SELECT Sender,SendTime,MsgType,MsgLen,MSG 
+		FROM   IM_OFFLINESYSMSG WHERE Receiver= :recv;
+	EXEC SQL OPEN cur_getusersysmsg;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		EXEC SQL CLOSE cur_familysysmsg;
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0  && db_ret != -1405)
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL CLOSE cur_familysysmsg;
+		return DB_ERROR;
+	}
+	
+	EXEC SQL AT :db_link_name ALLOCATE :blob;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		EXEC SQL CLOSE cur_familysysmsg;
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if (db_ret == 1403 || (db_ret < 0  && db_ret != -1405) )
+	{
+		if (db_ret != 1403)
+			sql_error(sqlca, oraca);
+		EXEC SQL AT :db_link_name FREE :blob;
+		EXEC SQL CLOSE cur_familysysmsg;
+		return DB_ERROR;
+	}
+ 
+	lvr = (long_varraw *)malloc(sizeof(unsigned int) + bufsize);
+	lvr->len = bufsize;
+	
+	int iNum = 0;
+
+	for(;;)
+	{  
+		amt = 0; offset=1;bufsize = MAX_MSG_LEN;
+		EXEC SQL FETCH cur_getusersysmsg INTO :origin,:time,:msgtype,:msglen,:blob;
+		
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			EXEC SQL CLOSE cur_getusersysmsg;
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if ( (db_ret < 0 && db_ret != -1405) || db_ret == 1403 || iNum >= nRetCount)
+		{
+			if (db_ret != 1403)
+				sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			EXEC SQL CLOSE cur_getusersysmsg;
+			free(lvr);
+			nRetCount = iNum;
+			return DB_SUCCESS;
+		} 
+		 
+		pFamilyMsg[iNum].recvID		= userID;
+		pFamilyMsg[iNum].sendID		= origin;
+		pFamilyMsg[iNum].tm			= (unsigned int)time;
+		pFamilyMsg[iNum].msgtype	= (unsigned short)msgtype;  
+		pFamilyMsg[iNum].msglen		= msglen + 1;
+
+ 
+		EXEC SQL AT :db_link_name LOB READ :amt FROM :blob AT :offset INTO :lvr WITH LENGTH :msglen;
+		if (sqlca.sqlcode == 1403 )
+		{
+			memcpy((char*)pFamilyMsg[iNum].msg,lvr->buf,msglen + 1);
+		}
+		++iNum;
+	}
+
+	EXEC SQL AT :db_link_name FREE :blob;
+	EXEC SQL CLOSE cur_getusersysmsg;
+	free(lvr);
+	return DB_SUCCESS;
+}
+
+//获取客户端系统消息（公告)
+int CDatabaseMini::Get_Pub_Msg(uint32 userID,ST_WEB_MSG *pMsg, uint8 &nRetCount)
+{ 
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int     recv;
+		unsigned int msgno, msgrecvid, timenow;
+		VARCHAR var_msg[1401];
+		VARCHAR db_link_name[32],timesend[32];
+	EXEC SQL END DECLARE SECTION;
+	
+	SET_INIT_NULL(var_msg);
+
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+		
+	var_msg.arr[0]='\0';
+	var_msg.len=0;
+	timesend.arr[0] = '\0';
+	timesend.len = 0;
+	msgrecvid = 0;
+	msgno = 0;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+	recv = userID;
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;	
+	
+ start:
+	EXEC SQL AT :db_link_name SELECT MsgID INTO :msgno FROM IM_USERSTAT WHERE UserId=:recv;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if (db_ret < 0) 
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+		
+	if (db_ret == 1403)//没有该用户
+	{
+		msgno = 0;
+		
+		time_t t;
+		time(&t);
+		timenow = (unsigned int)t;
+		EXEC SQL AT :db_link_name INSERT INTO  IM_USERSTAT (UserId,MSGID,LstLoginTime,LstLogoutTime)
+			values(:recv, :msgno, :timenow,:timenow);
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if (db_ret < 0 ) //出错
+		{
+			sql_error(sqlca, oraca);
+			return DB_ERROR;
+		}
+		EXEC SQL AT :db_link_name COMMIT;
+	}
+ 
+	EXEC SQL AT :db_link_name DECLARE cur_pubmsg CURSOR FOR
+		SELECT Msgid, msg,TO_CHAR(PubTime,'YYYY/MM/DD HH24:MI:SS')  
+		FROM IM_SYSTEMMSG WHERE Msgid > :msgno AND ExpireTime>= sysdate ORDER BY MSGID;
+	EXEC SQL OPEN cur_pubmsg;
+	int iNum = 0;
+	for(;;)
+	{  
+		EXEC SQL FETCH cur_pubmsg INTO :msgrecvid, :var_msg,:timesend;
+		db_ret = sqlca.sqlcode;
+		if (db_ret == 1403 )
+		{
+			EXEC SQL CLOSE cur_pubmsg; 
+			if (iNum != 0)
+			{
+				EXEC SQL AT :db_link_name UPDATE IM_USERSTAT SET MSGID = :msgno	WHERE UserId=:recv;	
+				EXEC SQL AT :db_link_name COMMIT;
+			}
+			nRetCount = iNum;
+			return DB_SUCCESS;
+		}
+		if( db_ret < 0 && db_ret != -1405 )
+		{
+			sql_error(sqlca, oraca);
+			EXEC SQL CLOSE cur_pubmsg;
+			nRetCount = iNum;
+			return DB_SUCCESS;
+		}
+		msgno = msgrecvid;
+		
+		var_msg.arr[var_msg.len]='\0';
+		timesend.arr[timesend.len] = '\0';
+		
+		pMsg[iNum].recID			= 0;
+		pMsg[iNum].recvID		= recv;
+		pMsg[iNum].sendID		= 0;
+		pMsg[iNum].msgtype		= 0;  
+		//pMsg[iNum].msglen		= var_msg.len + 1;
+		memcpy((char*)pMsg[iNum].msg,var_msg.arr,var_msg.len + 1);
+		strncpy(pMsg[iNum].sendTime, (char*)timesend.arr,31);
+		
+		iNum++;
+		memset(var_msg.arr, 0,var_msg.len);
+		memset(timesend.arr, 0, timesend.len);
+	}
+
+	EXEC SQL CLOSE cur_pubmsg;
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::Save_OnlineUser_Num(uint32 onlinenum)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int     ionlinenum;
+		VARCHAR db_link_name[32];
+		int		 retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+		
+	ionlinenum = onlinenum;	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+start:
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.SaveOnlineNum(:ionlinenum,:retcode);
+		end;
+	END-EXEC;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if (db_ret < 0) 
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;
+	}
+ 
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::TestContext(void)
+{
+//	DEF_ORASET;
+
+// 	EXEC SQL BEGIN DECLARE SECTION;
+// 		sql_context testctx[ 1 ];
+// 	EXEC SQL END DECLARE SECTION;
+// 
+// 	for (int i = 0; i < 1; ++i)
+// 	{
+// 		EXEC SQL CONTEXT ALLOCATE :testctx[i];
+// 	}
+// 	for (int i = 0; i < 1; ++i)
+// 	{
+// 		EXEC SQL CONTEXT USE :testctx[i];
+// 		EXEC SQL CONTEXT FREE :testctx[i];
+// 	}	
+	return 0;
+}
+
+//test blob procedure
+int CDatabaseMini::Save_Family_RequestMsg2(const uint32 c_iFamilyID, uint32 iSenderID,uint32 iSendTime,const char *strMsg, int iMsgLen)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		long_varraw * lvr;
+		unsigned int     nFamilyID, nSenderID, nSendTime, nMsgSeq;
+		int nMsgLen, nMsgType;
+		char*   pmsg;
+		OCIBlobLocator *blob;
+		unsigned int offset = 1; /* attention: typedef ub4 unsigned int */
+		VARCHAR db_link_name[32];
+		int		 retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+
+	
+	nFamilyID = c_iFamilyID;
+	nSenderID = iSenderID;
+	nSendTime = iSendTime;
+	nMsgLen = iMsgLen;
+	nMsgType = CMD_CLUSTER_AUTH_REQ;
+	pmsg = (char*)strMsg;
+	
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;	
+
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+
+start:   	
+	EXEC SQL AT :db_link_name ALLOCATE :blob;
+	
+  
+	lvr = (long_varraw *)malloc(sizeof(ub4) + nMsgLen);
+	lvr->len = nMsgLen;
+	memcpy(lvr->buf,pmsg,nMsgLen);
+	EXEC SQL AT :db_link_name LOB WRITE ONE :nMsgLen 
+			FROM :lvr WITH LENGTH :nMsgLen INTO :blob AT :offset;
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 || db_ret == 1403 )
+	{
+		sql_error(sqlca, oraca);	
+		EXEC SQL AT :db_link_name ROLLBACK;
+		EXEC SQL AT :db_link_name FREE :blob;
+		free(lvr);
+		return DB_ERROR;
+	} 
+	free(lvr);
+
+	
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.SaveFamilyRequestMsg(:nMsgSeq, :nFamilyID,:nSenderID,:nSendTime,:nMsgType,:nMsgLen,:blob,:retcode);
+		end;
+	END-EXEC;	
+
+	EXEC SQL AT :db_link_name FREE :blob;
+	EXEC SQL AT :db_link_name COMMIT;
+	
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::SetWokuMsgRecvID(uint32 userID, uint8 Type, uint32 recID)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int     recid, userid;
+		int				type;
+		VARCHAR db_link_name[32];
+		int		 retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	recid = recID;
+	userid = userID;
+	type = Type;
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+start: 		
+
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.SetWokuMsgRecvID(:userid,:type,:recid,:retcode);
+		end;
+	END-EXEC;	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if (db_ret < 0 || db_ret == 1403)
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;	
+	}	
+	return DB_SUCCESS;
+}
+
+int CDatabaseMini::GetWokuMsgID(uint32 userID,uint32 &nOperationID,uint32 &nUserMsgID,uint32 &nSysMsgID,uint32 &nBroadcastID,uint32 &nUsercommentID,uint32 &nLogcommentID)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		unsigned int     userid,OperationID,UserMsgID,SysMsgID,BroadcastID,UsercommentID,LogcommentID;
+		VARCHAR db_link_name[32];
+		int		 retcode;
+	EXEC SQL END DECLARE SECTION;
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	userid = userID;
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+start: 		
+	EXEC SQL AT :db_link_name EXECUTE
+		begin
+			Mini_Local_Pkg.GetWokuMsgID(:userid,:OperationID,:UserMsgID,:SysMsgID,:BroadcastID,:UsercommentID,:LogcommentID,:retcode);
+		end;
+	END-EXEC;	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if ((db_ret < 0 && db_ret != -1405)|| db_ret == 1403)
+	{
+		sql_error(sqlca, oraca);
+		return DB_ERROR;	
+	}	
+	if(retcode != 1403)
+	{
+		nOperationID = OperationID;
+		nUserMsgID = UserMsgID;
+		nSysMsgID = SysMsgID;
+		nBroadcastID = BroadcastID;
+		nUsercommentID = UsercommentID;
+		nLogcommentID = LogcommentID;
+	}
+	return DB_SUCCESS;
+}
+
+/* 获取WEBIM互通消息(及离线消息) */
+int  CDatabaseMini::Get_WebIM_Msg(int ServerNo,ST_WEBIM_MSG *pWebIMMsg, uint16 &nRetCount)
+{
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		int v_serverno;
+		unsigned long v_msgid;
+		unsigned int v_receiver, v_sender, v_sendtime, v_msglen, v_reqcount;
+		unsigned int amt,offset, bufsize = MAX_MSG_LEN;
+		short  v_msgtype;
+		long_varraw *lvr;
+		OCIBlobLocator *blob;
+		varchar v_sendername[41], v_text[1401];
+		varchar db_link_name[32];
+		varchar v_uuid[41];
+	EXEC SQL END DECLARE SECTION;
+	
+	SET_INIT_NULL(db_link_name);
+
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen((char*)db_link_name.arr);
+
+	v_serverno = ServerNo;
+	v_reqcount = nRetCount;
+
+	int db_ret;
+	int iReconnTimes;
+	bool bReconn;
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];
+	EXEC SQL AT :db_link_name ALLOCATE :blob;
+
+start:
+
+	EXEC SQL AT :db_link_name DECLARE cur_webimmsg CURSOR FOR
+		select t1.MsgId,t1.Receiver,t1.Sender,
+		(cast(cast(t1.SendTime as timestamp) at time zone 'gmt' as date)-to_date('19700101 08:00:00','yyyymmdd hh24:mi:ss'))*24*60*60 as SendTime,
+		t1.MsgType,t1.MsgLen,t1.Msg,t1.SenderName,t1.Text,t1.uuid
+		from IM_OFFLINETALKMSG t1, IM_USERONLINE t2
+		where t2.ServerNo=:v_serverno and t2.status=1 and t1.Receiver=t2.UserId
+		and rownum <= :v_reqcount
+		order by t1.Receiver,t1.MsgId;
+	EXEC SQL OPEN cur_webimmsg;
+
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		EXEC SQL CLOSE cur_webimmsg;
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if( db_ret < 0 && db_ret != -1405)
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL CLOSE cur_webimmsg;
+		return DB_ERROR;
+	}
+	
+	db_ret = sqlca.sqlcode;
+	if (conn_error(db_ret))
+	{
+		EXEC SQL CLOSE cur_webimmsg;
+		iReconnTimes=0;
+		bReconn=ConnectDB();
+		while(!bReconn)
+		{
+			iReconnTimes++;
+			sleep(iReconnTimes%10);
+			bReconn=ConnectDB();
+		}
+		goto start;				
+	}
+	
+	if (db_ret < 0)
+	{
+		sql_error(sqlca, oraca);
+		EXEC SQL AT :db_link_name FREE :blob;
+		EXEC SQL CLOSE cur_webimmsg;
+		return DB_ERROR;
+	}
+ 
+	lvr = (long_varraw *)malloc(sizeof(unsigned int) + bufsize);
+	lvr->len = bufsize;
+	
+	int iNum = 0;
+
+	for(;;)
+	{  
+		amt = 0; offset = 1; bufsize = MAX_MSG_LEN;
+	 
+		SET_INIT_NULL(v_sendername);
+		SET_INIT_NULL(v_text);
+		SET_INIT_NULL(v_uuid);
+		EXEC SQL FETCH cur_webimmsg INTO 
+			:v_msgid, :v_receiver, :v_sender, :v_sendtime,:v_msgtype,:v_msglen,:blob, :v_sendername, :v_text, :v_uuid;
+
+		db_ret = sqlca.sqlcode;
+		if (( db_ret < 0  && db_ret != -1405)|| db_ret == 1403 || iNum >= nRetCount)
+		{
+			if (db_ret != 1403)
+				sql_error(sqlca, oraca);
+			EXEC SQL AT :db_link_name FREE :blob;
+			EXEC SQL CLOSE cur_webimmsg;
+			free(lvr);
+			EXEC SQL AT :db_link_name COMMIT;
+			nRetCount = iNum;
+			return DB_SUCCESS;
+		} 
+		 
+		pWebIMMsg[iNum].msgid	= v_msgid;
+		pWebIMMsg[iNum].recvID	= v_receiver;
+		pWebIMMsg[iNum].sendID	= v_sender;
+		pWebIMMsg[iNum].tm		= (unsigned int)v_sendtime;
+		pWebIMMsg[iNum].msgtype	= (unsigned short)v_msgtype;  
+		pWebIMMsg[iNum].msglen	= v_msglen;
+		strncpy(pWebIMMsg[iNum].from_nickname, (char*)v_sendername.arr, MAX_NICKNAME_LEN+1);
+		strncpy(pWebIMMsg[iNum].msgtext, (char*)v_text.arr, MAX_MSG_LEN);
+		strncpy(pWebIMMsg[iNum].uuid, (char*)v_uuid.arr, MAX_UUID_LEN);		
+ 
+		if(v_msglen > 0)
+		{
+			EXEC SQL AT :db_link_name LOB READ :amt FROM :blob AT :offset INTO :lvr WITH LENGTH :v_msglen;
+			if (sqlca.sqlcode == 1403 )
+			{
+				memcpy((char*)pWebIMMsg[iNum].msg,lvr->buf,v_msglen);
+			}
+		}
+		++iNum;
+
+		EXEC SQL AT :db_link_name insert into 
+			IM_OFFLINETALKMSG_ARC (
+						msgid,receiver,sender,srcip,srcport,sendtime,msgtype,msglen,msg,
+						receivername,sendername,readtime,status,text) 
+					select
+						msgid,receiver,sender,srcip,srcport,sendtime,msgtype,msglen,msg,
+						receivername,sendername,sysdate,1,text
+					from IM_OFFLINETALKMSG where msgid=:v_msgid; 
+		EXEC SQL AT	:db_link_name delete from IM_OFFLINETALKMSG where msgid=:v_msgid;
+		LPONLINE_USER_INFO lpUser = CAppManager::GetInstance().GetAppNetWork().FindOnlineUser(v_receiver);
+		if(lpUser == NULL)
+		{
+			EXEC SQL AT :db_link_name UPDATE IM_USERONLINE SET STATUS=0 WHERE USERId= :v_receiver;
+			db_ret = sqlca.sqlcode;
+			if (db_ret < 0 ) 
+			{
+				EXEC SQL AT :db_link_name FREE :blob;
+				EXEC SQL CLOSE cur_webimmsg;
+				free(lvr);
+				return DB_ERROR;
+			}
+		}
+	}
+	EXEC SQL AT :db_link_name FREE :blob;
+	EXEC SQL CLOSE cur_webimmsg;
+	free(lvr);
+	EXEC SQL AT :db_link_name COMMIT;
+	return DB_SUCCESS;
+}
+
+// 获取时间段之间的历史消息
+int CDatabaseMini::WebHistoryMsg(uint32 nFromID, uint32 nToID, uint32 nStartMsgID, uint32 nStartTime, uint32 nEndTime, uint32 nMaxMsg, uint32& nRetCount, MsgList &lsMsg)
+{
+	lsMsg.set_ret(0);
+
+	DEF_ORASET;
+	EXEC SQL BEGIN DECLARE SECTION;
+		VARCHAR	db_link_name[32],var_fontName[50],var_nickName[41],var_data[1315],var_uuid[80];
+		unsigned int sid,did,startmsgid,starttime,endtime,msgnum,msgid;
+		unsigned int from_id,to_id,send_time,fontSize,fontColor,fontStyle,datatype;
+		int	retcode;
+		SQL_CURSOR cur_msgInfo;
+	EXEC SQL END DECLARE SECTION;
+
+	SET_INIT_NULL(db_link_name);
+	
+	strncpy((char*)db_link_name.arr, m_Connect,32);
+	db_link_name.len = (short)strlen(m_Connect);
+	
+	sid=nFromID;
+	did=nToID;
+	startmsgid=nStartMsgID;
+	starttime=nStartTime;
+	endtime=nEndTime;
+	msgnum=nMaxMsg+1;		// 多请求一条数据，用于判断是否所有历史消息都查询完
+	
+	SET_INIT_NULL(var_fontName);
+	SET_INIT_NULL(var_nickName);
+	SET_INIT_NULL(var_data);
+	SET_INIT_NULL(var_uuid);
+  
+	int db_ret, iReconnTimes;
+	uint32 iNum = 0;	
+	bool bReconn;	
+	
+	EXEC SQL CONTEXT USE :m_ctx[m_nMyContextid];  
+
+start:  
+		EXEC SQL ALLOCATE :cur_msgInfo;
+		EXEC SQL AT :db_link_name EXECUTE
+			begin
+				Mini_User_Pkg.WebHistoryMsg(:sid,:did,:startmsgid,:starttime,:endtime,:msgnum,:cur_msgInfo,:retcode);
+			end;
+		END-EXEC;
+
+		db_ret = sqlca.sqlcode;
+		if (conn_error(db_ret))
+		{
+			EXEC SQL CLOSE :cur_msgInfo;
+			iReconnTimes=0;
+			bReconn=ConnectDB();
+			while(!bReconn)
+			{
+				iReconnTimes++;
+				sleep(iReconnTimes%10);
+				bReconn=ConnectDB();
+			}
+			goto start;				
+		}
+		
+		if(db_ret < 0 && db_ret != -1405) 
+		{
+			lsMsg.set_ret(1);
+			sql_error(sqlca, oraca);		
+			EXEC SQL CLOSE :cur_msgInfo;
+			EXEC SQL FREE  :cur_msgInfo;
+			return DB_ERROR;
+		}
+
+		for(;;)
+		{  
+			EXEC SQL FETCH :cur_msgInfo INTO :from_id,:to_id,:send_time,:fontSize,:fontColor,:fontStyle,:var_fontName,:var_nickName,:var_data,:msgid,:var_uuid,:datatype;
+			db_ret = sqlca.sqlcode;
+			if (db_ret == 1403 )
+			{
+				nRetCount = iNum;
+				break;
+			}
+			if (iNum >= nRetCount)
+			{
+				break;
+			}	
+			if( db_ret < 0 && db_ret != -1405 )
+			{
+				sql_error(sqlca, oraca);
+				nRetCount = iNum;
+				break;
+			}	
+
+			if(iNum < nMaxMsg)
+			{
+				MsgInfo* msginfo = lsMsg.add_msglist();
+				msginfo->set_fromid(from_id);
+				msginfo->set_toid(to_id);
+				msginfo->set_fontsize(fontSize);
+				msginfo->set_fontcolor(fontColor);
+				msginfo->set_fontstyle(fontStyle);
+				msginfo->set_fontname((char*)var_fontName.arr);
+				msginfo->set_fromnickname((char*)var_nickName.arr);
+				msginfo->set_data((char*)var_data.arr);
+				msginfo->set_msgid(msgid);
+				msginfo->set_uuid((char*)var_uuid.arr);
+				msginfo->set_send_time(send_time);
+				msginfo->set_datatype(datatype);
+				lsMsg.set_lastmsgid(msgid);
+			}
+			
+			SET_INIT_NULL(var_fontName);
+			SET_INIT_NULL(var_nickName);
+			SET_INIT_NULL(var_data);
+			SET_INIT_NULL(var_uuid);
+			
+			++iNum;
+		}
+
+		SET_END_NULL(var_fontName);
+		SET_END_NULL(var_nickName);
+		SET_END_NULL(var_data);
+		SET_END_NULL(var_uuid);
+
+		if(iNum > nMaxMsg)
+		{	// 说明还有后续的历史消息
+			lsMsg.set_isend(0);
+		}
+		else
+		{
+			lsMsg.set_isend(1);
+		}
+
+		CLog::Log("WebHistoryMsg",CLog::TYPE_DEBUG,"查询历史消息条数:%d", iNum);
+		
+		EXEC SQL CLOSE :cur_msgInfo;
+		EXEC SQL FREE  :cur_msgInfo;
+		return DB_SUCCESS;		
+}
+
+
+void ForDisableBuildWarningMini()
+{
+	unsigned int nTest =  sqlstm.sqlvsn;
+	nTest++;
+}

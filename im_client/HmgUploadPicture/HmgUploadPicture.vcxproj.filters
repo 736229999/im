@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+    <Filter Include="生成的文件">
+      <UniqueIdentifier>{48d5fc0a-fd6d-421e-8a6e-ebb9a9c8ebc3}</UniqueIdentifier>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="UploadPictureX\Thread\BizUploadThread.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\controls\button.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ConfigInfo.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\Enablewindow\EnableWindow.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\FileName.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\controls\FlatEdit.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FmtString.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\FormProgress.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\controls\GraphComboBox.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HmgUploadPicture.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HmgUploadPictureX.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\HttpObject.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\InPlaceTextTip.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\PanelBaseDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\controls\PictureEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\PreviewDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\ProgressCtrlEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\SEH.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\ShellPidl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\ShellTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\controls\SkinCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\controls\SplitterControl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\controls\StaticCtrlEx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\_HyperLink\StatLink.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="stdafx.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\Thread\Thread.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\ThumBnaiListCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\ThumBnaiUpListCtrl.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\UploadingDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\UploadOperationsDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\UpLoadPhotoDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPicShellExtDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\WebProcess.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="UploadPictureX\XSkinDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="HmgUploadPicture_i.c">
+      <Filter>生成的文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HmgUploadPicture.def">
+      <Filter>源文件</Filter>
+    </None>
+    <None Include="RES\im\bitmap1.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\bitmap_right2.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\dropdrag\bm_single.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\bmp00001.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\bmp00002.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\bmp00003.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\bmp00004.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\bmp00005.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\bmp00006.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\bmp00007.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\bmp00008.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\bmp00009.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\dropdrag\bmp_multi.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\btn1_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\btn1_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\btn1_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\btn1_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\btn_main_icon.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\button_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\button_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\button_hover.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\button_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\close_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\close_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\close_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\column_b.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\column_btn_bottom.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\column_btn_bottom_disable.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\column_btn_bottom_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\column_btn_mid.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\column_btn_mid_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\column_btn_top.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\combo_right.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\dlg_caption_bar.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\dlg_caption_left.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\dlg_caption_mid.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\dlg_caption_right.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\flagicon.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\help_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\help_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\help_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\hint_icon.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="HmgUploadPicture.rgs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="HmgUploadPictureX.rgs">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\ICR_HAND.CUR">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\italic_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\left_btn_arrow.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\progress.ctrl.bar\loding 红.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\progress.ctrl.bar\loding绿.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\progress.ctrl.bar\loding蓝.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\ico\main.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\main.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\max_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\max_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\max_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\min_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\min_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\min_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="NODRAGGING.CUR">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\restore_down.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\restore_hot.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\restore_normal.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\right_btn_arrow.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\scrollbar.BMP">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\sel_pic1.ico">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\upload_picture_btn.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="UploadPictureXCtrl.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\progress.ctrl.bar.v2\进度条-右边边线.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\progress.ctrl.bar.v2\进度条-左边边线.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\progress.ctrl.bar.v2\进度条-灰.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\progress.ctrl.bar.v2\进度条-绿.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\progress.ctrl.bar.v2\进度条-蓝.bmp">
+      <Filter>资源文件</Filter>
+    </None>
+    <None Include="RES\im\loginWait.gif.dat" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="HmgUploadPicture.idl">
+      <Filter>源文件</Filter>
+    </Midl>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UploadPictureX\Thread\BizUploadThread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\controls\button.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="ConfigInfo.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\Enablewindow\EnableWindow.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\FileName.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\controls\FlatEdit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="FmtString.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\FormProgress.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\controls\GraphComboBox.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HmgUploadPictureX.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\HttpObject.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\_HyperLink\HyprLink.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\InPlaceTextTip.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\PanelBaseDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\controls\PictureEx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\PreviewDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\ProgressCtrlEx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\PubHeader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="Resource.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\SEH.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\ShellPidl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\ShellTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\controls\SkinCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\controls\SplitterControl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\controls\StaticCtrlEx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\_HyperLink\StatLink.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\SyncCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\Thread\Thread.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\ThumBnaiListCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\ThumBnaiUpListCtrl.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\UploadingDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\UploadOperationsDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\UpLoadPhotoDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPicShellExtDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\WebProcess.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="UploadPictureX\XSkinDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="HmgUploadPicture.h">
+      <Filter>生成的文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="HmgUploadPicture.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+</Project>

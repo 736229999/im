@@ -1,0 +1,1 @@
+devenv /rebuild release "ImClient_buyer_beta.sln"

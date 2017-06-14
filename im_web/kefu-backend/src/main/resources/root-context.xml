@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:beans="http://www.springframework.org/schema/beans" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+           http://www.springframework.org/schema/context
+            http://www.springframework.org/schema/context/spring-context.xsd
+             http://www.springframework.org/schema/mvc
+              http://www.springframework.org/schema/mvc/spring-mvc.xsd
+              http://www.springframework.org/schema/task
+               http://www.springframework.org/schema/task/spring-task-3.0.xsd">
+
+    <!-- Root Context: defines shared resources visible to all other web components -->
+    <!-- Enables the Spring MVC @Controller programming model -->
+    <mvc:annotation-driven>
+        <mvc:message-converters register-defaults="true">
+            <beans:bean id="mappingJacksonHttpMessageConverter"
+                        class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter">
+                <beans:property name="supportedMediaTypes">
+                    <beans:list>
+                        <beans:value>application/json;charset=UTF-8</beans:value>
+                        <beans:value>text/json;charset=UTF-8</beans:value>
+                        <beans:value>text/plain;charset=UTF-8</beans:value>
+                    </beans:list>
+                </beans:property>
+            </beans:bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/**" />
+            <mvc:exclude-mapping path="/service-provider/**"/>
+            <mvc:exclude-mapping path="/pc-installer/**"/>
+            <mvc:exclude-mapping path="/material/**"/>
+            <bean class="com.feiniu.common.core.ControllerInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <mvc:resources mapping="/js/**" location="/static/js/"/>
+    <mvc:resources mapping="/css/**" location="/static/css/"/>
+    <mvc:resources mapping="/images/**" location="/static/images/"/>
+    <mvc:resources mapping="/fonts/**" location="/static/fonts/"/>
+    <mvc:resources mapping="/material/**" location="/static/material/"/>
+
+    <!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
+    <beans:bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <beans:property name="prefix" value="/WEB-INF/pages/"/>
+        <beans:property name="suffix" value=".jsp"/>
+    </beans:bean>
+
+    <beans:bean class="com.feiniu.fnSubAccount.constants.BusinessConfig">
+        <property name="merchantServiceURL" value="${kefu.merchantServiceURL}"></property>
+        <property name="storeServiceURL" value="${kefu.storeServiceURL}"></property>
+        <property name="backendServiceURL" value="${feiniu.backendHost}"></property>
+        <property name="imageServiceURL" value="${feiniu.imageServiceURL}"></property>
+        <property name="imServerIpURL" value="${feiniu.ImServerIPURL}"></property>
+        <property name="imServerIpPath" value="${feiniu.ImServerIpPath}"></property>
+        <property name="imageAccessUrlList" value="${feiniu.imageAccessUrlList}"></property>
+        <property name="memcacheMagicNumber" value="${feiniu.memcacheMagicNumber}"></property>
+        <property name="errorPageBasePath" value="${feiniu.errorPageBasePath}"></property>
+        <property name="customerServiceOrganId" value="${feiniu.customerServiceOrganId}"></property>
+        <property name="customerServiceOrganName" value="${feiniu.customerServiceOrganName}"></property>
+        <property name="memcacheServerIp" value="${feiniu.memcacheServerIp}"></property>
+        <property name="merchantInfoAPI" value="${kefu.merchantInfoAPI}"></property>
+        <property name="useImApi" value="${kefu.useImApi}"></property>
+        <property name="imAPLURL" value="${kefu.imAPLURL}"></property>
+        <property name="merchantInfoURL" value="${kefu.merchantInfoURL}"></property>
+        <property name="isPreview" value="${feiniu.isPreview}"></property>
+        <property name="merchantMemberApiServiceName" value="${feiniu.merchantMemberApiServiceName}"></property>
+    </beans:bean>
+
+    <beans:bean class="com.feiniu.fnSubAccount.bean.vo.PCInstallerConfig">
+        <property name="version" value="${version}"></property>
+        <property name="size" value="${size}"></property>
+        <property name="fileName" value="${fileName}"></property>
+        <property name="updateTime" value="${updateTime}"></property>
+    </beans:bean>
+
+    <beans:bean class="com.feiniu.fnSubAccount.bean.vo.WorkInstallerConfig">
+        <property name="version" value="${work.version}"></property>
+        <property name="size" value="${work.size}"></property>
+        <property name="fileName" value="${work.fileName}"></property>
+        <property name="updateTime" value="${work.updateTime}"></property>
+        <property name="system" value="${work.system}"></property>
+    </beans:bean>
+
+    <beans:bean class="com.feiniu.fnSubAccount.controller.websocket.WebSocketHandshakeInterceptor"></beans:bean>
+
+    <beans:bean id="multipartResolver"
+                class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!-- 设置上传文件的最大尺寸为2MB -->
+        <beans:property name="maxUploadSize">
+            <beans:value>2097152</beans:value>
+        </beans:property>
+    </beans:bean>
+
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/kefu/**"/>
+            <bean class="com.feiniu.fnSubAccount.filter.AuthInterceptor">
+            </bean>
+        </mvc:interceptor>
+    </mvc:interceptors>
+
+    <context:component-scan base-package="com.feiniu.fnSubAccount"/>
+    <beans:bean class="com.feiniu.fnSubAccount.exception.CustomGlobalExceptionResolver">
+    </beans:bean>
+
+
+    <task:annotation-driven scheduler="qbScheduler" mode="proxy"/>
+    <task:scheduler id="qbScheduler" pool-size="10"/>
+</beans>

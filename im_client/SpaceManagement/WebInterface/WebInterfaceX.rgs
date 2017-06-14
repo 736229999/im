@@ -1,0 +1,27 @@
+HKCR
+{
+	WebInterface.WebInterfaceX.1 = s 'WebInterfaceX Class'
+	{
+		CLSID = s '{5BAAC37E-CEB9-4FF7-B48F-A54A4C5B9FF4}'
+	}
+	WebInterface.WebInterfaceX = s 'WebInterfaceX Class'
+	{
+		CLSID = s '{5BAAC37E-CEB9-4FF7-B48F-A54A4C5B9FF4}'
+		CurVer = s 'WebInterface.WebInterfaceX.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {5BAAC37E-CEB9-4FF7-B48F-A54A4C5B9FF4} = s 'WebInterfaceX Class'
+		{
+			ProgID = s 'WebInterface.WebInterfaceX.1'
+			VersionIndependentProgID = s 'WebInterface.WebInterfaceX'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{C4F2A28C-D254-4416-9CE2-D6D8189ACEBD}'
+		}
+	}
+}

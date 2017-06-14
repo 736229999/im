@@ -1,0 +1,38 @@
+// Music.idl : Music 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(Music.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(0AAB3BBD-C150-43C2-8320-CD113793DB89),
+	dual,
+	nonextensible,
+	helpstring("IMiniMusicPlayer 接口"),
+	pointer_default(unique)
+]
+interface IMiniMusicPlayer : IDispatch{
+	[id(1), helpstring("方法Show")] HRESULT Show(void);
+	[id(2), helpstring("方法AddFriend")] HRESULT AddFriend([in] LONG nUserId, [in] BSTR strUserName, [in] BSTR strNickName, [in] LONG nSex);
+};
+[
+	uuid(E1B646E0-6E70-4E0B-BA1C-9FF0B8330DD7),
+	version(1.0),
+	helpstring("Music 1.0 类型库")
+]
+library MusicLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(55910FE5-E7C0-4C3D-9E06-49B1A12909D8),
+		helpstring("MiniMusicPlayer Class")
+	]
+	coclass MiniMusicPlayer
+	{
+		[default] interface IMiniMusicPlayer;
+	};
+};

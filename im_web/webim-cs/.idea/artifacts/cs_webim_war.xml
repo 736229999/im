@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="cs-webim:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="cs-webim.war">
+      <element id="artifact" artifact-name="cs-webim:war exploded" />
+    </root>
+  </artifact>
+</component>

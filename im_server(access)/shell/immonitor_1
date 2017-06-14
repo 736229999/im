@@ -1,0 +1,31 @@
+#!/bin/sh 
+HOLD1=/tmp/imhold1.$$
+WORKINGPATH=`dirname $0`/..
+
+while [ 1 ]
+do
+
+ps -A| grep ImServer | grep -v grep | awk '{print $2}' > $HOLD1
+if [ ! -s $HOLD1 ]; then
+	echo `date` >> ../Log/ImMonitor.log
+ 	echo "ImServer process isn't running..." >> ../Log/ImMonitor.log
+	sleep 1
+	ulimit -c unlimited
+	nohup ../ImServer > /dev/null&
+	echo "restart ImServer" >> ../Log/ImMonitor.log
+	echo >> ../Log/ImMonitor.log
+	
+fi
+	 
+if [ -f core.* ];then
+        DATE=`date "+%Y%m%d%k%M%S"`
+        DUMPFILE=core$DATE.tar.gz
+        UPLOADSERVER=`cat ../config/Config.ini | grep -A 2 "\[ShellConfig\]" | grep UploadDumpIP | awk -F "[=]" '{print $2}'`
+        echo [$DATE] send dump file: $DUMPFILE to $UPLOADSERVER
+        tar zcvf $DUMPFILE core.*
+        curl -F "file=@$DUMPFILE" $UPLOADSERVER
+        rm -rf core.*
+fi
+	sleep 300
+	
+done

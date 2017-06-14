@@ -1,0 +1,432 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug_Business|Win32">
+      <Configuration>Debug_Business</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release_Business|Win32">
+      <Configuration>Release_Business</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{9188CDAA-6BBC-4CAA-B821-BCF575E31166}</ProjectGuid>
+    <RootNamespace>HmgUploadPicture</RootNamespace>
+    <Keyword>AtlProj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Static</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Dynamic</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v100</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseOfMfc>Dynamic</UseOfMfc>
+    <UseOfAtl>Dynamic</UseOfAtl>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.30319.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">$(Configuration)\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</IgnoreImportLibrary>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">true</LinkIncremental>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</OutDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">.\Release\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">.\Release\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">.\Release\</IntDir>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">true</IgnoreImportLibrary>
+    <IgnoreImportLibrary Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">true</IgnoreImportLibrary>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkIncremental>
+    <LinkIncremental Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">false</LinkIncremental>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'" />
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSet Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRules Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" />
+    <CodeAnalysisRuleAssemblies Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'" />
+    <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</PostBuildEventUseInBuild>
+    <PostBuildEventUseInBuild Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">false</PostBuildEventUseInBuild>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>F:\HMG\HmgUploadPicture\HmgUploadPicture;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <RegisterOutput>false</RegisterOutput>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)HmgUploadPicture.tlb</TypeLibraryName>
+      <HeaderFileName>HmgUploadPicture.h</HeaderFileName>
+      <DllDataFileName>
+      </DllDataFileName>
+      <InterfaceIdentifierFileName>HmgUploadPicture_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>HmgUploadPicture_p.c</ProxyFileName>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>F:\HMG\HmgUploadPicture\HmgUploadPicture;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;_DEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <RegisterOutput>false</RegisterOutput>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)HmgUploadPicture.tlb</TypeLibraryName>
+      <HeaderFileName>HmgUploadPicture.h</HeaderFileName>
+      <DllDataFileName>
+      </DllDataFileName>
+      <InterfaceIdentifierFileName>HmgUploadPicture_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>HmgUploadPicture_p.c</ProxyFileName>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <RegisterOutput>false</RegisterOutput>
+      <AdditionalOptions>wininet.lib %(AdditionalOptions)</AdditionalOptions>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)HmgUploadPicture.tlb</TypeLibraryName>
+      <HeaderFileName>HmgUploadPicture.h</HeaderFileName>
+      <DllDataFileName>
+      </DllDataFileName>
+      <InterfaceIdentifierFileName>HmgUploadPicture_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>HmgUploadPicture_p.c</ProxyFileName>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <PreprocessorDefinitions>WIN32;_WINDOWS;NDEBUG;_USRDLL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Link>
+      <RegisterOutput>false</RegisterOutput>
+      <AdditionalOptions>wininet.lib %(AdditionalOptions)</AdditionalOptions>
+      <ModuleDefinitionFile>$(ProjectName).def</ModuleDefinitionFile>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Windows</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+    <Midl>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MkTypLibCompatible>false</MkTypLibCompatible>
+      <TargetEnvironment>Win32</TargetEnvironment>
+      <GenerateStublessProxies>true</GenerateStublessProxies>
+      <TypeLibraryName>$(IntDir)HmgUploadPicture.tlb</TypeLibraryName>
+      <HeaderFileName>HmgUploadPicture.h</HeaderFileName>
+      <DllDataFileName>
+      </DllDataFileName>
+      <InterfaceIdentifierFileName>HmgUploadPicture_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>HmgUploadPicture_p.c</ProxyFileName>
+      <ValidateAllParameters>false</ValidateAllParameters>
+    </Midl>
+    <ResourceCompile>
+      <PreprocessorDefinitions>NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <Culture>0x0804</Culture>
+      <AdditionalIncludeDirectories>$(IntDir);%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ResourceCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="UploadPictureX\Thread\BizUploadThread.cpp" />
+    <ClCompile Include="UploadPictureX\controls\button.cpp" />
+    <ClCompile Include="ConfigInfo.cpp" />
+    <ClCompile Include="UploadPictureX\Enablewindow\EnableWindow.cpp" />
+    <ClCompile Include="UploadPictureX\FileName.cpp" />
+    <ClCompile Include="UploadPictureX\controls\FlatEdit.cpp" />
+    <ClCompile Include="FmtString.cpp" />
+    <ClCompile Include="UploadPictureX\FormProgress.cpp" />
+    <ClCompile Include="UploadPictureX\controls\GraphComboBox.cpp" />
+    <ClCompile Include="HmgUploadPicture.cpp" />
+    <ClCompile Include="HmgUploadPictureX.cpp" />
+    <ClCompile Include="UploadPictureX\HttpObject.cpp" />
+    <ClCompile Include="UploadPictureX\InPlaceTextTip.cpp" />
+    <ClCompile Include="UploadPictureX\PanelBaseDlg.cpp" />
+    <ClCompile Include="UploadPictureX\controls\PictureEx.cpp" />
+    <ClCompile Include="UploadPictureX\PreviewDlg.cpp" />
+    <ClCompile Include="UploadPictureX\ProgressCtrlEx.cpp" />
+    <ClCompile Include="UploadPictureX\SEH.cpp" />
+    <ClCompile Include="UploadPictureX\ShellPidl.cpp" />
+    <ClCompile Include="UploadPictureX\ShellTree.cpp" />
+    <ClCompile Include="UploadPictureX\controls\SkinCtrl.cpp" />
+    <ClCompile Include="UploadPictureX\controls\SplitterControl.cpp" />
+    <ClCompile Include="UploadPictureX\controls\StaticCtrlEx.cpp" />
+    <ClCompile Include="UploadPictureX\_HyperLink\StatLink.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="UploadPictureX\Thread\Thread.cpp" />
+    <ClCompile Include="UploadPictureX\ThumBnaiListCtrl.cpp" />
+    <ClCompile Include="UploadPictureX\ThumBnaiUpListCtrl.cpp" />
+    <ClCompile Include="UploadPictureX\UploadingDlg.cpp" />
+    <ClCompile Include="UploadPictureX\UploadOperationsDlg.cpp" />
+    <ClCompile Include="UploadPictureX\UpLoadPhotoDlg.cpp" />
+    <ClCompile Include="UploadPicShellExtDlg.cpp" />
+    <ClCompile Include="UploadPictureX\WebProcess.cpp" />
+    <ClCompile Include="UploadPictureX\XSkinDlg.cpp" />
+    <ClCompile Include="HmgUploadPicture_i.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug_Business|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release_Business|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="HmgUploadPicture.def" />
+    <None Include="RES\im\bitmap1.bmp" />
+    <None Include="RES\im\bitmap_right2.bmp" />
+    <None Include="RES\dropdrag\bm_single.bmp" />
+    <None Include="RES\im\bmp00001.bmp" />
+    <None Include="RES\im\bmp00002.bmp" />
+    <None Include="RES\im\bmp00003.bmp" />
+    <None Include="RES\im\bmp00004.bmp" />
+    <None Include="RES\im\bmp00005.bmp" />
+    <None Include="RES\im\bmp00006.bmp" />
+    <None Include="RES\im\bmp00007.bmp" />
+    <None Include="RES\im\bmp00008.bmp" />
+    <None Include="RES\im\bmp00009.bmp" />
+    <None Include="RES\dropdrag\bmp_multi.bmp" />
+    <None Include="RES\im\btn1_disable.bmp" />
+    <None Include="RES\im\btn1_down.bmp" />
+    <None Include="RES\im\btn1_hover.bmp" />
+    <None Include="RES\im\btn1_normal.bmp" />
+    <None Include="RES\im\btn_main_icon.bmp" />
+    <None Include="RES\im\button_disable.bmp" />
+    <None Include="RES\im\button_down.bmp" />
+    <None Include="RES\im\button_hover.bmp" />
+    <None Include="RES\im\button_normal.bmp" />
+    <None Include="RES\im\close_down.bmp" />
+    <None Include="RES\im\close_hot.bmp" />
+    <None Include="RES\im\close_normal.bmp" />
+    <None Include="RES\im\column_b.bmp" />
+    <None Include="RES\im\column_btn_bottom.bmp" />
+    <None Include="RES\im\column_btn_bottom_disable.bmp" />
+    <None Include="RES\im\column_btn_bottom_hot.bmp" />
+    <None Include="RES\im\column_btn_mid.bmp" />
+    <None Include="RES\im\column_btn_mid_hot.bmp" />
+    <None Include="RES\im\column_btn_top.bmp" />
+    <None Include="RES\im\combo_right.bmp" />
+    <None Include="RES\im\dlg_caption_bar.bmp" />
+    <None Include="RES\im\dlg_caption_left.bmp" />
+    <None Include="RES\im\dlg_caption_mid.bmp" />
+    <None Include="RES\im\dlg_caption_right.bmp" />
+    <None Include="RES\flagicon.ico" />
+    <None Include="RES\im\help_down.bmp" />
+    <None Include="RES\im\help_hot.bmp" />
+    <None Include="RES\im\help_normal.bmp" />
+    <None Include="RES\hint_icon.bmp" />
+    <None Include="HmgUploadPicture.rgs" />
+    <None Include="HmgUploadPictureX.rgs" />
+    <None Include="RES\ICR_HAND.CUR" />
+    <None Include="RES\im\italic_normal.bmp" />
+    <None Include="RES\im\left_btn_arrow.bmp" />
+    <None Include="RES\progress.ctrl.bar\loding 红.bmp" />
+    <None Include="RES\progress.ctrl.bar\loding绿.bmp" />
+    <None Include="RES\progress.ctrl.bar\loding蓝.bmp" />
+    <None Include="RES\ico\main.ico" />
+    <None Include="RES\main.ico" />
+    <None Include="RES\im\max_down.bmp" />
+    <None Include="RES\im\max_hot.bmp" />
+    <None Include="RES\im\max_normal.bmp" />
+    <None Include="RES\im\min_down.bmp" />
+    <None Include="RES\im\min_hot.bmp" />
+    <None Include="RES\im\min_normal.bmp" />
+    <None Include="NODRAGGING.CUR" />
+    <None Include="RES\im\restore_down.bmp" />
+    <None Include="RES\im\restore_hot.bmp" />
+    <None Include="RES\im\restore_normal.bmp" />
+    <None Include="RES\im\right_btn_arrow.bmp" />
+    <None Include="RES\im\scrollbar.BMP" />
+    <None Include="RES\sel_pic1.ico" />
+    <None Include="RES\upload_picture_btn.bmp" />
+    <None Include="UploadPictureXCtrl.bmp" />
+    <None Include="RES\progress.ctrl.bar.v2\进度条-右边边线.bmp" />
+    <None Include="RES\progress.ctrl.bar.v2\进度条-左边边线.bmp" />
+    <None Include="RES\progress.ctrl.bar.v2\进度条-灰.bmp" />
+    <None Include="RES\progress.ctrl.bar.v2\进度条-绿.bmp" />
+    <None Include="RES\progress.ctrl.bar.v2\进度条-蓝.bmp" />
+    <None Include="RES\im\loginWait.gif.dat" />
+    <None Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Midl Include="HmgUploadPicture.idl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="UploadPictureX\Thread\BizUploadThread.h" />
+    <ClInclude Include="UploadPictureX\controls\button.h" />
+    <ClInclude Include="ConfigInfo.h" />
+    <ClInclude Include="UploadPictureX\Enablewindow\EnableWindow.h" />
+    <ClInclude Include="UploadPictureX\FileName.h" />
+    <ClInclude Include="UploadPictureX\controls\FlatEdit.h" />
+    <ClInclude Include="FmtString.h" />
+    <ClInclude Include="UploadPictureX\FormProgress.h" />
+    <ClInclude Include="UploadPictureX\controls\GraphComboBox.h" />
+    <ClInclude Include="HmgUploadPictureX.h" />
+    <ClInclude Include="UploadPictureX\HttpObject.h" />
+    <ClInclude Include="UploadPictureX\_HyperLink\HyprLink.h" />
+    <ClInclude Include="UploadPictureX\InPlaceTextTip.h" />
+    <ClInclude Include="UploadPictureX\PanelBaseDlg.h" />
+    <ClInclude Include="UploadPictureX\controls\PictureEx.h" />
+    <ClInclude Include="UploadPictureX\PreviewDlg.h" />
+    <ClInclude Include="UploadPictureX\ProgressCtrlEx.h" />
+    <ClInclude Include="UploadPictureX\PubHeader.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="UploadPictureX\SEH.h" />
+    <ClInclude Include="UploadPictureX\ShellPidl.h" />
+    <ClInclude Include="UploadPictureX\ShellTree.h" />
+    <ClInclude Include="UploadPictureX\controls\SkinCtrl.h" />
+    <ClInclude Include="UploadPictureX\controls\SplitterControl.h" />
+    <ClInclude Include="UploadPictureX\controls\StaticCtrlEx.h" />
+    <ClInclude Include="UploadPictureX\_HyperLink\StatLink.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="UploadPictureX\SyncCtrl.h" />
+    <ClInclude Include="UploadPictureX\Thread\Thread.h" />
+    <ClInclude Include="UploadPictureX\ThumBnaiListCtrl.h" />
+    <ClInclude Include="UploadPictureX\ThumBnaiUpListCtrl.h" />
+    <ClInclude Include="UploadPictureX\UploadingDlg.h" />
+    <ClInclude Include="UploadPictureX\UploadOperationsDlg.h" />
+    <ClInclude Include="UploadPictureX\UpLoadPhotoDlg.h" />
+    <ClInclude Include="UploadPicShellExtDlg.h" />
+    <ClInclude Include="UploadPictureX\WebProcess.h" />
+    <ClInclude Include="UploadPictureX\XSkinDlg.h" />
+    <ClInclude Include="HmgUploadPicture.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="HmgUploadPicture.rc" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

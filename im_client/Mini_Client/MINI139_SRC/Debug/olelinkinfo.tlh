@@ -1,0 +1,88 @@
+﻿// Created by Microsoft (R) C/C++ Compiler Version 10.00.30319.01 (3d038e76).
+//
+// e:\moumou_2.2\mini_client\mini139_src\debug\olelinkinfo.tlh
+//
+// C++ source equivalent of Win32 type library ..\binDebug\OleLinkInfo.ocx
+// compiler-generated file created 03/29/16 at 18:47:58 - DO NOT EDIT!
+
+#pragma once
+#pragma pack(push, 8)
+
+#include <comdef.h>
+
+//
+// Forward references and typedefs
+//
+
+struct __declspec(uuid("21dfe841-c6d0-42af-8ef2-147955ff8791"))
+/* LIBID */ __OleLinkInfoLib;
+struct __declspec(uuid("5c8fa553-98df-4a73-9208-7ff1bdf0c55b"))
+/* dispinterface */ _DOleLinkInfo;
+struct __declspec(uuid("99d5104d-2a9c-4f64-b3d0-ae2953eebd1c"))
+/* dispinterface */ _DOleLinkInfoEvents;
+struct /* coclass */ OleLinkInfo;
+
+//
+// Smart pointer typedef declarations
+//
+
+_COM_SMARTPTR_TYPEDEF(_DOleLinkInfo, __uuidof(_DOleLinkInfo));
+_COM_SMARTPTR_TYPEDEF(_DOleLinkInfoEvents, __uuidof(_DOleLinkInfoEvents));
+
+//
+// Type library items
+//
+
+struct __declspec(uuid("5c8fa553-98df-4a73-9208-7ff1bdf0c55b"))
+_DOleLinkInfo : IDispatch
+{
+    //
+    // Wrapper methods for error-handling
+    //
+
+    // Methods:
+    HRESULT SetPicFilePath (
+        _bstr_t strFilePath );
+    HRESULT SetHeadText (
+        _bstr_t strHeadText );
+    HRESULT SetContentText (
+        _bstr_t strContentText );
+    long IsPointInLinkRect (
+        long olex,
+        long oley,
+        long x,
+        long y );
+    HRESULT SetUrlText (
+        _bstr_t strUrlText );
+    _bstr_t GetUrlText ( );
+};
+
+struct __declspec(uuid("99d5104d-2a9c-4f64-b3d0-ae2953eebd1c"))
+_DOleLinkInfoEvents : IDispatch
+{};
+
+struct __declspec(uuid("7eedabb0-a9d2-4187-864a-a48e48ea93e1"))
+OleLinkInfo;
+    // [ default ] dispinterface _DOleLinkInfo
+    // [ default, source ] dispinterface _DOleLinkInfoEvents
+
+//
+// Named GUID constants initializations
+//
+
+extern "C" const GUID __declspec(selectany) LIBID_OleLinkInfoLib =
+    {0x21dfe841,0xc6d0,0x42af,{0x8e,0xf2,0x14,0x79,0x55,0xff,0x87,0x91}};
+extern "C" const GUID __declspec(selectany) DIID__DOleLinkInfo =
+    {0x5c8fa553,0x98df,0x4a73,{0x92,0x08,0x7f,0xf1,0xbd,0xf0,0xc5,0x5b}};
+extern "C" const GUID __declspec(selectany) DIID__DOleLinkInfoEvents =
+    {0x99d5104d,0x2a9c,0x4f64,{0xb3,0xd0,0xae,0x29,0x53,0xee,0xbd,0x1c}};
+extern "C" const GUID __declspec(selectany) CLSID_OleLinkInfo =
+    {0x7eedabb0,0xa9d2,0x4187,{0x86,0x4a,0xa4,0x8e,0x48,0xea,0x93,0xe1}};
+
+//
+// Wrapper method implementations
+//
+
+#include "e:\moumou_2.2\mini_client\mini139_src\debug\olelinkinfo.tli"
+
+#pragma pack(pop)

@@ -1,0 +1,71 @@
+// WebInterface.idl : WebInterface 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(WebInterface.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(03791259-A36F-4ED2-8E13-7441E2B3EFF8),
+	dual,
+	nonextensible,
+	helpstring("IWebInterfaceX 接口"),
+	pointer_default(unique)
+]
+interface IWebInterfaceX : IDispatch{
+	[id(1), helpstring("方法SetUserInfo")] HRESULT SetUserInfo([in]LONG nUserID, [in] BSTR strUserName, [in] BSTR strNickName);
+	[id(2), helpstring("方法UploadPicture")] HRESULT UploadPicture([in] BSTR strPictureFile, [out] LONG * nFileSize, [out] BSTR* strPictureUrl, [out] BSTR* strError);
+	[id(3), helpstring("方法GetUserArticleList")] HRESULT GetUserArticleList([in] LONG nFriendId, [in] BSTR strBeginTime, [in] BSTR strEndTime, [out, retval] BSTR* strReturn);
+	[id(4), helpstring("方法GetArticleContent")] HRESULT GetArticleContent([in] LONG nArticleId, [out,retval] BSTR* strReturn);
+	[id(5), helpstring("方法CreateArticle")] HRESULT CreateArticle([in] LONG nOperationFlag, [in] LONG nArticleId, [in] BSTR strTitle, [in] BSTR strContent, [in] LONG nBookId, [in] LONG nViewProp, [in] BSTR strTag, [in] LONG nTopFlag, [out,retval]BSTR * strReturn);
+	[id(6), helpstring("方法SetArticleTop")] HRESULT SetArticleTop([in] LONG nArticleId, [in] LONG nTopFlag, [out,retval]BSTR * strReturn);
+	[id(7), helpstring("方法SetArticleTitle")] HRESULT SetArticleTitle([in] LONG nArticleId, [in] BSTR strTitle, [out,retval]BSTR * strReturn);
+	[id(8), helpstring("方法SetArticleViewProp")] HRESULT SetArticleViewProp([in] LONG nArticleId, [in] LONG nViewProp, [out,retval]BSTR * strReturn);
+	[id(9), helpstring("方法PutArticleToBook")] HRESULT PutArticleToBook([in] LONG nArticleId, [in] BSTR strBookIds, [out,retval]BSTR * strReturn);
+	[id(10), helpstring("方法DeleteArticle")] HRESULT DeleteArticle([in] BSTR strArticleId,[out,retval]BSTR * strReturn);
+	[id(11), helpstring("方法GetUserBookList")] HRESULT GetUserBookList([in] LONG nFriendId, [out,retval] BSTR* strReturn);
+	[id(12), helpstring("方法CreateBook")] HRESULT CreateBook([in] LONG nOperationFlag, [in] LONG nBookId, [in] BSTR strBookName, [in] LONG nViewProp, [out,retval] BSTR* strReturn);
+	[id(13), helpstring("方法DeleteBook")] HRESULT DeleteBook([in] LONG nBookId, [out,retval] BSTR* strReturn);
+	[id(14), helpstring("方法GetUserPictureList")] HRESULT GetUserPictureList([in] LONG nFriendId, [in] BSTR strBeginTime, [in] BSTR strEndTime, [out,retval] BSTR* strReturn);
+	[id(15), helpstring("方法PutPictureToAlbum")] HRESULT PutPictureToAlbum([in] LONG nPictureId, [in] LONG nAlbumId, [out,retval] BSTR* strReturn);
+	[id(16), helpstring("方法DeletePicture")] HRESULT DeletePicture([in] BSTR strPictureId, [out,retval] BSTR* strReturn);
+	[id(17), helpstring("方法GetUserAlbumList")] HRESULT GetUserAlbumList([in] LONG nFriendId, [out,retval] BSTR* strReturn);
+	[id(18), helpstring("方法CreateAlbum")] HRESULT CreateAlbum([in] LONG nOperationFlag, [in] LONG nAlbumId, [in] BSTR strAlbumName, [in] LONG nViewProp, [out,retval] BSTR* strReturn);
+	[id(19), helpstring("方法DeleteAlbum")] HRESULT DeleteAlbum([in] LONG nAlbumId, [out,retval] BSTR* strReturn);
+	[id(20), helpstring("方法GetUserArticleTagList")] HRESULT GetUserArticleTagList([out,retval] BSTR* strReturn);
+	[id(21), helpstring("方法GetUserPictureTagList")] HRESULT GetUserPictureTagList([out,retval] BSTR* strReturn);
+	[id(22), helpstring("方法GetSpaceSize")] HRESULT GetSpaceSize([out,retval] BSTR* strReturn);
+	[id(23), helpstring("方法MiniOnline")] HRESULT MiniOnline(void);
+	[id(25), helpstring("方法SetPictureTitle")] HRESULT SetPictureTitle([in] LONG nPictureId, [in] BSTR strTitle, [out,retval] BSTR* strReturn);
+	[id(26), helpstring("方法SetPictureVewProp")] HRESULT SetPictureViewProp([in] LONG nPictureId, [in] LONG nViewProp, [out,retval] BSTR* strReturn);
+	[id(27), helpstring("方法SetUserFace")] HRESULT SetUserFace(BSTR strPictureUrl, [out,retval] BSTR* strReturn);
+	[id(28), helpstring("方法PayPhotoFrame")] HRESULT PayPhotoFrame([in] LONG nFrameId, [out] FLOAT* fPaied, [out] BSTR* strError, [out,retval] VARIANT_BOOL* pReturnVal);
+	[id(29), helpstring("方法DelArticleInBook")] HRESULT DelArticleInBook([in] LONG nArticleId, [in] LONG nBookId, [out,retval] BSTR* strReturn);
+	[id(30), helpstring("方法DelPictureInAlbum")] HRESULT DelPictureInAlbum([in] LONG nPictureId, [in] LONG nAlbumId, [out,retval] BSTR* strReturn);
+	[id(31), helpstring("方法GetArticleBookList")] HRESULT GetArticleBookList([in] LONG nArticleId, [out,retval] BSTR* strReturn);
+	[id(32), helpstring("方法GetPictureAlbumList")] HRESULT GetPictureAlbumList([in] LONG nPictureId, [out,retval] BSTR* strReturn);
+	[id(33), helpstring("方法SyncPicture")] HRESULT SyncPicture([out,retval] BSTR* strReturn);
+	[id(34), helpstring("方法EnablePicture")] HRESULT EnablePicture([in] BSTR strPictureUrl,[in] BSTR strTitle, [in] BSTR strContent, [in] BSTR strTag, [in] LONG nViewProp, [in] LONG nFileSize, [in] LONG nAlbumId, [out,retval] BSTR* strReturn);
+	[id(35), helpstring("方法GetUserAudioList")] HRESULT GetUserAudioList([in] LONG nFriendId, [in] BSTR strBeginTime, [in] BSTR strEndTime, [out,retval] BSTR* strReturn);
+
+};
+[
+	uuid(C4F2A28C-D254-4416-9CE2-D6D8189ACEBD),
+	version(1.0),
+	helpstring("WebInterface 1.0 类型库")
+]
+library WebInterfaceLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(5BAAC37E-CEB9-4FF7-B48F-A54A4C5B9FF4),
+		helpstring("WebInterfaceX Class")
+	]
+	coclass WebInterfaceX
+	{
+		[default] interface IWebInterfaceX;
+	};
+};

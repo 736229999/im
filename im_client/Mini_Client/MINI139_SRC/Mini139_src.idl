@@ -1,0 +1,72 @@
+// Mini139_src.idl : Mini139_src 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(Mini139_src.tlb)和封送处理代码。
+
+#include "olectl.h"
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(B12A6538-CE42-4C80-A096-97BC261DBEB5),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface ICOleImage : IDispatch{
+};
+
+[
+	object,
+	uuid(3204084F-52AB-4071-A7F8-09B7E257D03A),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IOleImage : IDispatch{
+};
+
+[
+	uuid(8213BB96-E801-48F9-A6C6-965C1F1520B6),
+	version(1.0)	
+]
+library Mini139_srcLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(B37E7D9C-8DF9-4046-8145-8E17E1907709)		
+	]
+	dispinterface _ICOleImageEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(0C217B0F-D4AA-4B2D-9934-F51E671681CB),		
+		control
+	]
+	coclass COleImage
+	{
+		[default] interface ICOleImage;
+		[default, source] dispinterface _ICOleImageEvents;
+	};
+	[
+		uuid(A512FAA3-B7B0-4719-A655-E80B74976ECC)		
+	]
+	dispinterface _IOleImageEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(515AF5D3-6031-4B49-A9FC-8728EFE2E9C3),		
+		control
+	]
+	coclass OleImage
+	{
+		[default] interface IOleImage;
+		[default, source] dispinterface _IOleImageEvents;
+	};
+};

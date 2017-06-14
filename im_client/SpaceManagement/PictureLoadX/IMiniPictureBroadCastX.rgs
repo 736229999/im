@@ -1,0 +1,27 @@
+HKCR
+{
+	PictureLoadX.IMiniPictureBroadCastX.1 = s 'IMiniPictureBroadCastX Class'
+	{
+		CLSID = s '{D9D21C16-86BF-4165-8985-1E4227A95ED4}'
+	}
+	PictureLoadX.IMiniPictureBroadCastX = s 'IMiniPictureBroadCastX Class'
+	{
+		CLSID = s '{D9D21C16-86BF-4165-8985-1E4227A95ED4}'
+		CurVer = s 'PictureLoadX.IMiniPictureBroadCastX.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {D9D21C16-86BF-4165-8985-1E4227A95ED4} = s 'IMiniPictureBroadCastX Class'
+		{
+			ProgID = s 'PictureLoadX.IMiniPictureBroadCastX.1'
+			VersionIndependentProgID = s 'PictureLoadX.IMiniPictureBroadCastX'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{A8A6F23C-7025-42F7-9E73-73E5475B8A46}'
+		}
+	}
+}

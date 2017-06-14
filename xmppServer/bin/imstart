@@ -1,0 +1,24 @@
+cd `dirname $0`
+
+#sh imstop
+sh imkill
+#rm -rf ./Log
+echo -e "\nStarting IM Service ......"
+
+nohup ./UserOnlineManager > /dev/null&
+sleep 1
+echo -e "[UserOnlineManager]..........started!"
+nohup ./ClusterOnlineManager > /dev/null&
+sleep 1
+echo -e "[ClusterManager]..........started!"
+nohup ./ImServer > /dev/null&
+sleep 1
+echo -e "[ImServer]..........started!"
+nohup ./WebMsgNotify > /dev/null&
+sleep 1
+echo -e "[WebMsgNotify]..........started!"
+
+echo -e "\nAll IM Service Started"
+sh imlps
+
+sh immonitor &

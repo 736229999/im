@@ -1,0 +1,44 @@
+// MyArticles.idl : MyArticles 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(MyArticles.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(244C98DD-957C-4AD0-B99E-792EAF707087),
+	dual,
+	nonextensible,
+	helpstring("IMyArticlesX 接口"),
+	pointer_default(unique)
+]
+interface IMyArticlesX : IDispatch{
+	[id(1), helpstring("方法Show")] HRESULT Show(void);
+	[id(2), helpstring("方法Close")] HRESULT Close(void);
+	[propget, id(3), helpstring("属性 UserInfo3")] HRESULT UserInfo([out, retval] LONG * pVal);
+	[id(4), helpstring("方法SelectWriteArticleX")] HRESULT SelectWriteArticleX([in]LONG pWriteArticleX);
+	[id(5), helpstring("方法OnUploadLocalArticle")] HRESULT OnUploadLocalArticle([in] LONG nSavedID);
+	[id(6), helpstring("方法UpdateWebArticleList")] HRESULT UpdateWebArticleList([in] LONG nArticleID);
+	[id(7), helpstring("方法UpdateLocalArticleList")] HRESULT UpdateLocalArticleList([in] LONG nSavedID, [in] BSTR strArticleTitle);
+	[id(8), helpstring("方法SetMessageWndHandle")] HRESULT SetMessageWndHandle([in] LONG hWnd);
+};
+[
+	uuid(3A62904D-83EF-4C97-9638-2CE871609E42),
+	version(1.0),
+	helpstring("MyArticles 1.0 类型库")
+]
+library MyArticlesLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(5AEA6EC6-720E-4609-BC72-5D84953ABBE9),
+		helpstring("MyArticlesX Class")
+	]
+	coclass MyArticlesX
+	{
+		[default] interface IMyArticlesX;
+	};
+};

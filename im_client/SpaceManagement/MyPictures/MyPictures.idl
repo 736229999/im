@@ -1,0 +1,41 @@
+// MyPictures.idl : MyPictures 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(MyPictures.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(67AADD15-3197-40C9-8B8C-C02B63AF16C4),
+	dual,
+	nonextensible,
+	helpstring("IMyPicturesX 接口"),
+	pointer_default(unique)
+]
+interface IMyPicturesX : IDispatch{
+	[id(1), helpstring("方法Show")] HRESULT Show(void);
+	[id(2), helpstring("方法Close")] HRESULT Close(void);
+	[propget, id(3), helpstring("属性 UserInfo3")] HRESULT UserInfo([out, retval] LONG * pVal);
+	[id(4), helpstring("方法SelectHeadPhotoX")] HRESULT SelectHeadPhotoX([in] LONG pHeadPhotoX);
+	[id(5), helpstring("方法SetMessageWndHandle")] HRESULT SetMessageWndHandle([in] LONG hWnd);
+};
+[
+	uuid(279C8FC4-2542-46E6-8856-F24FCA354111),
+	version(1.0),
+	helpstring("MyPictures 1.0 类型库")
+]
+library MyPicturesLib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(9AEF2D1C-2907-4E80-AEA8-A91374E3379F),
+		helpstring("MyPicturesX Class")
+	]
+	coclass MyPicturesX
+	{
+		[default] interface IMyPicturesX;
+	};
+};

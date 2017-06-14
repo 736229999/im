@@ -1,0 +1,110 @@
+#content {
+    border: 1px solid #a5a5a5;
+    padding-top: 0px;
+}
+
+#content .title_nav {
+    border-bottom: 1px solid #a5a5a5;
+    background-color: #E4E4E4;
+}
+
+.padd_b_10 {
+    padding-bottom: 0px;
+}
+
+.chat-message-panel .datagrid-header {
+    border-bottom-width: 0px;
+}
+
+.chat-message-panel .panel {
+    margin-top: 5px;
+}
+
+.chat-message-panel .panel-header {
+    padding: 0px;
+}
+
+.chat-message-panel .panel-header .panel-title {
+    line-height: 24px;
+    background-color: #F2F2F2;
+    color: #5e5e5e;
+}
+
+.chat-message-panel .datagrid .panel,
+.chat-message-panel .datagrid .panel .panel-header,
+.chat-message-panel .datagrid .panel .panel-body {
+    min-width: 100%;
+}
+
+.chat-message-panel .datagrid .panel-title {
+    margin-left: 5px;
+}
+
+.chat-message-panel .datagrid .panel-body p {
+    margin: 10px 8px;
+}
+
+.datagrid-btable {
+    width: 100%;
+}
+
+.datagrid-row-alt {
+    background: #ffffff;
+}
+
+.datagrid-row-over,
+.datagrid-header td.datagrid-header-over {
+    background: #ffffff;
+    cursor: default;
+}
+
+.datagrid-row-selected {
+    background: #ffffff;
+    color: #000000;
+}
+
+.fancybox-wrap {
+    max-width: 1600px !important;
+    max-height: 750px !important;
+    overflow-x: hidden;
+}
+
+.fancybox-inner {
+    max-width: 1600px !important;
+    max-height: 750px !important;
+}
+
+.fancybox-inner img {
+    max-width: 1600px !important;
+    max-height: 750px !important;
+}
+
+.fancybox-skin {
+    padding: 0px !important;
+}
+
+.fn-fancy-item {
+    display: inline-block;
+    position: relative;
+    max-width: 450px !important;
+    max-height: 450px !important;
+}
+
+.fn-fancy-item img {
+    max-width: 450px !important;
+    max-height: 450px !important;
+}
+
+.fn-fancy-item::after {
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 16px;
+    height: 16px;
+    content: ' ';
+    background: url("../../images/magnifier_zoom_in.png") no-repeat rgb(255, 255, 255);
+}
+
+.panel .messager-body {
+    border: 2px solid #dedede;
+}

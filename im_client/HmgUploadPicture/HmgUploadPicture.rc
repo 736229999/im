@@ -1,0 +1,426 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""HmgUploadPicture.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "InternalName", "HmgUploadPicture.dll"
+            VALUE "OriginalFilename", "HmgUploadPicture.dll"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_HMGUPLOADPICTURE    REGISTRY                "HmgUploadPicture.rgs"
+IDR_HMGUPLOADPICTUREX   REGISTRY                "HmgUploadPictureX.rgs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_UPLOADPHOTO_DIALOG DIALOGEX 0, 0, 635, 404
+STYLE DS_SETFONT | WS_POPUP | WS_SYSMENU
+FONT 9, "宋体", 400, 0, 0x86
+BEGIN
+    CONTROL         "",IDC_DIR_TREE,"SysTreeView32",TVS_HASBUTTONS | TVS_HASLINES | TVS_LINESATROOT | TVS_SHOWSELALWAYS | WS_TABSTOP | 0x800,9,40,136,353
+    CONTROL         "",IDC_FILE_LIST,"SysListView32",LVS_SHOWSELALWAYS | LVS_SHAREIMAGELISTS | LVS_AUTOARRANGE | WS_TABSTOP,151,40,474,126
+    CONTROL         "",IDC_UPLOADFILE_LIST,"SysListView32",LVS_SHOWSELALWAYS | LVS_AUTOARRANGE | LVS_EDITLABELS | WS_GROUP | WS_TABSTOP,151,196,474,135
+    GROUPBOX        "",IDC_DLG_UPLOAD_STATIC_GROUP1,148,338,327,55,NOT WS_VISIBLE
+    GROUPBOX        "",IDC_DLG_UPLOAD_STATIC_GROUP3,480,338,145,55,NOT WS_VISIBLE
+    LTEXT           "目录选择：",IDC_STATIC_TREECTRL_PROMT,5,21,53,8
+    EDITTEXT        IDC_DLG_UPLOAD_ALBUM,10,0,258,12,ES_AUTOHSCROLL | NOT WS_VISIBLE
+    LTEXT           "(双击图片或者按住左键拖拉,将图片添加到下边的上传列表中.不限图片个数,在当前可用空间范围内,您可以随意上传,速度超快哦!)",IDC_STATIC_LISTCTRL_PROMPT,115,22,511,8
+    LTEXT           "IDC_DESCRIPTION_STATIC",IDC_DESCRIPTION_STATIC,346,0,171,8,NOT WS_VISIBLE,WS_EX_RIGHT
+    CONTROL         "",IDC_STATIC_LINE2,"Static",SS_BLACKFRAME,4,34,627,365
+    CONTROL         "",IDC_DLG_UPLOAD_STATIC_GROUP2,"Static",SS_BLACKFRAME | NOT WS_VISIBLE,150,169,475,21
+END
+
+IDD_PROPPAGE_UPLOADPICTUREX DIALOGEX 0, 0, 8, 8
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 9, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+END
+
+IDD_PREVIEW_DIALOG DIALOGEX 0, 0, 329, 246
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "关   闭",IDC_CANCEL,145,230,44,14
+END
+
+IDD_DLG_UPLOADPICSHELLEXT DIALOGEX 0, 0, 318, 135
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Dialog"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_DLG_UPLOADING DIALOGEX 0, 0, 263, 105
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "图片上传"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "正在上传图片 ...",IDC_STATIC,14,13,226,8
+    CONTROL         "",IDC_DLG_UPLOADING_PROGRESSCTRL,"msctls_progress32",0x1,14,27,242,13
+    LTEXT           "已上传图片文件数/总数: 0/0",IDC_DLG_UPLOADING_STATIC_PROMPT01,14,46,242,8
+    LTEXT           "当前图片:",IDC_DLG_UPLOADING_STATIC_PROMP02,14,60,242,8
+    PUSHBUTTON      "取消",IDC_DLG_UPLOADING_CANCEL,197,85,59,15
+    LTEXT           "正在取消 请稍等 .......",IDC_DLG_UPLOADING_STATIC_CANCEL,14,89,117,8,NOT WS_VISIBLE
+    CONTROL         "",IDC_STATIC,"Static",SS_ETCHEDHORZ,5,79,255,1
+END
+
+IDD_DLG_PANEL2 DIALOGEX 0, 0, 143, 45
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "重置设置信息",IDC_DLG_UPLOAD_BTN_RESETINFO,4,2,66,27
+    DEFPUSHBUTTON   "开始上传",IDC_DLG_UPLOAD_BTN_STARTSEND,73,2,66,27
+    LTEXT           "到网站查看已上传的图片>>",IDC_DLG_UPLOAD_STATIC_HYPERLINK,19,34,101,8
+    PUSHBUTTON      "",IDC_DLG_UPLOAD_STATIC_INFO,3,32,13,12
+END
+
+IDD_DLG_PANEL1 DIALOGEX 0, 0, 288, 45
+STYLE DS_SETFONT | DS_FIXEDSYS | DS_CONTROL | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    LTEXT           "添加到相册:",IDC_DLG_UPLOAD_STATIC_PROMPT2,4,18,45,8
+    LTEXT           "标签  TAG:",IDC_DLG_UPLOAD_STATIC_PROMPT1,4,3,41,8
+    COMBOBOX        IDC_DLG_UPLOAD_TAG_COMBO,52,1,232,144,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    COMBOBOX        IDC_DLG_UPLOAD_ALBUM_COMBO,52,16,99,73,CBS_DROPDOWN | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "访问权限:",IDC_DLG_UPLOAD_STATIC_PROMPT3,158,20,37,8
+    COMBOBOX        IDC_DLG_UPLOAD_ACL,200,17,84,62,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "图片最长边:",IDC_DLG_UPLOAD_STATIC_PROMPT4,4,32,45,9
+    COMBOBOX        IDC_DLG_UPLOAD_IMAGE_SIZE,52,31,99,62,CBS_DROPDOWNLIST | WS_VSCROLL | WS_TABSTOP
+END
+
+#if defined(APSTUDIO_INVOKED) || defined(XX)
+#if defined(APSTUDIO_INVOKED)
+IDD_DLG_OPERATIONS$(XX) DIALOGEX 0, 0, 498, 17
+#else
+IDD_DLG_OPERATIONS DIALOGEX 0, 0, 498, 17
+#endif
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "添 加",IDC_ADDUPLOAD_BUTTON,1,2,37,15,WS_GROUP
+    PUSHBUTTON      "添加全部",IDC_ADDALLUPLOADBUTTON,41,2,37,15
+    PUSHBUTTON      "移 除",IDC_REMOVEUPLOADFILE_BUTTON,82,2,37,15
+    PUSHBUTTON      "移除全部",IDC_REMOVEALLUPLOADFILES_BUTTON,122,2,37,15
+    LTEXT           "0",IDC_DLG_UPLOAD_STATIC_REMAINSIZE_1,165,5,8,8,NOT WS_GROUP
+    CONTROL         "",IDC_DLG_UPLOAD_PROGRESSCTRL,"msctls_progress32",0x0,176,2,114,14
+    LTEXT           "1G",IDC_DLG_UPLOAD_STATIC_REMAINSIZE_2,293,5,10,8,NOT WS_GROUP
+    LTEXT           "已选择0个文件,共0MB,占剩余空间的0%.",IDC_DLG_UPLOAD_STATIC_SELECTFILEINFO,307,5,187,8,NOT WS_GROUP
+END
+#endif
+
+#if defined(APSTUDIO_INVOKED) || !defined(XX)
+IDD_DLG_OPERATIONS DIALOGEX 0, 0, 498, 17
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    PUSHBUTTON      "添 加",IDC_ADDUPLOAD_BUTTON,1,2,37,15,WS_GROUP
+    PUSHBUTTON      "添加全部",IDC_ADDALLUPLOADBUTTON,41,2,37,15
+    PUSHBUTTON      "移 除",IDC_REMOVEUPLOADFILE_BUTTON,82,2,37,15
+    PUSHBUTTON      "移除全部",IDC_REMOVEALLUPLOADFILES_BUTTON,122,2,37,15
+    LTEXT           "已选择0个文件,共0MB.",IDC_DLG_UPLOAD_STATIC_SELECTFILEINFO,185,5,109,8,NOT WS_GROUP
+    RTEXT           "已选择0个文件,共0MB,占剩余空间的0%.",IDC_DLG_UPLOAD_STATIC_SELECTFILEINFO2,294,5,200,8,NOT WS_GROUP
+END
+#endif
+
+IDD_DIALOG_PROGRESS3 DIALOGEX 0, 0, 132, 35
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,98,12,26,15
+    CONTROL         237,IDC_STATIC_PROGRESS,"Static",SS_BITMAP | SS_REALSIZEIMAGE,7,17,80,10
+    LTEXT           "..",IDC_STATIC1,7,5,95,8
+END
+
+IDD_DIALOG_PROGRESS2 DIALOGEX 0, 0, 96, 35
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_CHILD | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    CONTROL         237,IDC_STATIC_PROGRESS,"Static",SS_BITMAP,7,18,80,10
+END
+
+IDD_DIALOG_PROGRESS DIALOGEX 0, 0, 132, 25
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    PUSHBUTTON      "取消",IDCANCEL,97,7,28,11
+    CONTROL         237,IDC_STATIC_PROGRESS,"Static",SS_BITMAP,7,8,80,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_UPLOADPHOTO_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 634
+    END
+
+    IDD_PROPPAGE_UPLOADPICTUREX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 1
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 1
+    END
+
+    IDD_PREVIEW_DIALOG, DIALOG
+    BEGIN
+        RIGHTMARGIN, 326
+        BOTTOMMARGIN, 244
+    END
+
+    IDD_DLG_UPLOADPICSHELLEXT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 311
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 128
+    END
+
+    IDD_DLG_UPLOADING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 256
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 101
+    END
+
+    IDD_DIALOG_PROGRESS3, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 125
+        BOTTOMMARGIN, 28
+    END
+
+    IDD_DIALOG_PROGRESS2, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 89
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 28
+    END
+
+    IDD_DIALOG_PROGRESS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 125
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 18
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDR_MAINFRAME           BITMAP                  "RES\\upload_picture_btn.bmp"
+IDB_UPLOADPICTUREX      BITMAP                  "UploadPictureXCtrl.bmp"
+IDB_RESTORE_NORMAL      BITMAP                  "RES\\im\\restore_normal.bmp"
+IDB_RESTORE_HOT         BITMAP                  "RES\\im\\restore_hot.bmp"
+IDB_RESTORE_DOWN        BITMAP                  "res\\im\\restore_down.bmp"
+IDB_PROGRESSBAR_V2_RIGHTLINE BITMAP                  "RES\\progress.ctrl.bar.v2\\进度条-右边边线.bmp"
+IDB_PROGRESSBAR_V2_LEFTLINE BITMAP                  "RES\\progress.ctrl.bar.v2\\进度条-左边边线.bmp"
+IDB_PROGRESSBAR_V2_GREEN BITMAP                  "RES\\progress.ctrl.bar.v2\\进度条-绿.bmp"
+IDB_PROGRESSBAR_V2_GRAY BITMAP                  "RES\\progress.ctrl.bar.v2\\进度条-灰.bmp"
+IDB_PROGRESSBAR_V2_BLUE BITMAP                  "RES\\progress.ctrl.bar.v2\\进度条-蓝.bmp"
+IDB_PROGRESSBAR_RED     BITMAP                  "RES\\progress.ctrl.bar\\loding 红.bmp"
+IDB_PROGRESSBAR_GREEN   BITMAP                  "RES\\progress.ctrl.bar\\loding绿.bmp"
+IDB_PROGRESSBAR_BLUE    BITMAP                  "RES\\progress.ctrl.bar\\loding蓝.bmp"
+IDB_MIN_NORMAL          BITMAP                  "RES\\im\\min_normal.bmp"
+IDB_MIN_HOT             BITMAP                  "RES\\im\\min_hot.bmp"
+IDB_MIN_DOWN            BITMAP                  "res\\im\\min_down.bmp"
+IDB_MAX_NORMAL          BITMAP                  "RES\\im\\max_normal.bmp"
+IDB_MAX_HOT             BITMAP                  "RES\\im\\max_hot.bmp"
+IDB_MAX_DOWN            BITMAP                  "res\\im\\max_down.bmp"
+IDB_MAINICON            BITMAP                  "res\\im\\btn_main_icon.bmp"
+IDB_IM_SCROLLBAR        BITMAP                  "res\\im\\scrollbar.BMP"
+IDB_IM_COMBO_BUTTON     BITMAP                  "RES\\im\\combo_right.bmp"
+IDB_IM_BTN_NORMAL       BITMAP                  "res\\im\\button_normal.bmp"
+IDB_IM_BTN_HOVER        BITMAP                  "res\\im\\button_hover.bmp"
+IDB_IM_BTN_DOWN         BITMAP                  "res\\im\\button_down.bmp"
+IDB_IM_BTN_DISABLE      BITMAP                  "res\\im\\button_disable.bmp"
+IDB_HELP_NORMAL         BITMAP                  "Res\\im\\help_normal.bmp"
+IDB_HELP_HOT            BITMAP                  "Res\\im\\help_hot.bmp"
+IDB_HELP_DOWN           BITMAP                  "Res\\im\\help_down.bmp"
+IDB_DRAGDROP_SINGLE     BITMAP                  "RES\\dropdrag\\bm_single.bmp"
+IDB_DRAGDROP_MULTI      BITMAP                  "RES\\dropdrag\\bmp_multi.bmp"
+IDB_DLG_CAPTION_R       BITMAP                  "res\\im\\dlg_caption_right.bmp"
+IDB_DLG_CAPTION_M       BITMAP                  "res\\im\\dlg_caption_mid.bmp"
+IDB_DLG_CAPTION_L       BITMAP                  "res\\im\\dlg_caption_left.bmp"
+IDB_DLG_CAPTION_BAR     BITMAP                  "Res\\im\\dlg_caption_bar.bmp"
+IDB_COLUMN_BTN_TOP_NORMAL BITMAP                  "res\\im\\column_btn_top.bmp"
+IDB_COLUMN_BTN_TOP_HOT  BITMAP                  "res\\im\\column_b.bmp"
+IDB_COLUMN_BTN_TOP_DOWN BITMAP                  "res\\im\\bmp00009.bmp"
+IDB_COLUMN_BTN_TOP_DISABLE BITMAP                  "res\\im\\bmp00006.bmp"
+IDB_COLUMN_BTN_MID_NORMAL BITMAP                  "res\\im\\column_btn_mid.bmp"
+IDB_COLUMN_BTN_MID_HOT  BITMAP                  "res\\im\\column_btn_mid_hot.bmp"
+IDB_COLUMN_BTN_MID_DOWN BITMAP                  "res\\im\\bmp00008.bmp"
+IDB_COLUMN_BTN_MID_DISABLE BITMAP                  "res\\im\\bmp00005.bmp"
+IDB_COLUMN_BTN_BOTTOM_NORMAL BITMAP                  "res\\im\\column_btn_bottom.bmp"
+IDB_COLUMN_BTN_BOTTOM_HOT BITMAP                  "res\\im\\column_btn_bottom_hot.bmp"
+IDB_COLUMN_BTN_BOTTOM_DOWN BITMAP                  "res\\im\\bmp00007.bmp"
+IDB_COLUMN_BTN_BOTTOM_DISABLE BITMAP                  "res\\im\\column_btn_bottom_disable.bmp"
+IDB_COLUMN_BTN_ARROW_RIGHT BITMAP                  "res\\im\\right_btn_arrow.bmp"
+IDB_COLUMN_BTN_ARROW_LEFT BITMAP                  "res\\im\\left_btn_arrow.bmp"
+IDB_CLOSE_NORMAL        BITMAP                  "RES\\im\\close_normal.bmp"
+IDB_CLOSE_HOT           BITMAP                  "RES\\im\\close_hot.bmp"
+IDB_CLOSE_DOWN          BITMAP                  "res\\im\\close_down.bmp"
+IDB_BTN1_NORMAL         BITMAP                  "Res\\im\\btn1_normal.bmp"
+IDB_BTN1_HOT            BITMAP                  "Res\\im\\btn1_hover.bmp"
+IDB_BTN1_DOWN           BITMAP                  "Res\\im\\btn1_down.bmp"
+IDB_BTN1_DISABLE        BITMAP                  "Res\\im\\btn1_disable.bmp"
+IDB_BTN_ITALIC_NORMAL   BITMAP                  "Res\\im\\italic_normal.bmp"
+IDB_BITMAP_RIGHT2       BITMAP                  "res\\im\\bitmap_right2.bmp"
+IDB_BITMAP_RIGHT        BITMAP                  "res\\im\\bitmap1.bmp"
+IDB_BITMAP_LEFT2        BITMAP                  "res\\im\\bmp00002.bmp"
+IDB_BITMAP_LEFT         BITMAP                  "res\\im\\bmp00001.bmp"
+IDB_BITMAP_HINT         BITMAP                  "RES\\hint_icon.bmp"
+IDB_BITMAP_BIG2         BITMAP                  "res\\im\\bmp00004.bmp"
+IDB_BITMAP_BIG          BITMAP                  "res\\im\\bmp00003.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_NODRAG              CURSOR                  "NODRAGGING.CUR"
+IDC_HANDLE              CURSOR                  "RES\\ICR_HAND.CUR"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_SEL_PIC             ICON                    "res\\flagicon.ico"
+IDI_MAIN                ICON                    "RES\\ico\\main.ico"
+IDR_MAINFRAME           ICON                    "res\\main.ico"
+IDI_UPD_PIC             ICON                    "res\\sel_pic1.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// GIF
+//
+
+IDR_GIF_LOGIN           GIF                     "res\\im\\loginWait.gif.dat"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PROJNAME            "HmgUploadPicture"
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "HmgUploadPicture.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

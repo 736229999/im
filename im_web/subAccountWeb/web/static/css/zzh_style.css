@@ -1,0 +1,260 @@
+@charset "utf-8";
+/* CSS Document */
+/*!
+ * @名称：子账号样式文件
+ * @功能：1、重设浏览器默认样式
+ *       2、设置通用原子类
+ */
+/* 防止用户自定义背景颜色对网页的影响，添加让用户可以自定义字体 */
+
+.w55{ width:55px;}
+.w56{ width:56px;}
+.w64{ width:64px;}
+.w70{ width:70px;}
+.w106{ width:106px;}
+.w120{ width:120px;}
+.w130{ width:130px;}
+.w168{ width:168px;}
+.w182{ width:182px;}
+.w460{ width:460px;}
+.w880{ width:880px;}
+.colff8400{ color:#ff8400;}
+.col999999{ color:#999999;}
+.colff0000{ color:#ff0000}
+.colf22e00{ color:#f22e00}
+.col333333{ color:#333333;}
+.col0066cc{ color:#0066cc;}
+.lh28{ line-height:28px;}
+.mt10{ margin-top:10px;}
+.mt15{ margin-top:15px;}
+.mr10{ margin-right:10px;}
+.mr15{ margin-right:15px;}
+.mr20{ margin-right:20px;}
+.mr30{ margin-right:30px;}
+.mb20{ margin-bottom:20px;}
+.ppglBorderDiv {
+    border: 1px solid #e9e9e9;
+    margin: 0px 0px 20px;
+}
+.ppglBorderDiv .hackIe6 {
+    _height: 42px;
+     _overflow: hidden;
+}
+.ppglBorderDiv h2 .h2-notice {
+    color: #999999;
+    float: right;
+    font-size: 12px;
+    font-weight: 100;
+    margin-right: 10px;
+   *position: relative !important;
+   *top: -38px !important;
+
+}
+.ppglBorderDiv h2 .h2-notice b {
+    color: #f22e00;
+}
+.employAddBtn{ width:77px; height:34px; font-size:14px; background:#b52536; border:none; text-align:center; line-height:34px; cursor:pointer; color:#fff;}
+.employAddLongBtn{ width:173px; height:34px; font-size:14px; background:#90613b; border:none; text-align:center; line-height:34px; cursor:pointer;color:#fff;}
+.dateSettingTxt{ width:190px; height:26px; border:1px #e1e1e1 solid; color:#333333; text-indent:10px;line-height:13px;line-height:26px \9;}
+.buiness_btn_69{ width:69px; height:28px; text-align:center; border:none; line-height:28px; color:#ffffff; cursor:pointer; font-size:12px; }
+.newEmp_btn_69{ background:#db384c; width:69px; height:30px; text-align:center; border:none; line-height:28px; color:#ffffff; cursor:pointer; font-size:12px; }
+.roleUpdateTxt{ width:188px; height:26px; border:1px #dddddd solid; text-indent:5px;  line-height:13px;line-height:26px \9; color:#333333; float:left; margin-right:10px;}
+.roleUpdateBtn{ width:63px; height:28px; border:none; cursor:pointer; background:url(../images/employ_icon.png) no-repeat; background-position:-22px -104px; float:left;}
+.roleUpdateBtn:hover{ background-position:-97px -104px;}
+
+
+.searchBar{ margin-bottom:10px; height:48px; position:relative;}
+.searchBar h2{ font-size:14px; color:#333333; position:absolute; left:0px; bottom:0px; font-weight:bold;}
+.search{ display:inline-block; position:absolute; right:0px; bottom:0px;}
+.search .searchTxt{ height:26px; border:1px #dfdfdf solid; width:238px; text-indent:5px;color:#999999; margin:0px; padding:0px; float:left; margin-right:-1px; line-height:26px; }
+.search .searchBtn{ border:1px #847666 solid; width:60px; height:28px; background:#847666; text-align:center; line-height:26px; color:#ffffff; cursor:pointer; float:left;}
+
+
+
+.zzhBasic .basic-content{ margin:20px 20px 50px;}
+.zzhBasic .basic-content .red-b-title{ width:100%; border-bottom:1px #e1e1e1 solid; display:inline-block;}
+.zzhBasic .basic-content .red-b-title h2{ display:inline-block; padding:0px 10px 5px;  background: #fff; font-size:12px; font-weight:bold; color:#333333; float:left; position:relative;  z-index:2;}
+.zzhBasic .basic-content .red-b-title .r-title{ float:right; margin-right:24px; color:#333333; font-size:12px;}
+
+.zzhBasic .basic-content .red-b-box{ margin-bottom:20px;}
+.zzhBasic .basic-content .red-b-box .kf{ margin:8px 0px; height:15px; position:relative;}
+.zzhBasic .basic-content .red-b-box .kf font{ font-size:12px; position:absolute; left:30px;}
+.zzhBasic .basic-content .red-b-box .kf em.down{ display:block; width:9px; height:15px; background:url(../images/zzh/zzh-images.png) no-repeat -210px -110px; position:absolute; right:78px; cursor:pointer;}
+.zzhBasic .basic-content .red-b-box .kf em.up{ display:block; width:9px; height:15px; background:url(../images/zzh/zzh-images.png) no-repeat -192px -110px; position:absolute; right:59px; cursor:pointer;}
+.zzhBasic .basic-content .red-b-box input[type=checkbox]{-webkit-appearance: none;appearance: none;width:13px; height:13px;cursor: pointer;background: #fff; border:1px #dedede solid;position:absolute; right:20px;}
+.zzhBasic .basic-content .red-b-box input[type=checkbox]:checked::after {content:url(../images/checkbg.gif);display: block;}
+.zzhBasic .basic-content .red-b-box .zzhCommonCheck{-webkit-appearance: none;appearance: none;width:13px; height:13px;cursor: pointer;background: #fff; border:1px #dedede solid; position:absolute; right:20px;}
+.zzhBasic .basic-content .red-b-box .kf .date{ width:260px; position:absolute; left:30px;}
+.zzhBasic .basic-content .red-b-box .kf .time{ width:260px; position:absolute; left:290px;}
+.zzhBasic .basic-content .red-b-box .cz{  height:28px; position:relative; margin-bottom:10px;}
+.zzhBasic .basic-content .red-b-box .cz .date-box{ width:260px;  position:absolute; left:30px;}
+.zzhBasic .basic-content .red-b-box .cz .time-box{ width:260px; position:absolute; left:290px;}
+.zzhBasic .basic-content .red-b-box .cz .font-z{ display:block; font-size:12px; padding:0px 8px; float:left; height:28px; line-height:28px;}
+.zzhBasic .basic-content .red-b-box .text-100{ width:98px; height:26px; line-height:26px; border:1px #dddddd solid; text-indent:5px; float:left;}
+.zzhBasic .basic-content .red-b-box .dh{  height:28px; position:relative; margin-top:10px; line-height:28px;}
+.zzhBasic .basic-content .red-b-box .dh font{font-size:12px; position:absolute; left:30px;}
+.zzhBasic .basic-content .red-b-box .text-190{ width:188px; height:26px;line-height:26px; border:1px #dddddd solid; text-indent:5px; position:absolute; left:90px;}
+.zzhBasic .basic-content .red-b-box .dh .sureBrn{  background: url("../images/dis-btn.png") no-repeat scroll -13px -15px;
+    border: medium none;
+    color: #ffffff;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 90px;}
+.zzhBasic .basic-content .red-b-box .dh .cancelBrn{ background: url("../images/dis-btn.png") no-repeat scroll -13px -157px;
+    border: medium none;
+    cursor: pointer;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    width: 90px;}
+
+
+/*子账亮灯设置号*/
+.lightSetting{ margin:20px; overflow:hidden;}
+.lightSettingTitle{border-bottom:1px #e1e1e1 solid; position:relative;}
+.lightH2{ display:inline-block; padding:2px 10px 5px;  font-weight:bold;}
+.lightSettingTitle .rightA{ color:#0066cc; cursor:pointer; position:absolute; right:10px;_margin-right:20px;}
+.lightSetting h3{ display:inline-block;}
+.settingBtnDefault{display:inline-block;*display:inline;*zoom:1;height:9px;background-image:url(../images/hoverchangepostion.jpg);background-repeat:none;background-position:0 -9px;width:9px; margin:0px 5px;}
+.lightSettingBtn a:hover{background-position:0 0;}
+.lightSettingBtn input{ vertical-align:text-bottom;}
+.lightSettingTxt{ width:190px; height:26px; border:1px #e1e1e1 solid; color:#333333; font-size:12px; text-indent:10px; line-height:13px;line-height:26px \9;}
+.active{ border:1px #f22e00 solid;}
+
+.lightSettingSelect{ width:192px; height:26px; border:1px #e1e1e1 solid; color:#333333;}
+.lightSetting input[type=checkbox]{-webkit-appearance: none;appearance: none;width:13px; height:13px;cursor: pointer;vertical-align: bottom;background: #fff; border:1px #dedede solid; vertical-align:text-top; margin-right:10px;}
+.lightSetting input[type=checkbox]:checked::after {content:url(../images/checkbg.gif);display: block;}
+.lightSettingRightBtn{ display:inline; float:right; color:#0066cc;  border:1px #dedede solid; padding:2px 5px; margin-right:10px; cursor:pointer; *position:relative;*top:-22px;_top:-24px; }
+.lxwmTitle{ height:40px; line-height:40px; padding-left:10px;border-bottom:1px #dedede solid;*line-height:30px !important;_height:35px;_padding-top:5px; }
+.lxwmTitle>span:first-child{float: left}
+.lightSetting .mbs-box{ display:inline;  margin-top:20px; margin-left:20px; margin-right:15px; float:left; border:1px #dedede solid;}
+.lightSetting .mbs-box .mbs-box-title{ font-weight:bold; color:#666666; padding:7px 0px 7px 10px; margin-top:10px;clear: both}
+.lightSetting .mbs-box p{ padding:7px 0px 7px 10px;}
+.contentUS{ float: left; margin: 10px 5px 0px 10px;}
+.lightSetting .kf-box{ width:60px; margin-top:20px;border:1px #dedede solid; float:left; display:inline; padding-top:5px;}
+.lightSetting .kf-box p{ padding:0px 0px 5px 0px; text-align:center;}
+
+/*警告段落*/
+.warnBox{border:1px #ffe3e0 solid; height:46px; line-height:46px; background:#fff2f2;  margin:20px 20px 0px; color:#f22e00;}
+.warnBox em.wrong{  display:inline-block; width:25px; height:46px;background:url(../images/zzh/zzh-images.png) no-repeat -275px -94px; margin:0px 10px; float:left;}
+.warnBox font{ height:46px; line-height:46px; font-size:12px;}
+.warnBox em.right{  display:inline-block; width:25px; height:46px;background:url(../images/zzh/zzh-images.png) no-repeat -18px -152px; margin:0px 10px; float:left;}
+
+.zzhBasic .flow-setting-box{ margin:50px 20px;}
+.zzhBasic .flow-setting-box span{ display:block; height:14px; margin-bottom:30px;}
+.zzhBasic .flow-setting-box span .fsb-title{ display:inline-block;width:82px; font-size:12px; text-align:right; color:#333333;}
+.zzhBasic .flow-setting-box span .fsb-title i{ color:#F00; font-style:none;}
+.zzhBasic .flow-setting-box span .zzhradio{ margin-left:3px; margin-right:3px; position:relative; top:3px;}
+.zzhBasic .flow-setting-box span font{ color:#999999; font-size:12px; margin-left:20px;}
+.zzhBasic .flow-setting-box .line{ height:1px; background:#e0e0e0; margin-bottom:30px;_height:1px; _overflow:hidden;}
+.zzhBasic .flow-setting-box .dlzh{ height:30px; margin-bottom:10px;}
+.zzhBasic .flow-setting-box .dlzh font{ height:30px; line-height:30px;float:left; margin-right:3px;}
+.zzhBasic .flow-setting-box span font.no-mr20{ margin-left:0px;}
+.zzhBasic .sureBtn{ background: url("../images/employee/employ_icon.png") no-repeat scroll -22px -61px;
+    border: medium none;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 12px;
+    height: 28px;
+    line-height: 28px;
+    text-align: center;
+    width: 69px;}
+
+/* 公共commonSelect控件 */
+.commonSelect{position:absolute; display:inline-block;margin-right:15px; z-index:50; float:left;}
+.commonSelect dt{height:28px;display:inline-block;border:1px solid #d2ccc4;line-height:28px;padding-left:10px;cursor:pointer;padding-right:12px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;position:relative;z-index:99;}
+.commonSelect .dtBGpostion64{background:#fcfcfb url(../images/ico.gif) no-repeat 64px center;}
+.commonSelect .dtBGpostion116{background:#fcfcfb url(../images/ico.gif) no-repeat 116px center;}
+.commonSelect .dtBGpostion176{background:#fcfcfb url(../images/ico.gif) no-repeat 176px center;}
+.commonSelect dt:hover,.select dt.cur{border:1px solid #409DFE;box-shadow:0 0 3px #409DFE;}
+.commonSelect dd{position:relative;left:0;top:-2px;border:1px solid #d2ccc4;background:#fff;display:none; z-index:1000;}
+.commonSelect dd ul{padding:0px 4px;max-height:250px;overflow:auto; z-index:100;*padding:4px;}
+.commonSelect dd ul li{_display:inline;}
+.commonSelect dd ul li a{line-height:28px;display:block;padding:0 8px;color:#333333;*line-height:24px;_line-height:28px;_padding-left:6px;}
+.commonSelect dd ul li a:hover{background:#f5f5f5;}
+
+
+
+.g-right-title{height:48px; border-bottom:1px #e1e1e1 solid; line-height:48px; position:relative; _overflow:hidden;}
+.g-right-title .g-right-Tabs{ position:absolute; bottom:-1px; left:20px; _bottom:-2px;}
+.g-right-title .g-right-Tabs li{ list-style:none; float:left;}
+.g-right-title .g-right-Tabs li a{ display:block; height:32px; padding:0px 20px; color:#333333; line-height:32px; cursor:pointer; _display:inline-block;}
+.g-right-title .g-right-Tabs li a.selected{ border-left:1px #e1e1e1 solid; border-right:1px #e1e1e1 solid; border-top:1px #db384c solid; border-bottom:1px #ffffff solid;}
+.g-right-content{ margin:20px;}
+
+.g-right-content .attention{ height:20px; line-height:20px; color:#ff8400;}
+.g-right-content .attention em{ display:block; height:20px; width:14px; background:url(../images/zzh-images.png) no-repeat -410px -109px; margin-right:6px; float:left;}
+.g-right-content .attention .editA{ display:inline-block; border:1px #dddddd solid; color:#0066cc; padding:0px 5px; height:18px; line-height:18px; cursor:pointer; margin-left:30px; font-size:12px;}
+.g-right-content .setting_ul{ margin-left:20px; margin-top:10px;}
+.g-right-content .setting_ul li a{ display:inline-block; padding:6px 0px; color:#333333;}
+
+
+
+.formbox{overflow:hidden; margin:10px auto 20px; color:#333333;}
+.formbox ul li.short{ display:block; overflow:hidden; _height:40px; _overflow:visible;}
+.formbox ul li.autoright{ padding:0px 0px 5px 108px; overflow:hidden;margin-top:-10px;}
+.formname{text-align:right; float:left; width:108px; line-height:28px; padding:5px 0px; display:block; float:left;}
+.formtext{float:left; display:block; padding:5px 0px;}
+.formtext font{ font-family:"宋体"; font-size:12px;_margin:0px 5px;}
+.formbox ul li .formtext input[type=checkbox]{-webkit-appearance: none;appearance: none;width:13px; height:13px;cursor: pointer;vertical-align: bottom;background: #fff; border:1px #dedede solid; vertical-align:text-top; margin-right:3px;}
+.formbox ul li .formtext input[type=checkbox]:checked::after {content:url(../images/checkbg.gif);display: block;}
+.formbox ul li .formtext font{ display:inline-block; padding-right:20px;}
+.formbox ul li .formtext .formlabel{ line-height:28px;}
+.formbox ul li .formtext .formA{ line-height:28px; color:#0066cc; text-decoration:underline; cursor:pointer;}
+.formbox ul li .formtext .roleGroup-Box{ padding:20px; width:721px; border:1px #e0e0e0 solid; background:#f8f8f8; margin-top:5px; position:relative;}
+.formbox ul li .formtext .roleGroup-Box em.top{ display:block; width:11px; height:6px; background:url(../images/zzh-images.png) no-repeat -552px -113px; position:absolute; top:-6px; left:5px;}
+.formbox ul li .formtext .updatePW{ line-height:28px; float:left; text-indent:5px; color:#0066cc; text-decoration:underline;}
+.formbox ul li .formtext .attion{ display:inline; float:left; height:28px; line-height:28px; color:#999999; margin-left:10px;}
+.formbox ul li .formtext .attion em.attentionPic{ width:14px; height:14px; display:inline-block; background:url(../images/zzh-images.png) no-repeat -410px -112px; position:relative; top:3px; margin-right:5px;}
+.formbox ul li .formtext .attion em.wrongPic{ width:14px; height:14px; display:inline-block; background:url(../images/zzh-images.png) no-repeat -431px -112px; position:relative; top:3px; margin-right:5px;}
+.formbox ul li .formtext .attion em.rightPic{ width:14px; height:14px; display:inline-block; background:url(../images/zzh-images.png) no-repeat -452px -112px; position:relative; top:3px;}
+
+.formbox ul li .sq{ cursor:pointer; position:relative; }
+.formbox ul li .sq em.show{ width:9px; height:5px; display:inline-block; background:url(../images/zzh-images.png) no-repeat -523px -113px; position:absolute; left:30px; top:3px; *top:10px !important;}
+.formbox ul li .sq em.hide{ width:9px; height:5px; display:inline-block; background:url(../images/zzh-images.png) no-repeat -523px -128px;}
+.formbox ul li .structureDiv {border:1px #EEE  solid; background:#f8f8f8; padding:20px; display:block;}
+.formbox ul li i.structureTopBg{ display:block;width:9px; height:6px; background:url(../images/rolebg.gif) no-repeat; position:relative; left:8px; top:1px; _top:7px; }
+.zzhmessage{ padding:10px 30px 0px;background:#ffffff;}
+.zzhmessage .formname{text-align:right; float:left; width:60px; line-height:28px; padding:5px 0px; display:block; float:left;}
+
+
+
+
+/*日历*/
+.icon_calendar{background:url(../images/calendar.png) no-repeat 72px 4px; cursor:pointer;}
+.icon_red_calendar{background:url(../images/rl.gif) no-repeat 65px 4px; cursor:pointer;}
+
+
+.chat-panel {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.chat-panel .chat-icon {
+    clear: both;
+    border-radius: 2px;
+    display: block;
+    line-height: 24px;
+    margin-top: 8px;
+    width: 100%;
+    text-decoration: none;
+}
+
+.chat-panel>.chat-icon>span:first-child {
+    margin-left: 10px;
+}
+
+.chat-panel>.chat-icon>span:last-child {
+    float: right;
+    margin-right: 10px;
+    padding-left: 32px;
+    padding-right: 2px;
+    line-height: 24px;
+    cursor: pointer;
+    background: url("../images/niutou.png") no-repeat scroll 0 -3px #ffe9b5;
+    border: 1px solid #e9d7ab;
+    border-radius: 2px;
+    color: #c65b2b;
+}

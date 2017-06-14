@@ -1,0 +1,9 @@
+file(GLOB srcs ./*.cpp)
+add_executable (AccessServer ${srcs}) 
+set_target_properties(AccessServer PROPERTIES OUTPUT_NAME "AccessServer")
+target_link_libraries(AccessServer common MiniNetTrans MiniAppNetwork DataBaseLib
+ pthread rt clntsh json curl ssdb-client memcached hessian hessianorb
+event zookeeper_mt zookeeper leveldb occi sqlplus rdkafka++ rdkafka ssl sasl2
+stdc++ z crypto zmq)
+add_dependencies(AccessServer common MiniNetTrans MiniAppNetwork DataBaseLib
+ hessian)

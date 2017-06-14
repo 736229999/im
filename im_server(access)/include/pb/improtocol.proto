@@ -1,0 +1,228 @@
+import "base.proto";
+
+option optimize_for = LITE_RUNTIME;
+
+
+// 应用层数据包头
+message XT_HEAD_PB
+{
+    optional int32 flag = 1;   //1  MINI139包标识 0xF0服务器主动发包，0xF1服务器应答  0xF2客户端请求 0xF3客户端应答 0xFD卖家版标志，现只在获取好友列表以及组信息时用到
+    enum EN_FLAG { FLAG_SRVACTION = 0xF0; FLAG_SRVACK = 0xF1; FLAG_CNTREQUEST = 0xF2; FLAG_CNTACK = 0xF3; FLAG_SELLCNTREQ = 0xFD; }
+    optional int32 from = 2;   //2  来源,对客户端来说是版本号
+    enum EN_FROM { FROM_SERVER = 0x0100; FROM_CLIENT = 2000; FROM_TRANSFER = 0x0200; }
+    optional int32 cmd = 3;    //3 命令号
+    optional int32 seq = 4;    //4 命令序列号
+    optional int32 sid = 5;    //5 源ID (详细说明见协议文档)
+    enum EN_SID { SID_SERVER = 0; };   //通用的服务器ID,不建议使用
+    optional int32 dtype = 6;  // 6 目标类型 (0x01 用户，0x02 群，0x03 中转会话成员)
+    enum EN_DSET_TYPE { DEST_TYPE_SERVER = 0x00; DEST_TYPE_USER = 0x01; DEST_TYPE_FAMILY = 0x02; DEST_TYPE_TRANSMIT = 0x03; }
+    optional int32 did = 7;    //7 目标ID(详细说明见协议文档)s
+}
+
+// 数据包
+message DataPacket
+{
+    required XT_HEAD_PB head = 1;  // 包头
+    required bytes data = 2;       // 数据
+}
+
+
+
+message MsgInfo
+{
+    optional uint32 msgid = 1;
+    optional string uuid = 2;
+    optional uint32 fromid = 3;
+    optional uint32 toid = 4;
+    optional uint32 send_time = 5;
+    optional string data = 6;
+    optional string fromnickname = 7;
+    optional uint32 fontSize = 8;
+    optional uint32 fontColor = 9;
+    optional uint32 fontStyle = 10;
+    optional string fontName = 11;
+}
+
+message MsgList
+{
+    optional uint32 ret = 1;
+    repeated MsgInfo msglist = 15;
+}
+
+// 用户退出的消息
+message UserOfflineIND
+{
+    required uint32 userid = 1;    // 用户id
+}
+
+
+enum EN_BUFLOCATION { LOCATION_MEM = 0x00; LOCATION_DB = 0x01; }       // buf所在的位置
+
+// 使用老的udp协议发送大buf的数据给客户端
+message Buf_ServerSend
+{
+    required uint32 packetCount = 1;                       // 包数量
+    required uint32 idxPacket = 2;                         // 当前传输的包索引
+    required string bufUnitIdx = 3;                        // buf唯一标识
+    required EN_BUFLOCATION buflocation = 4;               // buf所处的位置
+    required bytes packetData = 5;                         // 包二进制流
+}
+// 使用老的udp协议发送大buf时客户端的请求
+message Buf_ClientSend
+{
+    required uint32 idxPacketReq = 1;                      // 请求包的索引
+    required string bufUnitIdx = 2;                        // buf唯一标识
+    required EN_BUFLOCATION buflocation = 3;               // buf所处的位置
+}
+
+// 消息提醒类型
+enum REMIND_TYPE
+{
+    RT_RECEIVE_AND_POPMSG          = 0x01;                     // 接收并提醒
+    RT_RECEIVE_NOT_POPMSG          = 0x02;                     // 接收但不提醒
+    RT_OFF                         = 0x03;                     // 不接收
+}
+
+// 只包含userid的请求
+message BaseReq
+{
+    required uint32 userid = 1;                             // 用户id
+}
+
+// 消息应答
+message MsgRemindAck
+{
+    optional REMIND_TYPE neworder = 1 [default = RT_RECEIVE_AND_POPMSG];        // 新订单提醒方式
+    optional REMIND_TYPE payorder = 2 [default = RT_RECEIVE_AND_POPMSG];        // 已付款提醒方式
+    optional REMIND_TYPE goodscomment = 3 [default = RT_RECEIVE_AND_POPMSG];    // 商品评价提醒方式
+    optional REMIND_TYPE returnorder = 4 [default = RT_RECEIVE_AND_POPMSG];     // 退换货提醒方式
+}
+
+// 客服更新操作
+enum CS_UPDATE_OPER
+{
+    UO_ADD_CUST = 0x01;    // 添加买家
+    UO_DEL_CUST = 0x02;    // 删除买家
+    UO_SET_MASTER = 0x03;  // 设置监控主管
+    UO_SET_CHATTING_CUST = 0x04;   // 设置正在聊天的买家
+    UO_ADD_RECPTION = 0x05;
+    UO_DEL_RECPTION = 0x06;
+}
+
+// 客服更新操作请求，用于服务器之间同步
+message CsUpdateOperReq
+{
+    required CS_UPDATE_OPER updateoper = 1;     // 操作类型
+    required uint32 csid = 2;                   // 客服ID
+    required uint32 custid = 3;                 // 买家ID
+}
+
+// 订单中商品信息
+message OrderGoodsInfo
+{
+    optional string productName = 1;                       // 商品名称
+    optional string picUrl = 2;                            // 图片地址
+    optional uint32 qty = 3;                               // 商品数量
+    optional double totalPrice = 4;                        //subTotalPrice - coupons - voucher - promote
+    optional string color = 5;                            // 颜色
+    optional string size = 6;                             // 大小
+}
+
+// 新订单
+message NewOrder
+{
+    optional string ogNo = 1;                              // 订单号
+    optional double totalPay = 2;                          // 支付金额;
+    optional string insertDate = 3;                        // 下单时间
+    optional string packQueryNo = 4;                      // 物流接口查询包裹号
+    optional string merchantId = 5;                       // 商家Id
+    optional double freight = 6;                          // 包裹运费金额
+    optional string buyername = 7;                        // 买家名字
+    repeated OrderGoodsInfo goodslist = 25;
+}
+
+// 已付款订单
+message PayOrder
+{
+    optional string ogNo = 1;                              // 订单号
+    optional double totalPay = 2;                          // 支付金额;
+    optional string insertDate = 3;                        // 下单时间
+    optional string packQueryNo = 4;                      // 物流接口查询包裹号
+    optional string merchantId = 5;                       // 商家Id
+    optional double freight = 6;                          // 包裹运费金额
+    optional string buyername = 7;                        // 买家名字
+    optional string payDate = 8;                          // 付款时间
+    repeated OrderGoodsInfo goodslist = 25;
+}
+
+// 已评价
+message GoodsComment
+{
+    optional string ogNo = 1;                              // 订单号
+    optional string insertDate = 2;                        // 下单时间
+    optional string merchantId = 3;                        // 商家Id
+    optional string bugername = 4;                         // 买家姓名
+    optional string evaluatecontext = 5;                  // 评价内容
+    optional string commentDate = 6;                      // 评价时间
+    optional OrderGoodsInfo goods = 15;                    // 评价的商品
+}
+
+
+// 退货商品详情
+message ReturnGoodsInfo
+{
+    optional double productPrice = 1;                       // 商品价格
+    optional int32 returnQty = 2;                           // 退货数量
+    optional string productMainUrl = 3;                     // 商品主图
+    optional string color = 4;                              // 颜色
+    optional string size = 5;                               // 大小
+    optional string reason = 6;                             // 原因
+    optional double totalPrice =7;                          //(origPrice - aprnPromote - aprnVoucher) * returnQty;
+    optional string productName = 8;                       // 商品名称
+    optional string rssSeq = 9;							// 退货子单号 
+}
+
+// 退货信息
+message ReturnOrder
+{
+    optional string ogNo = 1;                               // 订单编号
+    optional string ogsSeq = 2;                             // 字订单流水号
+    optional string applyDate = 3;                          // 申请时间
+    optional double applyPrice = 4;                         // 申请金额
+    optional string merchantId = 5;                         // 商家ID
+    optional string buyername = 6;                          // 买家名字
+    repeated ReturnGoodsInfo goodslist = 25;
+}
+
+
+// 消息推送数据
+message MsgPushInd
+{
+    required EuMsgPush mpType = 1;                         // 消息类型
+    required bytes mpData = 2;                             // 消息二进制流
+}
+
+message csTeamInfoReq
+{
+    required int32 csId = 1;
+}
+
+message csTeamInfo
+{
+    required int32 csTeamid = 1;
+    required int32 csQueueLength = 2;
+}
+
+message csTeamInfoAck
+{
+    required int32 ret = 1;
+    required int32 csId = 2;
+    repeated csTeamInfo teaminfo = 3;
+}
+
+message csTeamQueueInfo
+{
+    required int32 ret = 1;	
+    required int32 csTeamId = 2;
+    required int32 csQueueLength = 3;
+}

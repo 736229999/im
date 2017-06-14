@@ -1,0 +1,236 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 中文(中华人民共和国) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE 
+BEGIN
+    "1 TYPELIB ""PictureLoadX.tlb""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,1
+ PRODUCTVERSION 1,0,0,1
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "080403a8"
+        BEGIN
+            VALUE "CompanyName", "TODO: <公司名>"
+            VALUE "FileDescription", "TODO: <文件说明>"
+            VALUE "FileVersion", "1.0.0.1"
+            VALUE "LegalCopyright", "TODO: (C) <公司名>。保留所有权利。"
+            VALUE "InternalName", "PictureLoadX.dll"
+            VALUE "OriginalFilename", "PictureLoadX.dll"
+            VALUE "ProductName", "TODO: <产品名>"
+            VALUE "ProductVersion", "1.0.0.1"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x804, 936
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// REGISTRY
+//
+
+IDR_PICTURELOADX        REGISTRY                "PictureLoadX.rgs"
+IDR_IMINIPICTUREBROADCASTX REGISTRY                "IMiniPictureBroadCastX.rgs"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_DIALOG_MAIN DIALOGEX 0, 0, 104, 90
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_DIALOG_PICTURES_SHOW DIALOGEX 0, 0, 103, 325
+STYLE DS_SETFONT | DS_FIXEDSYS | WS_POPUP | WS_SYSMENU
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+END
+
+IDD_DIALOG_OPTION DIALOGEX 0, 0, 183, 90
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU
+CAPTION "选项"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    LTEXT           "每张图片显示时间(1—10秒)",IDC_STATIC_INTERVAL,10,30,
+                    116,10
+    CONTROL         "幻灯片窗口始终在最上面",IDC_CHECK_TOP,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,10,6,115,11
+    EDITTEXT        IDC_EDIT_INTERVAL,109,29,38,12,ES_AUTOHSCROLL
+    CONTROL         "",IDC_SPIN_INTERVAL,"msctls_updown32",UDS_ARROWKEYS,152,
+                    28,11,12
+    DEFPUSHBUTTON   "确定",IDC_BUTTON_OK,73,70,44,15
+    PUSHBUTTON      "取消",IDC_BUTTON_CANCLE,129,69,44,15
+    CONTROL         "退出时清除下载文件夹图片",IDC_CHECK_EMPTY_ALL_PICTURES,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,11,49,112,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_DIALOG_MAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 2
+        RIGHTMARGIN, 102
+        TOPMARGIN, 2
+        BOTTOMMARGIN, 88
+    END
+
+    IDD_DIALOG_PICTURES_SHOW, DIALOG
+    BEGIN
+        RIGHTMARGIN, 100
+        BOTTOMMARGIN, 323
+    END
+
+    IDD_DIALOG_OPTION, DIALOG
+    BEGIN
+        RIGHTMARGIN, 181
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_MAIN MENU 
+BEGIN
+    POPUP "最小化"
+    BEGIN
+        MENUITEM "最小化",                      ID_MIN
+        MENUITEM "显示窗口",                    ID_SHOW_PICTURE_DLG
+        MENUITEM "选项",                        ID_OPTION
+        MENUITEM SEPARATOR
+        MENUITEM "关于",                        ID_ABOUT
+        MENUITEM "退出",                        ID_EXIT
+    END
+END
+
+IDR_MENU_SCROLL MENU 
+BEGIN
+    POPUP "图片滚动"
+    BEGIN
+        MENUITEM "向上滚动",                    ID_PICTURES_UP
+        MENUITEM "向下滚动",                    ID_PICTURES_DOWN
+        MENUITEM SEPARATOR
+        MENUITEM "停止滚动",                    ID_PICTURES_STOP
+        MENUITEM SEPARATOR
+        POPUP "滚动设置"
+        BEGIN
+            MENUITEM "慢速",                        ID_SPEED_LOW
+            MENUITEM "中速",                        ID_SPEED_MEDIUM
+            MENUITEM "快速",                        ID_SPEED_FAST
+        END
+    END
+END
+
+IDR_MENU_TASKBAR MENU 
+BEGIN
+    POPUP ""
+    BEGIN
+        MENUITEM "最小化",                      ID_TASKBAR_MIN
+        MENUITEM "显示窗口",                    ID_TASKBAR_SHOWDLG
+        MENUITEM SEPARATOR
+        MENUITEM "退出",                        ID_TASKBAR_EXIT
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDS_PROJNAME            "PictureLoadX"
+END
+
+#endif    // 中文(中华人民共和国) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+1 TYPELIB "PictureLoadX.tlb"
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

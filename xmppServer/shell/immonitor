@@ -1,0 +1,57 @@
+#!/bin/sh 
+HOLD1=/tmp/imhold1.$$
+HOLD2=/tmp/imhold2.$$
+HOLD3=/tmp/imhold3.$$
+HOLD4=/tmp/imhold4.$$
+WORKINGPATH=`dirname $0`/..
+
+while [ 1 ]
+do
+ulimit -c unlimited
+
+ps -A| grep ImServer | grep -v grep | awk '{print $2}' > $HOLD1
+if [ ! -s $HOLD1 ]; then
+	echo `date` >> ../Log/ImMonitor.log
+ 	echo "ImServer process isn't running..." >> ../Log/ImMonitor.log
+	sleep 1
+	nohup ../bin/ImServer &> /dev/null&
+	echo "restart ImServer" >> ../Log/ImMonitor.log
+	echo >> ../Log/ImMonitor.log
+	
+fi
+	
+ps -A| grep UserOnline | grep -v grep | awk '{print $2}' > $HOLD2
+if [ ! -s $HOLD2 ]; then
+	echo `date` >> ../Log/ImMonitor.log
+ 	echo "UserOnlineManager process isn't running..." >> ../Log/ImMonitor.log
+	sleep 1
+	nohup ../bin/UserOnlineManager &> /dev/null&
+	echo "restart UserOnlineManager" >> ../Log/ImMonitor.log
+	echo >> ../Log/ImMonitor.log
+	
+fi
+	
+ps -A| grep ClusterOnline | grep -v grep | awk '{print $2}' > $HOLD3
+if [ ! -s $HOLD3 ]; then
+	echo `date` >> ../Log/ImMonitor.log
+ 	echo "ClusterOnlineManager process isn't running..." >> ../Log/ImMonitor.log
+	sleep 1
+	nohup ../bin/ClusterOnlineManager &> /dev/null&
+	echo "restart ClusterOnlineManager" >> ../Log/ImMonitor.log
+	echo >> ../Log/ImMonitor.log
+	
+fi
+	
+ps -A| grep WebMsgNotify | grep -v grep | awk '{print $2}' > $HOLD4
+if [ ! -s $HOLD4 ]; then
+	echo `date` >> ../Log/ImMonitor.log
+ 	echo "WebMsgNotify process isn't running..." >> ../Log/ImMonitor.log
+	sleep 1
+	nohup ../bin/WebMsgNotify &> /dev/null&
+	echo "restart WebMsgNotify" >> ../Log/ImMonitor.log
+	echo >> ../Log/ImMonitor.log
+	
+fi
+	sleep 300	
+	
+done

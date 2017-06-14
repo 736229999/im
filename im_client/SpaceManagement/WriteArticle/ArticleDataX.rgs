@@ -1,0 +1,27 @@
+HKCR
+{
+	WriteArticle.ArticleDataX.1 = s 'ArticleDataX Class'
+	{
+		CLSID = s '{253841B1-876C-4378-BF4F-58A1157770FB}'
+	}
+	WriteArticle.ArticleDataX = s 'ArticleDataX Class'
+	{
+		CLSID = s '{253841B1-876C-4378-BF4F-58A1157770FB}'
+		CurVer = s 'WriteArticle.ArticleDataX.1'
+	}
+	NoRemove CLSID
+	{
+		ForceRemove {253841B1-876C-4378-BF4F-58A1157770FB} = s 'ArticleDataX Class'
+		{
+			ProgID = s 'WriteArticle.ArticleDataX.1'
+			VersionIndependentProgID = s 'WriteArticle.ArticleDataX'
+			ForceRemove 'Programmable'
+			InprocServer32 = s '%MODULE%'
+			{
+				val ThreadingModel = s 'Apartment'
+			}
+			val AppID = s '%APPID%'
+			'TypeLib' = s '{FFA518EF-8716-4FEB-B0B9-A9400EFA14D0}'
+		}
+	}
+}

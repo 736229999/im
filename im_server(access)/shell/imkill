@@ -1,0 +1,15 @@
+killall WebMsgNotify ImServer
+ ps -aux | grep -v WebMsgNotify | grep MsgNotify | grep -v grep | awk '{print $2}' | xargs -n 1 kill -9;
+ ps -aux | grep AccessServer | grep -v grep | awk '{print $2}' | xargs -n 1 kill -9;
+#kill immonitor
+HOLD=/tmp/imhold0.$$
+ps -aef| grep immonitor | grep -v grep | awk '{print $2}' > $HOLD
+if [ -s $HOLD ]
+ 
+then
+        while read PID
+        do
+        kill -9 $PID
+         done < $HOLD
+fi
+sh imlps
